@@ -481,6 +481,93 @@ body {
   background-color: #EEEEEE;
 }
 
+.nusa-form-check {
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5em;
+  margin-bottom: 0.125rem;
+}
+.nusa-form-check .nusa-form-check-input {
+  float: left;
+  margin-left: -1.5em;
+}
+
+.nusa-form-check-input {
+  width: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+  vertical-align: top;
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid #dee2e6;
+  appearance: none;
+  print-color-adjust: exact;
+  transition: background-color 0.15s ease-in-out, background-position 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.nusa-form-check-input[type=checkbox] {
+  border-radius: 0.25em;
+}
+.nusa-form-check-input[type=radio] {
+  border-radius: 50%;
+}
+.nusa-form-check-input:active {
+  filter: brightness(90%);
+}
+.nusa-form-check-input:focus {
+  border-color: rgb(173.8947368421, 173.0131578947, 236.4868421053);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(71, 69, 213, 0.25);
+}
+.nusa-form-check-input:checked {
+  background-color: #4745D5;
+  border-color: #4745D5;
+}
+.nusa-form-check-input:checked[type=checkbox] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+.nusa-form-check-input:checked[type=radio] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+}
+.nusa-form-check-input:disabled {
+  pointer-events: none;
+  filter: none;
+  opacity: 0.5;
+}
+.nusa-form-check-input[disabled] ~ .nusa-form-check-label, .nusa-form-check-input:disabled ~ .nusa-form-check-label {
+  opacity: 0.5;
+}
+
+.nusa-form-check-label {
+  color: #18181B;
+  cursor: pointer;
+}
+
+.nusa-form-check-inline {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.nusa-form-switch {
+  padding-left: 2.5em;
+}
+.nusa-form-switch .nusa-form-check-input {
+  width: 2em;
+  margin-left: -2.5em;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+  background-position: left center;
+  border-radius: 2em;
+  transition: background-position 0.15s ease-in-out;
+}
+.nusa-form-switch .nusa-form-check-input:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%2380bdff'/%3e%3c/svg%3e");
+}
+.nusa-form-switch .nusa-form-check-input:checked {
+  background-position: right center;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
 .nusa-navbar {
   display: flex;
   flex-wrap: wrap;
