@@ -1,0 +1,67 @@
+@use "variables" as *;
+
+.nusa-table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: $base-content;
+  vertical-align: top;
+  border-color: $border-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  overflow: hidden; // Pastikan konten di dalam (seperti thead) tidak menutupi sudut
+
+  > :not(caption) > * > * {
+    padding: .75rem .75rem;
+    background-color: transparent;
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px transparent;
+  }
+
+  > tbody {
+    vertical-align: inherit;
+  }
+
+  > thead {
+    vertical-align: bottom;
+  }
+}
+
+// Striped
+.nusa-table-striped {
+  > tbody > tr:nth-of-type(odd) > * {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.05);
+  }
+}
+
+// Hover
+.nusa-table-hover {
+  > tbody > tr:hover > * {
+    background-color: rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.075);
+  }
+}
+
+// Bordered
+.nusa-table-bordered {
+  > :not(caption) > * {
+    border-width: 1px 0;
+
+    > * {
+      border-width: 0 1px;
+    }
+  }
+}
+
+// Borderless
+.nusa-table-borderless {
+  > :not(caption) > * > * {
+    border-bottom-width: 0;
+  }
+}
+
+// Responsive tables
+.nusa-table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
