@@ -1953,25 +1953,38 @@ button.nusa-list-group-item.active {
   flex: 0 0 100%;
   width: 100%;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .nusa-carousel-img {
   display: block;
   width: 100%;
-  height: auto;
+  max-height: 50vh;
   object-fit: cover;
 }
 
 .nusa-carousel-caption {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 10%;
-  right: 10%;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
   padding: 1rem;
-  color: #fff;
+  color: #18181B;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #FFFFFF;
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
   border-radius: 0.375rem;
+}
+@media (min-width: 768px) {
+  .nusa-carousel-caption {
+    bottom: 1.5rem;
+    left: 10%;
+    right: 10%;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.375rem;
+  }
 }
 
 .nusa-carousel-control-prev,

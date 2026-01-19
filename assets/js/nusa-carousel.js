@@ -32,21 +32,38 @@ export function initCarousel() {
         if (prevBtn) {
             prevBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                const activeIndex = Array.from(items).findIndex(item => 
-                    isEffect ? item.classList.contains('active') : 
-                    Math.abs(item.getBoundingClientRect().left - carousel.getBoundingClientRect().left) < 10
-                );
-                goToSlide(activeIndex - 1);
+                let activeIndex = -1;
+
+                if (isEffect) {
+                    activeIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
+                } else {
+                    // Cari item yang paling dekat dengan posisi scroll saat ini
+                    const carouselLeft = carousel.getBoundingClientRect().left;
+                    let minDiff = Infinity;
+                    items.forEach((item, index) => {
+                        const diff = Math.abs(item.getBoundingClientRect().left - carouselLeft);
+                        if (diff < minDiff) { minDiff = diff; activeIndex = index; }
+                    });
+                }
+                goToSlide(activeIndex - 1); // Logic goToSlide akan menangani wrapping (loop)
             });
         }
 
         if (nextBtn) {
             nextBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                const activeIndex = Array.from(items).findIndex(item => 
-                    isEffect ? item.classList.contains('active') : 
-                    Math.abs(item.getBoundingClientRect().left - carousel.getBoundingClientRect().left) < 10
-                );
+                let activeIndex = -1;
+
+                if (isEffect) {
+                    activeIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
+                } else {
+                    const carouselLeft = carousel.getBoundingClientRect().left;
+                    let minDiff = Infinity;
+                    items.forEach((item, index) => {
+                        const diff = Math.abs(item.getBoundingClientRect().left - carouselLeft);
+                        if (diff < minDiff) { minDiff = diff; activeIndex = index; }
+                    });
+                }
                 goToSlide(activeIndex + 1);
             });
         }

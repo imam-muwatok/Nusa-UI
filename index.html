@@ -506,10 +506,10 @@
                 <div class="nusa-carousel" id="carouselManual">
                     <div class="nusa-carousel-item" id="slide-1">
                         <img src="https://placehold.co/800x300/4745D5/FFFFFF?text=Slide+1" class="nusa-carousel-img" alt="Slide 1">
-                        <div class="nusa-carousel-caption">
+                        <!-- <div class="nusa-carousel-caption">
                             <h5>Slide Pertama</h5>
                             <p>Deskripsi singkat untuk slide pertama.</p>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="nusa-carousel-item" id="slide-2">
                         <img src="https://placehold.co/800x300/E95897/FFFFFF?text=Slide+2" class="nusa-carousel-img" alt="Slide 2">
@@ -520,11 +520,11 @@
                 </div>
                 
                 <!-- Controls -->
-                <a href="#slide-3" class="nusa-carousel-control-prev" onclick="event.preventDefault(); document.getElementById('carouselManual').scrollBy({left: -document.getElementById('carouselManual').clientWidth, behavior: 'smooth'})">
+                <a href="#" class="nusa-carousel-control-prev" data-nusa-target="prev">
                     <span class="nusa-carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </a>
-                <a href="#slide-2" class="nusa-carousel-control-next" onclick="event.preventDefault(); document.getElementById('carouselManual').scrollBy({left: document.getElementById('carouselManual').clientWidth, behavior: 'smooth'})">
+                <a href="#" class="nusa-carousel-control-next" data-nusa-target="next">
                     <span class="nusa-carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </a>
