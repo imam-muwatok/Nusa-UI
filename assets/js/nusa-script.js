@@ -1,8 +1,10 @@
 import { initCarousel } from './nusa-carousel.js';
+import { initTabs } from './nusa-tabs.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize Carousel
     initCarousel();
+    initTabs();
 
     // --- Collapse Logic (Navbar) ---
     const collapseToggles = document.querySelectorAll('[data-nusa-toggle="collapse"]');
@@ -152,4 +154,99 @@ document.addEventListener('DOMContentLoaded', function() {
             trigger._nusaTooltip = null;
         }
     }
-});
+
+    // --- Popover Logic ---
+    const popoverTriggers = document.querySelectorAll('[data-nusa-toggle="popover"]');
+    
+    popoverTriggers.forEach(trigger => {
+        trigger.addEventListener('click', togglePopover);
+    });
+
+    // Close popovers when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.matches('[data-nusa-toggle="popover"]') && !e.target.closest('.nusa-popover')) {
+            document.querySelectorAll('.nusa-popover.show').forEach(popover => {
+                popover.classList.remove('show');
+                setTimeout(() => popover.remove(), 150);
+                if (popover._trigger) popover._trigger._nusaPopover = null;
+            });
+        }
+    });
+
+    function togglePopover(e) {
+        const trigger = e.currentTarget;
+        
+        if (trigger._nusaPopover) {
+            // Close if already open
+            const popover = trigger._nusaPopover;
+            popover.classList.remove('show');
+            setTimeout(() => popover.remove(), 150);
+            trigger._nusaPopover = null;
+            return;
+        }
+
+        // Close other popovers (optional behavior, mimicking Bootstrap default)
+        document.querySelectorAll('.nusa-popover.show').forEach(p => {
+            p.classList.remove('show');
+            setTimeout(() => p.remove(), 150);
+            if (p._trigger) p._trigger._nusaPopover = null;
+        });
+
+        const title = trigger.getAttribute('data-nusa-title') || '';
+        const content = trigger.getAttribute('data-nusa-content') || '';
+        const placement = trigger.getAttribute('data-nusa-placement') || 'end';
+
+        // Create popover element
+        const popover = document.createElement('div');
+        popover.className = `nusa-popover nusa-popover-${placement}`;
+        popover.innerHTML = `
+            <div class="nusa-popover-arrow"></div>
+            ${title ? `<h3 class="nusa-popover-header">${title}</h3>` : ''}
+            <div class="nusa-popover-body">${content}</div>
+        `;
+        document.body.appendChild(popover);
+        
+        // Force reflow to ensure dimensions are calculated correctly
+        popover.offsetHeight;
+
+        // Store reference
+        trigger._nusaPopover = popover;
+        popover._trigger = trigger;
+
+        // Calculate Position
+        const rect = trigger.getBoundingClientRect();
+        const popoverWidth = popover.offsetWidth; // Get dimensions after append
+        const popoverHeight = popover.offsetHeight;
+        
+        let top, left;
+        const scrollY = window.scrollY || window.pageYOffset;
+        const scrollX = window.scrollX || window.pageXOffset;
+        const offset = 8; // Jarak tambahan
+
+        switch(placement) {
+            case 'top':
+                top = rect.top + scrollY - popoverHeight - offset;
+                left = rect.left + scrollX + (rect.width / 2) - (popoverWidth / 2);
+                break;
+            case 'bottom':
+                top = rect.bottom + scrollY + offset;
+                left = rect.left + scrollX + (rect.width / 2) - (popoverWidth / 2);
+                break;
+            case 'start': // Left
+                top = rect.top + scrollY + (rect.height / 2) - (popoverHeight / 2);
+                left = rect.left + scrollX - popoverWidth - offset;
+                break;
+            case 'end': // Right
+                top = rect.top + scrollY + (rect.height / 2) - (popoverHeight / 2);
+                left = rect.right + scrollX + offset;
+                break;
+        }
+
+        popover.style.top = `${top}px`;
+        popover.style.left = `${left}px`;
+        
+        // Show with transition
+        requestAnimationFrame(() => {
+            popover.classList.add('show');
+        });
+    }

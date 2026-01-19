@@ -670,6 +670,66 @@ body {
   color: #EA5B7C;
 }
 
+.nusa-nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nusa-nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+}
+.nusa-nav-tabs .nusa-nav-item {
+  margin-bottom: -1px;
+}
+.nusa-nav-tabs .nusa-nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background: none;
+  border: 1px solid transparent;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+  color: #4745D5;
+  margin-left: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.nusa-nav-tabs .nusa-nav-link:hover, .nusa-nav-tabs .nusa-nav-link:focus {
+  border-color: #F8F8F8 #F8F8F8 #dee2e6;
+  color: rgb(39.6578947368, 37.8552631579, 167.6447368421);
+}
+.nusa-nav-tabs .nusa-nav-link.active {
+  color: #18181B;
+  background-color: #FFFFFF;
+  border-color: #dee2e6 #dee2e6 #FFFFFF;
+}
+.nusa-nav-tabs .nusa-nav-link.disabled {
+  color: rgba(24, 24, 27, 0.5);
+  pointer-events: none;
+  cursor: default;
+}
+
+.nusa-tab-content {
+  padding: 1rem 0;
+}
+.nusa-tab-content > .nusa-tab-pane {
+  display: none;
+}
+.nusa-tab-content > .nusa-tab-pane.active {
+  display: block;
+  animation: fade-in 0.15s linear;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .nusa-table {
   width: 100%;
   margin-bottom: 1rem;

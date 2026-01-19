@@ -1,0 +1,66 @@
+@use "variables" as *;
+
+.nusa-nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nusa-nav-tabs {
+  border-bottom: 1px solid $border-color;
+
+  .nusa-nav-item {
+    margin-bottom: -1px;
+  }
+
+  .nusa-nav-link {
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    background: none;
+    border: 1px solid transparent;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    color: $primary;
+    margin-left: 0; // Reset margin if inherited from navbar styles
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+    &:hover,
+    &:focus {
+      border-color: $base-200 $base-200 $border-color;
+      color: darken($primary, 15%);
+    }
+
+    &.active {
+      color: $base-content;
+      background-color: $base-100;
+      border-color: $border-color $border-color $base-100;
+    }
+    
+    &.disabled {
+        color: rgba($base-content, 0.5);
+        pointer-events: none;
+        cursor: default;
+    }
+  }
+}
+
+.nusa-tab-content {
+  padding: 1rem 0;
+  
+  > .nusa-tab-pane {
+    display: none;
+    
+    &.active {
+      display: block;
+      animation: fade-in .15s linear;
+    }
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

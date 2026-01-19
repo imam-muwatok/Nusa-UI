@@ -1,0 +1,105 @@
+@use "variables" as *;
+
+.nusa-popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1070;
+  display: block;
+  max-width: 276px;
+  font-family: $font-family-sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  font-size: 0.875rem;
+  word-wrap: break-word;
+  background-color: $base-100;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  opacity: 0;
+  transition: opacity .15s linear;
+  pointer-events: none;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nusa-popover-arrow {
+    position: absolute;
+    display: block;
+    width: 1rem;
+    height: 0.5rem;
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      border-color: transparent;
+      border-style: solid;
+    }
+  }
+
+  .nusa-popover-header {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    background-color: $base-200;
+    border-bottom: 1px solid darken($base-200, 5%);
+    border-top-left-radius: calc(#{$border-radius} - 1px);
+    border-top-right-radius: calc(#{$border-radius} - 1px);
+  }
+
+  .nusa-popover-body {
+    padding: 1rem 1rem;
+    color: $base-content;
+  }
+}
+
+.nusa-popover-top {
+  margin-bottom: 0.5rem;
+  .nusa-popover-arrow {
+    bottom: calc(-0.5rem - 1px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.nusa-popover-bottom {
+  margin-top: 0.5rem;
+  .nusa-popover-arrow {
+    top: calc(-0.5rem - 1px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.nusa-popover-start {
+  margin-right: 0.5rem;
+  .nusa-popover-arrow {
+    right: calc(-0.5rem - 1px);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.nusa-popover-end {
+  margin-left: 0.5rem;
+  .nusa-popover-arrow {
+    left: calc(-0.5rem - 1px);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
