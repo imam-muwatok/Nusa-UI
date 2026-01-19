@@ -318,6 +318,11 @@ body {
   opacity: 1;
 }
 
+.nusa-form-label {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
 .nusa-input-group {
   position: relative;
   display: flex;
@@ -566,6 +571,30 @@ body {
 .nusa-form-switch .nusa-form-check-input:checked {
   background-position: right center;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.nusa-form-control[type=file] {
+  overflow: hidden;
+}
+.nusa-form-control[type=file]:not(:disabled):not([readonly]) {
+  cursor: pointer;
+}
+.nusa-form-control[type=file]::file-selector-button {
+  padding: 0.375rem 0.75rem;
+  margin: -0.375rem -0.75rem;
+  margin-inline-end: 0.75rem;
+  color: #18181B;
+  background-color: #F8F8F8;
+  pointer-events: none;
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+  border-inline-end-width: 1px;
+  border-radius: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.nusa-form-control[type=file]:hover:not(:disabled):not([readonly])::file-selector-button {
+  background-color: rgb(235.25, 235.25, 235.25);
 }
 
 .nusa-navbar {
