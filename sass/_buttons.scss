@@ -17,7 +17,12 @@
     padding: .375rem .75rem;
     font-size: 1rem;
     border-radius: $border-radius;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, transform .1s ease-in-out;
+
+    &:active,
+    &.active {
+        transform: scale(0.95);
+    }
 }
 
 @each $color, $value in $theme-colors {
@@ -47,4 +52,45 @@
       border-color: $value;
     }
   }
+}
+
+// Pill / Capsule Buttons
+.nusa-btn-pill {
+  border-radius: $border-radius-pill;
+}
+
+// Circle Buttons (Icon only)
+.nusa-btn-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+// Button Sizes
+.nusa-btn-sm {
+  padding: .2rem .4rem;
+  font-size: .75rem;
+  border-radius: .2rem;
+}
+
+.nusa-btn-lg {
+  padding: .4rem .8rem;
+  font-size: 1.1rem;
+  border-radius: .3rem;
+}
+
+.nusa-btn-xl {
+  padding: .6rem 1rem;
+  font-size: 1.25rem;
+  border-radius: .4rem;
+}
+
+.nusa-btn-xxl {
+  padding: .8rem 1.2rem;
+  font-size: 1.5rem;
+  border-radius: .5rem;
 }
