@@ -4,6 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Carousel
     initCarousel();
 
+    // --- Collapse Logic (Navbar) ---
+    const collapseToggles = document.querySelectorAll('[data-nusa-toggle="collapse"]');
+    
+    collapseToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-nusa-target');
+            const target = document.querySelector(targetId);
+            
+            if (target) {
+                target.classList.toggle('show');
+            }
+        });
+    });
+
     // --- Offcanvas Logic ---
     const offcanvasToggles = document.querySelectorAll('[data-nusa-toggle="offcanvas"]');
     

@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nusa UI</title>
+    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/nusa.css">
 </head>
 <body>
 
     <nav class="nusa-navbar bg-white">
         <div class="nusa-container">
-            <a href="#" class="nusa-navbar-brand">Nusa UI</a>
-            <ul class="nusa-navbar-nav">
-                <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">Home</a></li>
-                <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">Docs</a></li>
-                <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">Examples</a></li>
-            </ul>
+            <a href="#" class="nusa-navbar-brand"><img class="nusa-navbar-brand-img" src="./assets/img/logo.png" alt="">Nusa UI</a>
+            <button class="nusa-navbar-toggler" type="button" data-nusa-toggle="collapse" data-nusa-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="nusa-navbar-toggler-icon"></span>
+            </button>
+            <div class="nusa-collapse nusa-navbar-collapse" id="navbarContent">
+                <ul class="nusa-navbar-nav">
+                    <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">Home</a></li>
+                    <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">Docs</a></li>
+                    <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">Examples</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -68,7 +74,7 @@
         <section class="py-5">
             <h2 class="text-center mb-4">Pratinjau Komponen</h2>
 
-            <h3 class="mt-4">Tombol (Buttons)</h3>
+            <h3 class="mt-4" id="components-buttons">Tombol (Buttons)</h3>
             <div class="mb-3">
                 <button class="nusa-btn nusa-btn-primary mb-2">Primary</button>
                 <button class="nusa-btn nusa-btn-secondary mb-2">Secondary</button>
@@ -94,7 +100,7 @@
                 <button class="nusa-btn nusa-btn-outline-dark mb-2">Dark</button>
             </div>
 
-            <h3 class="mt-4">Lencana (Badges)</h3>
+            <h3 class="mt-4" id="components-badges">Lencana (Badges)</h3>
             <p>Gunakan lencana di dalam tombol atau sebagai penanda notifikasi.</p>
             <div class="mb-3">
                 <span class="nusa-badge nusa-badge-primary">Primary</span>
@@ -112,7 +118,7 @@
               Notifikasi <span class="nusa-badge nusa-badge-dark rounded-pill position-absolute top-0 start-100 translate-middle">4</span>
             </button>
 
-            <h3 class="mt-4">Dropdown</h3>
+            <h3 class="mt-4" id="components-dropdown">Dropdown</h3>
             <p>Arahkan kursor (hover) ke tombol di bawah ini untuk melihat menu.</p>
             <div class="nusa-dropdown">
                 <button class="nusa-btn nusa-btn-primary">Dropdown Menu ▼</button>
@@ -123,7 +129,7 @@
                 </ul>
             </div>
 
-            <h3 class="mt-4">Breadcrumb</h3>
+            <h3 class="mt-4" id="components-breadcrumb">Breadcrumb</h3>
             <p>Navigasi remah roti untuk menunjukkan lokasi halaman saat ini.</p>
             <nav aria-label="breadcrumb">
                 <ol class="nusa-breadcrumb">
@@ -133,7 +139,7 @@
                 </ol>
             </nav>
 
-            <h3 class="mt-4">Accordion</h3>
+            <h3 class="mt-4" id="components-accordion">Accordion</h3>
             <p>Menu lipat sederhana menggunakan elemen <code>details</code> dan <code>summary</code>.</p>
             <div class="nusa-accordion">
                 <details class="nusa-accordion-item" open>
@@ -156,7 +162,7 @@
                 </details>
             </div>
 
-            <h3 class="mt-4">Pagination</h3>
+            <h3 class="mt-4" id="components-pagination">Pagination</h3>
             <p>Contoh navigasi halaman.</p>
             <nav aria-label="Page navigation example">
                 <ul class="nusa-pagination">
@@ -168,7 +174,7 @@
                 </ul>
             </nav>
 
-            <h3 class="mt-4">Modal</h3>
+            <h3 class="mt-4" id="components-modal">Modal</h3>
             <p>Klik tombol di bawah untuk membuka modal (menggunakan CSS <code>:target</code>).</p>
             <a href="#exampleModal" class="nusa-btn nusa-btn-primary">Buka Modal</a>
 
@@ -191,7 +197,7 @@
                 </div>
             </div>
 
-            <h3 class="mt-4">Progress Bar</h3>
+            <h3 class="mt-4" id="components-progress">Progress Bar</h3>
             <p>Dokumentasi dan contoh untuk progress bar.</p>
             <div class="nusa-progress mb-3">
                 <div class="nusa-progress-bar" style="width: 0%"></div>
@@ -209,7 +215,7 @@
                 <div class="nusa-progress-bar nusa-progress-bar-error" style="width: 100%">100%</div>
             </div>
 
-            <h3 class="mt-4">Spinner</h3>
+            <h3 class="mt-4" id="components-spinner">Spinner</h3>
             <p>Indikator loading dengan animasi.</p>
             <div class="mb-3">
                 <div class="nusa-spinner-border text-primary" role="status">
@@ -226,7 +232,7 @@
                 </div>
             </div>
 
-            <h3 class="mt-4">Toast</h3>
+            <h3 class="mt-4" id="components-toast">Toast</h3>
             <p>Notifikasi ringan yang meniru push notification.</p>
             <div class="nusa-toast" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="nusa-toast-header">
@@ -247,7 +253,7 @@
                 </div>
             </div>
 
-            <h3 class="mt-4">List Group</h3>
+            <h3 class="mt-4" id="components-list-group">List Group</h3>
             <p>Daftar item yang fleksibel dan kuat.</p>
             <ul class="nusa-list-group mb-3">
                 <li class="nusa-list-group-item">Item pertama</li>
@@ -269,7 +275,7 @@
                 <li class="nusa-list-group-item">Item 3</li>
             </ul>
 
-            <h3 class="mt-4">Placeholder</h3>
+            <h3 class="mt-4" id="components-placeholder">Placeholder</h3>
             <p>Gunakan loading placeholders untuk komponen atau teks.</p>
             
             <div class="nusa-card mb-3" aria-hidden="true">
@@ -288,7 +294,7 @@
                 </div>
             </div>
 
-            <h3 class="mt-4">Carousel</h3>
+            <h3 class="mt-4" id="components-carousel">Carousel</h3>
             <p>Slider gambar sederhana menggunakan CSS Scroll Snap (geser horizontal untuk melihat).</p>
             
             <!-- Variasi 1: Manual (Click & Swipe) -->
@@ -328,29 +334,7 @@
                 </div>
             </div>
 
-            <!-- Variasi 2: Auto Slide -->
-            <h4 class="mt-3">Auto Slide</h4>
-            <div class="nusa-carousel-container" data-bs-ride="carousel">
-                <div class="nusa-carousel" id="carouselAuto">
-                    <div class="nusa-carousel-item">
-                        <img src="https://placehold.co/800x300/09090B/FFFFFF?text=Auto+1" class="nusa-carousel-img" alt="Auto 1">
-                    </div>
-                    <div class="nusa-carousel-item">
-                        <img src="https://placehold.co/800x300/53BCFE/FFFFFF?text=Auto+2" class="nusa-carousel-img" alt="Auto 2">
-                    </div>
-                    <div class="nusa-carousel-item">
-                        <img src="https://placehold.co/800x300/F4B61A/FFFFFF?text=Auto+3" class="nusa-carousel-img" alt="Auto 3">
-                    </div>
-                </div>
-                <!-- Indicators -->
-                <div class="nusa-carousel-indicators">
-                    <button type="button" class="nusa-carousel-indicator active"></button>
-                    <button type="button" class="nusa-carousel-indicator"></button>
-                    <button type="button" class="nusa-carousel-indicator"></button>
-                </div>
-            </div>
-
-            <h3 class="mt-4">Peringatan (Alerts)</h3>
+            <h3 class="mt-4" id="components-alerts">Peringatan (Alerts)</h3>
             <p>Berikan pesan kontekstual untuk tindakan pengguna dengan komponen peringatan yang fleksibel.</p>
             <div class="nusa-alert nusa-alert-primary" role="alert">
               Ini adalah peringatan utama—coba periksa!
