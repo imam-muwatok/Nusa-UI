@@ -1,0 +1,16 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# Sass
+.sass-cache/
+*.css.map
+
+# Logs
+*.log
+
+# Project Specific
+poster.png
