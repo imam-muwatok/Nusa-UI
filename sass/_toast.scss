@@ -1,0 +1,63 @@
+@use "sass:map";
+@use "variables" as *;
+@use "functions" as *;
+
+.nusa-toast {
+  width: 350px;
+  max-width: 100%;
+  font-size: .875rem;
+  pointer-events: auto;
+  background-color: rgba($base-100, .85);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  opacity: 1; // Tampilkan secara default untuk pratinjau
+
+  &:not(:last-child) {
+    margin-bottom: .75rem;
+  }
+}
+
+.nusa-toast-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem .75rem;
+  color: $base-content;
+  background-color: rgba($base-100, .85);
+  background-clip: padding-box;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+  border-top-left-radius: calc(#{$border-radius} - 1px);
+  border-top-right-radius: calc(#{$border-radius} - 1px);
+
+  .nusa-btn-close {
+    margin-left: auto;
+  }
+}
+
+.nusa-toast-body {
+  padding: .75rem;
+  word-wrap: break-word;
+}
+
+// Color variations
+@each $color, $value in $theme-colors {
+  .nusa-toast-#{$color} {
+    background-color: $value;
+    border-color: rgba(0,0,0,.1);
+    
+    $text-color: if(map.has-key($theme-colors-content, $color), map.get($theme-colors-content, $color), color-contrast($value));
+    color: $text-color;
+
+    .nusa-toast-header {
+      background-color: rgba($value, .9);
+      color: $text-color;
+      border-bottom-color: rgba(0,0,0,.1);
+    }
+    
+    .nusa-btn-close {
+       filter: if(lightness($text-color) > 50%, invert(1) grayscale(100%) brightness(200%), none);
+    }
+  }
+}

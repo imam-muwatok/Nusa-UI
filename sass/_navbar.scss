@@ -1,0 +1,55 @@
+@use "variables" as *;
+
+.nusa-navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.nusa-navbar > .nusa-container {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nusa-navbar-brand {
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+    color: $dark;
+    font-weight: 500;
+}
+
+.nusa-navbar-nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nusa-nav-item {
+    // No specific styles needed for the item itself yet
+}
+
+.nusa-nav-link {
+    display: block;
+    padding: .5rem .5rem;
+    margin-left: 1rem;
+    text-decoration: none;
+    color: $dark;
+    transition: color .15s ease-in-out;
+}
+
+.nusa-nav-link:hover,
+.nusa-nav-link:focus {
+    color: $primary;
+}

@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "variables" as *;
+@use "functions" as *;
+
+.nusa-badge {
+  display: inline-block;
+  padding: .35em .65em;
+  font-size: .75em;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: $border-radius;
+}
+
+// Generate color variations for badges
+@each $color, $value in $theme-colors {
+  .nusa-badge-#{$color} {
+    $text-color: if(map.has-key($theme-colors-content, $color), map.get($theme-colors-content, $color), color-contrast($value));
+    color: $text-color;
+    background-color: $value;
+  }
+}

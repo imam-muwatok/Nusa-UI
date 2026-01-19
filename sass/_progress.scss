@@ -1,0 +1,33 @@
+@use "sass:map";
+@use "variables" as *;
+@use "functions" as *;
+
+.nusa-progress {
+  display: flex;
+  height: 1rem;
+  overflow: hidden; // Memastikan sudut melengkung tetap terlihat rapi
+  font-size: .75rem;
+  background-color: $base-200;
+  border-radius: $border-radius;
+}
+
+.nusa-progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: $primary-content;
+  text-align: center;
+  white-space: nowrap;
+  background-color: $primary;
+  transition: width .6s ease;
+}
+
+// Generate color variations
+@each $color, $value in $theme-colors {
+  .nusa-progress-bar-#{$color} {
+    background-color: $value;
+    $text-color: if(map.has-key($theme-colors-content, $color), map.get($theme-colors-content, $color), color-contrast($value));
+    color: $text-color;
+  }
+}

@@ -1,0 +1,50 @@
+@use "sass:map";
+@use "variables" as *;
+@use "functions" as *;
+
+.nusa-btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: $border-radius;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+@each $color, $value in $theme-colors {
+  // Solid Buttons
+  .nusa-btn-#{$color} {
+    $text-color: if(map.has-key($theme-colors-content, $color), map.get($theme-colors-content, $color), color-contrast($value));
+    color: $text-color;
+    background-color: $value;
+    border-color: $value;
+
+    &:hover {
+      color: $text-color;
+      filter: brightness(90%);
+    }
+  }
+
+  // Outline Buttons
+  .nusa-btn-outline-#{$color} {
+    $text-color: if(map.has-key($theme-colors-content, $color), map.get($theme-colors-content, $color), color-contrast($value));
+    color: $value;
+    border-color: $value;
+    background-color: transparent;
+
+    &:hover {
+      color: $text-color;
+      background-color: $value;
+      border-color: $value;
+    }
+  }
+}

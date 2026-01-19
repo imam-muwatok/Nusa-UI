@@ -1,0 +1,61 @@
+@use "variables" as *;
+
+.nusa-pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+
+.nusa-page-item {
+  &:not(:first-child) .nusa-page-link {
+    margin-left: -1px;
+  }
+
+  &.active .nusa-page-link {
+    z-index: 3;
+    color: $primary-content;
+    background-color: $primary;
+    border-color: $primary;
+  }
+
+  &.disabled .nusa-page-link {
+    color: rgba($base-content, 0.5);
+    pointer-events: none;
+    background-color: $base-100;
+    border-color: $border-color;
+  }
+}
+
+.nusa-page-link {
+  position: relative;
+  display: block;
+  color: $primary;
+  text-decoration: none;
+  background-color: $base-100;
+  border: 1px solid $border-color;
+  padding: .375rem .75rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &:hover {
+    z-index: 2;
+    color: darken($primary, 15%);
+    background-color: $base-200;
+    border-color: $base-200;
+  }
+
+  &:focus {
+    z-index: 3;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba($primary, 0.25);
+  }
+}
+
+.nusa-page-item:first-child .nusa-page-link {
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+}
+
+.nusa-page-item:last-child .nusa-page-link {
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+}

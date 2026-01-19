@@ -1,0 +1,35 @@
+@use "sass:map";
+@use "variables" as *;
+
+// Mixin Responsif: Min-Width (Mobile First)
+// Contoh penggunaan: @include media-up(md) { ... }
+@mixin media-up($breakpoint) {
+  $min: map.get($grid-breakpoints, $breakpoint);
+
+  @if $min {
+    // Jika breakpoint adalah 0 (xs), tidak perlu media query
+    @if $min == 0 {
+      @content;
+    } @else {
+      @media (min-width: $min) {
+        @content;
+      }
+    }
+  } @else {
+    @error "Breakpoint '#{$breakpoint}' tidak ditemukan di $grid-breakpoints.";
+  }
+}
+
+// Mixin Responsif: Max-Width (Desktop First / Specific overrides)
+// Contoh penggunaan: @include media-down(md) { ... }
+@mixin media-down($breakpoint) {
+  $min: map.get($grid-breakpoints, $breakpoint);
+
+  @if $min {
+    @media (max-width: ($min - 0.02px)) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint '#{$breakpoint}' tidak ditemukan.";
+  }
+}
