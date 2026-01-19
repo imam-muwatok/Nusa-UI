@@ -1555,6 +1555,114 @@ button.nusa-list-group-item.active {
   transform: scale(1);
 }
 
+.nusa-tooltip {
+  position: absolute;
+  z-index: 1080;
+  display: block;
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  font-size: 0.875rem;
+  word-wrap: break-word;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+.nusa-tooltip.show {
+  opacity: 0.9;
+}
+.nusa-tooltip .nusa-tooltip-arrow {
+  position: absolute;
+  display: block;
+  width: 0.8rem;
+  height: 0.4rem;
+}
+.nusa-tooltip .nusa-tooltip-arrow::before {
+  position: absolute;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+}
+.nusa-tooltip .nusa-tooltip-inner {
+  max-width: 200px;
+  padding: 0.25rem 0.5rem;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 0.5rem;
+}
+
+.nusa-tooltip-top {
+  padding: 0.4rem 0;
+}
+.nusa-tooltip-top .nusa-tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nusa-tooltip-top .nusa-tooltip-arrow::before {
+  top: 0;
+  border-width: 0.4rem 0.4rem 0;
+  border-top-color: #000;
+}
+
+.nusa-tooltip-bottom {
+  padding: 0.4rem 0;
+}
+.nusa-tooltip-bottom .nusa-tooltip-arrow {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nusa-tooltip-bottom .nusa-tooltip-arrow::before {
+  bottom: 0;
+  border-width: 0 0.4rem 0.4rem;
+  border-bottom-color: #000;
+}
+
+.nusa-tooltip-start {
+  padding: 0 0.4rem;
+}
+.nusa-tooltip-start .nusa-tooltip-arrow {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.4rem;
+  height: 0.8rem;
+}
+.nusa-tooltip-start .nusa-tooltip-arrow::before {
+  left: 0;
+  border-width: 0.4rem 0 0.4rem 0.4rem;
+  border-left-color: #000;
+}
+
+.nusa-tooltip-end {
+  padding: 0 0.4rem;
+}
+.nusa-tooltip-end .nusa-tooltip-arrow {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.4rem;
+  height: 0.8rem;
+}
+.nusa-tooltip-end .nusa-tooltip-arrow::before {
+  right: 0;
+  border-width: 0.4rem 0.4rem 0.4rem 0;
+  border-right-color: #000;
+}
+
 .nusa-container,
 .nusa-container-fluid {
   width: 100%;
