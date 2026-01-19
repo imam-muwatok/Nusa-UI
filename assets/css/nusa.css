@@ -409,6 +409,78 @@ body {
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 
+.nusa-form-range {
+  width: 100%;
+  height: 1.5rem;
+  padding: 0;
+  background-color: transparent;
+  appearance: none;
+}
+.nusa-form-range:focus {
+  outline: 0;
+}
+.nusa-form-range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(71, 69, 213, 0.25);
+}
+.nusa-form-range:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(71, 69, 213, 0.25);
+}
+.nusa-form-range::-moz-focus-outer {
+  border: 0;
+}
+.nusa-form-range::-webkit-slider-thumb {
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.25rem;
+  background-color: #4745D5;
+  border: 0;
+  border-radius: 1rem;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  appearance: none;
+}
+.nusa-form-range::-webkit-slider-thumb:active {
+  background-color: rgb(194.4736842105, 193.8157894737, 241.1842105263);
+}
+.nusa-form-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.5rem;
+  color: transparent;
+  cursor: pointer;
+  background-color: #F8F8F8;
+  border-color: transparent;
+  border-radius: 1rem;
+}
+.nusa-form-range::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  background-color: #4745D5;
+  border: 0;
+  border-radius: 1rem;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  appearance: none;
+}
+.nusa-form-range::-moz-range-thumb:active {
+  background-color: rgb(194.4736842105, 193.8157894737, 241.1842105263);
+}
+.nusa-form-range::-moz-range-track {
+  width: 100%;
+  height: 0.5rem;
+  color: transparent;
+  cursor: pointer;
+  background-color: #F8F8F8;
+  border-color: transparent;
+  border-radius: 1rem;
+}
+.nusa-form-range:disabled {
+  pointer-events: none;
+}
+.nusa-form-range:disabled::-webkit-slider-thumb {
+  background-color: #EEEEEE;
+}
+.nusa-form-range:disabled::-moz-range-thumb {
+  background-color: #EEEEEE;
+}
+
 .nusa-navbar {
   display: flex;
   flex-wrap: wrap;
