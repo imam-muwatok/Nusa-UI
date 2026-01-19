@@ -28,7 +28,11 @@
 @each $color, $value in $theme-colors {
   // Solid Buttons
   .nusa-btn-#{$color} {
-    $text-color: if(map.has-key($theme-colors-content, $color), map.get($theme-colors-content, $color), color-contrast($value));
+    // Update text color: Gunakan putih untuk semua kecuali light
+    $text-color: #fff;
+    @if $color == "light" {
+        $text-color: $dark;
+    }
     color: $text-color;
     background-color: $value;
     border-color: $value;
@@ -93,4 +97,10 @@
   padding: .8rem 1.2rem;
   font-size: 1.5rem;
   border-radius: .5rem;
+}
+
+// Block Buttons
+.nusa-btn-block {
+  display: block;
+  width: 100%;
 }
