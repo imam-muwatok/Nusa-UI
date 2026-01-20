@@ -2,6 +2,8 @@
 
 **Nusa UI** adalah kerangka kerja UI front-end yang ringan, modern, dan fleksibel, dibangun dengan kekuatan Sass. Terinspirasi oleh Bootstrap 5, Nusa UI dirancang untuk memberikan pengalaman pengembangan yang cepat dan mudah disesuaikan, dengan sentuhan estetika yang bersih.
 
+[![Live Preview](https://img.shields.io/badge/🚀_Live_Preview-View_Demo-blue?style=for-the-badge)](https://imam-muwatok.github.io/Nusa-UI/)
+
 ![Nusa UI Banner](assets/img/logo.png) <!-- Pastikan path logo sesuai atau ganti dengan banner yang menarik -->
 
 ## ✨ Fitur Utama
