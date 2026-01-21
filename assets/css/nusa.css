@@ -607,7 +607,7 @@ body {
 .ns-form-floating > .nusa-form-select ~ label,
 .ns-form-floating > .ns-form-select ~ label {
   opacity: 0.65;
-  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  transform: scale(0.85) translateY(-1rem) translateX(0.15rem);
 }
 
 .nusa-form-range,
@@ -3386,6 +3386,42 @@ body,
 [data-nusa-theme=dark] .nusa-form-range::-moz-range-track,
 [data-nusa-theme=dark] .ns-form-range::-moz-range-track {
   background-color: transparent;
+}
+[data-nusa-theme=dark] .nusa-accordion,
+[data-nusa-theme=dark] .ns-accordion {
+  border-color: #333;
+}
+[data-nusa-theme=dark] .nusa-accordion-item,
+[data-nusa-theme=dark] .ns-accordion-item {
+  border-color: #333;
+}
+[data-nusa-theme=dark] .nusa-accordion-button,
+[data-nusa-theme=dark] .ns-accordion-button {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+[data-nusa-theme=dark] .nusa-accordion-button::after,
+[data-nusa-theme=dark] .ns-accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e0e0e0'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+[data-nusa-theme=dark] .nusa-accordion-button:hover,
+[data-nusa-theme=dark] .ns-accordion-button:hover {
+  background-color: #2d2d2d;
+}
+[data-nusa-theme=dark] details[open] .nusa-accordion-button,
+[data-nusa-theme=dark] details[open] .ns-accordion-button {
+  background-color: rgba(71, 69, 213, 0.15);
+  color: #4745D5;
+}
+[data-nusa-theme=dark] details[open] .nusa-accordion-button::after,
+[data-nusa-theme=dark] details[open] .ns-accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234745D5'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+[data-nusa-theme=dark] .nusa-accordion-body,
+[data-nusa-theme=dark] .ns-accordion-body {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-top-color: #333;
 }
 
 .nusa-container,
