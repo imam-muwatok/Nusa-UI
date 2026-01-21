@@ -1,0 +1,58 @@
+@use "sass:map";
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+
+
+.nusa-card,
+.ns-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .175);
+  border-radius: $border-radius;
+}
+
+.nusa-card-body,
+.ns-card-body {
+  flex: 1 1 auto;
+  padding: map-get($spacers, 3);
+}
+
+.nusa-card-title,
+.ns-card-title {
+  margin-bottom: map-get($spacers, 2);
+}
+
+.nusa-card-text:last-child,
+.ns-card-text:last-child {
+  margin-bottom: 0;
+}
+
+@each $color, $value in $theme-colors {
+  .nusa-card-#{$color},
+  .ns-card-#{$color} {
+    border-color: $value;
+  }
+}
+
+// Menambahkan variasi background
+@each $color, $value in $theme-colors {
+  .nusa-card-bg-#{$color},
+  .ns-card-bg-#{$color} {
+    $text-color: if(map.has-key($theme-colors-content, $color), map.get($theme-colors-content, $color), color-contrast($value));
+    background-color: $value;
+    border-color: $value;
+    color: $text-color;
+
+    // Pastikan judul kartu juga menggunakan warna teks yang kontras
+    .nusa-card-title,
+    .ns-card-title {
+      color: $text-color;
+    }
+  }
+}

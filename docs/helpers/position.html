@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+        .position-example {
+            height: 200px;
+            background-color: #f8f9fa;
+            position: relative;
+            border: 1px solid #dee2e6;
+            border-radius: .375rem;
+        }
+        [data-nusa-theme="dark"] .position-example {
+            background-color: #212529;
+            border-color: #495057;
+        }
+        .position-marker {
+            width: 2rem;
+            height: 2rem;
+            background-color: #212529;
+            border-radius: .375rem;
+        }
+        [data-nusa-theme="dark"] .position-marker {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <section id="position">
+        <h1 class="display-4 mb-3">Position</h1>
+        <p class="lead">Gunakan utilitas posisi cepat ini untuk mengonfigurasi posisi elemen dengan cepat.</p>
+        <hr class="my-4">
+
+        <h3>Position Values</h3>
+        <p>Kelas posisi cepat tersedia, meskipun tidak responsif.</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>.position-static
+.position-relative
+.position-absolute
+.position-fixed
+.position-sticky</code></pre>
+            </div>
+        </div>
+
+        <h3>Arrange Elements</h3>
+        <p>Atur elemen dengan mudah menggunakan utilitas penentuan posisi tepi. Formatnya adalah <code>{property}-{position}</code>.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="position-example mb-3">
+                    <div class="position-absolute top-0 start-0 position-marker"></div>
+                    <div class="position-absolute top-0 end-0 position-marker"></div>
+                    <div class="position-absolute top-50 start-50 position-marker"></div>
+                    <div class="position-absolute bottom-50 end-50 position-marker"></div>
+                    <div class="position-absolute bottom-0 start-0 position-marker"></div>
+                    <div class="position-absolute bottom-0 end-0 position-marker"></div>
+                </div>
+<pre class="mt-3"><code>&lt;div class="position-relative"&gt;
+  &lt;div class="position-absolute top-0 start-0"&gt;&lt;/div&gt;
+  &lt;div class="position-absolute top-0 end-0"&gt;&lt;/div&gt;
+  &lt;div class="position-absolute top-50 start-50"&gt;&lt;/div&gt;
+  &lt;div class="position-absolute bottom-50 end-50"&gt;&lt;/div&gt;
+  &lt;div class="position-absolute bottom-0 start-0"&gt;&lt;/div&gt;
+  &lt;div class="position-absolute bottom-0 end-0"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Center Elements</h3>
+        <p>Selain itu, Anda juga dapat memusatkan elemen dengan kelas transformasi <code>.translate-middle</code>.</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="position-example mb-3">
+                    <div class="position-absolute top-0 start-0 translate-middle position-marker"></div>
+                    <div class="position-absolute top-0 start-50 translate-middle position-marker"></div>
+                    <div class="position-absolute top-0 start-100 translate-middle position-marker"></div>
+                    
+                    <div class="position-absolute top-50 start-0 translate-middle position-marker"></div>
+                    <div class="position-absolute top-50 start-50 translate-middle position-marker"></div>
+                    <div class="position-absolute top-50 start-100 translate-middle position-marker"></div>
+                    
+                    <div class="position-absolute top-100 start-0 translate-middle position-marker"></div>
+                    <div class="position-absolute top-100 start-50 translate-middle position-marker"></div>
+                    <div class="position-absolute top-100 start-100 translate-middle position-marker"></div>
+                </div>
+<pre class="mt-3"><code>&lt;div class="position-relative"&gt;
+  &lt;div class="position-absolute top-0 start-0 translate-middle"&gt;&lt;/div&gt;
+  &lt;div class="position-absolute top-0 start-50 translate-middle"&gt;&lt;/div&gt;
+  &lt;div class="position-absolute top-0 start-100 translate-middle"&gt;&lt;/div&gt;
+  
+  &lt;div class="position-absolute top-50 start-0 translate-middle"&gt;&lt;/div&gt;
+  &lt;div class="position-absolute top-50 start-50 translate-middle"&gt;&lt;/div&gt;
+  &lt;div class="position-absolute top-50 start-100 translate-middle"&gt;&lt;/div&gt;
+  
+  &lt;div class="position-absolute top-100 start-0 translate-middle"&gt;&lt;/div&gt;
+  &lt;div class="position-absolute top-100 start-50 translate-middle"&gt;&lt;/div&gt;
+  &lt;div class="position-absolute top-100 start-100 translate-middle"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

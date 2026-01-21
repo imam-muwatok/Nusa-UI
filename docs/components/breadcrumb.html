@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breadcrumb - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="breadcrumb">
+        <h1 class="display-4 mb-3">Breadcrumb</h1>
+        <p class="lead">Tunjukkan lokasi halaman saat ini dalam hierarki navigasi yang secara otomatis menambahkan pemisah melalui CSS.</p>
+        <hr class="my-4">
+
+        <h3>Contoh</h3>
+        <p>Gunakan daftar terurut atau tidak terurut dengan item daftar tertaut untuk membuat breadcrumb yang ditata minimalis.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="nusa-breadcrumb">
+                        <li class="nusa-breadcrumb-item active" aria-current="page">Home</li>
+                    </ol>
+                </nav>
+
+                <nav aria-label="breadcrumb">
+                    <ol class="nusa-breadcrumb">
+                        <li class="nusa-breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="nusa-breadcrumb-item active" aria-current="page">Library</li>
+                    </ol>
+                </nav>
+
+                <nav aria-label="breadcrumb">
+                    <ol class="nusa-breadcrumb">
+                        <li class="nusa-breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="nusa-breadcrumb-item"><a href="#">Library</a></li>
+                        <li class="nusa-breadcrumb-item active" aria-current="page">Data</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <h3>Pemisah</h3>
+        <p>Pemisah secara otomatis ditambahkan dalam CSS melalui <code>::before</code> dan <code>content</code>.</p>
+    </section>
+</body>
+</html>

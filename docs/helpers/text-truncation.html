@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Truncation - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="text-truncation">
+        <h1 class="display-4 mb-3">Text truncation</h1>
+        <p class="lead">Potong string teks yang cukup panjang dengan elipsis.</p>
+        <hr class="my-4">
+
+        <h3>Contoh</h3>
+        <p>Untuk memotong teks yang panjang, Anda dapat menggunakan kelas <code>.text-truncate</code>. Kelas ini memerlukan <code>display: inline-block</code> atau <code>display: block</code> agar berfungsi dengan benar.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <!-- Block level -->
+                <div class="nusa-row">
+                    <div class="nusa-col-2 text-truncate">
+                        Praeterea iter est quasdam res quas ex communi.
+                    </div>
+                </div>
+
+                <!-- Inline level -->
+                <span class="d-inline-block text-truncate" style="max-width: 150px;">
+                    Praeterea iter est quasdam res quas ex communi.
+                </span>
+            </div>
+        </div>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;!-- Block level --&gt;
+&lt;div class="nusa-row"&gt;
+  &lt;div class="nusa-col-2 text-truncate"&gt;
+    Praeterea iter est quasdam res quas ex communi.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Inline level --&gt;
+&lt;span class="d-inline-block text-truncate" style="max-width: 150px;"&gt;
+  Praeterea iter est quasdam res quas ex communi.
+&lt;/span&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

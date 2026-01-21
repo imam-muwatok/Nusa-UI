@@ -1,0 +1,13 @@
+@use "sass:color";
+@use "variables" as *;
+
+// Fungsi sederhana untuk memilih warna teks (terang/gelap) berdasarkan latar belakang.
+@function color-contrast($background, $color-dark: $dark, $color-light: #fff) {
+  // Jika lightness dari background lebih besar dari 50%, gunakan teks gelap.
+  // Jika tidak, gunakan teks terang.
+  @if color.channel($background, "lightness", $space: hsl) > 50% {
+    @return $color-dark;
+  } @else {
+    @return $color-light;
+  }
+}

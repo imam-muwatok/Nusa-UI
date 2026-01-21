@@ -1,0 +1,75 @@
+@use "../abstracts/variables" as *;
+
+.nusa-switch,
+.ns-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  cursor: pointer;
+
+  // Hide default checkbox
+  .nusa-switch-input,
+  .ns-switch-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  // The track
+  .nusa-switch-slider,
+  .ns-switch-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color .3s;
+  }
+
+  // The thumb (icon container)
+  .nusa-switch-icon-container,
+  .ns-switch-icon-container {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    .nusa-icon,
+    .ns-icon {
+        width: 16px;
+        height: 16px;
+        stroke: #6b7280; // gray-500
+        position: absolute;
+        transition: opacity .2s, transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .nusa-icon-moon { opacity: 1; transform: translateX(0) rotate(0deg); }
+    .nusa-icon-sun { opacity: 0; transform: translateX(-20px) rotate(-90deg); }
+  }
+
+  // Checked state
+  .nusa-switch-input:checked + .nusa-switch-slider,
+  .ns-switch-input:checked + .ns-switch-slider {
+    background-color: $primary;
+
+    .nusa-switch-icon-container,
+    .ns-switch-icon-container {
+      transform: translateX(26px);
+      
+      .nusa-icon-moon { opacity: 0; transform: translateX(20px) rotate(90deg); }
+      .nusa-icon-sun { opacity: 1; transform: translateX(0) rotate(0deg); stroke: #facc15; }
+    }
+  }
+}

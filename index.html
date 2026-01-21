@@ -20,6 +20,18 @@
     <title>Nusa UI</title>
     <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/nusa.css">
+    <script>
+        // Mencegah Flash of Unstyled Content (FOUC) dengan menerapkan tema segera
+        (function() {
+            const savedTheme = localStorage.getItem('nusa-theme');
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                document.documentElement.setAttribute('data-nusa-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-nusa-theme', 'light');
+            }
+        })();
+    </script>
 </head>
 <body>
 
@@ -32,7 +44,7 @@
             <div class="nusa-collapse nusa-navbar-collapse" id="navbarContent">
                 <ul class="nusa-navbar-nav">
                     <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">Home</a></li>
-                    <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">Docs</a></li>
+                    <li class="nusa-nav-item"><a href="docs/index.html" class="nusa-nav-link">Docs</a></li>
                     <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">Examples</a></li>
                 </ul>
             </div>
@@ -45,7 +57,7 @@
         <p class="lead">Kerangka kerja UI front-end yang ringan, modern, dan terinspirasi dari Bootstrap 5.</p>
         <p>Dibangun dengan Sass untuk kustomisasi yang tak terbatas. Alternatif cepat dan sederhana untuk proyek Anda berikutnya.</p>
         <div class="mt-4">
-            <a href="#" class="nusa-btn nusa-btn-primary me-2 mb-2">Mulai</a>
+            <a href="docs/index.html" class="nusa-btn nusa-btn-primary me-2 mb-2">Mulai</a>
             <a href="#" class="nusa-btn nusa-btn-secondary mb-2">Download</a>
         </div>
     </header>

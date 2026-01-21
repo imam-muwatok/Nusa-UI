@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reboot - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="reboot">
+        <h1 class="display-4 mb-3">Reboot</h1>
+        <p class="lead">Reboot, kumpulan perubahan CSS khusus elemen, memulai Nusa UI untuk menyediakan dasar yang elegan, konsisten, dan sederhana untuk dibangun.</p>
+        <hr class="my-4">
+
+        <h3>Pendekatan</h3>
+        <p>Reboot dibangun di atas Normalize.css, menyediakan banyak elemen HTML dengan gaya yang agak beropini menggunakan hanya pemilih elemen. Penataan tambahan dilakukan hanya melalui kelas. Misalnya, kami me-reboot beberapa elemen <code>&lt;table&gt;</code> untuk baseline yang lebih sederhana dan kemudian menyediakan <code>.nusa-table</code>, <code>.nusa-table-bordered</code>, dan lainnya.</p>
+
+        <h3>Default Halaman</h3>
+        <p>Elemen <code>&lt;html&gt;</code> dan <code>&lt;body&gt;</code> diperbarui untuk memberikan default halaman yang lebih baik. Lebih khusus lagi:</p>
+        <ul>
+            <li><code>box-sizing</code> diatur secara global pada setiap elemen—termasuk <code>*::before</code> dan <code>*::after</code>, ke <code>border-box</code>. Ini memastikan bahwa lebar elemen yang dideklarasikan tidak pernah terlampaui karena padding atau border.</li>
+            <li>Tidak ada <code>font-size</code> dasar yang dideklarasikan pada <code>&lt;html&gt;</code>, tetapi <code>16px</code> diasumsikan (default browser). <code>font-size: 1rem</code> diterapkan pada <code>&lt;body&gt;</code> untuk penskalaan tipe responsif yang mudah melalui kueri media sambil menghormati preferensi pengguna dan memastikan pendekatan yang lebih mudah diakses.</li>
+            <li><code>&lt;body&gt;</code> juga menetapkan <code>font-family</code> global, <code>line-height</code>, dan <code>text-align</code>. Ini diwarisi nanti oleh beberapa elemen formulir untuk mencegah inkonsistensi font.</li>
+            <li>Demi keamanan, <code>&lt;body&gt;</code> memiliki <code>background-color</code> yang dideklarasikan, defaultnya adalah <code>#fff</code>.</li>
+        </ul>
+
+        <h3>Native Font Stack</h3>
+        <p>Font web default (Helvetica Neue, Helvetica, dan Arial) telah dihapus di Nusa UI dan diganti dengan "native font stack" untuk rendering teks yang optimal di setiap perangkat dan OS.</p>
+        
+        <div class="nusa-card bg-light border-0 mb-4">
+            <div class="nusa-card-body">
+<pre><code>$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";</code></pre>
+            </div>
+        </div>
+
+        <h3>Headings dan Paragraf</h3>
+        <p>Semua elemen heading—misalnya, <code>&lt;h1&gt;</code>—dan <code>&lt;p&gt;</code> diatur ulang agar <code>margin-top</code> mereka dihapus. Heading memiliki <code>margin-bottom: .5rem</code> ditambahkan dan paragraf <code>margin-bottom: 1rem</code> untuk spasi yang mudah.</p>
+
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <h1>h1. Heading Nusa UI</h1>
+                <p>Ini adalah contoh paragraf. Reboot mengatur ulang margin untuk elemen ini agar tata letak lebih konsisten.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

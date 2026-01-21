@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offcanvas - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="offcanvas">
+        <h1 class="display-4 mb-3">Offcanvas</h1>
+        <p class="lead">Bangun sidebar tersembunyi ke dalam proyek Anda untuk navigasi, keranjang belanja, dan lainnya.</p>
+        <hr class="my-4">
+
+        <h3>Cara Kerja</h3>
+        <p>Offcanvas adalah komponen sidebar yang dapat di-toggle melalui JavaScript. Mirip dengan modal, tetapi muncul dari tepi viewport.</p>
+
+        <h3>Contoh</h3>
+        <p>Gunakan tombol di bawah ini untuk menampilkan dan menyembunyikan elemen offcanvas.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <a class="nusa-btn nusa-btn-primary" data-nusa-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    Link with href
+                </a>
+                <button class="nusa-btn nusa-btn-primary" type="button" data-nusa-toggle="offcanvas" data-nusa-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    Button with data-nusa-target
+                </button>
+
+                <div class="nusa-offcanvas nusa-offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="nusa-offcanvas-header">
+                        <h5 class="nusa-offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                        <button type="button" class="nusa-btn-close" data-nusa-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="nusa-offcanvas-body">
+                        <div>
+                            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                        </div>
+                        <div class="nusa-dropdown mt-3">
+                            <button class="nusa-btn nusa-btn-secondary" type="button">
+                                Dropdown button
+                            </button>
+                            <ul class="nusa-dropdown-menu">
+                                <li><a class="nusa-dropdown-item" href="#">Action</a></li>
+                                <li><a class="nusa-dropdown-item" href="#">Another action</a></li>
+                                <li><a class="nusa-dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Placement</h3>
+        <p>Tidak ada kelas penempatan default untuk komponen offcanvas, jadi Anda harus menambahkan salah satu kelas pengubah di bawah ini.</p>
+        <ul>
+            <li><code>.nusa-offcanvas-start</code> menempatkan offcanvas di sebelah kiri viewport.</li>
+            <li><code>.nusa-offcanvas-end</code> menempatkan offcanvas di sebelah kanan viewport.</li>
+        </ul>
+
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <button class="nusa-btn nusa-btn-primary" type="button" data-nusa-toggle="offcanvas" data-nusa-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+
+                <div class="nusa-offcanvas nusa-offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="nusa-offcanvas-header">
+                        <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+                        <button type="button" class="nusa-btn-close" data-nusa-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="nusa-offcanvas-body">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script type="module" src="../../assets/js/nusa-script.js"></script>
+</body>
+</html>

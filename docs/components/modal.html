@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="modal">
+        <h1 class="display-4 mb-3">Modal</h1>
+        <p class="lead">Gunakan plugin JavaScript modal Nusa UI untuk menambahkan dialog ke situs Anda untuk kotak cahaya, pemberitahuan pengguna, atau konten yang sepenuhnya kustom.</p>
+        <hr class="my-4">
+
+        <h3>Contoh CSS-Only</h3>
+        <p>Nusa UI mendukung modal berbasis CSS menggunakan pseudo-class <code>:target</code>. Ini memungkinkan modal berfungsi tanpa JavaScript untuk kasus penggunaan sederhana.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <!-- Button trigger modal -->
+                <a href="#exampleModal" class="nusa-btn nusa-btn-primary">
+                    Launch demo modal
+                </a>
+
+                <!-- Modal -->
+                <div id="exampleModal" class="nusa-modal">
+                    <div class="nusa-modal-dialog">
+                        <div class="nusa-modal-content">
+                            <div class="nusa-modal-header">
+                                <h5 class="nusa-modal-title">Modal title</h5>
+                                <a href="#" class="nusa-btn-close" aria-label="Close"></a>
+                            </div>
+                            <div class="nusa-modal-body">
+                                <p>Woohoo, you're reading this text in a modal!</p>
+                            </div>
+                            <div class="nusa-modal-footer">
+                                <a href="#" class="nusa-btn nusa-btn-secondary">Close</a>
+                                <button type="button" class="nusa-btn nusa-btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<pre class="mt-3"><code>&lt;!-- Trigger --&gt;
+&lt;a href="#exampleModal" class="nusa-btn nusa-btn-primary"&gt;Launch demo modal&lt;/a&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div id="exampleModal" class="nusa-modal"&gt;
+  &lt;div class="nusa-modal-dialog"&gt;
+    &lt;div class="nusa-modal-content"&gt;
+      &lt;div class="nusa-modal-header"&gt;
+        &lt;h5 class="nusa-modal-title"&gt;Modal title&lt;/h5&gt;
+        &lt;a href="#" class="nusa-btn-close" aria-label="Close"&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class="nusa-modal-body"&gt;
+        &lt;p&gt;Woohoo, you're reading this text in a modal!&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="nusa-modal-footer"&gt;
+        &lt;a href="#" class="nusa-btn nusa-btn-secondary"&gt;Close&lt;/a&gt;
+        &lt;button type="button" class="nusa-btn nusa-btn-primary"&gt;Save changes&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Scrolling Long Content</h3>
+        <p>Ketika modal menjadi terlalu panjang untuk viewport atau perangkat pengguna, mereka menggulir secara independen dari halaman itu sendiri.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <a href="#exampleModalLong" class="nusa-btn nusa-btn-primary">Launch scrolling modal</a>
+
+                <div id="exampleModalLong" class="nusa-modal">
+                    <div class="nusa-modal-dialog">
+                        <div class="nusa-modal-content">
+                            <div class="nusa-modal-header">
+                                <h5 class="nusa-modal-title">Modal title</h5>
+                                <a href="#" class="nusa-btn-close" aria-label="Close"></a>
+                            </div>
+                            <div class="nusa-modal-body">
+                                <p style="min-height: 150vh">This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal.</p>
+                            </div>
+                            <div class="nusa-modal-footer">
+                                <a href="#" class="nusa-btn nusa-btn-secondary">Close</a>
+                                <button type="button" class="nusa-btn nusa-btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

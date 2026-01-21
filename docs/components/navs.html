@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navs & Tabs - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="navs">
+        <h1 class="display-4 mb-3">Navs & Tabs</h1>
+        <p class="lead">Dokumentasi dan contoh cara menggunakan komponen navigasi Nusa UI (navs).</p>
+        <hr class="my-4">
+
+        <h3>Base Nav</h3>
+        <p>Navigasi yang dibangun dengan flexbox dan menyediakan fondasi yang kuat untuk membangun semua jenis komponen navigasi.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <ul class="nusa-nav">
+                    <li class="nusa-nav-item">
+                        <a class="nusa-nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nusa-nav-item">
+                        <a class="nusa-nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nusa-nav-item">
+                        <a class="nusa-nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nusa-nav-item">
+                        <a class="nusa-nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+<pre class="mt-3"><code>&lt;ul class="nusa-nav"&gt;
+  &lt;li class="nusa-nav-item"&gt;
+    &lt;a class="nusa-nav-link active" aria-current="page" href="#"&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nusa-nav-item"&gt;
+    &lt;a class="nusa-nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nusa-nav-item"&gt;
+    &lt;a class="nusa-nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nusa-nav-item"&gt;
+    &lt;a class="nusa-nav-link disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Tabs</h3>
+        <p>Mengambil nav dasar dari atas dan menambahkan kelas <code>.nusa-nav-tabs</code> untuk menghasilkan antarmuka tab.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <ul class="nusa-nav nusa-nav-tabs mb-3" id="myTab" role="tablist">
+                    <li class="nusa-nav-item" role="presentation">
+                        <button class="nusa-nav-link active" id="home-tab" data-nusa-toggle="tab" data-nusa-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                    </li>
+                    <li class="nusa-nav-item" role="presentation">
+                        <button class="nusa-nav-link" id="profile-tab" data-nusa-toggle="tab" data-nusa-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                    </li>
+                    <li class="nusa-nav-item" role="presentation">
+                        <button class="nusa-nav-link" id="contact-tab" data-nusa-toggle="tab" data-nusa-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                    </li>
+                </ul>
+                <div class="nusa-tab-content" id="myTabContent">
+                    <div class="nusa-tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <p><strong>Ini adalah tab Home.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="nusa-tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <p><strong>Ini adalah tab Profile.</strong> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="nusa-tab-pane" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <p><strong>Ini adalah tab Contact.</strong> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module">
+        import { initTabs } from '../../assets/js/nusa-tabs.js';
+        document.addEventListener('DOMContentLoaded', initTabs);
+    </script>
+</body>
+</html>

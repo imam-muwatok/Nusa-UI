@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="tooltip">
+        <h1 class="display-4 mb-3">Tooltip</h1>
+        <p class="lead">Dokumentasi dan contoh untuk menambahkan tooltip kustom dengan CSS dan JavaScript menggunakan CSS3 untuk animasi dan atribut data untuk penyimpanan judul lokal.</p>
+        <hr class="my-4">
+
+        <h3>Contoh</h3>
+        <p>Arahkan kursor ke tautan di bawah ini untuk melihat tooltip:</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <p class="muted">Placeholder text to demonstrate some <a href="#" data-nusa-toggle="tooltip" title="Default tooltip">inline links</a> with tooltips. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="#" data-nusa-toggle="tooltip" title="Another tooltip">real text</a>. And all that just to give you an idea of how tooltips would look when used in real-world situations. So hopefully you've now seen how <a href="#" data-nusa-toggle="tooltip" title="Another one here too">these tooltips on links</a> can work in practice, once you use them on your own site or project.</p>
+            </div>
+        </div>
+
+        <h3>Four Directions</h3>
+        <p>Arahkan kursor ke tombol di bawah ini untuk melihat empat arah tooltip: atas, kanan, bawah, dan kiri.</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <button type="button" class="nusa-btn nusa-btn-secondary" data-nusa-toggle="tooltip" data-nusa-placement="top" title="Tooltip on top">
+                    Tooltip on top
+                </button>
+                <button type="button" class="nusa-btn nusa-btn-secondary" data-nusa-toggle="tooltip" data-nusa-placement="end" title="Tooltip on right">
+                    Tooltip on right
+                </button>
+                <button type="button" class="nusa-btn nusa-btn-secondary" data-nusa-toggle="tooltip" data-nusa-placement="bottom" title="Tooltip on bottom">
+                    Tooltip on bottom
+                </button>
+                <button type="button" class="nusa-btn nusa-btn-secondary" data-nusa-toggle="tooltip" data-nusa-placement="start" title="Tooltip on left">
+                    Tooltip on left
+                </button>
+<pre class="mt-3"><code>&lt;button type="button" class="nusa-btn nusa-btn-secondary" data-nusa-toggle="tooltip" data-nusa-placement="top" title="Tooltip on top"&gt;
+  Tooltip on top
+&lt;/button&gt;
+&lt;button type="button" class="nusa-btn nusa-btn-secondary" data-nusa-toggle="tooltip" data-nusa-placement="end" title="Tooltip on right"&gt;
+  Tooltip on right
+&lt;/button&gt;
+&lt;button type="button" class="nusa-btn nusa-btn-secondary" data-nusa-toggle="tooltip" data-nusa-placement="bottom" title="Tooltip on bottom"&gt;
+  Tooltip on bottom
+&lt;/button&gt;
+&lt;button type="button" class="nusa-btn nusa-btn-secondary" data-nusa-toggle="tooltip" data-nusa-placement="start" title="Tooltip on left"&gt;
+  Tooltip on left
+&lt;/button&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>HTML Content</h3>
+        <p>Tooltip juga mendukung konten HTML (pastikan untuk membersihkan input pengguna jika menggunakan data dinamis).</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <button type="button" class="nusa-btn nusa-btn-secondary" data-nusa-toggle="tooltip" data-nusa-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                    Tooltip with HTML
+                </button>
+<pre class="mt-3"><code>&lt;button type="button" class="nusa-btn nusa-btn-secondary" data-nusa-toggle="tooltip" data-nusa-html="true" title="&lt;em&gt;Tooltip&lt;/em&gt; &lt;u&gt;with&lt;/u&gt; &lt;b&gt;HTML&lt;/b&gt;"&gt;
+  Tooltip with HTML
+&lt;/button&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="../../assets/js/nusa-script.js"></script>
+</body>
+</html>

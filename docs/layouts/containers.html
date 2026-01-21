@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Containers - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="containers">
+        <h1 class="display-4 mb-3">Containers</h1>
+        <p class="lead">Container adalah elemen tata letak paling dasar di Nusa UI dan diperlukan saat menggunakan sistem grid default kami.</p>
+        <hr class="my-4">
+
+        <h3>Container Default</h3>
+        <p>Kelas <code>.nusa-container</code> (atau <code>.ns-container</code>) menetapkan <code>max-width</code> pada setiap breakpoint responsif. Ini membuat konten Anda terpusat dan memiliki padding horizontal.</p>
+        
+        <div class="nusa-card bg-light border-0 mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="nusa-container"&gt;
+  &lt;!-- Konten Anda di sini --&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+        <div class="nusa-container bg-primary text-white p-3 rounded mb-4">
+            Ini adalah contoh .nusa-container
+        </div>
+
+        <h3>Container Fluid</h3>
+        <p>Gunakan <code>.nusa-container-fluid</code> (atau <code>.ns-container-fluid</code>) untuk container dengan lebar penuh, yang mencakup seluruh lebar viewport.</p>
+
+        <div class="nusa-card bg-light border-0 mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="nusa-container-fluid"&gt;
+  &lt;!-- Konten Anda di sini --&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+        <div class="nusa-container-fluid bg-secondary text-white p-3 rounded">
+            Ini adalah contoh .nusa-container-fluid
+        </div>
+    </section>
+</body>
+</html>

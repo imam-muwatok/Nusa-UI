@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="text">
+        <h1 class="display-4 mb-3">Text</h1>
+        <p class="lead">Dokumentasi dan contoh untuk utilitas teks umum untuk mengontrol perataan, pembungkusan, bobot, dan lainnya.</p>
+        <hr class="my-4">
+
+        <h3>Text Alignment</h3>
+        <p>Sejajarkan teks dengan mudah ke komponen dengan kelas perataan teks. Tersedia untuk semua breakpoint.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <p class="text-start">Perataan teks awal (kiri dalam LTR).</p>
+                <p class="text-center">Perataan teks tengah.</p>
+                <p class="text-end">Perataan teks akhir (kanan dalam LTR).</p>
+                <p class="text-md-end">Perataan teks akhir pada breakpoint MD dan lebih besar.</p>
+            </div>
+        </div>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;p class="text-start"&gt;Perataan teks awal.&lt;/p&gt;
+&lt;p class="text-center"&gt;Perataan teks tengah.&lt;/p&gt;
+&lt;p class="text-end"&gt;Perataan teks akhir.&lt;/p&gt;
+&lt;p class="text-md-end"&gt;Perataan teks akhir pada MD ke atas.&lt;/p&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Font Weight</h3>
+        <p>Ubah bobot teks dengan cepat menggunakan kelas utilitas bobot font.</p>
+
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <p class="fw-bold">Teks tebal.</p>
+                <p class="fw-bolder">Teks lebih tebal (relatif terhadap elemen induk).</p>
+                <p class="fw-normal">Teks dengan bobot normal.</p>
+                <p class="fw-light">Teks dengan bobot ringan.</p>
+                <p class="fw-lighter">Teks lebih ringan (relatif terhadap elemen induk).</p>
+            </div>
+        </div>
+
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;p class="fw-bold"&gt;Teks tebal.&lt;/p&gt;
+&lt;p class="fw-bolder"&gt;Teks lebih tebal.&lt;/p&gt;
+&lt;p class="fw-normal"&gt;Teks dengan bobot normal.&lt;/p&gt;
+&lt;p class="fw-light"&gt;Teks dengan bobot ringan.&lt;/p&gt;
+&lt;p class="fw-lighter"&gt;Teks lebih ringan.&lt;/p&gt;</code></pre>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>

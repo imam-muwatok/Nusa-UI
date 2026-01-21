@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Control - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="form-control">
+        <h1 class="display-4 mb-3">Form Control</h1>
+        <p class="lead">Berikan gaya pada kontrol formulir tekstual dengan dukungan untuk berbagai jenis input, textarea, dan status.</p>
+        <hr class="my-4">
+
+        <h3>Contoh</h3>
+        <p>Gunakan <code>.nusa-form-control</code> pada elemen <code>&lt;input&gt;</code> dan <code>&lt;textarea&gt;</code>.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="nusa-form-label">Email address</label>
+                    <input type="email" class="nusa-form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="nusa-form-label">Example textarea</label>
+                    <textarea class="nusa-form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <h3>Disabled</h3>
+        <p>Tambahkan atribut <code>disabled</code> pada input untuk mencegah interaksi pengguna.</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <input class="nusa-form-control" type="text" placeholder="Disabled input" aria-label="Disabled input example" disabled>
+                <input class="nusa-form-control mt-3" type="text" placeholder="Disabled readonly input" aria-label="Disabled input example" disabled readonly>
+            </div>
+        </div>
+
+        <h3>Readonly</h3>
+        <p>Tambahkan atribut <code>readonly</code> pada input untuk mencegah modifikasi nilai.</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <input class="nusa-form-control" type="text" value="Readonly input here..." aria-label="readonly input example" readonly>
+            </div>
+        </div>
+        
+        <h3>File Input</h3>
+        <p>Input file juga menggunakan kelas <code>.nusa-form-control</code>.</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="mb-3">
+                    <label for="formFile" class="nusa-form-label">Default file input example</label>
+                    <input class="nusa-form-control" type="file" id="formFile">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakpoints - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="breakpoints">
+        <h1 class="display-4 mb-3">Breakpoints</h1>
+        <p class="lead">Breakpoints adalah blok bangunan dasar dari tata letak responsif. Gunakan mereka untuk mengontrol kapan tata letak Anda dapat beradaptasi di seluruh viewport atau ukuran perangkat.</p>
+        <hr class="my-4">
+
+        <h3>Cara Kerja Breakpoints</h3>
+        <p>Nusa UI menggunakan pendekatan <em>mobile-first</em> untuk pengembangan responsif. Ini berarti kode untuk tata letak seluler adalah default, dan gaya kemudian ditimpa untuk rentang breakpoint yang lebih besar.</p>
+        <p>Breakpoints ditentukan dalam Sass dan dapat disesuaikan. Berikut adalah breakpoint default:</p>
+
+        <div class="nusa-card bg-light border-0 mb-4">
+            <div class="nusa-card-body">
+<pre><code>// sass/abstracts/_variables.scss
+
+$grid-breakpoints: (
+  xs: 0,    // Extra small devices (portrait phones)
+  sm: 576px, // Small devices (landscape phones)
+  md: 768px, // Medium devices (tablets)
+  lg: 992px, // Large devices (desktops)
+  xl: 1200px, // Extra large devices (large desktops)
+  xxl: 1400px // Extra extra large devices (larger desktops)
+);</code></pre>
+            </div>
+        </div>
+
+        <h3>Penggunaan dalam Kelas Utilitas</h3>
+        <p>Breakpoints digunakan dalam kelas utilitas responsif seperti <code>.d-md-flex</code>, <code>.col-lg-6</code>, atau <code>.text-sm-center</code>. Ini memungkinkan Anda untuk menerapkan gaya yang berbeda berdasarkan ukuran layar.</p>
+    </section>
+</body>
+</html>

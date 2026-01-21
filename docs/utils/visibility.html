@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visibility - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="visibility">
+        <h1 class="display-4 mb-3">Visibility</h1>
+        <p class="lead">Kontrol visibilitas elemen, tanpa mengubah tampilan, dengan utilitas visibilitas.</p>
+        <hr class="my-4">
+
+        <h3>Overview</h3>
+        <p>Atur <code>visibility</code> elemen dengan kelas utilitas visibilitas kami. Kelas-kelas ini tidak mengubah nilai <code>display</code> sama sekali dan tidak memengaruhi tata letak – elemen <code>.invisible</code> masih memakan ruang di halaman.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="visible">...</div>
+                <div class="invisible">...</div>
+            </div>
+        </div>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="visible"&gt;...&lt;/div&gt;
+&lt;div class="invisible"&gt;...&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Contoh</h3>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="d-flex p-2 border">
+                    <div class="flex-fill p-2 bg-primary text-white">Visible</div>
+                    <div class="flex-fill p-2 bg-secondary text-white invisible">Invisible (takes space)</div>
+                    <div class="flex-fill p-2 bg-success text-white">Visible</div>
+                </div>
+            </div>
+        </div>
+        
+        <p>Bandingkan dengan <code>display: none</code> (menggunakan <code>.d-none</code>):</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="d-flex p-2 border">
+                    <div class="flex-fill p-2 bg-primary text-white">Visible</div>
+                    <div class="flex-fill p-2 bg-secondary text-white d-none">Hidden (no space)</div>
+                    <div class="flex-fill p-2 bg-success text-white">Visible</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,83 @@
+@use "sass:color";
+@use "../abstracts/variables" as *;
+
+.display-1 { font-size: 3.5rem; font-weight: 300; line-height: 1.2; }
+.lead { font-size: 1.25rem; font-weight: 300; }
+
+.hr { margin: 1rem 0; color: inherit; background-color: currentColor; border: 0; opacity: .25; }
+.hr:not([size]) { height: 1px; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.small {
+  font-size: .875em;
+}
+
+.nusa-collapse,
+.ns-collapse {
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+// Colored Links
+@each $color, $value in $theme-colors {
+  .link-#{$color} {
+    color: $value;
+
+    &:hover,
+    &:focus {
+      color: color.adjust($value, $lightness: -15%);
+    }
+  }
+}
+
+// Ratio
+.ratio {
+  position: relative;
+  width: 100%;
+
+  &::before {
+    display: block;
+    padding-top: var(--nusa-aspect-ratio);
+    content: "";
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@each $key, $ratio in (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%)
+) {
+  .ratio-#{$key} { --nusa-aspect-ratio: #{$ratio}; }
+}

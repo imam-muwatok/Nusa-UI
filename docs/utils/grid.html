@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid (Utilities) - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+        .grid-example > div {
+            background-color: rgba(71, 69, 213, .15);
+            border: 1px solid rgba(71, 69, 213, .2);
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section id="grid-utilities">
+        <h1 class="display-4 mb-3">Grid (Utilities)</h1>
+        <p class="lead">Gunakan utilitas grid CSS untuk membuat tata letak grid yang kuat dan fleksibel.</p>
+        <hr class="my-4">
+
+        <h3>Display Grid</h3>
+        <p>Buat container grid dengan <code>.d-grid</code> atau <code>.d-inline-grid</code>. Ini menerapkan <code>display: grid</code> atau <code>display: inline-grid</code> ke elemen.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="d-grid gap-3 grid-example" style="grid-template-columns: 1fr 1fr;">
+                    <div>Grid item 1</div>
+                    <div>Grid item 2</div>
+                    <div>Grid item 3</div>
+                    <div>Grid item 4</div>
+                </div>
+            </div>
+        </div>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="d-grid gap-3" style="grid-template-columns: 1fr 1fr;"&gt;
+  &lt;div&gt;Grid item 1&lt;/div&gt;
+  &lt;div&gt;Grid item 2&lt;/div&gt;
+  &lt;div&gt;Grid item 3&lt;/div&gt;
+  &lt;div&gt;Grid item 4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Gap</h3>
+        <p>Gunakan utilitas <code>gap</code> untuk mengontrol jarak antar item grid (dan flex). Kelas <code>.gap-0</code> hingga <code>.gap-5</code> tersedia.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="d-grid gap-2 d-md-block">
+                    <button class="nusa-btn nusa-btn-primary" type="button">Button</button>
+                    <button class="nusa-btn nusa-btn-primary" type="button">Button</button>
+                </div>
+            </div>
+        </div>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="d-grid gap-2 d-md-block"&gt;
+  &lt;button class="nusa-btn nusa-btn-primary" type="button"&gt;Button&lt;/button&gt;
+  &lt;button class="nusa-btn nusa-btn-primary" type="button"&gt;Button&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

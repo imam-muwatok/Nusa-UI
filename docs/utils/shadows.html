@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadows - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+        .shadow-demo-container {
+            background-color: #f8f9fa;
+        }
+        [data-nusa-theme="dark"] .shadow-demo-container {
+            background-color: #2d2d2d;
+        }
+    </style>
+</head>
+<body>
+    <section id="shadows">
+        <h1 class="display-4 mb-3">Shadows</h1>
+        <p class="lead">Tambahkan atau hapus bayangan ke elemen dengan utilitas box-shadow.</p>
+        <hr class="my-4">
+
+        <h3>Contoh</h3>
+        <p>Gunakan kelas utilitas <code>box-shadow</code> untuk menambahkan bayangan pada elemen. Tersedia dukungan untuk <code>.shadow-none</code> dan tiga ukuran default.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="d-flex flex-wrap gap-4 p-4 shadow-demo-container rounded justify-content-center">
+                    <div class="shadow-none p-3 bg-white rounded">No shadow</div>
+                    <div class="shadow-sm p-3 bg-white rounded">Small shadow</div>
+                    <div class="shadow p-3 bg-white rounded">Regular shadow</div>
+                    <div class="shadow-lg p-3 bg-white rounded">Large shadow</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="shadow-none p-3 bg-white rounded"&gt;No shadow&lt;/div&gt;
+&lt;div class="shadow-sm p-3 bg-white rounded"&gt;Small shadow&lt;/div&gt;
+&lt;div class="shadow p-3 bg-white rounded"&gt;Regular shadow&lt;/div&gt;
+&lt;div class="shadow-lg p-3 bg-white rounded"&gt;Large shadow&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

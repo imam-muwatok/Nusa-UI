@@ -1,0 +1,122 @@
+@use "../abstracts/variables" as *;
+@use "sass:color";
+
+// Smooth Transition
+// Terapkan transisi pada elemen yang sering berubah warna background/text
+body,
+.nusa-navbar, .ns-navbar,
+.nusa-sidebar, .ns-sidebar,
+.nusa-card, .ns-card,
+.nusa-modal-content, .ns-modal-content,
+.nusa-dropdown-menu, .ns-dropdown-menu,
+.nusa-form-control, .ns-form-control,
+.nusa-list-group-item, .ns-list-group-item,
+.nusa-toast, .ns-toast,
+.nusa-offcanvas, .ns-offcanvas {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+// Dark Mode Overrides
+[data-nusa-theme="dark"] {
+  body {
+    color: #e0e0e0;
+    background-color: #121212;
+  }
+  
+  // Switch component in dark mode
+  .nusa-switch .nusa-switch-slider,
+  .ns-switch .ns-switch-slider {
+    background-color: #374151; // gray-700
+  }
+
+  // Navbar
+  .nusa-navbar,
+  .ns-navbar {
+    background-color: #1e1e1e !important; // Force override bg-white
+    border-bottom-color: #333;
+
+    .nusa-navbar-brand,
+    .ns-navbar-brand {
+      color: #fff;
+    }
+
+    .nusa-nav-link,
+    .ns-nav-link {
+      color: #b0b0b0;
+
+      &:hover,
+      &:focus {
+        color: $primary;
+      }
+    }
+    
+    .nusa-navbar-toggler,
+    .ns-navbar-toggler {
+        color: #fff;
+        border-color: rgba(255,255,255,0.1);
+    }
+    
+    .nusa-navbar-toggler-icon,
+    .ns-navbar-toggler-icon {
+        filter: invert(1);
+    }
+  }
+
+  // Sidebar
+  .nusa-sidebar,
+  .ns-sidebar {
+    background-color: #121212;
+    border-right-color: #333;
+    border-bottom-color: #333;
+
+    .nusa-sidebar-header,
+    .ns-sidebar-header {
+      color: #fff;
+    }
+
+    .nusa-sidebar-link, .ns-sidebar-link,
+    .nusa-sidebar-btn, .ns-sidebar-btn {
+      color: #b0b0b0;
+
+      &:hover {
+        color: $primary;
+        background-color: rgba($primary, 0.1);
+      }
+
+      &.active {
+        color: $primary;
+        background-color: rgba($primary, 0.1);
+      }
+
+      &::after {
+        filter: invert(1) grayscale(100%);
+      }
+    }
+  }
+
+  // Cards
+  .nusa-card,
+  .ns-card {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #e0e0e0;
+
+    .nusa-card-title,
+    .ns-card-title {
+      color: #fff;
+    }
+  }
+  
+  // Buttons (Adjust outline dark for visibility)
+  .nusa-btn-outline-dark,
+  .ns-btn-outline-dark {
+      color: #e0e0e0;
+      border-color: #e0e0e0;
+      
+      &:hover {
+          background-color: #e0e0e0;
+          color: #121212;
+      }
+  }
+  
+}

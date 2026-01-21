@@ -1,10 +1,12 @@
 import { initCarousel } from './nusa-carousel.js';
 import { initTabs } from './nusa-tabs.js';
+import { initDarkMode } from './nusa-dark-mode.js';
 
-document.addEventListener('DOMContentLoaded', function() {
+const init = () => {
     // Initialize Carousel
     initCarousel();
     initTabs();
+    initDarkMode();
 
     // --- Collapse Logic (Navbar) ---
     const collapseToggles = document.querySelectorAll('[data-nusa-toggle="collapse"]');
@@ -17,6 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (target) {
                 target.classList.toggle('show');
+                // Toggle state pada trigger untuk styling (misal: rotasi icon)
+                this.classList.toggle('collapsed');
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
             }
         });
     });
@@ -93,7 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
             trigger.removeAttribute('title');
         }
 
-        const placement = trigger.getAttribute('data-nusa-placement') || 'top';
+        let placement = trigger.getAttribute('data-nusa-placement') || 'top';
+        if (placement === 'left') placement = 'start';
+        if (placement === 'right') placement = 'end';
         
         // Create tooltip element
         const tooltip = document.createElement('div');
@@ -117,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         switch(placement) {
             case 'top':
+            default:
                 top = rect.top + scrollY - tooltipHeight - offset;
                 left = rect.left + scrollX + (rect.width / 2) - (tooltipWidth / 2);
                 break;
@@ -250,3 +259,10 @@ document.addEventListener('DOMContentLoaded', function() {
             popover.classList.add('show');
         });
     }
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}

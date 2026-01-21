@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+        .p-3 { padding: 1rem !important; }
+        .mb-2 { margin-bottom: 0.5rem !important; }
+    </style>
+</head>
+<body>
+    <section id="background">
+        <h1 class="display-4 mb-3">Background</h1>
+        <p class="lead">Sampaikan makna melalui warna dengan segenggam kelas utilitas latar belakang.</p>
+        <hr class="my-4">
+
+        <h3>Background Color</h3>
+        <p>Mirip dengan kelas teks kontekstual, atur latar belakang elemen ke kelas kontekstual apa pun. Utilitas latar belakang <strong>tidak mengatur <code>color</code></strong>, jadi dalam beberapa kasus Anda mungkin ingin menggunakan <code>.text-*</code> utilitas.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+                <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+                <div class="p-3 mb-2 bg-accent text-white">.bg-accent</div>
+                <div class="p-3 mb-2 bg-neutral text-white">.bg-neutral</div>
+                <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+                <div class="p-3 mb-2 bg-info text-white">.bg-info</div>
+                <div class="p-3 mb-2 bg-warning text-white">.bg-warning</div>
+                <div class="p-3 mb-2 bg-error text-white">.bg-error</div>
+                <div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+                <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+                <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+                <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
+            </div>
+        </div>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="p-3 mb-2 bg-primary text-white"&gt;.bg-primary&lt;/div&gt;
+&lt;div class="p-3 mb-2 bg-secondary text-white"&gt;.bg-secondary&lt;/div&gt;
+&lt;div class="p-3 mb-2 bg-success text-white"&gt;.bg-success&lt;/div&gt;
+&lt;div class="p-3 mb-2 bg-error text-white"&gt;.bg-error&lt;/div&gt;
+&lt;div class="p-3 mb-2 bg-warning text-white"&gt;.bg-warning&lt;/div&gt;
+&lt;div class="p-3 mb-2 bg-info text-white"&gt;.bg-info&lt;/div&gt;
+&lt;div class="p-3 mb-2 bg-light text-dark"&gt;.bg-light&lt;/div&gt;
+&lt;div class="p-3 mb-2 bg-dark text-white"&gt;.bg-dark&lt;/div&gt;
+&lt;div class="p-3 mb-2 bg-white text-dark"&gt;.bg-white&lt;/div&gt;
+&lt;div class="p-3 mb-2 bg-transparent text-dark"&gt;.bg-transparent&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Sass</h3>
+        <p>Utilitas background dihasilkan dari peta Sass <code>$theme-colors</code> dan <code>$colors</code>.</p>
+        <div class="nusa-card bg-dark text-light border-0 mb-4">
+            <div class="nusa-card-body">
+<pre><code>// sass/_variables.scss
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  // ...
+);</code></pre>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

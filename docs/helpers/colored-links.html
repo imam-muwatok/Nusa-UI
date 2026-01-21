@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colored Links - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="colored-links">
+        <h1 class="display-4 mb-3">Colored links</h1>
+        <p class="lead">Tautan berwarna dengan status hover.</p>
+        <hr class="my-4">
+
+        <h3>Contoh</h3>
+        <p>Anda dapat menggunakan kelas <code>.link-*</code> untuk mewarnai tautan. Tidak seperti kelas <code>.text-*</code>, kelas ini juga memiliki status hover dan focus yang lebih gelap.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <p><a href="#" class="link-primary">Primary link</a></p>
+                <p><a href="#" class="link-secondary">Secondary link</a></p>
+                <p><a href="#" class="link-success">Success link</a></p>
+                <p><a href="#" class="link-error">Error link</a></p>
+                <p><a href="#" class="link-warning">Warning link</a></p>
+                <p><a href="#" class="link-info">Info link</a></p>
+                <p><a href="#" class="link-light bg-dark d-inline-block px-1 rounded">Light link</a></p>
+                <p><a href="#" class="link-dark">Dark link</a></p>
+            </div>
+        </div>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;a href="#" class="link-primary"&gt;Primary link&lt;/a&gt;
+&lt;a href="#" class="link-secondary"&gt;Secondary link&lt;/a&gt;
+&lt;a href="#" class="link-success"&gt;Success link&lt;/a&gt;
+&lt;a href="#" class="link-error"&gt;Error link&lt;/a&gt;
+&lt;a href="#" class="link-warning"&gt;Warning link&lt;/a&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

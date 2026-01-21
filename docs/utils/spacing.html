@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacing - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+        .spacing-box {
+            background-color: rgba(86, 61, 124, .15);
+            border: 1px solid rgba(86, 61, 124, .2);
+        }
+    </style>
+</head>
+<body>
+    <section id="spacing">
+        <h1 class="display-4 mb-3">Spacing</h1>
+        <p class="lead">Nusa UI menyertakan berbagai kelas utilitas margin dan padding responsif singkatan untuk memodifikasi tampilan elemen.</p>
+        <hr class="my-4">
+
+        <h3>Notasi</h3>
+        <p>Kelas utilitas spasi yang berlaku untuk semua breakpoint, dari <code>xs</code> hingga <code>xxl</code>, tidak memiliki singkatan breakpoint di dalamnya. Ini karena kelas-kelas tersebut diterapkan dari <code>min-width: 0</code> dan seterusnya, sehingga tidak terikat oleh kueri media. Namun, breakpoint yang tersisa menyertakan singkatan breakpoint.</p>
+        <p>Kelas-kelas tersebut dinamai menggunakan format <code>{property}{sides}-{size}</code> untuk <code>xs</code> dan <code>{property}{sides}-{breakpoint}-{size}</code> untuk <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, dan <code>xxl</code>.</p>
+        
+        <p>Di mana <em>property</em> adalah salah satu dari:</p>
+        <ul>
+            <li><code>m</code> - untuk kelas yang menetapkan <code>margin</code></li>
+            <li><code>p</code> - untuk kelas yang menetapkan <code>padding</code></li>
+        </ul>
+
+        <p>Di mana <em>sides</em> adalah salah satu dari:</p>
+        <ul>
+            <li><code>t</code> - untuk kelas yang menetapkan <code>margin-top</code> atau <code>padding-top</code></li>
+            <li><code>b</code> - untuk kelas yang menetapkan <code>margin-bottom</code> atau <code>padding-bottom</code></li>
+            <li><code>s</code> - (start) untuk kelas yang menetapkan <code>margin-left</code> atau <code>padding-left</code> (dalam LTR)</li>
+            <li><code>e</code> - (end) untuk kelas yang menetapkan <code>margin-right</code> atau <code>padding-right</code> (dalam LTR)</li>
+            <li><code>x</code> - untuk kelas yang menetapkan kedua <code>*-left</code> dan <code>*-right</code></li>
+            <li><code>y</code> - untuk kelas yang menetapkan kedua <code>*-top</code> dan <code>*-bottom</code></li>
+            <li>kosong - untuk kelas yang menetapkan <code>margin</code> atau <code>padding</code> pada keempat sisi elemen</li>
+        </ul>
+
+        <p>Di mana <em>size</em> adalah salah satu dari:</p>
+        <ul>
+            <li><code>0</code> - untuk kelas yang menghilangkan <code>margin</code> atau <code>padding</code> dengan mengaturnya ke <code>0</code></li>
+            <li><code>1</code> - (secara default) untuk kelas yang menetapkan <code>margin</code> atau <code>padding</code> ke <code>$spacer * .25</code></li>
+            <li><code>2</code> - (secara default) untuk kelas yang menetapkan <code>margin</code> atau <code>padding</code> ke <code>$spacer * .5</code></li>
+            <li><code>3</code> - (secara default) untuk kelas yang menetapkan <code>margin</code> atau <code>padding</code> ke <code>$spacer</code></li>
+            <li><code>4</code> - (secara default) untuk kelas yang menetapkan <code>margin</code> atau <code>padding</code> ke <code>$spacer * 1.5</code></li>
+            <li><code>5</code> - (secara default) untuk kelas yang menetapkan <code>margin</code> atau <code>padding</code> ke <code>$spacer * 3</code></li>
+            <li><code>auto</code> - untuk kelas yang menetapkan <code>margin</code> ke auto</li>
+        </ul>
+
+        <h3>Contoh</h3>
+        <p>Berikut adalah beberapa contoh representatif dari kelas-kelas ini:</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="spacing-box p-3 mb-2 bg-light border">.p-3</div>
+                <div class="spacing-box m-3 p-2 bg-light border">.m-3 .p-2</div>
+                <div class="spacing-box m-0 p-0 bg-light border">.m-0 .p-0</div>
+            </div>
+        </div>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="p-3 mb-2 bg-light border"&gt;.p-3&lt;/div&gt;
+&lt;div class="m-3 p-2 bg-light border"&gt;.m-3 .p-2&lt;/div&gt;
+&lt;div class="m-0 p-0 bg-light border"&gt;.m-0 .p-0&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Pemusatan Horizontal</h3>
+        <p>Selain itu, Nusa UI juga menyertakan kelas <code>.mx-auto</code> untuk memusatkan konten tingkat blok dengan lebar tetap secara horizontal—yaitu, konten yang memiliki <code>display: block</code> dan set <code>width</code>—dengan mengatur margin horizontal ke <code>auto</code>.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="mx-auto p-2 bg-light border" style="width: 200px;">
+                    Centered element
+                </div>
+            </div>
+        </div>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="mx-auto p-2 bg-light border" style="width: 200px;"&gt;
+  Centered element
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

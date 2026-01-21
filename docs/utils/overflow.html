@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+        .overflow-demo {
+            max-width: 260px;
+            max-height: 100px;
+            background-color: #f8f9fa;
+        }
+        [data-nusa-theme="dark"] .overflow-demo {
+            background-color: #1e1e1e;
+        }
+    </style>
+</head>
+<body>
+    <section id="overflow">
+        <h1 class="display-4 mb-3">Overflow</h1>
+        <p class="lead">Gunakan utilitas shorthand ini untuk mengonfigurasi dengan cepat bagaimana konten meluap dari elemen.</p>
+        <hr class="my-4">
+
+        <h3>Overflow</h3>
+        <p>Sesuaikan properti <code>overflow</code> dengan cepat dengan empat nilai default dan kelas.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="d-flex flex-wrap gap-3">
+                    <div class="overflow-auto p-3 bg-light border rounded" style="max-width: 260px; max-height: 100px;">
+                        This is an example of using <code>.overflow-auto</code> on an element with set width and height dimensions. By design, this content will vertically scroll.
+                    </div>
+                    <div class="overflow-hidden p-3 bg-light border rounded" style="max-width: 260px; max-height: 100px;">
+                        This is an example of using <code>.overflow-hidden</code> on an element with set width and height dimensions.
+                    </div>
+                    <div class="overflow-visible p-3 bg-light border rounded" style="max-width: 260px; max-height: 100px;">
+                        This is an example of using <code>.overflow-visible</code> on an element with set width and height dimensions.
+                    </div>
+                    <div class="overflow-scroll p-3 bg-light border rounded" style="max-width: 260px; max-height: 100px;">
+                        This is an example of using <code>.overflow-scroll</code> on an element with set width and height dimensions.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="overflow-auto"&gt;...&lt;/div&gt;
+&lt;div class="overflow-hidden"&gt;...&lt;/div&gt;
+&lt;div class="overflow-visible"&gt;...&lt;/div&gt;
+&lt;div class="overflow-scroll"&gt;...&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

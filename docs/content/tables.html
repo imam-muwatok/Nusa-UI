@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="tables">
+        <h1 class="display-4 mb-3">Tables</h1>
+        <p class="lead">Dokumentasi dan contoh untuk tabel opt-in dengan Nusa UI.</p>
+        <hr class="my-4">
+
+        <h3>Contoh Dasar</h3>
+        <p>Gunakan kelas dasar <code>.nusa-table</code> (atau <code>.ns-table</code>) ke tag <code>&lt;table&gt;</code> apa pun.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <table class="nusa-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h3>Varian</h3>
+        <p>Gunakan kelas pengubah untuk mengaktifkan gaya tabel alternatif.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <h5>Striped rows</h5>
+                <p>Gunakan <code>.nusa-table-striped</code> untuk menambahkan zebra-striping ke baris tabel.</p>
+                <table class="nusa-table nusa-table-striped mb-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">1</th><td>Mark</td><td>Otto</td></tr>
+                        <tr><th scope="row">2</th><td>Jacob</td><td>Thornton</td></tr>
+                    </tbody>
+                </table>
+
+                <h5>Hoverable rows</h5>
+                <p>Tambahkan <code>.nusa-table-hover</code> untuk mengaktifkan status hover pada baris tabel.</p>
+                <table class="nusa-table nusa-table-hover mb-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">1</th><td>Mark</td><td>Otto</td></tr>
+                        <tr><th scope="row">2</th><td>Jacob</td><td>Thornton</td></tr>
+                    </tbody>
+                </table>
+
+                <h5>Bordered table</h5>
+                <p>Tambahkan <code>.nusa-table-bordered</code> untuk batas di semua sisi tabel dan sel.</p>
+                <table class="nusa-table nusa-table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">1</th><td>Mark</td><td>Otto</td></tr>
+                        <tr><th scope="row">2</th><td>Jacob</td><td>Thornton</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

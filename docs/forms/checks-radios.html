@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checks & Radios - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="checks-radios">
+        <h1 class="display-4 mb-3">Checks & Radios</h1>
+        <p class="lead">Buat kontrol formulir yang konsisten lintas browser dengan checkbox dan radio button yang sepenuhnya dikustomisasi.</p>
+        <hr class="my-4">
+
+        <h3>Checks</h3>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="nusa-form-check">
+                    <input class="nusa-form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="nusa-form-check-label" for="flexCheckDefault">
+                        Default checkbox
+                    </label>
+                </div>
+                <div class="nusa-form-check">
+                    <input class="nusa-form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="nusa-form-check-label" for="flexCheckChecked">
+                        Checked checkbox
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <h3>Indeterminate</h3>
+        <p>Checkbox dapat berada dalam keadaan <code>indeterminate</code> (tidak tentu) melalui JavaScript.</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="nusa-form-check">
+                    <input class="nusa-form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                    <label class="nusa-form-check-label" for="flexCheckIndeterminate">
+                        Indeterminate checkbox
+                    </label>
+                </div>
+                <script>
+                    document.getElementById('flexCheckIndeterminate').indeterminate = true;
+                </script>
+            </div>
+        </div>
+
+        <h3>Radios</h3>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="nusa-form-check">
+                    <input class="nusa-form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="nusa-form-check-label" for="flexRadioDefault1">
+                        Default radio
+                    </label>
+                </div>
+                <div class="nusa-form-check">
+                    <input class="nusa-form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="nusa-form-check-label" for="flexRadioDefault2">
+                        Default checked radio
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <h3>Switches</h3>
+        <p>Switch memiliki markup yang sama dengan checkbox tetapi menggunakan kelas <code>.nusa-form-switch</code> untuk merender toggle.</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="nusa-form-check nusa-form-switch">
+                    <input class="nusa-form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <label class="nusa-form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+                </div>
+                <div class="nusa-form-check nusa-form-switch">
+                    <input class="nusa-form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                    <label class="nusa-form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+                </div>
+                <div class="nusa-form-check nusa-form-switch">
+                    <input class="nusa-form-check-input" type="checkbox" id="flexSwitchCheckDisabled" disabled>
+                    <label class="nusa-form-check-label" for="flexSwitchCheckDisabled">Disabled switch checkbox input</label>
+                </div>
+                <div class="nusa-form-check nusa-form-switch">
+                    <input class="nusa-form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                    <label class="nusa-form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked switch checkbox input</label>
+                </div>
+            </div>
+        </div>
+
+        <h3>Inline</h3>
+        <p>Kelompokkan checkbox atau radio pada baris horizontal yang sama dengan menambahkan <code>.nusa-form-check-inline</code> ke <code>.nusa-form-check</code>.</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="nusa-form-check nusa-form-check-inline">
+                    <input class="nusa-form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="nusa-form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+                <div class="nusa-form-check nusa-form-check-inline">
+                    <input class="nusa-form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="nusa-form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+                <div class="nusa-form-check nusa-form-check-inline">
+                    <input class="nusa-form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="nusa-form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="nusa-form-check nusa-form-check-inline">
+                    <input class="nusa-form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="nusa-form-check-label" for="inlineRadio2">2</label>
+                </div>
+            </div>
+        </div>
+
+        <h3>Disabled</h3>
+        <p>Tambahkan atribut <code>disabled</code> dan CSS terkait akan menerapkan gaya yang lebih pudar.</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="nusa-form-check">
+                    <input class="nusa-form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+                    <label class="nusa-form-check-label" for="flexCheckDisabled">
+                        Disabled checkbox
+                    </label>
+                </div>
+                <div class="nusa-form-check">
+                    <input class="nusa-form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioDisabled" disabled>
+                    <label class="nusa-form-check-label" for="flexRadioDisabled">
+                        Disabled radio
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

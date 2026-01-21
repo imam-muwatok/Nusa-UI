@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="validation">
+        <h1 class="display-4 mb-3">Validation</h1>
+        <p class="lead">Berikan umpan balik yang berharga dan dapat ditindaklanjuti kepada pengguna Anda dengan validasi formulir HTML5.</p>
+        <hr class="my-4">
+
+        <h3>Server-side</h3>
+        <p>Kami merekomendasikan penggunaan validasi sisi klien, tetapi jika Anda memerlukan validasi sisi server, Anda dapat menggunakan kelas <code>.is-valid</code> dan <code>.is-invalid</code>.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <form class="nusa-row g-3">
+                    <div class="nusa-col-md-4">
+                        <label for="validationServer01" class="nusa-form-label">First name</label>
+                        <input type="text" class="nusa-form-control is-valid" id="validationServer01" value="Mark" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="nusa-col-md-4">
+                        <label for="validationServer02" class="nusa-form-label">Last name</label>
+                        <input type="text" class="nusa-form-control is-valid" id="validationServer02" value="Otto" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="nusa-col-md-4">
+                        <label for="validationServerUsername" class="nusa-form-label">Username</label>
+                        <div class="nusa-input-group has-validation">
+                            <span class="nusa-input-group-text" id="inputGroupPrepend3">@</span>
+                            <input type="text" class="nusa-form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nusa-col-md-6">
+                        <label for="validationServer03" class="nusa-form-label">City</label>
+                        <input type="text" class="nusa-form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+                        <div id="validationServer03Feedback" class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="nusa-col-md-3">
+                        <label for="validationServer04" class="nusa-form-label">State</label>
+                        <select class="nusa-form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option>...</option>
+                        </select>
+                        <div id="validationServer04Feedback" class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+                    <div class="nusa-col-md-3">
+                        <label for="validationServer05" class="nusa-form-label">Zip</label>
+                        <input type="text" class="nusa-form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+                        <div id="validationServer05Feedback" class="invalid-feedback">
+                            Please provide a valid zip.
+                        </div>
+                    </div>
+                    <div class="nusa-col-12">
+                        <div class="nusa-form-check">
+                            <input class="nusa-form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+                            <label class="nusa-form-check-label" for="invalidCheck3">
+                                Agree to terms and conditions
+                            </label>
+                            <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nusa-col-12">
+                        <button class="nusa-btn nusa-btn-primary" type="submit">Submit form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <h3>Supported Elements</h3>
+        <p>Gaya validasi tersedia untuk elemen kontrol formulir berikut:</p>
+        <ul>
+            <li><code>&lt;input&gt;</code>s dan <code>&lt;textarea&gt;</code>s dengan <code>.nusa-form-control</code></li>
+            <li><code>&lt;select&gt;</code>s dengan <code>.nusa-form-select</code></li>
+            <li><code>.nusa-form-check</code>s</li>
+        </ul>
+
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <form class="was-validated">
+                    <div class="mb-3">
+                        <label for="validationTextarea" class="nusa-form-label">Textarea</label>
+                        <textarea class="nusa-form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter a message in the textarea.
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

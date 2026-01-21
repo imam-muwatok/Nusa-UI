@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="display">
+        <h1 class="display-4 mb-3">Display property</h1>
+        <p class="lead">Ubah nilai properti tampilan komponen secara responsif dengan kelas utilitas tampilan kami.</p>
+        <hr class="my-4">
+
+        <h3>Cara Kerja</h3>
+        <p>Ubah nilai properti <code>display</code> dengan kelas utilitas responsif kami. Kami sengaja hanya mendukung sebagian dari semua nilai yang mungkin untuk <code>display</code>. Kelas dapat digabungkan untuk berbagai efek yang Anda butuhkan.</p>
+
+        <h3>Notasi</h3>
+        <p>Kelas utilitas tampilan yang berlaku untuk semua breakpoint, dari <code>xs</code> hingga <code>xxl</code>, tidak memiliki singkatan breakpoint di dalamnya. Ini karena kelas-kelas tersebut diterapkan dari <code>min-width: 0</code> dan seterusnya, sehingga tidak terikat oleh kueri media. Namun, breakpoint yang tersisa menyertakan singkatan breakpoint.</p>
+        <p>Kelas-kelas tersebut dinamai menggunakan format:</p>
+        <ul>
+            <li><code>.d-{value}</code> untuk <code>xs</code></li>
+            <li><code>.d-{breakpoint}-{value}</code> untuk <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, dan <code>xxl</code>.</li>
+        </ul>
+        <p>Di mana <em>value</em> adalah salah satu dari:</p>
+        <ul>
+            <li><code>none</code></li>
+            <li><code>inline</code></li>
+            <li><code>inline-block</code></li>
+            <li><code>block</code></li>
+            <li><code>flex</code></li>
+            <li><code>inline-flex</code></li>
+        </ul>
+
+        <h3>Contoh</h3>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="d-inline p-2 bg-primary text-white">d-inline</div>
+                <div class="d-inline p-2 bg-dark text-white">d-inline</div>
+            </div>
+        </div>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="d-inline p-2 bg-primary text-white"&gt;d-inline&lt;/div&gt;
+&lt;div class="d-inline p-2 bg-dark text-white"&gt;d-inline&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <span class="d-block p-2 bg-primary text-white">d-block</span>
+                <span class="d-block p-2 bg-dark text-white">d-block</span>
+            </div>
+        </div>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;span class="d-block p-2 bg-primary text-white"&gt;d-block&lt;/span&gt;
+&lt;span class="d-block p-2 bg-dark text-white"&gt;d-block&lt;/span&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Menyembunyikan Elemen</h3>
+        <p>Untuk pengembangan ramah seluler yang lebih cepat, gunakan kelas tampilan responsif untuk menampilkan dan menyembunyikan elemen berdasarkan perangkat. Hindari membuat versi yang sama sekali berbeda dari situs yang sama, sebagai gantinya sembunyikan elemen secara responsif untuk setiap ukuran layar.</p>
+        <p>Untuk menyembunyikan elemen cukup gunakan kelas <code>.d-none</code> atau salah satu varian responsif <code>.d-{sm,md,lg,xl,xxl}-none</code>.</p>
+        <p>Untuk menampilkan elemen hanya pada interval ukuran layar tertentu, Anda dapat menggabungkan satu kelas <code>.d-*-none</code> dengan kelas <code>.d-*-*</code>, misalnya <code>.d-none .d-md-block .d-xl-none .d-xxl-none</code> akan menyembunyikan elemen untuk semua ukuran layar kecuali pada perangkat menengah dan besar.</p>
+
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="d-lg-none p-2 bg-light border mb-2">hide on lg and wider screens</div>
+                <div class="d-none d-lg-block p-2 bg-light border">hide on screens smaller than lg</div>
+            </div>
+        </div>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="d-lg-none"&gt;hide on lg and wider screens&lt;/div&gt;
+&lt;div class="d-none d-lg-block"&gt;hide on screens smaller than lg&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>

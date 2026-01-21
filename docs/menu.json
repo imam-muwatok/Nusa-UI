@@ -1,0 +1,150 @@
+{
+  "navigation": [
+    {
+      "title": "Getting started",
+      "sub_menu": [
+        "Introduction",
+        "Download",
+        "Contents",
+        "Browsers & devices",
+        "JavaScript",
+        "Build tools",
+        "Webpack",
+        "Parcel",
+        "Accessibility",
+        "RFS",
+        "RTL"
+      ]
+    },
+    {
+      "title": "Customize",
+      "sub_menu": [
+        "Overview",
+        "Sass",
+        "Options",
+        "Color",
+        "Components",
+        "CSS variables",
+        "Optimize"
+      ]
+    },
+    {
+      "title": "Layout",
+      "sub_menu": [
+        "Breakpoints",
+        "Containers",
+        "Grid",
+        "Columns",
+        "Gutters",
+        "Utilities",
+        "Z-index"
+      ]
+    },
+    {
+      "title": "Content",
+      "sub_menu": [
+        "Reboot",
+        "Typography",
+        "Images",
+        "Tables",
+        "Figures"
+      ]
+    },
+    {
+      "title": "Forms",
+      "sub_menu": [
+        "Overview",
+        "Form control",
+        "Select",
+        "Checks & radios",
+        "Range",
+        "Input group",
+        "Floating labels",
+        "Layout",
+        "Validation"
+      ]
+    },
+    {
+      "title": "Components",
+      "sub_menu": [
+        "Accordion",
+        "Alerts",
+        "Badge",
+        "Breadcrumb",
+        "Buttons",
+        "Button group",
+        "Card",
+        "Carousel",
+        "Close button",
+        "Collapse",
+        "Dropdowns",
+        "List group",
+        "Modal",
+        "Navs & tabs",
+        "Navbar",
+        "Offcanvas",
+        "Pagination",
+        "Popovers",
+        "Progress",
+        "Scrollspy",
+        "Spinners",
+        "Toasts",
+        "Tooltips"
+      ]
+    },
+    {
+      "title": "Helpers",
+      "sub_menu": [
+        "Clearfix",
+        "Colored links",
+        "Ratio",
+        "Position",
+        "Visually hidden",
+        "Stretched link",
+        "Text truncation"
+      ]
+    },
+    {
+      "title": "Utilities",
+      "sub_menu": [
+        "API",
+        "Background",
+        "Borders",
+        "Colors",
+        "Display",
+        "Flex",
+        "Float",
+        "Interactions",
+        "Overflow",
+        "Position",
+        "Shadows",
+        "Sizing",
+        "Spacing",
+        "Text",
+        "Vertical align",
+        "Visibility"
+      ]
+    },
+    {
+      "title": "Extend",
+      "sub_menu": [
+        "Approach",
+        "Icons"
+      ]
+    },
+    {
+      "title": "About",
+      "sub_menu": [
+        "Overview",
+        "Team",
+        "Brand",
+        "License",
+        "Translations"
+      ]
+    },
+    {
+      "title": "Migration",
+      "sub_menu": []
+    }
+  ]
+}

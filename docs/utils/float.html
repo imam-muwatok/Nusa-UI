@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="float">
+        <h1 class="display-4 mb-3">Float</h1>
+        <p class="lead">Ubah float pada elemen apa pun, di breakpoint apa pun, menggunakan utilitas float responsif kami.</p>
+        <hr class="my-4">
+
+        <h3>Overview</h3>
+        <p>Kelas utilitas ini mengapungkan elemen ke kiri atau kanan, atau menonaktifkan pengapungan, berdasarkan ukuran viewport saat ini menggunakan properti CSS <code>float</code>. <code>!important</code> disertakan untuk menghindari masalah spesifisitas.</p>
+        <ul>
+            <li><code>.float-start</code> untuk mengapungkan elemen ke kiri (start).</li>
+            <li><code>.float-end</code> untuk mengapungkan elemen ke kanan (end).</li>
+            <li><code>.float-none</code> untuk menonaktifkan pengapungan.</li>
+        </ul>
+
+        <h3>Responsive</h3>
+        <p>Variasi responsif juga tersedia untuk setiap nilai <code>float</code>.</p>
+        <ul>
+            <li><code>.float-sm-start</code></li>
+            <li><code>.float-md-end</code></li>
+            <li><code>.float-lg-none</code></li>
+            <li>dan seterusnya...</li>
+        </ul>
+
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="float-start">Float start on all viewport sizes</div><br>
+                <div class="float-end">Float end on all viewport sizes</div><br>
+                <div class="float-none">Don't float on all viewport sizes</div>
+            </div>
+        </div>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="float-start"&gt;Float start on all viewport sizes&lt;/div&gt;&lt;br&gt;
+&lt;div class="float-end"&gt;Float end on all viewport sizes&lt;/div&gt;&lt;br&gt;
+&lt;div class="float-none"&gt;Don't float on all viewport sizes&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Responsive Examples</h3>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="float-sm-end">Float end on viewports sized SM (small) or wider</div><br>
+                <div class="float-md-start">Float start on viewports sized MD (medium) or wider</div><br>
+                <div class="float-lg-none">Don't float on viewports sized LG (large) or wider</div><br>
+                <div class="float-xl-end">Float end on viewports sized XL (extra-large) or wider</div><br>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>

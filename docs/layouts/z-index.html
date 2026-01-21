@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+        .z-index-example {
+            position: relative;
+            height: 200px;
+            border: 1px solid rgba(0,0,0,.1);
+            background-color: rgba(0,0,0,.05);
+            border-radius: .375rem;
+        }
+        .z-index-item {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+            border-radius: .375rem;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+        }
+    </style>
+</head>
+<body>
+    <section id="z-index">
+        <h1 class="display-4 mb-3">Z-index</h1>
+        <p class="lead">Gunakan utilitas z-index kami untuk mengontrol tumpukan elemen pada sumbu Z.</p>
+        <hr class="my-4">
+
+        <h3>Contoh</h3>
+        <p>Kelas <code>.z-{value}</code> tersedia untuk nilai 0 hingga 3, serta <code>n1</code> untuk -1.</p>
+
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="z-index-example mb-3">
+                    <div class="z-index-item bg-primary z-3" style="top: 20px; left: 20px;">z-3</div>
+                    <div class="z-index-item bg-secondary z-2" style="top: 50px; left: 50px;">z-2</div>
+                    <div class="z-index-item bg-success z-1" style="top: 80px; left: 80px;">z-1</div>
+                    <div class="z-index-item bg-warning z-0" style="top: 110px; left: 110px;">z-0</div>
+                    <div class="z-index-item bg-dark z-n1" style="top: 140px; left: 140px;">z-n1</div>
+                </div>
+<pre><code>&lt;div class="z-3 position-absolute p-5 rounded-3 bg-primary"&gt;&lt;/div&gt;
+&lt;div class="z-2 position-absolute p-5 rounded-3 bg-secondary"&gt;&lt;/div&gt;
+&lt;div class="z-1 position-absolute p-5 rounded-3 bg-success"&gt;&lt;/div&gt;
+&lt;div class="z-0 position-absolute p-5 rounded-3 bg-warning"&gt;&lt;/div&gt;
+&lt;div class="z-n1 position-absolute p-5 rounded-3 bg-dark"&gt;&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <p>Catatan: Properti <code>z-index</code> hanya berfungsi pada elemen yang memiliki <code>position</code> (seperti <code>absolute</code>, <code>relative</code>, <code>fixed</code>, atau <code>sticky</code>) dan flex items.</p>
+    </section>
+</body>
+</html>

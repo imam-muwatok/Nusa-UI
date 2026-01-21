@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) {
+                console.warn('Nusa UI: LocalStorage access denied in iframe head script');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 1rem;
+            background-color: transparent;
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="range">
+        <h1 class="display-4 mb-3">Range</h1>
+        <p class="lead">Gunakan input range kustom kami untuk gaya lintas-browser yang konsisten dan kustomisasi bawaan.</p>
+        <hr class="my-4">
+
+        <h3>Overview</h3>
+        <p>Buat kontrol <code>&lt;input type="range"&gt;</code> kustom dengan <code>.nusa-form-range</code>. Track (latar belakang) dan thumb (pegangan) keduanya diberi gaya agar muncul sama di seluruh browser.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <label for="customRange1" class="nusa-form-label">Example range</label>
+                <input type="range" class="nusa-form-range" id="customRange1">
+<pre class="mt-3"><code>&lt;label for="customRange1" class="nusa-form-label"&gt;Example range&lt;/label&gt;
+&lt;input type="range" class="nusa-form-range" id="customRange1"&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Min and Max</h3>
+        <p>Input range memiliki nilai implisit untuk <code>min</code> dan <code>max</code>—0 dan 100, masing-masing. Anda dapat menentukan nilai baru untuk atribut tersebut.</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <label for="customRange2" class="nusa-form-label">Example range (0 to 5)</label>
+                <input type="range" class="nusa-form-range" min="0" max="5" id="customRange2">
+            </div>
+        </div>
+
+        <h3>Disabled</h3>
+        <p>Tambahkan atribut <code>disabled</code> boolean pada input untuk memberinya tampilan abu-abu dan menghapus kejadian pointer.</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <label for="disabledRange" class="nusa-form-label">Disabled range</label>
+                <input type="range" class="nusa-form-range" id="disabledRange" disabled>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
