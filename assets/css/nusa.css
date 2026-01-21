@@ -3718,6 +3718,10 @@ body,
 [data-nusa-theme=dark] .ns-popover-end .ns-popover-arrow::before {
   border-right-color: #333;
 }
+[data-nusa-theme=dark] .nusa-progress,
+[data-nusa-theme=dark] .ns-progress {
+  background-color: #374151;
+}
 
 .nusa-container,
 .nusa-container-fluid,
