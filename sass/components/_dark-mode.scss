@@ -208,4 +208,17 @@ body,
   .ns-form-floating > label {
     color: rgba(255, 255, 255, 0.65);
   }
+
+  // Range
+  .nusa-form-range,
+  .ns-form-range {
+    background-image: linear-gradient($primary, $primary), linear-gradient(#374151, #374151);
+
+    &::-webkit-slider-runnable-track {
+      background-color: transparent;
+    }
+    &::-moz-range-track {
+      background-color: transparent;
+    }
+  }
 }

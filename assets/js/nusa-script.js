@@ -1,12 +1,14 @@
 import { initCarousel } from './nusa-carousel.js';
 import { initTabs } from './nusa-tabs.js';
 import { initDarkMode } from './nusa-dark-mode.js';
+import { initRange } from './nusa-range.js';
 
 const init = () => {
     // Initialize Carousel
     initCarousel();
     initTabs();
     initDarkMode();
+    initRange();
 
     // --- Collapse Logic (Navbar) ---
     const collapseToggles = document.querySelectorAll('[data-nusa-toggle="collapse"]');

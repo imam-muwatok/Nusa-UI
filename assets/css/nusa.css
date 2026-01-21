@@ -360,6 +360,96 @@ body {
   background-color: #F8F8F8;
 }
 
+.nusa-form-range,
+.ns-form-range {
+  width: 100%;
+  height: 1.5rem;
+  padding: 0;
+  background-color: transparent;
+  appearance: none;
+  background-image: linear-gradient(#4745D5, #4745D5), linear-gradient(#F8F8F8, #F8F8F8);
+  background-size: 0% 0.5rem, 100% 0.5rem;
+  background-repeat: no-repeat;
+  background-position: left center, left center;
+}
+.nusa-form-range:focus,
+.ns-form-range:focus {
+  outline: 0;
+}
+.nusa-form-range:focus::-webkit-slider-thumb,
+.ns-form-range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(71, 69, 213, 0.25);
+}
+.nusa-form-range:focus::-moz-range-thumb,
+.ns-form-range:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(71, 69, 213, 0.25);
+}
+.nusa-form-range::-moz-focus-outer,
+.ns-form-range::-moz-focus-outer {
+  border: 0;
+}
+.nusa-form-range::-webkit-slider-thumb,
+.ns-form-range::-webkit-slider-thumb {
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.25rem;
+  background-color: #4745D5;
+  border: 0;
+  border-radius: 1rem;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  appearance: none;
+}
+.nusa-form-range::-webkit-slider-thumb:active,
+.ns-form-range::-webkit-slider-thumb:active {
+  background-color: rgb(153.3157894737, 152.2105263158, 231.7894736842);
+}
+.nusa-form-range::-webkit-slider-runnable-track,
+.ns-form-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.5rem;
+  color: transparent;
+  cursor: pointer;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 1rem;
+}
+.nusa-form-range::-moz-range-thumb,
+.ns-form-range::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  background-color: #4745D5;
+  border: 0;
+  border-radius: 1rem;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  appearance: none;
+}
+.nusa-form-range::-moz-range-thumb:active,
+.ns-form-range::-moz-range-thumb:active {
+  background-color: rgb(153.3157894737, 152.2105263158, 231.7894736842);
+}
+.nusa-form-range::-moz-range-track,
+.ns-form-range::-moz-range-track {
+  width: 100%;
+  height: 0.5rem;
+  color: transparent;
+  cursor: pointer;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 1rem;
+}
+.nusa-form-range:disabled,
+.ns-form-range:disabled {
+  pointer-events: none;
+}
+.nusa-form-range:disabled::-webkit-slider-thumb,
+.ns-form-range:disabled::-webkit-slider-thumb {
+  background-color: #EEEEEE;
+}
+.nusa-form-range:disabled::-moz-range-thumb,
+.ns-form-range:disabled::-moz-range-thumb {
+  background-color: #EEEEEE;
+}
+
 .nusa-input-group,
 .ns-input-group {
   position: relative;
@@ -3273,6 +3363,18 @@ body,
 [data-nusa-theme=dark] .nusa-form-floating > label,
 [data-nusa-theme=dark] .ns-form-floating > label {
   color: rgba(255, 255, 255, 0.65);
+}
+[data-nusa-theme=dark] .nusa-form-range,
+[data-nusa-theme=dark] .ns-form-range {
+  background-image: linear-gradient(#4745D5, #4745D5), linear-gradient(#374151, #374151);
+}
+[data-nusa-theme=dark] .nusa-form-range::-webkit-slider-runnable-track,
+[data-nusa-theme=dark] .ns-form-range::-webkit-slider-runnable-track {
+  background-color: transparent;
+}
+[data-nusa-theme=dark] .nusa-form-range::-moz-range-track,
+[data-nusa-theme=dark] .ns-form-range::-moz-range-track {
+  background-color: transparent;
 }
 
 .nusa-container,
