@@ -113,7 +113,7 @@
 
                 <h5>Bordered table</h5>
                 <p>Tambahkan <code>.nusa-table-bordered</code> untuk batas di semua sisi tabel dan sel.</p>
-                <table class="nusa-table nusa-table-bordered">
+                <table class="nusa-table nusa-table-bordered mb-4">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -126,6 +126,48 @@
                         <tr><th scope="row">2</th><td>Jacob</td><td>Thornton</td></tr>
                     </tbody>
                 </table>
+
+                <h5>Excel Style</h5>
+                <p>Gunakan kombinasi <code>.nusa-table-bordered</code> dan <code>.nusa-table-sm</code> untuk membuat tampilan padat dengan garis batas di setiap sel, menyerupai spreadsheet.</p>
+                <table class="nusa-table nusa-table-bordered nusa-table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">A</th>
+                            <th scope="col">B</th>
+                            <th scope="col">C</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">1</th><td>Data A1</td><td>Data B1</td><td>Data C1</td></tr>
+                        <tr><th scope="row">2</th><td>Data A2</td><td>Data B2</td><td>Data C2</td></tr>
+                        <tr><th scope="row">3</th><td>Data A3</td><td>Data B3</td><td>Data C3</td></tr>
+                        <tr><th scope="row">4</th><td>Data A4</td><td>Data B4</td><td>Data C4</td></tr>
+                        <tr><th scope="row">5</th><td>Data A5</td><td>Data B5</td><td>Data C5</td></tr>
+                    </tbody>
+                </table>
+
+                <h5>Sticky Header</h5>
+                <p>Gunakan <code>.nusa-table-sticky-header</code> untuk membuat header tabel tetap menempel di bagian atas saat digulir. Pastikan tabel berada dalam wadah dengan ketinggian terbatas dan <code>overflow-y: auto</code>.</p>
+                <div class="nusa-table-responsive border rounded" style="max-height: 200px; overflow-y: auto;">
+                    <table class="nusa-table nusa-table-sticky-header mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Header 1</th>
+                                <th scope="col">Header 2</th>
+                                <th scope="col">Header 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">1</th><td>Data</td><td>Data</td><td>Data</td></tr>
+                            <tr><th scope="row">2</th><td>Data</td><td>Data</td><td>Data</td></tr>
+                            <tr><th scope="row">3</th><td>Data</td><td>Data</td><td>Data</td></tr>
+                            <tr><th scope="row">4</th><td>Data</td><td>Data</td><td>Data</td></tr>
+                            <tr><th scope="row">5</th><td>Data</td><td>Data</td><td>Data</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
