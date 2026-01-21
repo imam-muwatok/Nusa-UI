@@ -329,6 +329,37 @@ body {
   display: inline-block;
 }
 
+.nusa-form-select,
+.ns-form-select {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  -moz-padding-start: calc(0.75rem - 3px);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #18181B;
+  background-color: #FFFFFF;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  appearance: none;
+}
+.nusa-form-select:focus,
+.ns-form-select:focus {
+  border-color: rgb(173.8947368421, 173.0131578947, 236.4868421053);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(71, 69, 213, 0.25);
+}
+.nusa-form-select:disabled,
+.ns-form-select:disabled {
+  background-color: #F8F8F8;
+}
+
 .nusa-input-group,
 .ns-input-group {
   position: relative;
@@ -3208,6 +3239,10 @@ body,
 [data-nusa-theme=dark] .ns-form-select[readonly] {
   background-color: #2d2d2d;
   border-color: #333;
+}
+[data-nusa-theme=dark] .nusa-form-select,
+[data-nusa-theme=dark] .ns-form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e0e0e0' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
 }
 [data-nusa-theme=dark] .nusa-form-control[type=file]::file-selector-button,
 [data-nusa-theme=dark] .ns-form-control[type=file]::file-selector-button {
