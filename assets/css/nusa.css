@@ -3177,6 +3177,68 @@ body,
   background-color: rgba(255, 255, 255, 0.075);
   box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.075);
 }
+[data-nusa-theme=dark] .nusa-form-control,
+[data-nusa-theme=dark] .ns-form-control,
+[data-nusa-theme=dark] .nusa-form-select,
+[data-nusa-theme=dark] .ns-form-select {
+  background-color: #1e1e1e;
+  border-color: #333;
+  color: #e0e0e0;
+}
+[data-nusa-theme=dark] .nusa-form-control:focus,
+[data-nusa-theme=dark] .ns-form-control:focus,
+[data-nusa-theme=dark] .nusa-form-select:focus,
+[data-nusa-theme=dark] .ns-form-select:focus {
+  background-color: #1e1e1e;
+  color: #fff;
+  border-color: rgb(44.5789473684, 42.5526315789, 188.4473684211);
+}
+[data-nusa-theme=dark] .nusa-form-control::placeholder,
+[data-nusa-theme=dark] .ns-form-control::placeholder,
+[data-nusa-theme=dark] .nusa-form-select::placeholder,
+[data-nusa-theme=dark] .ns-form-select::placeholder {
+  color: #6c757d;
+}
+[data-nusa-theme=dark] .nusa-form-control:disabled, [data-nusa-theme=dark] .nusa-form-control[readonly],
+[data-nusa-theme=dark] .ns-form-control:disabled,
+[data-nusa-theme=dark] .ns-form-control[readonly],
+[data-nusa-theme=dark] .nusa-form-select:disabled,
+[data-nusa-theme=dark] .nusa-form-select[readonly],
+[data-nusa-theme=dark] .ns-form-select:disabled,
+[data-nusa-theme=dark] .ns-form-select[readonly] {
+  background-color: #2d2d2d;
+  border-color: #333;
+}
+[data-nusa-theme=dark] .nusa-form-control[type=file]::file-selector-button,
+[data-nusa-theme=dark] .ns-form-control[type=file]::file-selector-button {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  border-inline-end-color: #333;
+}
+[data-nusa-theme=dark] .nusa-form-control[type=file]:hover:not(:disabled):not([readonly])::file-selector-button,
+[data-nusa-theme=dark] .ns-form-control[type=file]:hover:not(:disabled):not([readonly])::file-selector-button {
+  background-color: #333;
+}
+[data-nusa-theme=dark] .nusa-input-group-text,
+[data-nusa-theme=dark] .ns-input-group-text {
+  background-color: #2d2d2d;
+  border-color: #333;
+  color: #e0e0e0;
+}
+[data-nusa-theme=dark] .nusa-form-check-input,
+[data-nusa-theme=dark] .ns-form-check-input {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+[data-nusa-theme=dark] .nusa-form-check-input:checked,
+[data-nusa-theme=dark] .ns-form-check-input:checked {
+  background-color: #4745D5;
+  border-color: #4745D5;
+}
+[data-nusa-theme=dark] .nusa-form-floating > label,
+[data-nusa-theme=dark] .ns-form-floating > label {
+  color: rgba(255, 255, 255, 0.65);
+}
 
 .nusa-container,
 .nusa-container-fluid,

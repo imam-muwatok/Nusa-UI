@@ -141,4 +141,66 @@ body,
       box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.075);
     }
   }
+
+  // Forms
+  .nusa-form-control,
+  .ns-form-control,
+  .nusa-form-select,
+  .ns-form-select {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #e0e0e0;
+
+    &:focus {
+      background-color: #1e1e1e;
+      color: #fff;
+      border-color: color.adjust($primary, $lightness: -10%);
+    }
+
+    &::placeholder {
+      color: #6c757d;
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: #2d2d2d;
+      border-color: #333;
+    }
+  }
+
+  .nusa-form-control[type="file"],
+  .ns-form-control[type="file"] {
+    &::file-selector-button {
+      background-color: #2d2d2d;
+      color: #e0e0e0;
+      border-inline-end-color: #333;
+    }
+    
+    &:hover:not(:disabled):not([readonly])::file-selector-button {
+      background-color: #333;
+    }
+  }
+
+  .nusa-input-group-text,
+  .ns-input-group-text {
+    background-color: #2d2d2d;
+    border-color: #333;
+    color: #e0e0e0;
+  }
+
+  .nusa-form-check-input,
+  .ns-form-check-input {
+    background-color: #1e1e1e;
+    border-color: #333;
+
+    &:checked {
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+
+  .nusa-form-floating > label,
+  .ns-form-floating > label {
+    color: rgba(255, 255, 255, 0.65);
+  }
 }
