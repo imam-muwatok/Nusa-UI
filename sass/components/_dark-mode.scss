@@ -320,4 +320,28 @@ body,
       color: #fff;
     }
   }
+
+  // List Group
+  .nusa-list-group-item,
+  .ns-list-group-item {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #e0e0e0;
+
+    &.disabled {
+      background-color: #121212;
+      color: #6c757d;
+    }
+  }
+
+  a.nusa-list-group-item,
+  button.nusa-list-group-item,
+  a.ns-list-group-item,
+  button.ns-list-group-item {
+    &:hover,
+    &:focus {
+      background-color: #2d2d2d;
+      color: #fff;
+    }
+  }
 }
