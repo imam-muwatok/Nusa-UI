@@ -369,4 +369,17 @@ body,
       filter: invert(1) grayscale(100%) brightness(200%);
     }
   }
+
+  // Offcanvas
+  .nusa-offcanvas,
+  .ns-offcanvas {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #333;
+
+    .nusa-btn-close,
+    .ns-btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+  }
 }

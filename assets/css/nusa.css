@@ -3633,6 +3633,18 @@ body,
 [data-nusa-theme=dark] .ns-modal-content .ns-btn-close {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
+[data-nusa-theme=dark] .nusa-offcanvas,
+[data-nusa-theme=dark] .ns-offcanvas {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #333;
+}
+[data-nusa-theme=dark] .nusa-offcanvas .nusa-btn-close,
+[data-nusa-theme=dark] .nusa-offcanvas .ns-btn-close,
+[data-nusa-theme=dark] .ns-offcanvas .nusa-btn-close,
+[data-nusa-theme=dark] .ns-offcanvas .ns-btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
 
 .nusa-container,
 .nusa-container-fluid,
