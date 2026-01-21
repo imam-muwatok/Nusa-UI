@@ -268,4 +268,15 @@ body,
     color: #e0e0e0;
     border-top-color: #333;
   }
+
+  // Alerts
+  @each $state, $value in $theme-colors {
+    .nusa-alert-#{$state},
+    .ns-alert-#{$state} {
+      // Dark mode: background lebih gelap (campur dengan base dark), text lebih terang
+      background-color: color.mix(#1e1e1e, $value, 85%);
+      border-color: color.mix(#1e1e1e, $value, 75%);
+      color: color.mix(#fff, $value, 40%);
+    }
+  }
 }

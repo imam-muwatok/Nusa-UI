@@ -1226,16 +1226,78 @@ body {
 
 .nusa-alert-primary,
 .ns-alert-primary {
-  color: #084298;
-  background-color: #cfe2ff;
-  border-color: #b6d4fe;
+  background-color: rgb(236.6, 236.4, 250.8);
+  border-color: rgb(227.4, 227.1, 248.7);
+  color: rgb(27.2105263158, 25.9736842105, 115.0263157895);
+}
+
+.nusa-alert-secondary,
+.ns-alert-secondary {
+  background-color: rgb(252.8, 238.3, 244.6);
+  border-color: rgb(251.7, 229.95, 239.4);
+  color: rgb(141.8174603175, 18.6825396825, 72.1825396825);
+}
+
+.nusa-alert-accent,
+.ns-alert-accent {
+  background-color: rgb(239.7, 250.8, 248.3);
+  border-color: rgb(232.05, 248.7, 244.95);
+  color: rgb(33.9230769231, 123.5769230769, 103.3846153846);
+}
+
+.nusa-alert-neutral,
+.ns-alert-neutral {
+  background-color: rgb(230.4, 230.4, 230.6);
+  border-color: rgb(218.1, 218.1, 218.4);
+  color: rgb(4.5, 4.5, 5.5);
+}
+
+.nusa-alert-info,
+.ns-alert-info {
+  background-color: rgb(237.8, 248.3, 254.9);
+  border-color: rgb(229.2, 244.95, 254.85);
+  color: rgb(0.9739884393, 103.2427745665, 167.5260115607);
 }
 
 .nusa-alert-success,
 .ns-alert-success {
-  color: #0f5132;
-  background-color: #d1e7dd;
-  border-color: #badbcc;
+  background-color: rgb(239.9, 250.8, 244.1);
+  border-color: rgb(232.35, 248.7, 238.65);
+  color: rgb(34.4922279793, 124.0077720207, 68.9844559585);
+}
+
+.nusa-alert-warning,
+.ns-alert-warning {
+  background-color: rgb(253.9, 247.7, 232.1);
+  border-color: rgb(253.35, 244.05, 220.65);
+  color: rgb(128.8125, 93.9375, 6.1875);
+}
+
+.nusa-alert-error,
+.ns-alert-error {
+  background-color: rgb(252.9, 238.6, 241.9);
+  border-color: rgb(251.85, 230.4, 235.35);
+  color: rgb(144.0540540541, 18.4459459459, 47.4324324324);
+}
+
+.nusa-alert-light,
+.ns-alert-light {
+  background-color: white;
+  border-color: white;
+  color: rgb(127.5, 127.5, 127.5);
+  background-color: #fefefe;
+  border-color: #fdfdfd;
+  color: #636464;
+}
+
+.nusa-alert-dark,
+.ns-alert-dark {
+  background-color: rgb(231.9, 231.9, 232.2);
+  border-color: rgb(220.35, 220.35, 220.8);
+  color: rgb(12, 12, 13.5);
+  background-color: #d3d3d4;
+  border-color: #bcbcbd;
+  color: #141414;
 }
 
 .nusa-card,
@@ -3422,6 +3484,66 @@ body,
   background-color: #1e1e1e;
   color: #e0e0e0;
   border-top-color: #333;
+}
+[data-nusa-theme=dark] .nusa-alert-primary,
+[data-nusa-theme=dark] .ns-alert-primary {
+  background-color: rgb(36.15, 35.85, 57.45);
+  border-color: rgb(40.25, 39.75, 75.75);
+  color: rgb(144.6, 143.4, 229.8);
+}
+[data-nusa-theme=dark] .nusa-alert-secondary,
+[data-nusa-theme=dark] .ns-alert-secondary {
+  background-color: rgb(60.45, 38.7, 48.15);
+  border-color: rgb(80.75, 44.5, 60.25);
+  color: rgb(241.8, 154.8, 192.6);
+}
+[data-nusa-theme=dark] .nusa-alert-accent,
+[data-nusa-theme=dark] .ns-alert-accent {
+  background-color: rgb(40.8, 57.45, 53.7);
+  border-color: rgb(48, 75.75, 69.5);
+  color: rgb(163.2, 229.8, 214.8);
+}
+[data-nusa-theme=dark] .nusa-alert-neutral,
+[data-nusa-theme=dark] .ns-alert-neutral {
+  background-color: rgb(26.85, 26.85, 27.15);
+  border-color: rgb(24.75, 24.75, 25.25);
+  color: rgb(107.4, 107.4, 108.6);
+}
+[data-nusa-theme=dark] .nusa-alert-info,
+[data-nusa-theme=dark] .ns-alert-info {
+  background-color: rgb(37.95, 53.7, 63.6);
+  border-color: rgb(43.25, 69.5, 86);
+  color: rgb(151.8, 214.8, 254.4);
+}
+[data-nusa-theme=dark] .nusa-alert-success,
+[data-nusa-theme=dark] .ns-alert-success {
+  background-color: rgb(41.1, 57.45, 47.4);
+  border-color: rgb(48.5, 75.75, 59);
+  color: rgb(164.4, 229.8, 189.6);
+}
+[data-nusa-theme=dark] .nusa-alert-warning,
+[data-nusa-theme=dark] .ns-alert-warning {
+  background-color: rgb(62.1, 52.8, 29.4);
+  border-color: rgb(83.5, 68, 29);
+  color: rgb(248.4, 211.2, 117.6);
+}
+[data-nusa-theme=dark] .nusa-alert-error,
+[data-nusa-theme=dark] .ns-alert-error {
+  background-color: rgb(60.6, 39.15, 44.1);
+  border-color: rgb(81, 45.25, 53.5);
+  color: rgb(242.4, 156.6, 176.4);
+}
+[data-nusa-theme=dark] .nusa-alert-light,
+[data-nusa-theme=dark] .ns-alert-light {
+  background-color: rgb(63.75, 63.75, 63.75);
+  border-color: rgb(86.25, 86.25, 86.25);
+  color: white;
+}
+[data-nusa-theme=dark] .nusa-alert-dark,
+[data-nusa-theme=dark] .ns-alert-dark {
+  background-color: rgb(29.1, 29.1, 29.55);
+  border-color: rgb(28.5, 28.5, 29.25);
+  color: rgb(116.4, 116.4, 118.2);
 }
 
 .nusa-container,

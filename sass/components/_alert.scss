@@ -1,24 +1,30 @@
+@use "sass:color";
 @use "../abstracts/variables" as *;
 
 .nusa-alert,
 .ns-alert {
-    position: relative;
-    padding: 1rem 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: $border-radius;
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: $border-radius;
 }
 
-.nusa-alert-primary,
-.ns-alert-primary {
-    color: #084298;
-    background-color: #cfe2ff;
-    border-color: #b6d4fe;
-}
+@each $state, $value in $theme-colors {
+  .nusa-alert-#{$state},
+  .ns-alert-#{$state} {
+    background-color: color.mix(#fff, $value, 90%);
+    border-color: color.mix(#fff, $value, 85%);
+    color: color.scale($value, $lightness: -50%);
 
-.nusa-alert-success,
-.ns-alert-success {
-    color: #0f5132;
-    background-color: #d1e7dd;
-    border-color: #badbcc;
+    @if $state == "light" {
+      background-color: #fefefe;
+      border-color: #fdfdfd;
+      color: #636464;
+    } @else if $state == "dark" {
+      background-color: #d3d3d4;
+      border-color: #bcbcbd;
+      color: #141414;
+    }
+  }
 }
