@@ -344,4 +344,29 @@ body,
       color: #fff;
     }
   }
+
+  // Modal
+  .nusa-modal-content,
+  .ns-modal-content {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #e0e0e0;
+
+    .nusa-modal-header,
+    .ns-modal-header,
+    .nusa-modal-footer,
+    .ns-modal-footer {
+      border-color: #333;
+    }
+
+    .nusa-modal-title,
+    .ns-modal-title {
+      color: #fff;
+    }
+
+    .nusa-btn-close,
+    .ns-btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+  }
 }
