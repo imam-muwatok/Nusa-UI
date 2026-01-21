@@ -203,6 +203,11 @@ body,
       border-color: $primary;
     }
   }
+  
+  .nusa-form-check-label,
+  .ns-form-check-label {
+    color: #e0e0e0;
+  }
 
   .nusa-form-floating > label,
   .ns-form-floating > label {

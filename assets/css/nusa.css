@@ -450,6 +450,13 @@ body {
   background-color: #EEEEEE;
 }
 
+.nusa-form-check-label,
+.ns-form-check-label {
+  color: #18181B;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
 .nusa-input-group,
 .ns-input-group {
   position: relative;
@@ -3359,6 +3366,10 @@ body,
 [data-nusa-theme=dark] .ns-form-check-input:checked {
   background-color: #4745D5;
   border-color: #4745D5;
+}
+[data-nusa-theme=dark] .nusa-form-check-label,
+[data-nusa-theme=dark] .ns-form-check-label {
+  color: #e0e0e0;
 }
 [data-nusa-theme=dark] .nusa-form-floating > label,
 [data-nusa-theme=dark] .ns-form-floating > label {
