@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+
+// Display Headings
+//
+// Heading yang lebih besar dan lebih tipis untuk tampilan hero atau judul utama.
+
+$display-font-sizes: (
+  1: 6rem,
+  2: 5.5rem,
+  3: 4.5rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem
+);
+
+@each $level, $size in $display-font-sizes {
+  .display-#{$level} {
+    font-size: $size !important;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+}

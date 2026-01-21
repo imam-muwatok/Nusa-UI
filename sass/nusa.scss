@@ -3,6 +3,7 @@
 @use "abstracts/functions" as *;
 @use "abstracts/mixins" as *;
 @use "base/reboot";
+@use "base/typography";
 
 // 2. Import Components
 @use "components/buttons";
