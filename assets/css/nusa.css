@@ -3667,6 +3667,57 @@ body,
   border-color: #333;
   color: #6c757d;
 }
+[data-nusa-theme=dark] .nusa-popover,
+[data-nusa-theme=dark] .ns-popover {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+[data-nusa-theme=dark] .nusa-popover .nusa-popover-header,
+[data-nusa-theme=dark] .nusa-popover .ns-popover-header,
+[data-nusa-theme=dark] .ns-popover .nusa-popover-header,
+[data-nusa-theme=dark] .ns-popover .ns-popover-header {
+  background-color: #2d2d2d;
+  color: #fff;
+  border-bottom-color: #333;
+}
+[data-nusa-theme=dark] .nusa-popover .nusa-popover-body,
+[data-nusa-theme=dark] .nusa-popover .ns-popover-body,
+[data-nusa-theme=dark] .ns-popover .nusa-popover-body,
+[data-nusa-theme=dark] .ns-popover .ns-popover-body {
+  color: #e0e0e0;
+}
+[data-nusa-theme=dark] .nusa-popover-top .nusa-popover-arrow::after,
+[data-nusa-theme=dark] .ns-popover-top .ns-popover-arrow::after {
+  border-top-color: #1e1e1e;
+}
+[data-nusa-theme=dark] .nusa-popover-top .nusa-popover-arrow::before,
+[data-nusa-theme=dark] .ns-popover-top .ns-popover-arrow::before {
+  border-top-color: #333;
+}
+[data-nusa-theme=dark] .nusa-popover-bottom .nusa-popover-arrow::after,
+[data-nusa-theme=dark] .ns-popover-bottom .ns-popover-arrow::after {
+  border-bottom-color: #2d2d2d;
+}
+[data-nusa-theme=dark] .nusa-popover-bottom .nusa-popover-arrow::before,
+[data-nusa-theme=dark] .ns-popover-bottom .ns-popover-arrow::before {
+  border-bottom-color: #333;
+}
+[data-nusa-theme=dark] .nusa-popover-start .nusa-popover-arrow::after,
+[data-nusa-theme=dark] .ns-popover-start .ns-popover-arrow::after {
+  border-left-color: #1e1e1e;
+}
+[data-nusa-theme=dark] .nusa-popover-start .nusa-popover-arrow::before,
+[data-nusa-theme=dark] .ns-popover-start .ns-popover-arrow::before {
+  border-left-color: #333;
+}
+[data-nusa-theme=dark] .nusa-popover-end .nusa-popover-arrow::after,
+[data-nusa-theme=dark] .ns-popover-end .ns-popover-arrow::after {
+  border-right-color: #1e1e1e;
+}
+[data-nusa-theme=dark] .nusa-popover-end .nusa-popover-arrow::before,
+[data-nusa-theme=dark] .ns-popover-end .ns-popover-arrow::before {
+  border-right-color: #333;
+}
 
 .nusa-container,
 .nusa-container-fluid,
