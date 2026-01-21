@@ -3743,6 +3743,15 @@ body,
 [data-nusa-theme=dark] .ns-toast .ns-btn-close {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
+[data-nusa-theme=dark] .custom-scrollbar {
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+[data-nusa-theme=dark] .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+[data-nusa-theme=dark] .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
 
 .nusa-container,
 .nusa-container-fluid,
@@ -4183,6 +4192,46 @@ body,
     width: 100%;
   }
 }
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-visible {
+  overflow: visible !important;
+}
+
+.overflow-scroll {
+  overflow: scroll !important;
+}
+
+.nusa-card-body,
+.ns-card-body {
+  min-width: 0;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .d-none {
   display: none !important;
 }
