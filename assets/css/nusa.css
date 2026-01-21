@@ -3545,6 +3545,29 @@ body,
   border-color: rgb(28.5, 28.5, 29.25);
   color: rgb(116.4, 116.4, 118.2);
 }
+[data-nusa-theme=dark] .nusa-breadcrumb,
+[data-nusa-theme=dark] .ns-breadcrumb {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+[data-nusa-theme=dark] .nusa-breadcrumb .nusa-breadcrumb-item a,
+[data-nusa-theme=dark] .nusa-breadcrumb .ns-breadcrumb-item a,
+[data-nusa-theme=dark] .ns-breadcrumb .nusa-breadcrumb-item a,
+[data-nusa-theme=dark] .ns-breadcrumb .ns-breadcrumb-item a {
+  color: #4745D5;
+}
+[data-nusa-theme=dark] .nusa-breadcrumb .nusa-breadcrumb-item + .nusa-breadcrumb-item::before,
+[data-nusa-theme=dark] .nusa-breadcrumb .ns-breadcrumb-item + .ns-breadcrumb-item::before,
+[data-nusa-theme=dark] .ns-breadcrumb .nusa-breadcrumb-item + .nusa-breadcrumb-item::before,
+[data-nusa-theme=dark] .ns-breadcrumb .ns-breadcrumb-item + .ns-breadcrumb-item::before {
+  color: #e0e0e0;
+}
+[data-nusa-theme=dark] .nusa-breadcrumb .nusa-breadcrumb-item.active,
+[data-nusa-theme=dark] .nusa-breadcrumb .ns-breadcrumb-item.active,
+[data-nusa-theme=dark] .ns-breadcrumb .nusa-breadcrumb-item.active,
+[data-nusa-theme=dark] .ns-breadcrumb .ns-breadcrumb-item.active {
+  color: #b0b0b0;
+}
 
 .nusa-container,
 .nusa-container-fluid,
