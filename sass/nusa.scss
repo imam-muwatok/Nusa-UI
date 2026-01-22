@@ -40,6 +40,9 @@
 @use "components/sidebar";
 @use "components/switch";
 @use "components/dark-mode";
+
+// 3. Import Utilities
+@use "utils/auto-spacing";
 @use "utils/grid";
 @use "utils/overflow";
 @use "utils/line-height";
