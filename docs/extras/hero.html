@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Examples - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) { console.warn('Nusa UI: LocalStorage access denied'); }
+        })();
+    </script>
+    <style>
+        /* Styles from sass/extras/_hero.scss */
+        .hero-header {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-image-overflow {
+            max-height: 30vh;
+            overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .hero-image-overflow {
+                max-height: 50vh;
+            }
+        }
+        .hero-image-overflow img {
+            object-fit: cover;
+            object-position: top;
+            width: 100%;
+        }
+        
+        /* Divider for demo */
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+        [data-nusa-theme="dark"] .b-example-divider {
+            background-color: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .15);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 1. Centered Hero -->
+    <div class="nusa-container px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" src="../../assets/img/logo.png" alt="" width="72" height="57">
+        <h1 class="display-5 fw-bold">Centered Hero</h1>
+        <div class="nusa-col-lg-6 mx-auto">
+            <p class="lead mb-4">Desain dan sesuaikan halaman web responsif yang mengutamakan seluler dengan cepat menggunakan Nusa UI, kerangka kerja front-end open source paling populer di dunia, yang menampilkan variabel Sass dan sistem grid responsif.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="nusa-btn nusa-btn-primary nusa-btn-lg px-4 gap-3">Primary button</button>
+                <button type="button" class="nusa-btn nusa-btn-outline-secondary nusa-btn-lg px-4">Secondary</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <!-- 2. Responsive Left-aligned Hero with Image -->
+    <div class="nusa-container nusa-col-xxl-8 px-4 py-5">
+        <div class="nusa-row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="nusa-col-10 nusa-col-sm-8 nusa-col-lg-6">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" class="d-block mx-lg-auto img-fluid rounded shadow-lg" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+            </div>
+            <div class="nusa-col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
+                <p class="lead">Ubah variabel Sass dengan cepat dan buat sistem desain yang kuat. Komponen yang luas dan utilitas yang kuat memungkinkan Anda membangun apa pun yang Anda inginkan.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="nusa-btn nusa-btn-primary nusa-btn-lg px-4 me-md-2">Primary</button>
+                    <button type="button" class="nusa-btn nusa-btn-outline-secondary nusa-btn-lg px-4">Default</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <!-- 3. Centered with Screenshot -->
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold">Centered screenshot</h1>
+        <div class="nusa-col-lg-6 mx-auto">
+            <p class="lead mb-4">Contoh tata letak hero yang memusatkan teks dan menempatkan gambar atau tangkapan layar besar di bawahnya. Gambar di bawah ini dibatasi tingginya dan menggunakan <code>overflow: hidden</code>.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                <button type="button" class="nusa-btn nusa-btn-primary nusa-btn-lg px-4 me-sm-3">Get Started</button>
+                <button type="button" class="nusa-btn nusa-btn-outline-secondary nusa-btn-lg px-4">Documentation</button>
+            </div>
+        </div>
+        <div class="hero-image-overflow">
+            <div class="nusa-container px-5">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <!-- 4. Dark Mode Hero -->
+    <div class="bg-dark text-secondary px-4 py-5 text-center">
+        <div class="py-5">
+            <h1 class="display-5 fw-bold text-white">Dark mode hero</h1>
+            <div class="nusa-col-lg-6 mx-auto">
+                <p class="fs-5 mb-4">Buat hero dengan latar belakang gelap menggunakan utilitas warna latar belakang dan teks. Kombinasi ini memberikan kontras yang tinggi dan tampilan yang elegan.</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="nusa-btn nusa-btn-outline-info nusa-btn-lg px-4 me-sm-3 fw-bold">Custom button</button>
+                    <button type="button" class="nusa-btn nusa-btn-light nusa-btn-lg px-4">Secondary</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <!-- 5. Vertically Centered Hero -->
+    <div class="nusa-container nusa-col-xl-10 nusa-col-xxl-8 px-4 py-5">
+        <div class="nusa-row align-items-center g-lg-5 py-5">
+            <div class="nusa-col-lg-7 text-center text-lg-start">
+                <h1 class="display-4 fw-bold lh-1 mb-3">Vertically centered hero sign-up form</h1>
+                <p class="nusa-col-lg-10 fs-4">Di bawah ini adalah contoh formulir pendaftaran yang diletakkan di sebelah kanan teks hero. Formulir ini menggunakan komponen kartu dan input group.</p>
+            </div>
+            <div class="nusa-col-md-10 mx-auto nusa-col-lg-5">
+                <form class="p-4 p-md-5 border rounded-3 bg-light">
+                    <div class="nusa-form-floating mb-3">
+                        <input type="email" class="nusa-form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="nusa-form-floating mb-3">
+                        <input type="password" class="nusa-form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="nusa-form-check mb-3">
+                        <input class="nusa-form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="nusa-form-check-label" for="flexCheckDefault">
+                            Remember me
+                        </label>
+                    </div>
+                    <button class="w-100 nusa-btn nusa-btn-lg nusa-btn-primary" type="submit">Sign up</button>
+                    <hr class="my-4">
+                    <small class="text-secondary">By clicking Sign up, you agree to the terms of use.</small>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../../assets/js/nusa-script.js"></script>
+</body>
+</html>
