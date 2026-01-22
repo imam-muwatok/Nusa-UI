@@ -6403,6 +6403,10 @@ body,
   margin-inline: 3rem !important;
 }
 
+.mx-auto {
+  margin-inline: auto !important;
+}
+
 @media (min-width: 576px) {
   .mx-sm-0 {
     margin-inline: 0 !important;
