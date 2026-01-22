@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Examples - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) { console.warn('Nusa UI: LocalStorage access denied'); }
+        })();
+    </script>
+    <style>
+        body {
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+        }
+        html {
+            height: -webkit-fill-available;
+        }
+        main {
+            height: 100vh;
+            height: -webkit-fill-available;
+            max-height: 100vh;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        
+        /* Styles from sass/extras/_sidebar.scss */
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+        .nusa-nav-pills .nusa-nav-link {
+            border-radius: 0.25rem;
+        }
+        .nusa-nav-pills .nusa-nav-link.active,
+        .nusa-nav-pills .show > .nusa-nav-link {
+            color: #fff;
+            background-color: #4745D5;
+        }
+        
+        /* Dark mode overrides for demo */
+        [data-nusa-theme="dark"] .bg-white {
+            background-color: #1e1e1e !important;
+            color: #fff;
+        }
+        [data-nusa-theme="dark"] .link-dark {
+            color: #e0e0e0 !important;
+        }
+        [data-nusa-theme="dark"] .b-example-divider {
+            background-color: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .15);
+        }
+    </style>
+</head>
+<body>
+    
+    <main class="d-flex flex-nowrap">
+        
+        <!-- 1. Light Sidebar -->
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-white" style="width: 280px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <span class="fs-4 fw-bold">Sidebar</span>
+            </a>
+            <hr>
+            <ul class="nusa-nav nusa-nav-pills flex-column mb-auto">
+                <li class="nusa-nav-item">
+                    <a href="#" class="nusa-nav-link active" aria-current="page">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nusa-nav-link link-dark">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nusa-nav-link link-dark">
+                        Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nusa-nav-link link-dark">
+                        Products
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nusa-nav-link link-dark">
+                        Customers
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="nusa-dropdown">
+                <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-nusa-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <strong>mdo</strong>
+                </a>
+                <ul class="nusa-dropdown-menu text-small shadow">
+                    <li><a class="nusa-dropdown-item" href="#">New project...</a></li>
+                    <li><a class="nusa-dropdown-item" href="#">Settings</a></li>
+                    <li><a class="nusa-dropdown-item" href="#">Profile</a></li>
+                    <li><hr class="nusa-dropdown-divider"></li>
+                    <li><a class="nusa-dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="b-example-divider b-example-vr"></div>
+
+        <!-- 2. Dark Sidebar -->
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <span class="fs-4 fw-bold">Sidebar</span>
+            </a>
+            <hr>
+            <ul class="nusa-nav nusa-nav-pills flex-column mb-auto">
+                <li class="nusa-nav-item">
+                    <a href="#" class="nusa-nav-link active" aria-current="page">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nusa-nav-link text-white">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nusa-nav-link text-white">
+                        Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nusa-nav-link text-white">
+                        Products
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nusa-nav-link text-white">
+                        Customers
+                    </a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+
+    </main>
+
+    <script type="module" src="../../assets/js/nusa-script.js"></script>
+</body>
+</html>
