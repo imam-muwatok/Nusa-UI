@@ -1352,6 +1352,63 @@ body {
   color: #141414;
 }
 
+.nusa-avatar {
+  vertical-align: middle;
+  object-fit: cover;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+.nusa-avatar.nusa-avatar-xs {
+  width: 24px;
+  height: 24px;
+}
+.nusa-avatar.nusa-avatar-sm {
+  width: 32px;
+  height: 32px;
+}
+.nusa-avatar.nusa-avatar-md {
+  width: 48px;
+  height: 48px;
+}
+.nusa-avatar.nusa-avatar-lg {
+  width: 64px;
+  height: 64px;
+}
+.nusa-avatar.nusa-avatar-xl {
+  width: 96px;
+  height: 96px;
+}
+.nusa-avatar.nusa-avatar-xxl {
+  width: 128px;
+  height: 128px;
+}
+.nusa-avatar.nusa-avatar-square {
+  border-radius: 0.375rem;
+}
+.nusa-avatar.nusa-avatar-circle {
+  border-radius: 50%;
+}
+
+.nusa-avatar-group {
+  display: flex;
+  align-items: center;
+}
+.nusa-avatar-group .nusa-avatar {
+  border: 2px solid #fff;
+  margin-left: -0.8rem;
+  transition: transform 0.2s ease-in-out;
+}
+.nusa-avatar-group .nusa-avatar:first-child {
+  margin-left: 0;
+}
+.nusa-avatar-group .nusa-avatar:hover {
+  z-index: 2;
+  position: relative;
+  transform: translateY(-0.25rem);
+}
+
 .nusa-card,
 .ns-card {
   position: relative;

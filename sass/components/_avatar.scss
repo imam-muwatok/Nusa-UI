@@ -1,0 +1,60 @@
+@use "sass:map";
+@use "../abstracts/variables" as *;
+// Avatar Component
+//
+// Variasi ukuran untuk gambar profil atau avatar.
+
+$avatar-sizes: (
+  "xs": 24px,
+  "sm": 32px,
+  "md": 48px,
+  "lg": 64px,
+  "xl": 96px,
+  "xxl": 128px
+) !default;
+
+.nusa-avatar {
+  vertical-align: middle;
+  object-fit: cover;
+  border-radius: 50%;
+  width: map.get($avatar-sizes, "md");
+  height: map.get($avatar-sizes, "md");
+  flex-shrink: 0;
+
+  @each $size, $length in $avatar-sizes {
+    &.nusa-avatar-#{$size} {
+      width: $length;
+      height: $length;
+    }
+  }
+
+  &.nusa-avatar-square {
+    border-radius: $border-radius;
+  }
+
+  &.nusa-avatar-circle {
+    border-radius: 50%;
+  }
+}
+
+// Avatar Group
+.nusa-avatar-group {
+  display: flex;
+  align-items: center;
+
+  .nusa-avatar {
+    border: 2px solid #fff;
+    margin-left: -0.8rem;
+    transition: transform 0.2s ease-in-out;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      z-index: 2;
+      position: relative;
+      transform: translateY(-0.25rem);
+    }
+  }
+}
