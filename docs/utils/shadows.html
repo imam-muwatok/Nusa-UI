@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadows - Nusa UI</title>
     <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+
     <script>
         // Sinkronisasi tema
         (function() {
@@ -48,21 +50,68 @@
         
         <div class="nusa-card mb-4">
             <div class="nusa-card-body">
-                <div class="d-flex flex-wrap gap-4 p-4 shadow-demo-container rounded justify-content-center">
-                    <div class="shadow-none p-3 bg-primary rounded">No shadow</div>
-                    <div class="shadow-sm p-3 bg-secondary rounded">Small shadow</div>
-                    <div class="shadow p-3 bg-info rounded">Regular shadow</div>
-                    <div class="shadow-lg p-3 bg-success rounded">Large shadow</div>
+                <div class="d-flex flex-wrap gap-5 p-5 shadow-demo-container rounded justify-content-center align-items-center">
+                    <div class="shadow-none p-3 bg-primary text-white rounded">No shadow</div>
+                    <div class="shadow-sm p-3 bg-primary text-white rounded">Small shadow</div>
+                    <div class="shadow p-3 bg-primary text-white rounded">Regular shadow</div>
+                    <div class="shadow-lg p-3 bg-primary text-white rounded">Large shadow</div>
                 </div>
             </div>
         </div>
         
         <div class="nusa-card mb-4">
             <div class="nusa-card-body">
-<pre><code>&lt;div class="shadow-none p-3 bg-white rounded"&gt;No shadow&lt;/div&gt;
-&lt;div class="shadow-sm p-3 bg-white rounded"&gt;Small shadow&lt;/div&gt;
-&lt;div class="shadow p-3 bg-white rounded"&gt;Regular shadow&lt;/div&gt;
-&lt;div class="shadow-lg p-3 bg-white rounded"&gt;Large shadow&lt;/div&gt;</code></pre>
+<pre><code>&lt;div class="shadow-none p-3 rounded"&gt;No shadow&lt;/div&gt;
+&lt;div class="shadow-sm p-3 rounded"&gt;Small shadow&lt;/div&gt;
+&lt;div class="shadow p-3 rounded"&gt;Regular shadow&lt;/div&gt;
+&lt;div class="shadow-lg p-3 rounded"&gt;Large shadow&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Glow Effect</h3>
+        <p>Gunakan <code>.shadow-glow</code> untuk memberikan efek bersinar yang lembut. Pada mode gelap, efek ini akan berubah menjadi cahaya putih terang agar terlihat kontras.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="d-flex flex-wrap gap-5 p-5 shadow-demo-container rounded justify-content-center align-items-center">
+                    <div class="shadow-glow p-3 rounded">Glow shadow</div>
+                </div>
+            </div>
+        </div>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="shadow-glow p-3 rounded"&gt;Glow shadow&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <h3>Colored Glows</h3>
+        <p>Anda juga dapat menggunakan varian warna tema untuk efek glow, seperti <code>.shadow-glow-primary</code>, <code>.shadow-glow-success</code>, dll.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="d-flex flex-wrap gap-5 p-5 shadow-demo-container rounded justify-content-center align-items-center">
+                    <div class="shadow-glow-primary p-3 rounded">Primary</div>
+                    <div class="shadow-glow-success p-3 rounded">Success</div>
+                    <div class="shadow-glow-error p-3 rounded">Error</div>
+                    <div class="shadow-glow-warning p-3 rounded">Warning</div>
+                    <div class="shadow-glow-info p-3 rounded">Info</div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Hover Effect</h3>
+        <p>Tambahkan interaksi dengan menggunakan kelas utilitas <code>.shadow-*-hover</code> bersama dengan <code>.transition-shadow</code> untuk transisi yang halus.</p>
+        
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="d-flex flex-wrap gap-5 p-5 shadow-demo-container rounded justify-content-center align-items-center">
+                    <div class="shadow-sm shadow-lg-hover transition-shadow p-3 rounded" style="cursor: pointer;">Hover me!</div>
+                </div>
+            </div>
+        </div>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+<pre><code>&lt;div class="shadow-sm shadow-lg-hover transition-shadow p-3 rounded"&gt;Hover me!&lt;/div&gt;</code></pre>
             </div>
         </div>
     </section>

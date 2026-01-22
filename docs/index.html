@@ -41,6 +41,42 @@
         section {
             scroll-margin-top: 5rem;
         }
+
+        /* Responsive Sidebar Fix */
+        @media (min-width: 768px) {
+            .nusa-sidebar.nusa-offcanvas-start {
+                position: sticky !important;
+                top: 4rem;
+                height: calc(100vh - 4rem);
+                transform: none !important;
+                visibility: visible !important;
+                width: auto !important;
+                border-right: 1px solid #dee2e6;
+                background-color: transparent;
+                z-index: 1;
+            }
+            .nusa-sidebar .nusa-offcanvas-header {
+                display: none;
+            }
+            .nusa-sidebar .nusa-offcanvas-body {
+                padding: 0;
+                overflow: visible;
+            }
+            /* Main content fills remaining space on desktop */
+            main {
+                flex: 1;
+                width: auto !important;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .nusa-sidebar.nusa-offcanvas-start {
+                position: fixed; /* Override static from nusa.css */
+                top: 0;
+                bottom: 0;
+                width: 280px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -48,9 +84,16 @@
     <!-- Navbar -->
     <nav class="nusa-navbar bd-navbar">
         <div class="nusa-container-fluid px-4">
+            <button class="nusa-btn nusa-btn-sm nusa-btn-outline-dark d-md-none me-3" type="button" data-nusa-toggle="offcanvas" data-nusa-target="#docsSidebar" aria-controls="docsSidebar" aria-label="Toggle docs navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
+
             <a href="../index.html" class="nusa-navbar-brand">
                 <img src="../assets/img/logo.png" alt="Logo" class="nusa-navbar-brand-img" style="height: 30px;">
-                Nusa UI <span class="nusa-badge nusa-badge-light ms-2" style="font-size: 0.5em;">v1.0.0</span>
+                Nusa UI 
+                <!-- <span class="nusa-badge nusa-badge-light ms-2" style="font-size: 0.5em;">v1.0.0</span> -->
             </a>
             <div class="d-flex align-items-center">
                 <label class="nusa-switch me-3" for="nusa-theme-toggle" aria-label="Toggle theme">
@@ -75,7 +118,12 @@
     <div class="nusa-container-fluid">
         <div class="nusa-row">
             <!-- Sidebar -->
-            <div class="nusa-col-md-3 nusa-col-lg-2 d-none d-md-block nusa-sidebar">
+            <div class="nusa-col-md-3 nusa-col-lg-2 nusa-sidebar nusa-offcanvas nusa-offcanvas-start" tabindex="-1" id="docsSidebar">
+                <div class="nusa-offcanvas-header border-bottom d-md-none">
+                    <h5 class="nusa-offcanvas-title">Menu</h5>
+                    <button type="button" class="nusa-btn-close" data-nusa-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="nusa-offcanvas-body">
                 <nav class="nusa-nav flex-column small">
                     
                     <div class="nusa-sidebar-header">Getting Started</div>
@@ -85,6 +133,7 @@
                     <div class="nusa-sidebar-header">Customize</div>
                     <a href="customize/sass.html" class="nusa-sidebar-link">Sass</a>
                     <a href="customize/color.html" class="nusa-sidebar-link">Color</a>
+                    <a href="customize/variables.html" class="nusa-sidebar-link">Variables</a>
                     
                     <div class="nusa-sidebar-header">Layout</div>
                     <a href="layouts/breakpoints.html" class="nusa-sidebar-link">Breakpoints</a>
@@ -163,12 +212,21 @@
                     <a href="utils/text.html" class="nusa-sidebar-link">Text</a>
                     <a href="utils/vertical-align.html" class="nusa-sidebar-link">Vertical align</a>
                     <a href="utils/visibility.html" class="nusa-sidebar-link">Visibility</a>
+
+                    <div class="nusa-sidebar-header">Extras</div>
+
+                    <div class="nusa-sidebar-header">Examples</div>
+                    <a href="examples/index.html" class="nusa-sidebar-link">Home</a>
+
+                    
+
                    
                 </nav>
+                </div>
             </div>
 
             <!-- Main Content -->
-            <main class="nusa-col-md-9 nusa-col-lg-10 ms-sm-auto p-0" style="height: calc(100vh - 4rem);">
+            <main class="ms-sm-auto p-0" style="height: calc(100vh - 4rem);">
                 <iframe src="Introduction.html" name="docs-frame" id="docs-frame" class="w-100 h-100 border-0" title="Dokumentasi"></iframe>
             </main>
         </div>

@@ -11,7 +11,12 @@ $border-radius-sizes: (
   "xxl": 1rem     // 16px
 ) !default;
 
-$radii: map.merge($border-radius-sizes, ("DEFAULT": $border-radius));
+$radii: map.merge($border-radius-sizes, (
+  "DEFAULT": $border-radius,
+  "0": 0,
+  "circle": 50%,
+  "pill": 50rem
+));
 
 @each $breakpoint in map.keys($grid-breakpoints) {
   @include media-up($breakpoint) {

@@ -2,8 +2,10 @@
 @use "abstracts/variables" as *;
 @use "abstracts/functions" as *;
 @use "abstracts/mixins" as *;
+@use "base/root";
 @use "base/reboot";
 @use "base/typography";
+@use "base/display";
 
 // 2. Import Components
 @use "components/buttons";

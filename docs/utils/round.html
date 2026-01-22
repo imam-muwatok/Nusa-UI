@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rounded - Nusa UI</title>
     <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <link rel="stylesheet" href="../../assets/css/docs.css">
     <script>
         // Sinkronisasi tema
         (function() {
@@ -48,8 +49,8 @@
         <p>Gunakan kelas <code>.rounded-*</code> untuk mengubah kelengkungan sudut elemen. Tersedia ukuran dari <code>xs</code> hingga <code>xxl</code>.</p>
         
         <div class="nusa-card mb-4">
-           <div class="nusa-card-body">
-                <div class="d-flex flex-wrap gap-3 align-items-center">
+            <div class="nusa-card-body">
+                <div class="d-flex flex-wrap gap-3 align-items-center overflow-auto">
                     <div class="text-center me-3 mb-3">
                         <div class="bd-placeholder-img bg-primary rounded-0 mb-2">0</div>
                         <code>.rounded-0</code>
@@ -82,34 +83,6 @@
             </div>
         </div>
 
-        <h3>Specific Corner Radius</h3>
-        <p>You can also control the border radius of specific corners using the <code>.rounded-{top|end|bottom|start}-*</code> utilities.</p>
-
-        <div class="nusa-card mb-4">
-            <div class="nusa-card-body">
-                <div class="d-flex flex-wrap gap-3 align-items-center">
-                     <div class="text-center me-3 mb-3">
-                        <div class="bd-placeholder-img bg-primary rounded-top-lg mb-2">Top</div>
-                        <code>.rounded-top-lg</code>
-                    </div>
-                     <div class="text-center me-3 mb-3">
-                        <div class="bd-placeholder-img bg-primary rounded-end-lg mb-2">End</div>
-                        <code>.rounded-end-lg</code>
-                    </div>
-                     <div class="text-center me-3 mb-3">
-                        <div class="bd-placeholder-img bg-primary rounded-bottom-lg mb-2">Bottom</div>
-                        <code>.rounded-bottom-lg</code>
-                    </div>
-                     <div class="text-center me-3 mb-3">
-                        <div class="bd-placeholder-img bg-primary rounded-start-lg mb-2">Start</div>
-                        <code>.rounded-start-lg</code>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
         <h3>Bentuk Lain</h3>
         <p>Gunakan <code>.rounded-circle</code> untuk membuat lingkaran sempurna (jika lebar dan tinggi sama) atau <code>.rounded-pill</code> untuk bentuk kapsul.</p>
         <div class="nusa-card mb-4">
@@ -122,7 +95,23 @@
 &lt;div class="rounded-pill"&gt;...&lt;/div&gt;</code></pre>
             </div>
         </div>
+
+        <h3>Responsive</h3>
+        <p>Anda dapat mengubah radius border berdasarkan ukuran layar menggunakan breakpoint infix (<code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, <code>xxl</code>).</p>
+        <div class="nusa-card mb-4">
+            <div class="nusa-card-body">
+                <div class="d-flex align-items-center">
+                    <div class="text-center me-3">
+                        <div class="bd-placeholder-img bg-primary rounded-0 rounded-md-circle mb-2">Responsive</div>
+                        <code>.rounded-0 .rounded-md-circle</code>
+                    </div>
+                    <div class="text-center">
+                        <div class="bd-placeholder-img bg-secondary rounded-circle rounded-lg-0 mb-2">Toggle</div>
+                        <code>.rounded-circle .rounded-lg-0</code>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
-
 </html>

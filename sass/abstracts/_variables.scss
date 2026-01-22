@@ -36,14 +36,21 @@ $spacers: (
 
 // Border
 $border-width: 1px;
-$border-color: #dee2e6;
+$border-color-val: #dee2e6;
+$border-color: var(--nusa-border-color);
 $border-radius: .375rem;
 $border-radius-pill: 50rem;
 
 // Box Shadow
-$box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
-$box-shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, .075);
-$box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, .175);
+$box-shadow-val: 0 .5rem 1rem rgba(0, 0, 0, .15);
+$box-shadow-sm-val: 0 .125rem .25rem rgba(0, 0, 0, .075);
+$box-shadow-lg-val: 0 1rem 3rem rgba(0, 0, 0, .175);
+$box-shadow-glow-val: 0 0 0.75rem rgba($primary, 0.5);
+
+$box-shadow: var(--nusa-box-shadow);
+$box-shadow-sm: var(--nusa-box-shadow-sm);
+$box-shadow-lg: var(--nusa-box-shadow-lg);
+$box-shadow-glow: var(--nusa-box-shadow-glow);
 
 // Fonts
 $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

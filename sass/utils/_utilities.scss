@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "sass:meta";
+@use "sass:color";
 @use "../abstracts/variables" as *;
 
 // --- Color Generation Logic ---
@@ -32,6 +33,14 @@ $misc-colors: (
 );
 
 $utilities-colors: map.merge(map.merge($theme-colors, $misc-colors), $all-colors);
+
+// Generate colored glows
+$colored-glows: ();
+@each $color, $value in $theme-colors {
+  $colored-glows: map.merge($colored-glows, (
+    "glow-#{$color}": 0 0 0.75rem rgba($value, 0.5)
+  ));
+}
 
 // Map Utilitas
 $utilities: (
@@ -88,6 +97,12 @@ $utilities: (
       baseline: baseline,
       stretch: stretch
     )
+  ),
+  "gap": (
+    property: gap,
+    class: gap,
+    responsive: true,
+    values: $spacers
   ),
   "margin": (
     property: margin,
@@ -218,12 +233,17 @@ $utilities: (
   "shadow": (
     property: box-shadow,
     class: shadow,
-    values: (
-      null: $box-shadow,
-      sm: $box-shadow-sm,
-      lg: $box-shadow-lg,
-      none: none
-    )
+    state: hover,
+    values: map.merge(
+      (
+        null: $box-shadow,
+        sm: $box-shadow-sm,
+        lg: $box-shadow-lg,
+        glow: $box-shadow-glow,
+        none: none
+      ),
+      $colored-glows
+    ) 
   ),
   "position": (
     property: position,
@@ -348,6 +368,30 @@ $utilities: (
       100: 100%,
       auto: auto
     )
+  ),
+  "max-width": (
+    property: max-width,
+    class: mw,
+    values: (
+      100: 100%
+    )
+  ),
+  "object-fit": (
+    property: object-fit,
+    values: (
+      contain: contain,
+      cover: cover,
+      fill: fill,
+      scale: scale-down,
+      none: none
+    )
+  ),
+  "transition": (
+    property: transition,
+    values: (
+      null: all 0.2s ease-in-out,
+      shadow: box-shadow 0.3s ease-in-out
+    )
   )
 );
 
@@ -398,6 +442,36 @@ $utilities: (
           }
         }
       }
+    }
+  }
+
+  // Generate state classes
+  @if map.has-key($utility, state) {
+    $states: map.get($utility, state);
+    @each $state in $states {
+      @if meta.type-of($values) == "map" {
+        @each $modifier, $value in $values {
+          $modifier-part: if($modifier == "" or $modifier == null, "", "-#{$modifier}");
+          .#{$class-prefix}#{$modifier-part}-#{$state}:#{$state} {
+            #{$property}: $value !important;
+          }
+        }
+      } @else if meta.type-of($values) == "list" {
+        @each $value in $values {
+          .#{$class-prefix}-#{$value}-#{$state}:#{$state} {
+            #{$property}: $value !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Dark mode overrides for colored glows
+[data-nusa-theme="dark"] {
+  @each $color, $value in $theme-colors {
+    .shadow-glow-#{$color} {
+      box-shadow: 0 0 0.75rem rgba(color.mix(#fff, $value, 25%), 0.6) !important;
     }
   }
 }

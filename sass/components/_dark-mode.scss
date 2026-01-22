@@ -1,5 +1,6 @@
 @use "../abstracts/variables" as *;
 @use "sass:color";
+@use "sass:map";
 
 // Smooth Transition
 // Terapkan transisi pada elemen yang sering berubah warna background/text
@@ -23,6 +24,15 @@ body,
     background-color: #121212;
   }
   
+  // Links
+  a {
+    color: map.get($blues, 500);
+
+    &:hover {
+      color: color.adjust(map.get($blues, 500), $lightness: 10%);
+    }
+  }
+
   // Switch component in dark mode
   .nusa-switch .nusa-switch-slider,
   .ns-switch .ns-switch-slider {

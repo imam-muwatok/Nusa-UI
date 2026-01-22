@@ -1,0 +1,17 @@
+@use "../abstracts/variables" as *;
+
+:root {
+  --nusa-box-shadow: #{$box-shadow-val};
+  --nusa-box-shadow-sm: #{$box-shadow-sm-val};
+  --nusa-box-shadow-lg: #{$box-shadow-lg-val};
+  --nusa-box-shadow-glow: #{$box-shadow-glow-val};
+  --nusa-border-color: #{$border-color-val};
+}
+
+[data-nusa-theme="dark"] {
+  --nusa-box-shadow: 0 .5rem 1rem rgba(255, 255, 255, .15);
+  --nusa-box-shadow-sm: 0 .125rem .25rem rgba(255, 255, 255, .075);
+  --nusa-box-shadow-lg: 0 1rem 3rem rgba(255, 255, 255, .175);
+  --nusa-box-shadow-glow: 0 0 0.75rem rgba(255, 255, 255, 0.5);
+  --nusa-border-color: #333;
+}

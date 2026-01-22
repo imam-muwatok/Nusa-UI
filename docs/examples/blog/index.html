@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Nusa UI Example</title>
+    <link rel="stylesheet" href="../../../assets/css/nusa.css">
+    <style>
+        body {
+            padding-top: 4.5rem;
+            background-color: #f8f9fa;
+        }
+        .blog-header-logo {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: 2.25rem;
+        }
+        .blog-post-meta {
+            margin-bottom: 1.25rem;
+            color: #727272;
+        }
+        .featured-post {
+            background-image: url('https://placehold.co/1200x600/212529/666');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,.5);
+        }
+        .featured-post-overlay {
+            background: rgba(0,0,0,0.5);
+            padding: 2rem;
+            border-radius: 0.375rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nusa-navbar nusa-navbar-expand-lg fixed-top shadow-sm">
+        <div class="nusa-container">
+            <a class="nusa-navbar-brand blog-header-logo" href="#">Nusa Blog</a>
+            <button class="nusa-navbar-toggler" type="button" data-nusa-toggle="collapse" data-nusa-target="#navbarBlog">
+                <span class="nusa-navbar-toggler-icon"></span>
+            </button>
+            <div class="nusa-collapse nusa-navbar-collapse" id="navbarBlog">
+                <ul class="nusa-navbar-nav ms-auto">
+                    <li class="nusa-nav-item"><a class="nusa-nav-link active" href="#">Home</a></li>
+                    <li class="nusa-nav-item"><a class="nusa-nav-link" href="#">Lifestyle</a></li>
+                    <li class="nusa-nav-item"><a class="nusa-nav-link" href="#">Technology</a></li>
+                    <li class="nusa-nav-item"><a class="nusa-nav-link" href="#">Travel</a></li>
+                    <li class="nusa-nav-item"><a class="nusa-nav-link" href="#">About</a></li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#" class="nusa-btn nusa-btn-sm nusa-btn-outline-secondary">Sign up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="nusa-container py-4">
+        
+        <!-- Hero Section -->
+        <div class="p-4 p-md-5 mb-4 rounded featured-post">
+            <div class="nusa-col-md-6 featured-post-overlay">
+                <h1 class="display-4 fst-italic fw-bold">Title of a longer featured blog post</h1>
+                <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post's contents.</p>
+                <p class="lead mb-0"><a href="#" class="text-white fw-bold text-decoration-none">Continue reading...</a></p>
+            </div>
+        </div>
+
+        <!-- Featured Cards -->
+        <div class="nusa-row mb-2">
+            <div class="nusa-col-md-6 mb-4">
+                <div class="nusa-card flex-md-row mb-4 box-shadow h-md-250 h-100 overflow-hidden">
+                    <div class="nusa-card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">World</strong>
+                        <h3 class="mb-0">
+                            <a class="text-dark text-decoration-none" href="#">Featured post</a>
+                        </h3>
+                        <div class="mb-1 text-secondary">Nov 12</div>
+                        <p class="nusa-card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="stretched-link">Continue reading</a>
+                    </div>
+                    <div class="nusa-col-auto d-none d-lg-block">
+                        <img src="https://placehold.co/200x250/4745D5/FFFFFF?text=Thumb" alt="Thumbnail" class="h-100 object-fit-cover" style="width: 200px;">
+                    </div>
+                </div>
+            </div>
+            <div class="nusa-col-md-6 mb-4">
+                <div class="nusa-card flex-md-row mb-4 box-shadow h-md-250 h-100 overflow-hidden">
+                    <div class="nusa-card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-success">Design</strong>
+                        <h3 class="mb-0">
+                            <a class="text-dark text-decoration-none" href="#">Post title</a>
+                        </h3>
+                        <div class="mb-1 text-secondary">Nov 11</div>
+                        <p class="nusa-card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="stretched-link">Continue reading</a>
+                    </div>
+                    <div class="nusa-col-auto d-none d-lg-block">
+                        <img src="https://placehold.co/200x250/68D592/FFFFFF?text=Thumb" alt="Thumbnail" class="h-100 object-fit-cover" style="width: 200px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nusa-row g-5">
+            <!-- Main Content -->
+            <div class="nusa-col-md-8">
+                <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                    From the Firehose
+                </h3>
+
+                <article class="blog-post mb-5">
+                    <h2 class="blog-post-title mb-1">Sample blog post</h2>
+                    <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
+
+                    <p>This blog post shows a few different types of content that’s supported and styled with Nusa UI. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
+                    <hr>
+                    <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content.</p>
+                    <h2>Blockquotes</h2>
+                    <p>This is an example blockquote.</p>
+                    <blockquote class="blockquote">
+                        <p>A well-known quote, contained in a blockquote element.</p>
+                    </blockquote>
+                    <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content.</p>
+                </article>
+
+                <article class="blog-post mb-5">
+                    <h2 class="blog-post-title mb-1">Another blog post</h2>
+                    <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
+
+                    <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content.</p>
+                    <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content.</p>
+                </article>
+
+                <nav class="blog-pagination" aria-label="Pagination">
+                    <a class="nusa-btn nusa-btn-outline-primary rounded-pill" href="#">Older</a>
+                    <a class="nusa-btn nusa-btn-outline-secondary rounded-pill disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+                </nav>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="nusa-col-md-4">
+                <div class="position-sticky" style="top: 6rem;">
+                    
+                    <!-- About Widget -->
+                    <div class="nusa-card mb-4 border-0">
+                        <div class="nusa-card-body">
+                            <h4 class="fst-italic">About</h4>
+                            <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
+                        </div>
+                    </div>
+
+                    <!-- Archives Widget -->
+                    <div class="nusa-card mb-4 border-0">
+                        <div class="nusa-card-body">
+                            <h4 class="fst-italic">Archives</h4>
+                            <ol class="list-unstyled mb-0">
+                                <li><a href="#">March 2021</a></li>
+                                <li><a href="#">February 2021</a></li>
+                                <li><a href="#">January 2021</a></li>
+                                <li><a href="#">December 2020</a></li>
+                                <li><a href="#">November 2020</a></li>
+                                <li><a href="#">October 2020</a></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Social Widget -->
+                    <div class="nusa-card mb-4 border-0">
+                        <div class="nusa-card-body">
+                            <h4 class="fst-italic">Elsewhere</h4>
+                            <ol class="list-unstyled">
+                                <li><a href="#">GitHub</a></li>
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="#">Facebook</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-5 text-center border-top">
+        <p>Blog template built for <a href="https://github.com/imam-muwatok/nusa-ui">Nusa UI</a>.</p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </footer>
+
+    <script type="module" src="../../../assets/js/nusa-script.js"></script>
+</body>
+</html>
