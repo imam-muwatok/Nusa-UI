@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Example - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) { console.warn('Nusa UI: LocalStorage access denied'); }
+        })();
+    </script>
+    <style>
+        body {
+            background-color: var(--nusa-body-bg, #f8f9fa);
+        }
+        .nusa-container {
+            max-width: 960px;
+        }
+        
+        /* Styles from sass/extras/_checkout.scss */
+        @media (min-width: 992px) {
+            .nusa-checkout-cart {
+                position: sticky;
+                top: 2rem;
+            }
+        }
+        
+        [data-nusa-theme="dark"] body {
+            background-color: #121212;
+        }
+        
+        [data-nusa-theme="dark"] .bg-light {
+            background-color: #1e1e1e !important;
+        }
+    </style>
+</head>
+<body class="bg-light py-5">
+    <div class="nusa-container">
+        <main>
+            <div class="py-5 text-center">
+                <h2 class="fw-bold">Formulir Checkout</h2>
+                <p class="lead text-secondary">Di bawah ini adalah contoh formulir checkout yang dibuat sepenuhnya dengan komponen formulir dan utilitas Nusa UI.</p>
+            </div>
+
+            <div class="nusa-row g-5">
+                <!-- Cart Summary (Right Column) -->
+                <div class="nusa-col-md-5 nusa-col-lg-4 order-md-last">
+                    <div class="nusa-checkout-cart">
+                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-primary">Keranjang Anda</span>
+                            <span class="nusa-badge nusa-badge-primary rounded-pill">3</span>
+                        </h4>
+                        <ul class="nusa-list-group mb-3 shadow-sm">
+                            <li class="nusa-list-group-item d-flex justify-content-between lh-sm">
+                                <div>
+                                    <h6 class="my-0">Nama Produk</h6>
+                                    <small class="text-secondary">Deskripsi singkat</small>
+                                </div>
+                                <span class="text-secondary">$12</span>
+                            </li>
+                            <li class="nusa-list-group-item d-flex justify-content-between lh-sm">
+                                <div>
+                                    <h6 class="my-0">Produk Kedua</h6>
+                                    <small class="text-secondary">Deskripsi singkat</small>
+                                </div>
+                                <span class="text-secondary">$8</span>
+                            </li>
+                            <li class="nusa-list-group-item d-flex justify-content-between lh-sm">
+                                <div>
+                                    <h6 class="my-0">Item Ketiga</h6>
+                                    <small class="text-secondary">Deskripsi singkat</small>
+                                </div>
+                                <span class="text-secondary">$5</span>
+                            </li>
+                            <li class="nusa-list-group-item d-flex justify-content-between bg-light">
+                                <div class="text-success">
+                                    <h6 class="my-0">Kode Promo</h6>
+                                    <small>CONTOHCODE</small>
+                                </div>
+                                <span class="text-success">-$5</span>
+                            </li>
+                            <li class="nusa-list-group-item d-flex justify-content-between">
+                                <span>Total (USD)</span>
+                                <strong>$20</strong>
+                            </li>
+                        </ul>
+
+                        <form class="nusa-card p-2 shadow-sm">
+                            <div class="nusa-input-group">
+                                <input type="text" class="nusa-form-control" placeholder="Kode Promo">
+                                <button type="submit" class="nusa-btn nusa-btn-secondary">Gunakan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Billing Details (Left Column) -->
+                <div class="nusa-col-md-7 nusa-col-lg-8">
+                    <h4 class="mb-3">Alamat Penagihan</h4>
+                    <form class="needs-validation" novalidate>
+                        <div class="nusa-row g-3">
+                            <div class="nusa-col-sm-6">
+                                <label for="firstName" class="nusa-form-label">Nama Depan</label>
+                                <input type="text" class="nusa-form-control" id="firstName" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Nama depan wajib diisi.
+                                </div>
+                            </div>
+
+                            <div class="nusa-col-sm-6">
+                                <label for="lastName" class="nusa-form-label">Nama Belakang</label>
+                                <input type="text" class="nusa-form-control" id="lastName" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Nama belakang wajib diisi.
+                                </div>
+                            </div>
+
+                            <div class="nusa-col-12">
+                                <label for="username" class="nusa-form-label">Username</label>
+                                <div class="nusa-input-group has-validation">
+                                    <span class="nusa-input-group-text">@</span>
+                                    <input type="text" class="nusa-form-control" id="username" placeholder="Username" required>
+                                    <div class="invalid-feedback">
+                                        Username wajib diisi.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="nusa-col-12">
+                                <label for="email" class="nusa-form-label">Email <span class="text-secondary">(Opsional)</span></label>
+                                <input type="email" class="nusa-form-control" id="email" placeholder="you@example.com">
+                                <div class="invalid-feedback">
+                                    Masukkan alamat email yang valid untuk update pengiriman.
+                                </div>
+                            </div>
+
+                            <div class="nusa-col-12">
+                                <label for="address" class="nusa-form-label">Alamat</label>
+                                <input type="text" class="nusa-form-control" id="address" placeholder="1234 Main St" required>
+                                <div class="invalid-feedback">
+                                    Silakan masukkan alamat pengiriman Anda.
+                                </div>
+                            </div>
+
+                            <div class="nusa-col-12">
+                                <label for="address2" class="nusa-form-label">Alamat 2 <span class="text-secondary">(Opsional)</span></label>
+                                <input type="text" class="nusa-form-control" id="address2" placeholder="Apartment or suite">
+                            </div>
+
+                            <div class="nusa-col-md-5">
+                                <label for="country" class="nusa-form-label">Negara</label>
+                                <select class="nusa-form-select" id="country" required>
+                                    <option value="">Pilih...</option>
+                                    <option>Indonesia</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Silakan pilih negara yang valid.
+                                </div>
+                            </div>
+
+                            <div class="nusa-col-md-4">
+                                <label for="state" class="nusa-form-label">Provinsi</label>
+                                <select class="nusa-form-select" id="state" required>
+                                    <option value="">Pilih...</option>
+                                    <option>Jawa Tengah</option>
+                                    <option>Jawa Barat</option>
+                                    <option>Jawa Timur</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Silakan pilih provinsi yang valid.
+                                </div>
+                            </div>
+
+                            <div class="nusa-col-md-3">
+                                <label for="zip" class="nusa-form-label">Kode Pos</label>
+                                <input type="text" class="nusa-form-control" id="zip" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Kode pos wajib diisi.
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="nusa-form-check">
+                            <input type="checkbox" class="nusa-form-check-input" id="same-address">
+                            <label class="nusa-form-check-label" for="same-address">Alamat pengiriman sama dengan alamat penagihan</label>
+                        </div>
+
+                        <div class="nusa-form-check">
+                            <input type="checkbox" class="nusa-form-check-input" id="save-info">
+                            <label class="nusa-form-check-label" for="save-info">Simpan informasi ini untuk waktu berikutnya</label>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h4 class="mb-3">Pembayaran</h4>
+
+                        <div class="my-3">
+                            <div class="nusa-form-check">
+                                <input id="credit" name="paymentMethod" type="radio" class="nusa-form-check-input" checked required>
+                                <label class="nusa-form-check-label" for="credit">Kartu Kredit</label>
+                            </div>
+                            <div class="nusa-form-check">
+                                <input id="debit" name="paymentMethod" type="radio" class="nusa-form-check-input" required>
+                                <label class="nusa-form-check-label" for="debit">Kartu Debit</label>
+                            </div>
+                            <div class="nusa-form-check">
+                                <input id="paypal" name="paymentMethod" type="radio" class="nusa-form-check-input" required>
+                                <label class="nusa-form-check-label" for="paypal">PayPal</label>
+                            </div>
+                        </div>
+
+                        <div class="nusa-row gy-3">
+                            <div class="nusa-col-md-6">
+                                <label for="cc-name" class="nusa-form-label">Nama di kartu</label>
+                                <input type="text" class="nusa-form-control" id="cc-name" placeholder="" required>
+                                <small class="text-secondary">Nama lengkap seperti yang tertera pada kartu</small>
+                                <div class="invalid-feedback">
+                                    Nama di kartu wajib diisi
+                                </div>
+                            </div>
+
+                            <div class="nusa-col-md-6">
+                                <label for="cc-number" class="nusa-form-label">Nomor kartu kredit</label>
+                                <input type="text" class="nusa-form-control" id="cc-number" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Nomor kartu kredit wajib diisi
+                                </div>
+                            </div>
+
+                            <div class="nusa-col-md-3">
+                                <label for="cc-expiration" class="nusa-form-label">Kedaluwarsa</label>
+                                <input type="text" class="nusa-form-control" id="cc-expiration" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Tanggal kedaluwarsa wajib diisi
+                                </div>
+                            </div>
+
+                            <div class="nusa-col-md-3">
+                                <label for="cc-cvv" class="nusa-form-label">CVV</label>
+                                <input type="text" class="nusa-form-control" id="cc-cvv" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Kode keamanan wajib diisi
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <button class="nusa-btn nusa-btn-primary nusa-btn-lg w-100" type="submit">Lanjutkan ke checkout</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="my-5 pt-5 text-secondary text-center small">
+            <p class="mb-1">&copy; 2026 Nusa UI</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#" class="text-decoration-none">Privacy</a></li>
+                <li class="list-inline-item"><a href="#" class="text-decoration-none">Terms</a></li>
+                <li class="list-inline-item"><a href="#" class="text-decoration-none">Support</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script type="module" src="../../assets/js/nusa-script.js"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+</html>
