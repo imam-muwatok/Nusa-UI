@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Template - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) { console.warn('Nusa UI: LocalStorage access denied'); }
+        })();
+    </script>
+    <style>
+        /* Styles from sass/extras/_dashboard.scss */
+        body {
+            font-size: .875rem;
+        }
+        .feather {
+            width: 16px;
+            height: 16px;
+            vertical-align: text-bottom;
+        }
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 48px 0 0;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        }
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        @media (max-width: 767.98px) {
+            .sidebar {
+                position: static;
+                height: auto;
+                padding-top: 0;
+                width: 100%;
+                box-shadow: none;
+                border-bottom: 1px solid var(--nusa-border-color);
+            }
+            .sidebar-sticky {
+                height: auto;
+            }
+        }
+        .sidebar .nusa-nav-link {
+            font-weight: 500;
+            color: #333;
+            padding: .5rem 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar .nusa-nav-link .feather {
+            margin-right: 4px;
+            color: #727272;
+        }
+        .sidebar .nusa-nav-link.active {
+            color: #4745D5;
+        }
+        .sidebar .nusa-nav-link:hover .feather,
+        .sidebar .nusa-nav-link.active .feather {
+            color: inherit;
+        }
+        .sidebar-heading {
+            font-size: .75rem;
+            text-transform: uppercase;
+        }
+        
+        /* Navbar */
+        .navbar-brand {
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            font-size: 1rem;
+            background-color: rgba(0, 0, 0, .25);
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+        }
+        .navbar .nusa-form-control {
+            padding: .75rem 1rem;
+            border-width: 0;
+            border-radius: 0;
+        }
+        .form-control-dark {
+            color: #fff;
+            background-color: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .1);
+        }
+        .form-control-dark:focus {
+            border-color: transparent;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+        }
+        
+        /* Dark Mode Overrides */
+        [data-nusa-theme="dark"] .sidebar {
+            box-shadow: inset -1px 0 0 rgba(255, 255, 255, .1);
+        }
+        [data-nusa-theme="dark"] .sidebar .nusa-nav-link {
+            color: #e0e0e0;
+        }
+        [data-nusa-theme="dark"] .sidebar .nusa-nav-link.active {
+            color: #4745D5;
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="nusa-navbar navbar sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="nusa-navbar-brand navbar-brand nusa-col-md-3 nusa-col-lg-2 me-0 px-3 text-white" href="#">Nusa UI</a>
+        <button class="nusa-navbar-toggler position-absolute d-md-none collapsed" type="button" data-nusa-toggle="collapse" data-nusa-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="nusa-navbar-toggler-icon"></span>
+        </button>
+        <input class="nusa-form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        <div class="nusa-navbar-nav">
+            <div class="nusa-nav-item text-nowrap">
+                <a class="nusa-nav-link px-3 text-white" href="#">Sign out</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="nusa-container-fluid">
+        <div class="nusa-row">
+            <nav id="sidebarMenu" class="nusa-col-md-3 nusa-col-lg-2 d-md-block bg-light sidebar nusa-collapse">
+                <div class="position-sticky pt-3 sidebar-sticky">
+                    <ul class="nusa-nav flex-column">
+                        <li class="nusa-nav-item">
+                            <a class="nusa-nav-link active" aria-current="page" href="#">
+                                <span data-feather="home" class="feather"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nusa-nav-item">
+                            <a class="nusa-nav-link" href="#">
+                                <span data-feather="file" class="feather"></span>
+                                Orders
+                            </a>
+                        </li>
+                        <li class="nusa-nav-item">
+                            <a class="nusa-nav-link" href="#">
+                                <span data-feather="shopping-cart" class="feather"></span>
+                                Products
+                            </a>
+                        </li>
+                        <li class="nusa-nav-item">
+                            <a class="nusa-nav-link" href="#">
+                                <span data-feather="users" class="feather"></span>
+                                Customers
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-secondary">
+                        <span>Saved reports</span>
+                        <a class="link-secondary" href="#" aria-label="Add a new report">
+                            <span data-feather="plus-circle" class="feather"></span>
+                        </a>
+                    </h6>
+                    <ul class="nusa-nav flex-column mb-2">
+                        <li class="nusa-nav-item">
+                            <a class="nusa-nav-link" href="#">
+                                <span data-feather="file-text" class="feather"></span>
+                                Current month
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="nusa-col-md-9 ms-sm-auto nusa-col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="nusa-btn-toolbar mb-2 mb-md-0">
+                        <div class="nusa-btn-group me-2">
+                            <button type="button" class="nusa-btn nusa-btn-sm nusa-btn-outline-secondary">Share</button>
+                            <button type="button" class="nusa-btn nusa-btn-sm nusa-btn-outline-secondary">Export</button>
+                        </div>
+                        <button type="button" class="nusa-btn nusa-btn-sm nusa-btn-outline-secondary dropdown-toggle">
+                            <span data-feather="calendar" class="feather"></span>
+                            This week
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chart Placeholder -->
+                <div class="my-4 w-100 bg-light rounded d-flex align-items-center justify-content-center text-secondary" style="height: 300px; border: 2px dashed #dee2e6;">
+                    <span class="h4">Chart Placeholder</span>
+                </div>
+
+                <h2>Section title</h2>
+                <div class="nusa-table-responsive">
+                    <table class="nusa-table nusa-table-striped nusa-table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Header</th>
+                                <th scope="col">Header</th>
+                                <th scope="col">Header</th>
+                                <th scope="col">Header</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1,001</td><td>random</td><td>data</td><td>placeholder</td><td>text</td></tr>
+                            <tr><td>1,002</td><td>placeholder</td><td>irrelevant</td><td>visual</td><td>layout</td></tr>
+                            <tr><td>1,003</td><td>data</td><td>rich</td><td>dashboard</td><td>tabular</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace()
+    </script>
+    <script type="module" src="../../assets/js/nusa-script.js"></script>
+</body>
+</html>
