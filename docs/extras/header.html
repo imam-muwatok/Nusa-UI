@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Examples - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) { console.warn('Nusa UI: LocalStorage access denied'); }
+        })();
+    </script>
+    <style>
+        /* Styles from sass/extras/_header.scss */
+        .nusa-header-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+            margin: 0;
+        }
+        [data-nusa-theme="dark"] .nusa-header-divider {
+            background-color: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .15);
+        }
+        
+        /* Demo specific spacing */
+        body {
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="nusa-container py-3">
+        <h1 class="display-5 fw-bold">Header Examples</h1>
+        <p class="lead text-secondary">Berbagai variasi header dan navigasi yang responsif.</p>
+    </div>
+
+    <!-- 1. Simple Header -->
+    <div class="nusa-container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <span class="fs-4 fw-bold">Simple Header</span>
+            </a>
+
+            <ul class="nusa-nav nusa-nav-pills">
+                <li class="nusa-nav-item"><a href="#" class="nusa-nav-link active" aria-current="page">Home</a></li>
+                <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">Features</a></li>
+                <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">Pricing</a></li>
+                <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">FAQs</a></li>
+                <li class="nusa-nav-item"><a href="#" class="nusa-nav-link">About</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <div class="nusa-header-divider"></div>
+
+    <!-- 2. Centered Header -->
+    <div class="nusa-container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+                <span class="fs-4 fw-bold">Centered Nav</span>
+            </a>
+
+            <ul class="nusa-nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nusa-nav-link px-2 link-secondary">Home</a></li>
+                <li><a href="#" class="nusa-nav-link px-2 link-dark">Features</a></li>
+                <li><a href="#" class="nusa-nav-link px-2 link-dark">Pricing</a></li>
+                <li><a href="#" class="nusa-nav-link px-2 link-dark">FAQs</a></li>
+                <li><a href="#" class="nusa-nav-link px-2 link-dark">About</a></li>
+            </ul>
+
+            <div class="col-md-3 text-end">
+                <button type="button" class="nusa-btn nusa-btn-outline-primary me-2">Login</button>
+                <button type="button" class="nusa-btn nusa-btn-primary">Sign-up</button>
+            </div>
+        </header>
+    </div>
+
+    <div class="nusa-header-divider"></div>
+
+    <!-- 3. Header with Search -->
+    <header class="p-3 mb-3 border-bottom">
+        <div class="nusa-container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none me-lg-3">
+                    <span class="fs-4 fw-bold">Search Header</span>
+                </a>
+
+                <ul class="nusa-nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nusa-nav-link px-2 link-secondary">Overview</a></li>
+                    <li><a href="#" class="nusa-nav-link px-2 link-dark">Inventory</a></li>
+                    <li><a href="#" class="nusa-nav-link px-2 link-dark">Customers</a></li>
+                    <li><a href="#" class="nusa-nav-link px-2 link-dark">Products</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="nusa-form-control" placeholder="Search..." aria-label="Search">
+                </form>
+
+                <div class="nusa-dropdown text-end">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-nusa-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="nusa-dropdown-menu text-small">
+                        <li><a class="nusa-dropdown-item" href="#">New project...</a></li>
+                        <li><a class="nusa-dropdown-item" href="#">Settings</a></li>
+                        <li><a class="nusa-dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="nusa-dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="nusa-header-divider"></div>
+
+    <!-- 4. Dark Header -->
+    <header class="p-3 text-bg-dark bg-dark text-white">
+        <div class="nusa-container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none me-lg-3">
+                    <span class="fs-4 fw-bold">Dark Header</span>
+                </a>
+
+                <ul class="nusa-nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nusa-nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="#" class="nusa-nav-link px-2 text-white">Features</a></li>
+                    <li><a href="#" class="nusa-nav-link px-2 text-white">Pricing</a></li>
+                    <li><a href="#" class="nusa-nav-link px-2 text-white">FAQs</a></li>
+                    <li><a href="#" class="nusa-nav-link px-2 text-white">About</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="nusa-form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <button type="button" class="nusa-btn nusa-btn-outline-light me-2">Login</button>
+                    <button type="button" class="nusa-btn nusa-btn-warning">Sign-up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="nusa-header-divider"></div>
+
+    <!-- 5. Double Header -->
+    <header class="py-3 mb-3 border-bottom">
+        <div class="nusa-container d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
+            <div class="nusa-dropdown">
+                <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" data-nusa-toggle="dropdown" aria-expanded="false">
+                    <span class="fs-4 fw-bold">Double Header</span>
+                </a>
+                <ul class="nusa-dropdown-menu text-small shadow">
+                    <li><a class="nusa-dropdown-item active" href="#" aria-current="page">Overview</a></li>
+                    <li><a class="nusa-dropdown-item" href="#">Inventory</a></li>
+                    <li><a class="nusa-dropdown-item" href="#">Customers</a></li>
+                    <li><a class="nusa-dropdown-item" href="#">Products</a></li>
+                </ul>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <form class="w-100 me-3" role="search">
+                    <input type="search" class="nusa-form-control" placeholder="Search..." aria-label="Search">
+                </form>
+                <div class="flex-shrink-0 nusa-dropdown">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-nusa-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="nusa-dropdown-menu text-small shadow">
+                        <li><a class="nusa-dropdown-item" href="#">New project...</a></li>
+                        <li><a class="nusa-dropdown-item" href="#">Settings</a></li>
+                        <li><a class="nusa-dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="nusa-dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script type="module" src="../../assets/js/nusa-script.js"></script>
+</body>
+</html>
