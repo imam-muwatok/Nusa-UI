@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) { console.warn('Nusa UI: LocalStorage access denied'); }
+        })();
+    </script>
+    <style>
+        body {
+            background-color: var(--nusa-body-bg, #f8f9fa);
+        }
+        
+        /* Styles from sass/extras/_product.scss */
+        .product-gallery .main-image {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            background-color: #f8f9fa;
+        }
+        .product-gallery .main-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+        }
+        .product-gallery .thumbnails {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+        .product-gallery .thumbnails .thumbnail {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            border-radius: 0.25rem;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            opacity: 0.7;
+            transition: all 0.2s;
+        }
+        .product-gallery .thumbnails .thumbnail.active, 
+        .product-gallery .thumbnails .thumbnail:hover {
+            border-color: #4745D5;
+            opacity: 1;
+        }
+        .product-gallery .thumbnails .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-rating {
+            color: #F4B61A;
+            font-size: 1.1rem;
+        }
+        .color-swatch .nusa-form-check-input {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: 2px solid var(--nusa-border-color);
+            cursor: pointer;
+            background-image: none;
+        }
+        .color-swatch .nusa-form-check-input:checked {
+            border-color: #4745D5;
+            box-shadow: 0 0 0 0.2rem rgba(71, 69, 213, 0.25);
+        }
+        
+        /* Dark mode adjustments */
+        [data-nusa-theme="dark"] body {
+            background-color: #121212;
+        }
+        [data-nusa-theme="dark"] .product-gallery .main-image {
+            background-color: #2d2d2d;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="nusa-container py-5">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="nusa-breadcrumb bg-transparent p-0">
+                <li class="nusa-breadcrumb-item"><a href="#">Home</a></li>
+                <li class="nusa-breadcrumb-item"><a href="#">Fashion</a></li>
+                <li class="nusa-breadcrumb-item"><a href="#">Men</a></li>
+                <li class="nusa-breadcrumb-item active" aria-current="page">Premium T-Shirt</li>
+            </ol>
+        </nav>
+
+        <div class="nusa-card shadow-sm border-0 mb-5">
+            <div class="nusa-card-body p-4">
+                <div class="nusa-row g-5">
+                    <!-- Product Gallery -->
+                    <div class="nusa-col-md-6">
+                        <div class="product-gallery">
+                            <div class="main-image">
+                                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop" alt="Product Image" id="mainImage">
+                            </div>
+                            <div class="thumbnails">
+                                <div class="thumbnail active">
+                                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=200&auto=format&fit=crop" alt="Thumb 1">
+                                </div>
+                                <div class="thumbnail">
+                                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=200&auto=format&fit=crop" alt="Thumb 2">
+                                </div>
+                                <div class="thumbnail">
+                                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=200&auto=format&fit=crop" alt="Thumb 3">
+                                </div>
+                                <div class="thumbnail">
+                                    <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?q=80&w=200&auto=format&fit=crop" alt="Thumb 4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Details -->
+                    <div class="nusa-col-md-6">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h1 class="h2 fw-bold mb-2">Premium Cotton T-Shirt</h1>
+                                <div class="product-rating mb-3">
+                                    <span>★★★★☆</span>
+                                    <span class="text-secondary small ms-2">(124 reviews)</span>
+                                </div>
+                            </div>
+                            <span class="nusa-badge nusa-badge-success">In Stock</span>
+                        </div>
+
+                        <h2 class="display-6 fw-bold text-primary mb-4">$29.99</h2>
+
+                        <p class="text-secondary mb-4">
+                            Kaos katun premium berkualitas tinggi yang nyaman dipakai sehari-hari. Desain minimalis dengan potongan modern fit yang pas di badan. Tersedia dalam berbagai warna menarik.
+                        </p>
+
+                        <div class="mb-4">
+                            <label class="nusa-form-label fw-semibold d-block mb-2">Warna</label>
+                            <div class="color-swatch d-flex gap-2">
+                                <div class="nusa-form-check p-0">
+                                    <input class="nusa-form-check-input" type="radio" name="color" id="color1" style="background-color: #18181B;" checked>
+                                </div>
+                                <div class="nusa-form-check p-0">
+                                    <input class="nusa-form-check-input" type="radio" name="color" id="color2" style="background-color: #4745D5;">
+                                </div>
+                                <div class="nusa-form-check p-0">
+                                    <input class="nusa-form-check-input" type="radio" name="color" id="color3" style="background-color: #68D592;">
+                                </div>
+                                <div class="nusa-form-check p-0">
+                                    <input class="nusa-form-check-input" type="radio" name="color" id="color4" style="background-color: #E95897;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="nusa-row mb-4">
+                            <div class="nusa-col-6">
+                                <label for="sizeSelect" class="nusa-form-label fw-semibold">Ukuran</label>
+                                <select class="nusa-form-select" id="sizeSelect">
+                                    <option>Pilih Ukuran</option>
+                                    <option value="s">Small (S)</option>
+                                    <option value="m" selected>Medium (M)</option>
+                                    <option value="l">Large (L)</option>
+                                    <option value="xl">Extra Large (XL)</option>
+                                </select>
+                            </div>
+                            <div class="nusa-col-6">
+                                <label for="qtyInput" class="nusa-form-label fw-semibold">Jumlah</label>
+                                <div class="nusa-input-group">
+                                    <button class="nusa-btn nusa-btn-outline-secondary" type="button">-</button>
+                                    <input type="text" class="nusa-form-control text-center" id="qtyInput" value="1">
+                                    <button class="nusa-btn nusa-btn-outline-secondary" type="button">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex">
+                            <button class="nusa-btn nusa-btn-primary nusa-btn-lg flex-grow-1">Tambah ke Keranjang</button>
+                            <button class="nusa-btn nusa-btn-outline-secondary nusa-btn-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs Info -->
+        <div class="nusa-card shadow-sm border-0 mb-5">
+            <div class="nusa-card-header bg-transparent border-bottom">
+                <ul class="nusa-nav nusa-nav-tabs nusa-card-header-tabs border-bottom-0">
+                    <li class="nusa-nav-item">
+                        <a class="nusa-nav-link active" href="#">Deskripsi</a>
+                    </li>
+                    <li class="nusa-nav-item">
+                        <a class="nusa-nav-link" href="#">Spesifikasi</a>
+                    </li>
+                    <li class="nusa-nav-item">
+                        <a class="nusa-nav-link" href="#">Ulasan (124)</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nusa-card-body p-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <h3 class="h4 fw-bold mb-4">Produk Terkait</h3>
+        <div class="nusa-row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+            <!-- Product 1 -->
+            <div class="nusa-col">
+                <div class="nusa-card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=400&auto=format&fit=crop" class="nusa-card-img-top" alt="...">
+                    <div class="nusa-card-body">
+                        <h5 class="nusa-card-title h6">Casual Shirt</h5>
+                        <p class="nusa-card-text fw-bold text-primary">$24.99</p>
+                        <a href="#" class="nusa-btn nusa-btn-sm nusa-btn-outline-primary w-100">Lihat Detail</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="nusa-col">
+                <div class="nusa-card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=400&auto=format&fit=crop" class="nusa-card-img-top" alt="...">
+                    <div class="nusa-card-body">
+                        <h5 class="nusa-card-title h6">Slim Fit Shirt</h5>
+                        <p class="nusa-card-text fw-bold text-primary">$34.99</p>
+                        <a href="#" class="nusa-btn nusa-btn-sm nusa-btn-outline-primary w-100">Lihat Detail</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="nusa-col">
+                <div class="nusa-card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=400&auto=format&fit=crop" class="nusa-card-img-top" alt="...">
+                    <div class="nusa-card-body">
+                        <h5 class="nusa-card-title h6">Basic Tee</h5>
+                        <p class="nusa-card-text fw-bold text-primary">$19.99</p>
+                        <a href="#" class="nusa-btn nusa-btn-sm nusa-btn-outline-primary w-100">Lihat Detail</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="nusa-col">
+                <div class="nusa-card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=400&auto=format&fit=crop" class="nusa-card-img-top" alt="...">
+                    <div class="nusa-card-body">
+                        <h5 class="nusa-card-title h6">Summer Shirt</h5>
+                        <p class="nusa-card-text fw-bold text-primary">$27.99</p>
+                        <a href="#" class="nusa-btn nusa-btn-sm nusa-btn-outline-primary w-100">Lihat Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../../assets/js/nusa-script.js"></script>
+</body>
+</html>
