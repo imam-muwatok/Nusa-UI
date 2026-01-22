@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Example - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) { console.warn('Nusa UI: LocalStorage access denied'); }
+        })();
+    </script>
+    <style>
+        body {
+            background-image: linear-gradient(180deg, var(--nusa-body-bg), var(--nusa-body-bg) 100%, #f8f9fa);
+        }
+
+        /* Styles from sass/extras/_pricing.scss */
+        .pricing-header {
+            max-width: 700px;
+        }
+        .nusa-card-pricing .nusa-card-header {
+            background-color: transparent;
+            border-bottom: 0;
+            padding-top: 1.5rem;
+        }
+        .display-price {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        
+        /* Custom check icon for table */
+        .bi-check {
+            width: 1.5em;
+            height: 1.5em;
+            vertical-align: -.125em;
+            fill: currentcolor;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="nusa-container py-3">
+        <header>
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <span class="fs-4 fw-bold">Pricing Example</span>
+                </a>
+
+                <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="#">Features</a>
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="#">Enterprise</a>
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="#">Support</a>
+                    <a class="py-2 text-dark text-decoration-none" href="#">Pricing</a>
+                </nav>
+            </div>
+
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <h1 class="display-4 fw-normal">Harga Paket</h1>
+                <p class="fs-5 text-secondary">Bangun proyek Anda dengan cepat menggunakan komponen Nusa UI. Pilih paket yang sesuai dengan kebutuhan tim dan proyek Anda.</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="nusa-row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="nusa-col">
+                    <div class="nusa-card nusa-card-pricing mb-4 rounded-3 shadow-sm">
+                        <div class="nusa-card-header py-3">
+                            <h4 class="my-0 fw-normal">Free</h4>
+                        </div>
+                        <div class="nusa-card-body">
+                            <h1 class="nusa-card-title display-price">$0<small class="text-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>10 users included</li>
+                                <li>2 GB of storage</li>
+                                <li>Email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 nusa-btn nusa-btn-lg nusa-btn-outline-primary">Sign up for free</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col">
+                    <div class="nusa-card nusa-card-pricing mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="nusa-card-header py-3 text-bg-primary bg-primary text-white border-primary">
+                            <h4 class="my-0 fw-normal">Pro</h4>
+                        </div>
+                        <div class="nusa-card-body">
+                            <h1 class="nusa-card-title display-price">$15<small class="text-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>20 users included</li>
+                                <li>10 GB of storage</li>
+                                <li>Priority email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 nusa-btn nusa-btn-lg nusa-btn-primary">Get started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col">
+                    <div class="nusa-card nusa-card-pricing mb-4 rounded-3 shadow-sm">
+                        <div class="nusa-card-header py-3">
+                            <h4 class="my-0 fw-normal">Enterprise</h4>
+                        </div>
+                        <div class="nusa-card-body">
+                            <h1 class="nusa-card-title display-price">$29<small class="text-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>30 users included</li>
+                                <li>15 GB of storage</li>
+                                <li>Phone and email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 nusa-btn nusa-btn-lg nusa-btn-primary">Contact us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="display-6 text-center mb-4">Compare plans</h2>
+
+            <div class="nusa-table-responsive">
+                <table class="nusa-table text-center">
+                    <thead>
+                        <tr>
+                            <th style="width: 34%;"></th>
+                            <th style="width: 22%;">Free</th>
+                            <th style="width: 22%;">Pro</th>
+                            <th style="width: 22%;">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start">Public</th>
+                            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Private</th>
+                            <td></td>
+                            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start">Permissions</th>
+                            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Sharing</th>
+                            <td></td>
+                            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Unlimited members</th>
+                            <td></td>
+                            <td></td>
+                            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Extra security</th>
+                            <td></td>
+                            <td></td>
+                            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+            <div class="nusa-row">
+                <div class="nusa-col-12 text-center text-secondary">
+                    &copy; 2026 Nusa UI
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- SVG Icons -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="check" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+    </svg>
+
+    <script type="module" src="../../assets/js/nusa-script.js"></script>
+</body>
+</html>
