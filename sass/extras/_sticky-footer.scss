@@ -1,0 +1,22 @@
+// Sticky Footer Styles
+
+main > .nusa-container {
+  padding: 60px 15px 0;
+}
+
+.footer {
+  background-color: #f8f9fa;
+  
+  > .nusa-container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+[data-nusa-theme="dark"] .footer {
+  background-color: #1e1e1e;
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
