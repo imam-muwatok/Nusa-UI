@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Templates - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) { console.warn('Nusa UI: LocalStorage access denied'); }
+        })();
+    </script>
+    <style>
+        body {
+            padding: 2rem;
+            background-color: transparent;
+        }
+        .preview-box {
+            background-color: var(--nusa-body-bg);
+            border: 1px solid var(--nusa-border-color);
+            border-radius: .5rem;
+            padding: 3rem 1rem;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .preview-box.bg-light {
+            background-color: #f8f9fa !important;
+        }
+        [data-nusa-theme="dark"] .preview-box.bg-light {
+            background-color: #212529 !important;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="display-4 mb-3">Login Templates</h1>
+    <p class="lead text-secondary mb-5">Kumpulan contoh desain halaman login yang responsif dan modern menggunakan komponen Nusa UI.</p>
+
+    <!-- Example 1: Simple Card -->
+    <section class="mb-5">
+        <h3 class="h4 mb-3">1. Simple Card</h3>
+        <div class="preview-box bg-light d-flex justify-content-center align-items-center">
+            <div class="nusa-card shadow-sm border-0" style="max-width: 400px; width: 100%;">
+                <div class="nusa-card-body p-4">
+                    <div class="text-center mb-4">
+                        <h4 class="fw-bold">Masuk</h4>
+                        <p class="text-secondary small">Silakan masuk untuk melanjutkan</p>
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label class="nusa-form-label small fw-semibold">Email</label>
+                            <input type="email" class="nusa-form-control" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="nusa-form-label small fw-semibold">Password</label>
+                            <input type="password" class="nusa-form-control" placeholder="********">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="nusa-form-check">
+                                <input class="nusa-form-check-input" type="checkbox" id="remember1">
+                                <label class="nusa-form-check-label small" for="remember1">Ingat saya</label>
+                            </div>
+                            <a href="#" class="small text-decoration-none">Lupa password?</a>
+                        </div>
+                        <button class="nusa-btn nusa-btn-primary w-100 mb-3">Masuk</button>
+                        <div class="text-center small">
+                            Belum punya akun? <a href="#" class="text-decoration-none fw-semibold">Daftar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example 2: Split Screen -->
+    <section class="mb-5">
+        <h3 class="h4 mb-3">2. Split Screen</h3>
+        <div class="preview-box p-0 overflow-hidden border">
+            <div class="nusa-row g-0">
+                <div class="nusa-col-md-6 d-none d-md-flex bg-primary text-white align-items-center justify-content-center p-5">
+                    <div class="text-center">
+                        <h2 class="fw-bold mb-3">Nusa UI</h2>
+                        <p class="lead mb-0">Framework CSS modern untuk pengembangan web yang lebih cepat.</p>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6 bg-white p-5">
+                    <div class="d-flex align-items-center h-100 justify-content-center">
+                        <div style="max-width: 350px; width: 100%;">
+                            <h3 class="fw-bold mb-2 text-dark">Selamat Datang</h3>
+                            <p class="text-secondary mb-4">Masuk ke akun Anda</p>
+                            
+                            <div class="d-grid gap-2 mb-3">
+                                <button class="nusa-btn nusa-btn-outline-dark">
+                                    <svg class="me-2" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352-2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/></svg>
+                                    Google
+                                </button>
+                            </div>
+
+                            <div class="position-relative text-center mb-3">
+                                <hr class="text-secondary">
+                                <span class="position-absolute top-50 start-50 translate-middle px-2 bg-white text-secondary small">atau</span>
+                            </div>
+
+                            <form>
+                                <div class="nusa-form-floating mb-3">
+                                    <input type="email" class="nusa-form-control" id="floatingInput" placeholder="name@example.com">
+                                    <label for="floatingInput">Email address</label>
+                                </div>
+                                <div class="nusa-form-floating mb-4">
+                                    <input type="password" class="nusa-form-control" id="floatingPassword" placeholder="Password">
+                                    <label for="floatingPassword">Password</label>
+                                </div>
+                                <button class="nusa-btn nusa-btn-dark w-100 py-2" type="submit">Sign In</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

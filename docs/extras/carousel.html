@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Templates - Nusa UI</title>
+    <link rel="stylesheet" href="../../assets/css/nusa.css">
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <script>
+        // Sinkronisasi tema
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('nusa-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.setAttribute('data-nusa-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-nusa-theme', 'light');
+                }
+            } catch (e) { console.warn('Nusa UI: LocalStorage access denied'); }
+        })();
+    </script>
+    <style>
+        body {
+            padding-bottom: 5rem;
+        }
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        /* Styles from sass/extras/_carousel-extended.scss */
+        .nusa-carousel-hero .nusa-carousel-item {
+            height: 70vh;
+            min-height: 400px;
+        }
+        .nusa-carousel-hero .nusa-carousel-item img {
+            height: 100%;
+            object-fit: cover;
+        }
+        .nusa-carousel-hero .nusa-carousel-caption {
+            bottom: 50%;
+            transform: translateY(50%);
+            left: 10%;
+            right: 10%;
+            text-align: center;
+            background: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .nusa-carousel-multi .nusa-carousel-item {
+            padding-right: 1rem;
+        }
+        @media (min-width: 768px) {
+            .nusa-carousel-multi .nusa-carousel-item {
+                flex: 0 0 50%;
+                width: 50%;
+            }
+        }
+        @media (min-width: 992px) {
+            .nusa-carousel-multi .nusa-carousel-item {
+                flex: 0 0 33.333333%;
+                width: 33.333333%;
+            }
+        }
+
+        .nusa-carousel-testimonial {
+            padding: 3rem 0;
+        }
+        .nusa-carousel-testimonial .nusa-carousel-item {
+            text-align: center;
+            padding: 0 10%;
+        }
+        .nusa-carousel-testimonial .nusa-carousel-control-prev,
+        .nusa-carousel-testimonial .nusa-carousel-control-next {
+            filter: invert(1) grayscale(100);
+            width: 5%;
+            opacity: 0.2;
+        }
+        .nusa-carousel-testimonial .nusa-carousel-control-prev:hover,
+        .nusa-carousel-testimonial .nusa-carousel-control-next:hover {
+            opacity: 0.5;
+        }
+        [data-nusa-theme="dark"] .nusa-carousel-testimonial .nusa-carousel-control-prev,
+        [data-nusa-theme="dark"] .nusa-carousel-testimonial .nusa-carousel-control-next {
+            filter: invert(0);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="nusa-container py-5">
+        <h1 class="display-4 mb-3">Carousel Templates</h1>
+        <p class="lead text-secondary mb-5">Variasi lanjutan dari komponen carousel untuk berbagai kebutuhan layout.</p>
+    </div>
+
+    <!-- 1. Hero Carousel -->
+    <section>
+        <div class="nusa-container mb-3">
+            <h3 class="h4">1. Hero Slider</h3>
+            <p class="text-secondary">Carousel layar penuh dengan caption di tengah.</p>
+        </div>
+        <div class="nusa-carousel-container nusa-carousel-hero">
+            <div class="nusa-carousel" id="heroCarousel">
+                <div class="nusa-carousel-item">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop" class="nusa-carousel-img" alt="Nature">
+                    <div class="nusa-carousel-caption">
+                        <h1 class="display-4 text-white">Jelajahi Alam</h1>
+                        <p class="lead text-white d-none d-md-block">Temukan keindahan tersembunyi di setiap sudut dunia.</p>
+                        <button class="nusa-btn nusa-btn-primary mt-3">Mulai Petualangan</button>
+                    </div>
+                </div>
+                <div class="nusa-carousel-item">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop" class="nusa-carousel-img" alt="Forest">
+                    <div class="nusa-carousel-caption">
+                        <h1 class="display-4 text-white">Hutan Tropis</h1>
+                        <p class="lead text-white d-none d-md-block">Rasakan kesegaran udara alami yang belum terjamah.</p>
+                        <button class="nusa-btn nusa-btn-outline-light mt-3">Pelajari Lebih Lanjut</button>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="nusa-carousel-control-prev" data-nusa-target="prev">
+                <span class="nusa-carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a href="#" class="nusa-carousel-control-next" data-nusa-target="next">
+                <span class="nusa-carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. Multi Item Carousel -->
+    <section class="nusa-container">
+        <h3 class="h4 mb-3">2. Card Slider (Multi-Item)</h3>
+        <p class="text-secondary mb-4">Menampilkan beberapa item sekaligus (3 di desktop, 2 di tablet, 1 di mobile).</p>
+        
+        <div class="nusa-carousel-container">
+            <div class="nusa-carousel nusa-carousel-multi pb-4" id="multiCarousel">
+                <!-- Item 1 -->
+                <div class="nusa-carousel-item">
+                    <div class="nusa-card h-100 shadow-sm">
+                        <img src="https://placehold.co/600x400/4745D5/FFFFFF?text=Product+1" class="nusa-card-img-top" alt="...">
+                        <div class="nusa-card-body">
+                            <h5 class="nusa-card-title">Produk Unggulan 1</h5>
+                            <p class="nusa-card-text text-secondary">Deskripsi singkat produk yang menarik perhatian.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="nusa-carousel-item">
+                    <div class="nusa-card h-100 shadow-sm">
+                        <img src="https://placehold.co/600x400/E95897/FFFFFF?text=Product+2" class="nusa-card-img-top" alt="...">
+                        <div class="nusa-card-body">
+                            <h5 class="nusa-card-title">Produk Unggulan 2</h5>
+                            <p class="nusa-card-text text-secondary">Deskripsi singkat produk yang menarik perhatian.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="nusa-carousel-item">
+                    <div class="nusa-card h-100 shadow-sm">
+                        <img src="https://placehold.co/600x400/66D5BC/FFFFFF?text=Product+3" class="nusa-card-img-top" alt="...">
+                        <div class="nusa-card-body">
+                            <h5 class="nusa-card-title">Produk Unggulan 3</h5>
+                            <p class="nusa-card-text text-secondary">Deskripsi singkat produk yang menarik perhatian.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="nusa-carousel-item">
+                    <div class="nusa-card h-100 shadow-sm">
+                        <img src="https://placehold.co/600x400/F4B61A/FFFFFF?text=Product+4" class="nusa-card-img-top" alt="...">
+                        <div class="nusa-card-body">
+                            <h5 class="nusa-card-title">Produk Unggulan 4</h5>
+                            <p class="nusa-card-text text-secondary">Deskripsi singkat produk yang menarik perhatian.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Controls outside/custom styled could be added here -->
+        </div>
+    </section>
+
+    <!-- 3. Testimonial Carousel -->
+    <section class="bg-light">
+        <div class="nusa-container py-5">
+            <h3 class="h4 mb-4 text-center">3. Testimonial Slider</h3>
+            
+            <div class="nusa-carousel-container">
+                <div class="nusa-carousel nusa-carousel-testimonial" id="testimonialCarousel" data-bs-ride="carousel">
+                    <div class="nusa-carousel-item">
+                        <img src="https://i.pravatar.cc/150?img=32" class="nusa-avatar nusa-avatar-xl rounded-circle mb-3" alt="User">
+                        <figure>
+                            <blockquote class="blockquote">
+                                <p class="mb-3">"Nusa UI sangat membantu mempercepat proses development tim kami. Komponennya lengkap dan mudah disesuaikan."</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer mt-2">
+                                Sarah Johnson <cite title="Source Title">- CTO at TechCorp</cite>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="nusa-carousel-item">
+                        <img src="https://i.pravatar.cc/150?img=11" class="nusa-avatar nusa-avatar-xl rounded-circle mb-3" alt="User">
+                        <figure>
+                            <blockquote class="blockquote">
+                                <p class="mb-3">"Desain yang bersih dan modern. Dokumentasinya sangat jelas dan mudah dipahami oleh pemula sekalipun."</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer mt-2">
+                                Budi Santoso <cite title="Source Title">- Freelancer</cite>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <a href="#" class="nusa-carousel-control-prev" data-nusa-target="prev">
+                    <span class="nusa-carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a href="#" class="nusa-carousel-control-next" data-nusa-target="next">
+                    <span class="nusa-carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Zoom Effect -->
+    <section class="nusa-container">
+        <h3 class="h4 mb-3">4. Zoom Effect</h3>
+        <p class="text-secondary mb-4">Transisi zoom in/out yang halus (menggunakan class <code>.nusa-carousel-zoom</code>).</p>
+        
+        <div class="nusa-carousel-container" style="max-width: 800px; margin: 0 auto;">
+            <div class="nusa-carousel nusa-carousel-zoom shadow rounded-lg overflow-hidden" id="zoomCarousel">
+                <div class="nusa-carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1600&auto=format&fit=crop" class="nusa-carousel-img" alt="Mountain">
+                    <div class="nusa-carousel-caption">
+                        <h5>Pegunungan Alpen</h5>
+                    </div>
+                </div>
+                <div class="nusa-carousel-item">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop" class="nusa-carousel-img" alt="Beach">
+                    <div class="nusa-carousel-caption">
+                        <h5>Pantai Kuta</h5>
+                    </div>
+                </div>
+                <div class="nusa-carousel-item">
+                    <img src="https://images.unsplash.com/photo-1519681393798-3828fb4090bb?q=80&w=1600&auto=format&fit=crop" class="nusa-carousel-img" alt="City">
+                    <div class="nusa-carousel-caption">
+                        <h5>Kota Metropolitan</h5>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="nusa-carousel-control-prev" data-nusa-target="prev">
+                <span class="nusa-carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a href="#" class="nusa-carousel-control-next" data-nusa-target="next">
+                <span class="nusa-carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
+    </section>
+
+    <script type="module" src="../../assets/js/nusa-script.js"></script>
+</body>
+</html>
