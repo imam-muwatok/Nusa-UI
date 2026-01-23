@@ -3,39 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belajar Dasar Hangul - Bakor</title>
+    <title>Kurikulum Dasar - Bakor</title>
     <link rel="stylesheet" href="./../../../../assets/css/nusa.css">
     <style>
-        .hangul-card {
-            transition: transform 0.2s;
-            cursor: pointer;
+        .module-card {
+            transition: all 0.3s ease;
+            border-left: 5px solid transparent;
         }
-        .hangul-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--nusa-primary);
+        .module-card:hover {
+            transform: translateX(5px);
+            border-left-color: var(--nusa-primary);
+            box-shadow: var(--nusa-box-shadow-sm);
         }
-        .hangul-char {
-            font-size: 3rem;
+        .module-number {
+            font-size: 1.5rem;
             font-weight: bold;
-        }
-        .hangul-rom {
-            color: #6c757d;
-            font-size: 1.2rem;
-        }
-        .hangul-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        @media (min-width: 768px) {
-            .hangul-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        @media (min-width: 992px) {
-            .hangul-grid {
-                grid-template-columns: repeat(6, 1fr);
-            }
+            color: var(--nusa-text-secondary);
+            opacity: 0.3;
+            min-width: 40px;
         }
         /* Dark Mode Toggle */
         .theme-switch {
@@ -91,10 +76,10 @@
             </button>
             <div class="nusa-collapse nusa-navbar-collapse" id="navbarNav">
                 <ul class="nusa-navbar-nav ms-auto">
-                    <li class="nusa-nav-item"><a href="index.html" class="nusa-nav-link">Beranda</a></li>
-                    <li class="nusa-nav-item"><a href="index.html#courses" class="nusa-nav-link active">Kursus</a></li>
-                    <li class="nusa-nav-item"><a href="index.html#about" class="nusa-nav-link">Tentang</a></li>
-                    <li class="nusa-nav-item"><a href="index.html#contact" class="nusa-nav-link">Kontak</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html" class="nusa-nav-link">Beranda</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#courses" class="nusa-nav-link active">Kursus</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#about" class="nusa-nav-link">Tentang</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#contact" class="nusa-nav-link">Kontak</a></li>
                 </ul>
                 <div class="d-flex ms-lg-3 mt-3 mt-lg-0 align-items-center">
                     <label class="theme-switch me-3" for="nusa-theme-toggle" aria-label="Toggle Dark Mode">
@@ -110,291 +95,201 @@
     <!-- Header -->
     <header class="bg-primary text-white py-5">
         <div class="nusa-container text-center">
-            <h1 class="display-4 fw-bold">Mengenal Huruf Hangul</h1>
-            <p class="lead opacity-75">Panduan lengkap belajar huruf vokal dan konsonan dasar bahasa Korea.</p>
+            <h1 class="display-4 fw-bold">Kurikulum Dasar</h1>
+            <p class="lead opacity-75">Mulai perjalanan bahasa Korea Anda dari nol hingga bisa percakapan dasar.</p>
         </div>
     </header>
 
     <main class="nusa-container py-5">
-        <!-- Intro -->
-        <section class="mb-5">
-            <h2 class="fw-bold mb-3">Apa itu Hangul?</h2>
-            <p class="text-secondary">Hangul (한글) adalah alfabet yang digunakan untuk menulis bahasa Korea. Diciptakan oleh Raja Sejong yang Agung pada tahun 1443. Berbeda dengan huruf Latin yang ditulis berderet ke samping, Hangul ditulis dalam blok-blok suku kata.</p>
-        </section>
+        <div class="nusa-row justify-content-center">
+            <div class="nusa-col-lg-8">
+                <div class="d-flex flex-column gap-3">
+                    
+                    <!-- Module 1 -->
+                    <a href="hangel.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">01</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Mengenal Huruf Hangul</h5>
+                                    <p class="text-secondary mb-0 small">Pelajari vokal dan konsonan dasar bahasa Korea.</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
+                        </div>
+                    </a>
 
-        <!-- Vowels -->
-        <section class="mb-5">
-            <h3 class="fw-bold mb-4 border-bottom pb-2">Vokal Dasar (Mo-eum)</h3>
-            <div class="hangul-grid">
-                <!-- Vowel Cards -->
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-primary">ㅏ</div>
-                            <div class="hangul-rom">a</div>
+                    <!-- Module 2 -->
+                    <a href="struktur.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">02</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Struktur Suku Kata</h5>
+                                    <p class="text-secondary mb-0 small">Cara menggabungkan huruf menjadi blok suku kata.</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-primary">ㅑ</div>
-                            <div class="hangul-rom">ya</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-primary">ㅓ</div>
-                            <div class="hangul-rom">eo</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-primary">ㅕ</div>
-                            <div class="hangul-rom">yeo</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-primary">ㅗ</div>
-                            <div class="hangul-rom">o</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-primary">ㅛ</div>
-                            <div class="hangul-rom">yo</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-primary">ㅜ</div>
-                            <div class="hangul-rom">u</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-primary">ㅠ</div>
-                            <div class="hangul-rom">yu</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-primary">ㅡ</div>
-                            <div class="hangul-rom">eu</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-primary">ㅣ</div>
-                            <div class="hangul-rom">i</div>
-                        </div>
-                    </div>
-            </div>
-        </section>
+                    </a>
 
-        <!-- Consonants -->
-        <section class="mb-5">
-            <h3 class="fw-bold mb-4 border-bottom pb-2">Konsonan Dasar (Ja-eum)</h3>
-            <div class="hangul-grid">
-                <!-- Consonant Cards -->
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-secondary">ㄱ</div>
-                            <div class="hangul-rom">g/k</div>
+                    <!-- Module 3 -->
+                    <a href="latihan.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">03</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Latihan Membaca</h5>
+                                    <p class="text-secondary mb-0 small">Praktek membaca kata-kata dasar dengan flashcard.</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-secondary">ㄴ</div>
-                            <div class="hangul-rom">n</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-secondary">ㄷ</div>
-                            <div class="hangul-rom">d/t</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-secondary">ㄹ</div>
-                            <div class="hangul-rom">r/l</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-secondary">ㅁ</div>
-                            <div class="hangul-rom">m</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-secondary">ㅂ</div>
-                            <div class="hangul-rom">b/p</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-secondary">ㅅ</div>
-                            <div class="hangul-rom">s/t</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-secondary">ㅇ</div>
-                            <div class="hangul-rom">-/ng</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-secondary">ㅈ</div>
-                            <div class="hangul-rom">j/t</div>
-                        </div>
-                    </div>
-                    <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                        <div class="nusa-card-body">
-                            <div class="hangul-char text-secondary">ㅎ</div>
-                            <div class="hangul-rom">h/t</div>
-                        </div>
-                    </div>
-            </div>
-        </section>
+                    </a>
 
-        <!-- Double Vowels -->
-        <section class="mb-5">
-            <h3 class="fw-bold mb-4 border-bottom pb-2">Vokal Rangkap (Double Vowels)</h3>
-            <div class="hangul-grid">
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-primary">ㅐ</div>
-                        <div class="hangul-rom">ae</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-primary">ㅒ</div>
-                        <div class="hangul-rom">yae</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-primary">ㅔ</div>
-                        <div class="hangul-rom">e</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-primary">ㅖ</div>
-                        <div class="hangul-rom">ye</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-primary">ㅘ</div>
-                        <div class="hangul-rom">wa</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-primary">ㅙ</div>
-                        <div class="hangul-rom">wae</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-primary">ㅚ</div>
-                        <div class="hangul-rom">oe</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-primary">ㅝ</div>
-                        <div class="hangul-rom">wo</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-primary">ㅞ</div>
-                        <div class="hangul-rom">we</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-primary">ㅟ</div>
-                        <div class="hangul-rom">wi</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-primary">ㅢ</div>
-                        <div class="hangul-rom">ui</div>
-                    </div>
+                    <!-- Module 4 -->
+                    <a href="pelafalan.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">04</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Aturan Pelafalan</h5>
+                                    <p class="text-secondary mb-0 small">Batchim, Liaison, dan aturan bunyi lainnya.</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Module 5 -->
+                    <a href="angka.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">05</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Angka Asli Korea</h5>
+                                    <p class="text-secondary mb-0 small">Menghitung benda dan umur (Hana, Dul, Set...).</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Module 6 -->
+                    <a href="sino.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">06</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Angka Sino Korea</h5>
+                                    <p class="text-secondary mb-0 small">Uang, tanggal, dan nomor telepon (Il, I, Sam...).</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Module 7 -->
+                    <a href="latihan-angka.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">07</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Latihan Angka</h5>
+                                    <p class="text-secondary mb-0 small">Kuis membedakan penggunaan angka asli dan sino.</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Module 8 -->
+                    <a href="formal.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">08</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Pola Kalimat Formal</h5>
+                                    <p class="text-secondary mb-0 small">Bentuk sopan formal (Hapsyo-che) untuk situasi resmi.</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Module 9 -->
+                    <a href="informal.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">09</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Pola Kalimat Informal</h5>
+                                    <p class="text-secondary mb-0 small">Bentuk sopan sehari-hari (Haeyo-che).</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Module 10 -->
+                    <a href="informal-irregular.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">10</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Pengecualian Informal</h5>
+                                    <p class="text-secondary mb-0 small">Kata kerja tidak beraturan (Irregular Verbs).</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Module 11 -->
+                    <a href="partikel.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">11</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Partikel Dasar</h5>
+                                    <p class="text-secondary mb-0 small">Partikel lokasi (에/에서) dan waktu.</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Module 12 -->
+                    <a href="percakapan.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">12</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Latihan Percakapan</h5>
+                                    <p class="text-secondary mb-0 small">Praktek dialog sehari-hari.</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Module 13 -->
+                    <a href="partikel-subjek-topik.html" class="text-decoration-none">
+                        <div class="nusa-card module-card h-100 shadow-sm border-0">
+                            <div class="nusa-card-body d-flex align-items-center p-4">
+                                <div class="module-number">13</div>
+                                <div>
+                                    <h5 class="fw-bold mb-1 text-dark">Partikel Subjek & Topik</h5>
+                                    <p class="text-secondary mb-0 small">Membedakan 은/는 dan 이/가.</p>
+                                </div>
+                                <div class="ms-auto text-primary">→</div>
+                            </div>
+                        </div>
+                    </a>
+
                 </div>
             </div>
-        </section>
-
-        <!-- Double Consonants -->
-        <section class="mb-5">
-            <h3 class="fw-bold mb-4 border-bottom pb-2">Konsonan Rangkap (Double Consonants)</h3>
-            <div class="hangul-grid">
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-secondary">ㄲ</div>
-                        <div class="hangul-rom">kk</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-secondary">ㄸ</div>
-                        <div class="hangul-rom">tt</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-secondary">ㅃ</div>
-                        <div class="hangul-rom">pp</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-secondary">ㅆ</div>
-                        <div class="hangul-rom">ss</div>
-                    </div>
-                </div>
-                <div class="nusa-card text-center h-100 hangul-card shadow-sm">
-                    <div class="nusa-card-body">
-                        <div class="hangul-char text-secondary">ㅉ</div>
-                        <div class="hangul-rom">jj</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quiz Section -->
-        <section class="mb-5">
-            <h3 class="fw-bold mb-4 border-bottom pb-2">Kuis Kilat: Tebak Huruf</h3>
-            <div class="nusa-card shadow-sm p-4 text-center">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="mb-0">Huruf apa ini?</h4>
-                    <div class="d-flex align-items-center">
-                        <button id="quiz-reset" class="nusa-btn nusa-btn-sm nusa-btn-outline-error me-2">Reset</button>
-                        <span id="quiz-score" class="nusa-badge nusa-badge-secondary">Skor: 0 / 0</span>
-                    </div>
-                </div>
-                <div class="display-1 fw-bold text-primary mb-4" id="quiz-question">?</div>
-                <div class="d-flex flex-wrap justify-content-center gap-2 mb-3" id="quiz-options">
-                    <!-- Options will be generated here -->
-                </div>
-                <div id="quiz-result" class="fw-bold mt-3" style="min-height: 1.5em;"></div>
-                <button id="quiz-next" class="nusa-btn nusa-btn-outline-primary mt-3" style="display: none;">Soal Selanjutnya</button>
-            </div>
-        </section>
-
-        <!-- Practice CTA -->
-        <div class="nusa-card border-0 shadow-sm p-4 text-center">
-            <h3 class="fw-bold">Sudah hafal huruf-huruf di atas?</h3>
-            <p class="text-secondary">Lanjut ke materi berikutnya untuk belajar cara menggabungkan huruf menjadi suku kata.</p>
-            <a href="struktur.html" class="nusa-btn nusa-btn-primary">Lanjut ke Struktur Suku Kata →</a>
         </div>
-
     </main>
 
     <!-- Footer -->
@@ -444,162 +339,6 @@
     <script type="module">
         import { initDarkMode } from '../../../../assets/js/nusa-dark-mode.js';
         initDarkMode();
-
-        // Sound Effects
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        function playSoundEffect(type) {
-            if (audioCtx.state === 'suspended') audioCtx.resume();
-            const osc = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            osc.connect(gain);
-            gain.connect(audioCtx.destination);
-
-            if (type === 'correct') {
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(600, audioCtx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.1);
-                gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.5);
-            } else {
-                osc.type = 'sawtooth';
-                osc.frequency.setValueAtTime(150, audioCtx.currentTime);
-                osc.frequency.linearRampToValueAtTime(100, audioCtx.currentTime + 0.3);
-                gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.3);
-            }
-        }
-
-        // Audio Pronunciation Logic
-        function playAudio(text) {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel(); // Stop previous audio
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'ko-KR';
-                utterance.rate = 0.8; // Slower for learning
-                window.speechSynthesis.speak(utterance);
-            }
-        }
-
-        document.querySelectorAll('.hangul-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const text = card.querySelector('.hangul-char').textContent;
-                playAudio(text);
-            });
-        });
-
-        // Simple Quiz Logic
-        const hangulData = [
-            { char: 'ㅏ', rom: 'a' }, { char: 'ㅑ', rom: 'ya' }, { char: 'ㅓ', rom: 'eo' }, { char: 'ㅕ', rom: 'yeo' },
-            { char: 'ㅗ', rom: 'o' }, { char: 'ㅛ', rom: 'yo' }, { char: 'ㅜ', rom: 'u' }, { char: 'ㅠ', rom: 'yu' },
-            { char: 'ㅡ', rom: 'eu' }, { char: 'ㅣ', rom: 'i' },
-            { char: 'ㄱ', rom: 'g/k' }, { char: 'ㄴ', rom: 'n' }, { char: 'ㄷ', rom: 'd/t' }, { char: 'ㄹ', rom: 'r/l' },
-            { char: 'ㅁ', rom: 'm' }, { char: 'ㅂ', rom: 'b/p' }, { char: 'ㅅ', rom: 's' }, { char: 'ㅇ', rom: 'ng' },
-            { char: 'ㅈ', rom: 'j' }, { char: 'ㅎ', rom: 'h' },
-            { char: 'ㄲ', rom: 'kk' }, { char: 'ㄸ', rom: 'tt' }, { char: 'ㅃ', rom: 'pp' }, { char: 'ㅆ', rom: 'ss' }, { char: 'ㅉ', rom: 'jj' },
-            { char: 'ㅐ', rom: 'ae' }, { char: 'ㅒ', rom: 'yae' }, { char: 'ㅔ', rom: 'e' }, { char: 'ㅖ', rom: 'ye' },
-            { char: 'ㅘ', rom: 'wa' }, { char: 'ㅙ', rom: 'wae' }, { char: 'ㅚ', rom: 'oe' }, { char: 'ㅝ', rom: 'wo' },
-            { char: 'ㅞ', rom: 'we' }, { char: 'ㅟ', rom: 'wi' }, { char: 'ㅢ', rom: 'ui' }
-        ];
-
-        const questionEl = document.getElementById('quiz-question');
-        const optionsEl = document.getElementById('quiz-options');
-        const resultEl = document.getElementById('quiz-result');
-        const nextBtn = document.getElementById('quiz-next');
-        const scoreEl = document.getElementById('quiz-score');
-        const resetBtn = document.getElementById('quiz-reset');
-
-        let currentQuestion = null;
-        let score = 0;
-        let questionsAnswered = 0;
-
-        function generateQuestion() {
-            // Reset UI
-            resultEl.textContent = '';
-            resultEl.className = 'fw-bold mt-3';
-            nextBtn.style.display = 'none';
-            optionsEl.innerHTML = '';
-
-            // Pick random char
-            const randomIndex = Math.floor(Math.random() * hangulData.length);
-            currentQuestion = hangulData[randomIndex];
-            questionEl.textContent = currentQuestion.char;
-
-            // Generate options (1 correct + 3 wrong)
-            const options = [currentQuestion];
-            while (options.length < 4) {
-                const randomOption = hangulData[Math.floor(Math.random() * hangulData.length)];
-                if (!options.includes(randomOption)) {
-                    options.push(randomOption);
-                }
-            }
-
-            // Shuffle options
-            options.sort(() => Math.random() - 0.5);
-
-            // Render buttons
-            options.forEach(opt => {
-                const btn = document.createElement('button');
-                btn.className = 'nusa-btn nusa-btn-outline-secondary px-4 py-2';
-                btn.textContent = opt.rom;
-                btn.onclick = () => checkAnswer(opt, btn);
-                optionsEl.appendChild(btn);
-            });
-        }
-
-        function checkAnswer(selected, btnElement) {
-            // Disable all buttons
-            const buttons = optionsEl.querySelectorAll('button');
-            buttons.forEach(b => b.disabled = true);
-
-            questionsAnswered++;
-
-            if (selected.char === currentQuestion.char) {
-                score++;
-                btnElement.classList.remove('nusa-btn-outline-secondary');
-                btnElement.classList.add('nusa-btn-success');
-                resultEl.textContent = 'Benar! 🎉';
-                resultEl.classList.add('text-success');
-                playSoundEffect('correct');
-                confetti({
-                    particleCount: 100,
-                    spread: 70,
-                    origin: { y: 0.6 }
-                });
-            } else {
-                btnElement.classList.remove('nusa-btn-outline-secondary');
-                btnElement.classList.add('nusa-btn-error');
-                resultEl.textContent = `Salah! Jawaban yang benar adalah "${currentQuestion.rom}"`;
-                resultEl.classList.add('text-error');
-                playSoundEffect('wrong');
-                
-                // Highlight correct answer
-                buttons.forEach(b => {
-                    if (b.textContent === currentQuestion.rom) {
-                        b.classList.remove('nusa-btn-outline-secondary');
-                        b.classList.add('nusa-btn-success');
-                    }
-                });
-            }
-            
-            scoreEl.textContent = `Skor: ${score} / ${questionsAnswered}`;
-            nextBtn.style.display = 'inline-block';
-        }
-
-        nextBtn.addEventListener('click', generateQuestion);
-        
-        resetBtn.addEventListener('click', () => {
-            score = 0;
-            questionsAnswered = 0;
-            scoreEl.textContent = 'Skor: 0 / 0';
-            generateQuestion();
-        });
-
-        // Start first question
-        generateQuestion();
     </script>
 </body>
 </html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Angka (Asli vs Sino) - Bakor</title>
+    <link rel="stylesheet" href="../../../../assets/css/nusa.css">
+    <style>
+        .korean-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--nusa-primary);
+            cursor: pointer;
+        }
+        .korean-text:hover {
+            text-decoration: underline;
+        }
+        /* Dark Mode Toggle */
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #0d6efd;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="nusa-navbar bg-white shadow-sm sticky-top">
+        <div class="nusa-container">
+            <a href="../index.html" class="nusa-navbar-brand fw-bold text-primary d-flex align-items-center">
+                <span class="me-2">🇰🇷</span> Bakor
+            </a>
+            <button class="nusa-navbar-toggler" type="button" data-nusa-toggle="collapse" data-nusa-target="#navbarNav">
+                <span class="nusa-navbar-toggler-icon"></span>
+            </button>
+            <div class="nusa-collapse nusa-navbar-collapse" id="navbarNav">
+                <ul class="nusa-navbar-nav ms-auto">
+                    <li class="nusa-nav-item"><a href="../index.html" class="nusa-nav-link">Beranda</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#courses" class="nusa-nav-link active">Kursus</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#about" class="nusa-nav-link">Tentang</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#contact" class="nusa-nav-link">Kontak</a></li>
+                </ul>
+                <div class="d-flex ms-lg-3 mt-3 mt-lg-0 align-items-center">
+                    <label class="theme-switch me-3" for="nusa-theme-toggle" aria-label="Toggle Dark Mode">
+                        <input type="checkbox" id="nusa-theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <a href="#" class="nusa-btn nusa-btn-primary">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white py-5">
+        <div class="nusa-container text-center">
+            <h1 class="display-4 fw-bold">Latihan Penggunaan Angka</h1>
+            <p class="lead opacity-75">Kapan pakai Hana? Kapan pakai Il? Mari kita latih!</p>
+        </div>
+    </header>
+
+    <main class="nusa-container py-5">
+        <!-- Cheat Sheet -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">Ringkasan Aturan</h3>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 shadow-sm border-primary">
+                        <div class="nusa-card-header fw-bold bg-primary text-white">Angka Asli (Hana, Dul, Set...)</div>
+                        <div class="nusa-card-body">
+                            <ul class="mb-0">
+                                <li class="mb-2">Menghitung jumlah benda (1-99)</li>
+                                <li class="mb-2">Umur (Sal)</li>
+                                <li class="mb-2">Jam (Si)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 shadow-sm border-secondary">
+                        <div class="nusa-card-header fw-bold bg-secondary text-white">Angka Sino (Il, I, Sam...)</div>
+                        <div class="nusa-card-body">
+                            <ul class="mb-0">
+                                <li class="mb-2">Uang / Harga</li>
+                                <li class="mb-2">Tanggal (Tahun, Bulan, Hari)</li>
+                                <li class="mb-2">Menit (Bun) & Detik (Cho)</li>
+                                <li class="mb-2">Nomor Telepon, Lantai, Bus</li>
+                                <li class="mb-2">Angka di atas 100</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">Kuis: Pilih Angka yang Tepat</h3>
+            <div class="nusa-card shadow-sm p-4 text-center">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Lengkapi Kalimat</h4>
+                    <div class="d-flex align-items-center">
+                        <button id="quiz-reset" class="nusa-btn nusa-btn-sm nusa-btn-outline-error me-2">Reset</button>
+                        <span id="quiz-score" class="nusa-badge nusa-badge-secondary">Skor: 0 / 0</span>
+                    </div>
+                </div>
+                
+                <div class="mb-2 fs-5 text-secondary" id="quiz-context">...</div>
+                <div class="display-6 fw-bold text-primary mb-4" id="quiz-question">...</div>
+                
+                <div class="d-flex justify-content-center gap-3 mb-3" id="quiz-options">
+                    <!-- Options will be generated here -->
+                </div>
+                
+                <div id="quiz-result" class="fw-bold mt-3" style="min-height: 1.5em;"></div>
+                <button id="quiz-next" class="nusa-btn nusa-btn-outline-primary mt-3" style="display: none;">Soal Selanjutnya</button>
+            </div>
+        </section>
+
+        <!-- Navigation CTA -->
+        <div class="nusa-card border-0 shadow-sm p-4 text-center">
+            <h3 class="fw-bold">Siap Lanjut?</h3>
+            <p class="text-secondary">Sekarang Anda sudah paham penggunaan angka. Mari masuk ke tata bahasa formal.</p>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="sino.html" class="nusa-btn nusa-btn-outline-secondary">← Kembali ke Angka Sino</a>
+                <a href="formal.html" class="nusa-btn nusa-btn-primary">Bentuk Formal →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="nusa-container">
+            <p class="text-center small text-gray-500">&copy; 2026 Bakor. All rights reserved. Powered by Nusa UI.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="../../../../assets/js/nusa-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script type="module">
+        import { initDarkMode } from '../../../../assets/js/nusa-dark-mode.js';
+        initDarkMode();
+
+        // Sound Effects
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playSoundEffect(type) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            if (type === 'correct') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.1);
+                gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.5);
+            } else {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+                osc.frequency.linearRampToValueAtTime(100, audioCtx.currentTime + 0.3);
+                gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.3);
+            }
+        }
+
+        // Quiz Logic
+        const quizData = [
+            { context: 'Jam 2 (Waktu)', question: '___ 시', correct: '두', options: ['두 (Du)', '이 (I)'] },
+            { context: '30 Menit (Waktu)', question: '___ 분', correct: '삼십', options: ['서른 (Seoreun)', '삼십 (Samsip)'] },
+            { context: '5 Buah (Benda)', question: '___ 개', correct: '다섯', options: ['다섯 (Daseot)', '오 (O)'] },
+            { context: '10.000 Won (Uang)', question: '___ 원', correct: '만', options: ['열 (Yeol)', '만 (Man)'] },
+            { context: 'Nomor 1 (Urutan)', question: '___ 번', correct: '일', options: ['하나 (Hana)', '일 (Il)'] },
+            { context: 'Umur 20', question: '___ 살', correct: '스무', options: ['스무 (Seumu)', '이십 (Isip)'] },
+            { context: 'Lantai 3', question: '___ 층', correct: '삼', options: ['셋 (Set)', '삼 (Sam)'] },
+            { context: '4 Orang', question: '___ 명', correct: '네', options: ['네 (Ne)', '사 (Sa)'] },
+            { context: 'Tahun 2024', question: '___ 년', correct: '이천이십사', options: ['이천이십사 (Sino)', 'Native'] },
+            { context: 'Bulan 12', question: '___ 월', correct: '십이', options: ['열두 (Yeoldu)', '십이 (Sibi)'] }
+        ];
+
+        const contextEl = document.getElementById('quiz-context');
+        const questionEl = document.getElementById('quiz-question');
+        const optionsEl = document.getElementById('quiz-options');
+        const resultEl = document.getElementById('quiz-result');
+        const nextBtn = document.getElementById('quiz-next');
+        const scoreEl = document.getElementById('quiz-score');
+        const resetBtn = document.getElementById('quiz-reset');
+
+        let currentQuestion = null;
+        let score = 0;
+        let questionsAnswered = 0;
+
+        function generateQuestion() {
+            resultEl.textContent = '';
+            resultEl.className = 'fw-bold mt-3';
+            nextBtn.style.display = 'none';
+            optionsEl.innerHTML = '';
+
+            const randomIndex = Math.floor(Math.random() * quizData.length);
+            currentQuestion = quizData[randomIndex];
+            
+            contextEl.textContent = currentQuestion.context;
+            questionEl.textContent = currentQuestion.question;
+
+            // Shuffle options
+            const shuffledOptions = [...currentQuestion.options].sort(() => Math.random() - 0.5);
+
+            shuffledOptions.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'nusa-btn nusa-btn-outline-secondary px-4 py-2 fs-5';
+                btn.textContent = opt;
+                // Extract value before parenthesis for checking
+                const val = opt.split(' ')[0];
+                btn.onclick = () => checkAnswer(val, btn);
+                optionsEl.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selected, btnElement) {
+            const buttons = optionsEl.querySelectorAll('button');
+            buttons.forEach(b => b.disabled = true);
+
+            questionsAnswered++;
+
+            if (selected === currentQuestion.correct) {
+                score++;
+                btnElement.classList.remove('nusa-btn-outline-secondary');
+                btnElement.classList.add('nusa-btn-success');
+                resultEl.textContent = `Benar! 🎉`;
+                resultEl.classList.add('text-success');
+                playSoundEffect('correct');
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            } else {
+                btnElement.classList.remove('nusa-btn-outline-secondary');
+                btnElement.classList.add('nusa-btn-error');
+                resultEl.textContent = `Salah! Jawaban: ${currentQuestion.correct}`;
+                resultEl.classList.add('text-error');
+                playSoundEffect('wrong');
+            }
+            scoreEl.textContent = `Skor: ${score} / ${questionsAnswered}`;
+            nextBtn.style.display = 'inline-block';
+        }
+
+        nextBtn.addEventListener('click', generateQuestion);
+        resetBtn.addEventListener('click', () => {
+            score = 0; questionsAnswered = 0; scoreEl.textContent = 'Skor: 0 / 0'; generateQuestion();
+        });
+
+        generateQuestion();
+    </script>
+</body>
+</html>
+
