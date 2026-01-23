@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Suku Kata Hangul - Bakor</title>
+    <link rel="stylesheet" href="../../../../assets/css/nusa.css">
+    <style>
+        .syllable-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .syllable-char {
+            font-size: 3rem;
+            font-weight: bold;
+            padding: 1rem;
+            border-radius: .5rem;
+            background-color: var(--nusa-base-200);
+            text-align: center;
+        }
+        .syllable-result {
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--nusa-primary);
+        }
+        /* Dark Mode Toggle */
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #0d6efd;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="nusa-navbar bg-white shadow-sm sticky-top">
+        <div class="nusa-container">
+            <a href="../index.html" class="nusa-navbar-brand fw-bold text-primary d-flex align-items-center">
+                <span class="me-2">🇰🇷</span> Bakor
+            </a>
+            <button class="nusa-navbar-toggler" type="button" data-nusa-toggle="collapse" data-nusa-target="#navbarNav">
+                <span class="nusa-navbar-toggler-icon"></span>
+            </button>
+            <div class="nusa-collapse nusa-navbar-collapse" id="navbarNav">
+                <ul class="nusa-navbar-nav ms-auto">
+                    <li class="nusa-nav-item"><a href="../index.html" class="nusa-nav-link">Beranda</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#courses" class="nusa-nav-link active">Kursus</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#about" class="nusa-nav-link">Tentang</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#contact" class="nusa-nav-link">Kontak</a></li>
+                </ul>
+                <div class="d-flex ms-lg-3 mt-3 mt-lg-0 align-items-center">
+                    <label class="theme-switch me-3" for="nusa-theme-toggle" aria-label="Toggle Dark Mode">
+                        <input type="checkbox" id="nusa-theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <a href="#" class="nusa-btn nusa-btn-primary">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white py-5">
+        <div class="nusa-container text-center">
+            <h1 class="display-4 fw-bold">Struktur Suku Kata Hangul</h1>
+            <p class="lead opacity-75">Belajar cara menggabungkan huruf vokal dan konsonan menjadi blok suku kata.</p>
+        </div>
+    </header>
+
+    <main class="nusa-container py-5">
+        <!-- Intro -->
+        <section class="mb-5">
+            <h2 class="fw-bold mb-3">Cara Kerja Blok Suku Kata</h2>
+            <p class="text-secondary">Dalam bahasa Korea, huruf tidak ditulis berjajar satu per satu seperti dalam abjad Latin. Sebaliknya, huruf-huruf Hangul dikelompokkan menjadi "blok" suku kata. Setiap blok mewakili satu suku kata dan selalu dimulai dengan konsonan, diikuti oleh vokal.</p>
+        </section>
+
+        <!-- Structure 1: Consonant + Vowel -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">Struktur 1: Konsonan + Vokal (KV)</h3>
+            <p class="text-secondary mb-4">Ini adalah bentuk paling dasar. Penempatan vokal tergantung pada bentuknya (vertikal atau horizontal).</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100">
+                        <div class="nusa-card-body text-center">
+                            <h5 class="nusa-card-title fw-bold">Vokal Vertikal</h5>
+                            <p class="small text-secondary">Vokal seperti ㅏ, ㅑ, ㅓ, ㅕ, ㅣ ditempatkan di sebelah kanan konsonan awal.</p>
+                            <div class="syllable-block">
+                                <div>
+                                    <div class="syllable-char">ㄱ</div> + <div class="syllable-char">ㅏ</div>
+                                </div>
+                                <div class="syllable-result">가</div>
+                            </div>
+                            <div class="mt-2 fs-5"> dibaca "ga"</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100">
+                        <div class="nusa-card-body text-center">
+                            <h5 class="nusa-card-title fw-bold">Vokal Horizontal</h5>
+                            <p class="small text-secondary">Vokal seperti ㅗ, ㅛ, ㅜ, ㅠ, ㅡ ditempatkan di bawah konsonan awal.</p>
+                            <div class="syllable-block">
+                                <div>
+                                    <div class="syllable-char">ㄴ</div> + <div class="syllable-char">ㅗ</div>
+                                </div>
+                                <div class="syllable-result">노</div>
+                            </div>
+                            <div class="mt-2 fs-5"> dibaca "no"</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Structure 2: Consonant + Vowel + Consonant -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">Struktur 2: Konsonan + Vokal + Konsonan (KVK)</h3>
+            <p class="text-secondary mb-4">Jika suku kata diakhiri dengan konsonan, konsonan akhir ini disebut <strong>Batchim (받침)</strong> dan selalu ditempatkan di bagian paling bawah blok.</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100">
+                        <div class="nusa-card-body text-center">
+                            <h5 class="nusa-card-title fw-bold">Contoh dengan Vokal Vertikal</h5>
+                            <div class="syllable-block justify-content-center">
+                                <div>
+                                    <div class="syllable-char">ㅂ</div> + <div class="syllable-char">ㅏ</div> + <div class="syllable-char">ㅂ</div>
+                                </div>
+                                <div class="syllable-result">밥</div>
+                            </div>
+                            <div class="mt-2 fs-5"> dibaca "bap" (nasi)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100">
+                        <div class="nusa-card-body text-center">
+                            <h5 class="nusa-card-title fw-bold">Contoh dengan Vokal Horizontal</h5>
+                            <div class="syllable-block justify-content-center">
+                                <div>
+                                    <div class="syllable-char">ㅁ</div> + <div class="syllable-char">ㅜ</div> + <div class="syllable-char">ㄹ</div>
+                                </div>
+                                <div class="syllable-result">물</div>
+                            </div>
+                            <div class="mt-2 fs-5"> dibaca "mul" (air)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Placeholder Consonant -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">Konsonan 'ㅇ' (ieung) sebagai Placeholder</h3>
+            <p class="text-secondary mb-4">Setiap blok suku kata harus diawali dengan konsonan. Jika suku kata dimulai dengan suara vokal, kita menggunakan konsonan 'ㅇ' sebagai placeholder yang tidak bersuara.</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100">
+                        <div class="nusa-card-body text-center">
+                            <h5 class="nusa-card-title fw-bold">Hanya Vokal</h5>
+                            <p class="small text-secondary">Untuk menulis 'a', kita gunakan 'ㅇ' + 'ㅏ'.</p>
+                            <div class="syllable-block">
+                                <div>
+                                    <div class="syllable-char">ㅇ</div> + <div class="syllable-char">ㅏ</div>
+                                </div>
+                                <div class="syllable-result">아</div>
+                            </div>
+                            <div class="mt-2 fs-5"> dibaca "a"</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100">
+                        <div class="nusa-card-body text-center">
+                            <h5 class="nusa-card-title fw-bold">Vokal + Batchim</h5>
+                            <p class="small text-secondary">Ketika 'ㅇ' menjadi batchim, ia berbunyi 'ng'.</p>
+                            <div class="syllable-block">
+                                <div>
+                                    <div class="syllable-char">ㅇ</div> + <div class="syllable-char">ㅏ</div> + <div class="syllable-char">ㄴ</div>
+                                </div>
+                                <div class="syllable-result">안</div>
+                            </div>
+                            <div class="mt-2 fs-5"> dibaca "an" (dalam)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batchim Sound Change Rules -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">Aturan Perubahan Bunyi Batchim</h3>
+            <p class="text-secondary mb-4">Bunyi konsonan akhir (batchim) tidak selalu sama. Bunyinya bisa berubah tergantung pada huruf apa yang mengikutinya. Ini adalah salah satu kunci untuk terdengar natural saat berbicara bahasa Korea.</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100">
+                        <div class="nusa-card-body text-center">
+                            <h5 class="nusa-card-title fw-bold">Aturan 1: Liaison (Menyambung)</h5>
+                            <p class="small text-secondary">Jika batchim diikuti oleh vokal (huruf 'ㅇ'), bunyi batchim akan "pindah" ke suku kata berikutnya.</p>
+                            <div class="syllable-block justify-content-center">
+                                <div>
+                                    <div class="syllable-char" style="font-size: 2.5rem;">한국어</div>
+                                </div>
+                                <div class="syllable-result">→</div>
+                                <div>
+                                    <div class="syllable-char" style="font-size: 2.5rem; color: var(--nusa-secondary-focus);">[한구거]</div>
+                                </div>
+                            </div>
+                            <div class="mt-2 fs-5">"han-guk-eo" dibaca "han-gu-geo"</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100">
+                        <div class="nusa-card-body text-center">
+                            <h5 class="nusa-card-title fw-bold">Aturan 2: Netralisasi</h5>
+                            <p class="small text-secondary">Banyak batchim yang bunyinya menjadi [t] jika berada di akhir kata atau diikuti konsonan lain.</p>
+                            <div class="syllable-block justify-content-center">
+                                <div><div class="syllable-char">옷</div></div>
+                                <div class="syllable-result">→</div>
+                                <div><div class="syllable-char" style="font-size: 2.5rem; color: var(--nusa-secondary-focus);">[옫]</div></div>
+                            </div>
+                            <div class="mt-2 fs-5">"os" dibaca "ot" (pakaian)</div>
+                            <p class="small text-secondary mt-2">(Berlaku untuk: ㅅ, ㅆ, ㅈ, ㅊ, ㄷ, ㅌ, ㅎ)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation CTA -->
+        <div class="nusa-card border-0 shadow-sm p-4 text-center">
+            <h3 class="fw-bold">Sudah Paham?</h3>
+            <p class="text-secondary">Kembali ke halaman sebelumnya untuk mereview huruf, atau lanjutkan ke latihan membaca.</p>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="index.html" class="nusa-btn nusa-btn-outline-secondary">← Kembali ke Daftar Huruf</a>
+                <a href="latihan.html" class="nusa-btn nusa-btn-primary">Latihan Membaca →</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="nusa-container">
+            <div class="nusa-row">
+                <div class="nusa-col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Bakor</h5>
+                    <p class="text-gray-400 small">Platform belajar bahasa Korea terdepan di Indonesia dengan metode yang menyenangkan, fleksibel, dan mudah dipahami oleh siapa saja.</p>
+                </div>
+                <div class="nusa-col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Menu</h6>
+                    <ul class="list-unstyled small text-gray-400">
+                        <li class="mb-2"><a href="../index.html" class="text-decoration-none text-gray-400 hover-text-white">Beranda</a></li>
+                        <li class="mb-2"><a href="../index.html#courses" class="text-decoration-none text-gray-400 hover-text-white">Kursus</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Blog</a></li>
+                        <li class="mb-2"><a href="../index.html#about" class="text-decoration-none text-gray-400 hover-text-white">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                <div class="nusa-col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Bantuan</h6>
+                    <ul class="list-unstyled small text-gray-400">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">FAQ</a></li>
+                        <li class="mb-2"><a href="../index.html#contact" class="text-decoration-none text-gray-400 hover-text-white">Kontak</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Kebijakan Privasi</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                <div class="nusa-col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
+                    <p class="text-gray-400 small">Dapatkan tips belajar dan promo terbaru.</p>
+                    <div class="nusa-input-group">
+                        <input type="email" class="nusa-form-control form-control-sm bg-dark text-white border-secondary" placeholder="Email Anda">
+                        <button class="nusa-btn nusa-btn-primary nusa-btn-sm">Langganan</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-gray-700 my-4">
+            <div class="text-center small text-gray-500">
+                &copy; 2026 Bakor. All rights reserved. Powered by Nusa UI.
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../../../../assets/js/nusa-script.js"></script>
+    <script type="module">
+        import { initDarkMode } from '../../../../assets/js/nusa-dark-mode.js';
+        initDarkMode();
+    </script>
+</body>
+</html>

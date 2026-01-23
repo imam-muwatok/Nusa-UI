@@ -32,13 +32,67 @@
         .nusa-card-pricing .nusa-card-header {
             background-color: transparent;
             border-bottom: 0;
-            padding-top: 1.5rem;
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+        }
+        .nusa-card-pricing .nusa-card-body {
+            padding: 2rem;
+        }
+        .nusa-card-pricing:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+        }
+        .nusa-card-pricing.popular {
+            border-color: var(--nusa-primary, #4745D5);
+            border-width: 2px;
+            transform: scale(1.05);
+            z-index: 1;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+        }
+        .nusa-card-pricing.popular:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
         }
         .display-price {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
         }
-        
+        .display-price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #6c757d;
+        }
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        .pricing-features li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.75rem;
+            position: relative;
+        }
+        .pricing-features li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23198754'%3e%3cpath d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .pricing-features li.disabled {
+            color: #adb5bd;
+            text-decoration: line-through;
+        }
+        .pricing-features li.disabled::before {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23adb5bd'%3e%3cpath d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
         /* Custom check icon for table */
         .bi-check {
             width: 1.5em;
@@ -72,6 +126,8 @@
         </header>
 
         <main>
+            <!-- Variation 1: Simple Cards -->
+            <h3 class="text-center mb-4 text-secondary">Simple Pricing</h3>
             <div class="nusa-row row-cols-1 row-cols-md-3 mb-3 text-center">
                 <div class="nusa-col">
                     <div class="nusa-card nusa-card-pricing mb-4 rounded-3 shadow-sm">
@@ -126,7 +182,86 @@
                 </div>
             </div>
 
-            <h2 class="display-6 text-center mb-4">Compare plans</h2>
+            <hr class="my-5">
+
+            <!-- Variation 2: Modern Pricing with Toggle -->
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <h2 class="display-5 fw-bold">Modern Pricing</h2>
+                <p class="fs-5 text-secondary mb-4">Pilih periode pembayaran yang sesuai untuk Anda.</p>
+                
+                <div class="d-flex justify-content-center align-items-center mb-5">
+                    <span class="me-3 fw-bold">Bulanan</span>
+                    <div class="nusa-form-check nusa-form-switch mb-0">
+                        <input class="nusa-form-check-input" type="checkbox" id="billingToggle" style="width: 3em; height: 1.5em;">
+                    </div>
+                    <span class="ms-3 fw-bold">Tahunan <span class="nusa-badge nusa-badge-success rounded-pill ms-1">Hemat 20%</span></span>
+                </div>
+            </div>
+
+            <div class="nusa-row row-cols-1 row-cols-md-3 mb-3 text-center align-items-center">
+                <!-- Basic Plan -->
+                <div class="nusa-col">
+                    <div class="nusa-card nusa-card-pricing mb-4 rounded-3 shadow-sm">
+                        <div class="nusa-card-header">
+                            <h4 class="my-0 fw-bold">Basic</h4>
+                        </div>
+                        <div class="nusa-card-body">
+                            <h1 class="nusa-card-title display-price"><span class="price-amount" data-monthly="10" data-yearly="96">$10</span><small>/bln</small></h1>
+                            <ul class="pricing-features">
+                                <li>Akses konten dasar</li>
+                                <li>5GB Penyimpanan</li>
+                                <li>Support Email</li>
+                                <li class="disabled">Akses API</li>
+                                <li class="disabled">Integrasi Kustom</li>
+                            </ul>
+                            <button type="button" class="w-100 nusa-btn nusa-btn-lg nusa-btn-outline-primary rounded-pill">Pilih Basic</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pro Plan (Popular) -->
+                <div class="nusa-col">
+                    <div class="nusa-card nusa-card-pricing popular mb-4 rounded-3 shadow-lg">
+                        <div class="nusa-card-header bg-primary text-white rounded-top">
+                            <h4 class="my-0 fw-bold">Pro</h4>
+                            <span class="nusa-badge nusa-badge-warning position-absolute top-0 start-50 translate-middle rounded-pill px-3">Paling Laris</span>
+                        </div>
+                        <div class="nusa-card-body">
+                            <h1 class="nusa-card-title display-price text-primary"><span class="price-amount" data-monthly="29" data-yearly="279">$29</span><small>/bln</small></h1>
+                            <ul class="pricing-features">
+                                <li>Semua fitur Basic</li>
+                                <li>50GB Penyimpanan</li>
+                                <li>Prioritas Support 24/7</li>
+                                <li>Akses API Terbatas</li>
+                                <li class="disabled">Integrasi Kustom</li>
+                            </ul>
+                            <button type="button" class="w-100 nusa-btn nusa-btn-lg nusa-btn-primary rounded-pill">Pilih Pro</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Enterprise Plan -->
+                <div class="nusa-col">
+                    <div class="nusa-card nusa-card-pricing mb-4 rounded-3 shadow-sm">
+                        <div class="nusa-card-header">
+                            <h4 class="my-0 fw-bold">Enterprise</h4>
+                        </div>
+                        <div class="nusa-card-body">
+                            <h1 class="nusa-card-title display-price"><span class="price-amount" data-monthly="59" data-yearly="566">$59</span><small>/bln</small></h1>
+                            <ul class="pricing-features">
+                                <li>Semua fitur Pro</li>
+                                <li>Unlimited Penyimpanan</li>
+                                <li>Dedicated Account Manager</li>
+                                <li>Akses API Penuh</li>
+                                <li>Integrasi Kustom</li>
+                            </ul>
+                            <button type="button" class="w-100 nusa-btn nusa-btn-lg nusa-btn-outline-primary rounded-pill">Hubungi Sales</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <h2 class="display-6 text-center mb-4">Perbandingan Fitur</h2>
 
             <div class="nusa-table-responsive">
                 <table class="nusa-table text-center">
@@ -200,5 +335,25 @@
     </svg>
 
     <script type="module" src="../../assets/js/nusa-script.js"></script>
+    <script>
+        // Simple script to toggle prices
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('billingToggle');
+            const prices = document.querySelectorAll('.price-amount');
+            
+            toggle.addEventListener('change', function() {
+                const isYearly = this.checked;
+                prices.forEach(price => {
+                    const amount = isYearly ? price.getAttribute('data-yearly') : price.getAttribute('data-monthly');
+                    // Simple animation effect
+                    price.style.opacity = 0;
+                    setTimeout(() => {
+                        price.textContent = '$' + amount;
+                        price.style.opacity = 1;
+                    }, 200);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

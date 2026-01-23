@@ -14,5 +14,6 @@
     display: inline-block; // Penting agar kartu tidak terpotong antar kolom
     width: 100%;
     margin-bottom: 1.5rem;
+    break-inside: avoid;
   }
 }

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Bahasa Korea - Bakor</title>
+    <link rel="stylesheet" href="../../../../assets/css/nusa.css">
+    <style>
+        /* Custom styles for Bakor theme */
+        .hero-section {
+            
+            padding: 5rem 0;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hover-translate-y {
+            transition: transform 0.3s ease;
+        }
+        .hover-translate-y:hover {
+            transform: translateY(-5px);
+        }
+        /* Dark Mode Toggle */
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #0d6efd;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="nusa-navbar shadow-sm sticky-top">
+        <div class="nusa-container">
+            <a href="#" class="nusa-navbar-brand fw-bold text-primary d-flex align-items-center">
+                <span class="me-2">🇰🇷</span> Bakor
+            </a>
+            <button class="nusa-navbar-toggler" type="button" data-nusa-toggle="collapse" data-nusa-target="#navbarNav">
+                <span class="nusa-navbar-toggler-icon"></span>
+            </button>
+            <div class="nusa-collapse nusa-navbar-collapse" id="navbarNav">
+                <ul class="nusa-navbar-nav ms-auto">
+                    <li class="nusa-nav-item"><a href="#" class="nusa-nav-link active">Beranda</a></li>
+                    <li class="nusa-nav-item"><a href="#courses" class="nusa-nav-link">Kursus</a></li>
+                    <li class="nusa-nav-item"><a href="#about" class="nusa-nav-link">Tentang</a></li>
+                    <li class="nusa-nav-item"><a href="#contact" class="nusa-nav-link">Kontak</a></li>
+                </ul>
+                <div class="d-flex ms-lg-3 mt-3 mt-lg-0 align-items-center">
+                    <label class="theme-switch me-3" for="nusa-theme-toggle" aria-label="Toggle Dark Mode">
+                        <input type="checkbox" id="nusa-theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <a href="#" class="nusa-btn nusa-btn-primary">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="nusa-container">
+            <div class="nusa-row align-items-center">
+                <div class="nusa-col-lg-6 mb-5 mb-lg-0">
+                    <span class="nusa-badge nusa-badge-primary rounded-pill mb-3">Platform Belajar #1</span>
+                    <h1 class="display-4 fw-bold mb-3 text-dark">Kuasai Bahasa Korea dengan <span class="text-primary">Mudah & Seru</span></h1>
+                    <p class="lead text-secondary mb-4">Belajar Hangul, percakapan sehari-hari, hingga persiapan TOPIK dengan materi interaktif dari mentor berpengalaman.</p>
+                    <div class="d-flex gap-2">
+                        <a href="#courses" class="nusa-btn nusa-btn-primary nusa-btn-lg">Mulai Belajar Gratis</a>
+                        <a href="#" class="nusa-btn nusa-btn-outline-secondary nusa-btn-lg">Lihat Silabus</a>
+                    </div>
+                    <div class="mt-4 d-flex align-items-center">
+                        <div class="nusa-avatar-group me-3">
+                            <img src="https://picsum.photos/50/50?random=1" class="nusa-avatar nusa-avatar-sm" alt="User">
+                            <img src="https://picsum.photos/50/50?random=2" class="nusa-avatar nusa-avatar-sm" alt="User">
+                            <img src="https://picsum.photos/50/50?random=3" class="nusa-avatar nusa-avatar-sm" alt="User">
+                            <span class="nusa-avatar nusa-avatar-sm bg-light text-dark d-flex align-items-center justify-content-center border fs-6">+2k</span>
+                        </div>
+                        <small class="text-secondary">Bergabung dengan 2,000+ pelajar lainnya</small>
+                    </div>
+                </div>
+                <div class="nusa-col-lg-6 text-center">
+                    <img src="https://picsum.photos/600/400?random=korea" alt="Belajar Korea" class="img-fluid rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section class="py-5">
+        <div class="nusa-container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Kenapa Memilih Bakor?</h2>
+                <p class="text-secondary">Metode pembelajaran yang efektif dan terstruktur untuk hasil maksimal.</p>
+            </div>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-4">
+                    <div class="nusa-card h-100 border-0 shadow-sm text-center p-4 hover-translate-y">
+                        <div class="feature-icon">📚</div>
+                        <h4 class="fw-bold">Materi Lengkap</h4>
+                        <p class="text-secondary">Kurikulum komprehensif dari Hangul dasar hingga percakapan bisnis tingkat lanjut.</p>
+                    </div>
+                </div>
+                <div class="nusa-col-md-4">
+                    <div class="nusa-card h-100 border-0 shadow-sm text-center p-4 hover-translate-y">
+                        <div class="feature-icon">🗣️</div>
+                        <h4 class="fw-bold">Latihan Bicara</h4>
+                        <p class="text-secondary">Fitur interaktif untuk melatih pelafalan (pronunciation) agar terdengar seperti native.</p>
+                    </div>
+                </div>
+                <div class="nusa-col-md-4">
+                    <div class="nusa-card h-100 border-0 shadow-sm text-center p-4 hover-translate-y">
+                        <div class="feature-icon">🏆</div>
+                        <h4 class="fw-bold">Sertifikat Resmi</h4>
+                        <p class="text-secondary">Dapatkan sertifikat digital yang valid setelah menyelesaikan setiap level kursus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses" class="py-5">
+        <div class="nusa-container">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <h2 class="fw-bold">Kursus Populer</h2>
+                    <p class="text-secondary mb-0">Pilih level yang sesuai dengan kemampuanmu saat ini.</p>
+                </div>
+                <a href="#" class="nusa-btn nusa-btn-link text-decoration-none fw-bold">Lihat Semua →</a>
+            </div>
+            
+            <div class="nusa-row g-4">
+                <!-- Course 1 -->
+                <div class="nusa-col-md-4">
+                    <div class="nusa-card h-100 shadow-sm border-0 overflow-hidden hover-translate-y">
+                        <img src="https://picsum.photos/400/250?random=hangul" class="nusa-card-img-top" alt="Hangul">
+                        <div class="nusa-card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="nusa-badge nusa-badge-success">Pemula</span>
+                                <span class="text-warning small">★ 4.8</span>
+                            </div>
+                            <h5 class="nusa-card-title fw-bold">Mastering Hangul dalam 7 Hari</h5>
+                            <p class="nusa-card-text text-secondary small">Pelajari huruf Korea dasar, cara membaca, dan menulis Hangul dengan cepat.</p>
+                            <hr class="my-3 opacity-25">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">Rp 150.000</span>
+                                <a href="basic/index.html" class="nusa-btn nusa-btn-sm nusa-btn-outline-primary rounded-pill">Belajar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course 2 -->
+                <div class="nusa-col-md-4">
+                    <div class="nusa-card h-100 shadow-sm border-0 overflow-hidden hover-translate-y">
+                        <img src="https://picsum.photos/400/250?random=talk" class="nusa-card-img-top" alt="Percakapan">
+                        <div class="nusa-card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="nusa-badge nusa-badge-warning">Menengah</span>
+                                <span class="text-warning small">★ 4.9</span>
+                            </div>
+                            <h5 class="nusa-card-title fw-bold">Percakapan Sehari-hari</h5>
+                            <p class="nusa-card-text text-secondary small">Tingkatkan percaya diri berbicara untuk situasi seperti belanja, travel, dan perkenalan.</p>
+                            <hr class="my-3 opacity-25">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">Rp 250.000</span>
+                                <a href="#" class="nusa-btn nusa-btn-sm nusa-btn-outline-primary rounded-pill">Belajar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course 3 -->
+                <div class="nusa-col-md-4">
+                    <div class="nusa-card h-100 shadow-sm border-0 overflow-hidden hover-translate-y">
+                        <img src="https://picsum.photos/400/250?random=topik" class="nusa-card-img-top" alt="TOPIK">
+                        <div class="nusa-card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="nusa-badge nusa-badge-error">Lanjut</span>
+                                <span class="text-warning small">★ 5.0</span>
+                            </div>
+                            <h5 class="nusa-card-title fw-bold">Persiapan Ujian TOPIK I</h5>
+                            <p class="nusa-card-text text-secondary small">Materi intensif dan latihan soal untuk persiapan ujian kemampuan bahasa Korea level 1 & 2.</p>
+                            <hr class="my-3 opacity-25">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">Rp 400.000</span>
+                                <button class="nusa-btn nusa-btn-sm nusa-btn-outline-primary rounded-pill">Belajar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="nusa-container">
+            <h2 class="fw-bold mb-3">Siap Menjadi Fasih Bahasa Korea?</h2>
+            <p class="lead mb-4 opacity-75">Bergabunglah dengan komunitas belajar kami dan wujudkan impianmu.</p>
+            <a href="#" class="nusa-btn nusa-btn-light nusa-btn-lg rounded-pill px-5 fw-bold">Daftar Gratis Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="nusa-container">
+            <div class="nusa-row">
+                <div class="nusa-col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Bakor</h5>
+                    <p class="text-gray-400 small">Platform belajar bahasa Korea terdepan di Indonesia dengan metode yang menyenangkan, fleksibel, dan mudah dipahami oleh siapa saja.</p>
+                </div>
+                <div class="nusa-col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Menu</h6>
+                    <ul class="list-unstyled small text-gray-400">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Beranda</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Kursus</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                <div class="nusa-col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Bantuan</h6>
+                    <ul class="list-unstyled small text-gray-400">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Kontak</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Kebijakan Privasi</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                <div class="nusa-col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
+                    <p class="text-gray-400 small">Dapatkan tips belajar dan promo terbaru.</p>
+                    <div class="nusa-input-group">
+                        <input type="email" class="nusa-form-control form-control-sm bg-dark text-white border-secondary" placeholder="Email Anda">
+                        <button class="nusa-btn nusa-btn-primary nusa-btn-sm">Langganan</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-gray-700 my-4">
+            <div class="text-center small text-gray-500">
+                &copy; 2026 Bakor. All rights reserved. Powered by Nusa UI.
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../../../../assets/js/nusa-script.js"></script>
+    <script type="module">
+        import { initDarkMode } from '../../../../assets/js/nusa-dark-mode.js';
+        initDarkMode();
+    </script>
+</body>
+</html>

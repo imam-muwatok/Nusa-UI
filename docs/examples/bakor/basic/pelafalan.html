@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aturan Pelafalan - Bakor</title>
+    <link rel="stylesheet" href="../../../../assets/css/nusa.css">
+    <style>
+        .rule-card {
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .rule-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--nusa-primary);
+        }
+        .pronunciation-text {
+            font-size: 1.25rem;
+            color: var(--nusa-secondary);
+            font-weight: 500;
+        }
+        .original-text {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .arrow-icon {
+            font-size: 1.5rem;
+            color: var(--nusa-text-secondary);
+            opacity: 0.5;
+        }
+        /* Dark Mode Toggle */
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #0d6efd;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="nusa-navbar bg-white shadow-sm sticky-top">
+        <div class="nusa-container">
+            <a href="../index.html" class="nusa-navbar-brand fw-bold text-primary d-flex align-items-center">
+                <span class="me-2">🇰🇷</span> Bakor
+            </a>
+            <button class="nusa-navbar-toggler" type="button" data-nusa-toggle="collapse" data-nusa-target="#navbarNav">
+                <span class="nusa-navbar-toggler-icon"></span>
+            </button>
+            <div class="nusa-collapse nusa-navbar-collapse" id="navbarNav">
+                <ul class="nusa-navbar-nav ms-auto">
+                    <li class="nusa-nav-item"><a href="../index.html" class="nusa-nav-link">Beranda</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#courses" class="nusa-nav-link active">Kursus</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#about" class="nusa-nav-link">Tentang</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#contact" class="nusa-nav-link">Kontak</a></li>
+                </ul>
+                <div class="d-flex ms-lg-3 mt-3 mt-lg-0 align-items-center">
+                    <label class="theme-switch me-3" for="nusa-theme-toggle" aria-label="Toggle Dark Mode">
+                        <input type="checkbox" id="nusa-theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <a href="#" class="nusa-btn nusa-btn-primary">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white py-5">
+        <div class="nusa-container text-center">
+            <h1 class="display-4 fw-bold">Aturan Pelafalan</h1>
+            <p class="lead opacity-75">Belajar cara mengucapkan kata-kata Korea dengan natural seperti penutur asli.</p>
+        </div>
+    </header>
+
+    <main class="nusa-container py-5">
+        <!-- Intro -->
+        <section class="mb-5">
+            <h2 class="fw-bold mb-3">Mengapa Bunyi Berubah?</h2>
+            <p class="text-secondary">Dalam bahasa Korea, bunyi huruf sering berubah tergantung pada huruf di sekitarnya. Tujuannya adalah untuk membuat pengucapan menjadi lebih mudah dan mengalir (flow). Klik pada kartu contoh untuk mendengarkan perbedaannya.</p>
+        </section>
+
+        <!-- Rule 1: Liaison -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">1. Liaison (Perangkaian)</h3>
+            <p class="text-secondary mb-4">Jika suku kata berakhir dengan konsonan (batchim) dan diikuti oleh vokal (huruf 'ㅇ'), bunyi konsonan tersebut pindah ke posisi 'ㅇ'.</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('한국어')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">한국어</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[한구거]</span>
+                            </div>
+                            <div class="text-secondary small">Han-guk-eo dibaca Han-gu-geo</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('할아버지')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">할아버지</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[하라버지]</span>
+                            </div>
+                            <div class="text-secondary small">Hal-a-beo-ji dibaca Ha-ra-beo-ji</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rule 2: Nasalization -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">2. Nasalisasi (Sengau)</h3>
+            <p class="text-secondary mb-4">Ketika konsonan letup (seperti ㅂ, ㄷ, ㄱ) bertemu dengan konsonan hidung (ㄴ, ㅁ), bunyinya berubah menjadi sengau (ㅁ, ㄴ, ㅇ) agar lebih mudah diucapkan.</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('합니다')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㅂ bertemu ㄴ/ㅁ → [ㅁ]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">합니다</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[함니다]</span>
+                            </div>
+                            <div class="text-secondary small">Hap-ni-da dibaca Ham-ni-da</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('작년')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㄱ bertemu ㄴ/ㅁ → [ㅇ]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">작년</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[장년]</span>
+                            </div>
+                            <div class="text-secondary small">Jak-nyeon dibaca Jang-nyeon</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rule 3: Aspiration -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">3. Aspirasi (Hembusan)</h3>
+            <p class="text-secondary mb-4">Ketika konsonan ㅎ bertemu dengan ㄱ, ㄷ, ㅂ, atau ㅈ, kedua huruf tersebut bergabung menjadi konsonan aspirasi yang kuat (ㅋ, ㅌ, ㅍ, ㅊ).</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('축하')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㄱ + ㅎ → [ㅋ]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">축하</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[추카]</span>
+                            </div>
+                            <div class="text-secondary small">Chuk-ha dibaca Chu-ka</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('좋다')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㅎ + ㄷ → [ㅌ]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">좋다</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[조타]</span>
+                            </div>
+                            <div class="text-secondary small">Joh-da dibaca Jo-ta</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rule 4: Tensification -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">4. Tensification (Pengerasan)</h3>
+            <p class="text-secondary mb-4">Konsonan biasa (ㄱ, ㄷ, ㅂ, ㅅ, ㅈ) diucapkan menjadi konsonan rangkap (ㄲ, ㄸ, ㅃ, ㅆ, ㅉ) setelah batchim tertentu.</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('학교')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㄱ + ㄱ → [ㄲ]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">학교</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[학꾜]</span>
+                            </div>
+                            <div class="text-secondary small">Hak-gyo dibaca Hak-kkyo</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('학생')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㄱ + ㅅ → [ㅆ]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">학생</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[학쌩]</span>
+                            </div>
+                            <div class="text-secondary small">Hak-saeng dibaca Hak-ssaeng</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rule 5: Palatalization -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">5. Palatalization (Palatalisasi)</h3>
+            <p class="text-secondary mb-4">Jika batchim ㄷ atau ㅌ bertemu dengan vokal '이', bunyinya berubah menjadi '지' atau '치'.</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('같이')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㅌ + 이 → [치]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">같이</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[가치]</span>
+                            </div>
+                            <div class="text-secondary small">Gat-i dibaca Ga-chi</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('굳이')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㄷ + 이 → [지]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">굳이</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[구지]</span>
+                            </div>
+                            <div class="text-secondary small">Gud-i dibaca Gu-ji</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rule 6: Liquidation -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">6. Liquidation (Likuida)</h3>
+            <p class="text-secondary mb-4">Ketika ㄴ bertemu dengan ㄹ (atau sebaliknya), bunyi ㄴ berubah menjadi ㄹ.</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('신라')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㄴ + ㄹ → [ㄹㄹ]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">신라</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[실라]</span>
+                            </div>
+                            <div class="text-secondary small">Sin-la dibaca Sil-la</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('설날')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㄹ + ㄴ → [ㄹㄹ]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">설날</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[설랄]</span>
+                            </div>
+                            <div class="text-secondary small">Seol-nal dibaca Seol-lal</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rule 7: Cluster Simplification -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">7. Cluster Simplification (Penyederhanaan Gugus)</h3>
+            <p class="text-secondary mb-4">Jika batchim terdiri dari dua konsonan dan diikuti konsonan lain atau akhir kata, hanya satu yang diucapkan.</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('닭')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㄺ → [ㄱ]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">닭</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[닥]</span>
+                            </div>
+                            <div class="text-secondary small">Dalg dibaca Dak</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('없다')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㅄ → [ㅂ]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">없다</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[업따]</span>
+                            </div>
+                            <div class="text-secondary small">Eobs-da dibaca Eop-tta</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rule 8: H-Deletion -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">8. H-Deletion (Penghilangan H)</h3>
+            <p class="text-secondary mb-4">Huruf ㅎ seringkali menjadi lemah atau hilang sama sekali jika berada di antara bunyi bersuara (vokal, ㄴ, ㄹ, ㅁ, ㅇ).</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('좋아요')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㅎ hilang antar vokal</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">좋아요</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[조아요]</span>
+                            </div>
+                            <div class="text-secondary small">Joh-a-yo dibaca Jo-a-yo</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 rule-card shadow-sm" onclick="playAudio('은행')">
+                        <div class="nusa-card-body text-center d-flex flex-column justify-content-center">
+                            <h5 class="fw-bold text-secondary mb-3">ㄴ + ㅎ → [ㄴ]</h5>
+                            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+                                <span class="original-text">은행</span>
+                                <span class="arrow-icon">→</span>
+                                <span class="pronunciation-text">[으냉]</span>
+                            </div>
+                            <div class="text-secondary small">Eun-haeng dibaca Eu-naeng</div>
+                            <div class="mt-3 text-primary opacity-75 small">🔊 Klik untuk dengar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">Kuis Pelafalan</h3>
+            <div class="nusa-card shadow-sm p-4 text-center">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Bagaimana cara membacanya?</h4>
+                    <div class="d-flex align-items-center">
+                        <button id="quiz-reset" class="nusa-btn nusa-btn-sm nusa-btn-outline-error me-2">Reset</button>
+                        <span id="quiz-score" class="nusa-badge nusa-badge-secondary">Skor: 0 / 0</span>
+                    </div>
+                </div>
+                <div class="display-4 fw-bold text-primary mb-4" id="quiz-question">?</div>
+                <div class="d-flex flex-column gap-2 mb-3" id="quiz-options">
+                    <!-- Options will be generated here -->
+                </div>
+                <div id="quiz-result" class="fw-bold mt-3" style="min-height: 1.5em;"></div>
+                <button id="quiz-next" class="nusa-btn nusa-btn-outline-primary mt-3" style="display: none;">Soal Selanjutnya</button>
+            </div>
+        </section>
+
+        <!-- Navigation CTA -->
+        <div class="nusa-card border-0 shadow-sm p-4 text-center">
+            <h3 class="fw-bold">Selamat!</h3>
+            <p class="text-secondary">Anda telah menyelesaikan dasar-dasar membaca Hangul. Sekarang Anda siap untuk memulai pelajaran tata bahasa dan percakapan.</p>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="latihan.html" class="nusa-btn nusa-btn-outline-secondary">← Kembali ke Latihan</a>
+                <a href="formal.html" class="nusa-btn nusa-btn-primary">Bentuk Formal →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="nusa-container">
+            <p class="text-center small text-gray-500">&copy; 2026 Bakor. All rights reserved. Powered by Nusa UI.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="../../../../assets/js/nusa-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script type="module">
+        import { initDarkMode } from '../../../../assets/js/nusa-dark-mode.js';
+        initDarkMode();
+
+        // Sound Effects
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playSoundEffect(type) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            if (type === 'correct') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.1);
+                gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.5);
+            } else {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+                osc.frequency.linearRampToValueAtTime(100, audioCtx.currentTime + 0.3);
+                gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.3);
+            }
+        }
+
+        // Expose playAudio to global scope for onclick handlers
+        window.playAudio = function(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Stop previous audio
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ko-KR';
+                utterance.rate = 0.8; // Slower for learning
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('Browser Anda tidak mendukung fitur audio.');
+            }
+        };
+
+        // Quiz Logic
+        const quizData = [
+            { word: '한국어', correct: '한구거', options: ['한구거', '한국어', '한궁어'], rule: 'Liaison' },
+            { word: '같이', correct: '가치', options: ['가치', '가티', '갇이'], rule: 'Palatalization' },
+            { word: '합니다', correct: '함니다', options: ['함니다', '합니다', '한니다'], rule: 'Nasalization' },
+            { word: '좋다', correct: '조타', options: ['조타', '좋다', '졷다'], rule: 'Aspiration' },
+            { word: '학교', correct: '학꾜', options: ['학꾜', '학교', '하교'], rule: 'Tensification' },
+            { word: '신라', correct: '실라', options: ['실라', '신라', '신나'], rule: 'Liquidation' },
+            { word: '닭', correct: '닥', options: ['닥', '달', '닭'], rule: 'Cluster Simplification' },
+            { word: '좋아요', correct: '조아요', options: ['조아요', '좋아요', '졷아요'], rule: 'H-Deletion' }
+        ];
+
+        const questionEl = document.getElementById('quiz-question');
+        const optionsEl = document.getElementById('quiz-options');
+        const resultEl = document.getElementById('quiz-result');
+        const nextBtn = document.getElementById('quiz-next');
+        const scoreEl = document.getElementById('quiz-score');
+        const resetBtn = document.getElementById('quiz-reset');
+
+        let currentQuestion = null;
+        let score = 0;
+        let questionsAnswered = 0;
+
+        function generateQuestion() {
+            resultEl.textContent = '';
+            resultEl.className = 'fw-bold mt-3';
+            nextBtn.style.display = 'none';
+            optionsEl.innerHTML = '';
+
+            const randomIndex = Math.floor(Math.random() * quizData.length);
+            currentQuestion = quizData[randomIndex];
+            questionEl.textContent = currentQuestion.word;
+
+            // Shuffle options
+            const shuffledOptions = [...currentQuestion.options].sort(() => Math.random() - 0.5);
+
+            shuffledOptions.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'nusa-btn nusa-btn-outline-secondary w-100 py-2';
+                btn.textContent = `[${opt}]`;
+                btn.onclick = () => checkAnswer(opt, btn);
+                optionsEl.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selected, btnElement) {
+            const buttons = optionsEl.querySelectorAll('button');
+            buttons.forEach(b => b.disabled = true);
+
+            questionsAnswered++;
+
+            if (selected === currentQuestion.correct) {
+                score++;
+                btnElement.classList.remove('nusa-btn-outline-secondary');
+                btnElement.classList.add('nusa-btn-success');
+                resultEl.textContent = `Benar! Aturan: ${currentQuestion.rule} 🎉`;
+                resultEl.classList.add('text-success');
+                playAudio(currentQuestion.word); // Play audio on correct answer
+                playSoundEffect('correct');
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            } else {
+                btnElement.classList.remove('nusa-btn-outline-secondary');
+                btnElement.classList.add('nusa-btn-error');
+                resultEl.textContent = `Salah! Jawaban: [${currentQuestion.correct}] (${currentQuestion.rule})`;
+                resultEl.classList.add('text-error');
+                playSoundEffect('wrong');
+                
+                buttons.forEach(b => {
+                    if (b.textContent === `[${currentQuestion.correct}]`) {
+                        b.classList.remove('nusa-btn-outline-secondary');
+                        b.classList.add('nusa-btn-success');
+                    }
+                });
+            }
+            scoreEl.textContent = `Skor: ${score} / ${questionsAnswered}`;
+            nextBtn.style.display = 'inline-block';
+        }
+
+        nextBtn.addEventListener('click', generateQuestion);
+        resetBtn.addEventListener('click', () => {
+            score = 0; questionsAnswered = 0; scoreEl.textContent = 'Skor: 0 / 0'; generateQuestion();
+        });
+
+        generateQuestion();
+    </script>
+</body>
+</html>

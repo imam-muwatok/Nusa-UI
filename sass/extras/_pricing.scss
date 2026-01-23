@@ -5,14 +5,82 @@
 }
 
 .nusa-card-pricing {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--nusa-border-color);
+  height: 100%;
+
   .nusa-card-header {
     background-color: transparent;
     border-bottom: 0;
-    padding-top: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .nusa-card-body {
+    padding: 2rem;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+  }
+
+  &.popular {
+    border-color: var(--nusa-primary, #4745D5);
+    border-width: 2px;
+    transform: scale(1.05);
+    z-index: 1;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+
+    &:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+    }
   }
 }
 
 .display-price {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+
+  small {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6c757d;
+  }
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+
+  li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.75rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.25rem;
+      width: 1rem;
+      height: 1rem;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23198754'%3e%3cpath d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &.disabled {
+      color: #adb5bd;
+      text-decoration: line-through;
+
+      &::before {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23adb5bd'%3e%3cpath d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      }
+    }
+  }
 }

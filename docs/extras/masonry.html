@@ -40,6 +40,11 @@
             display: inline-block;
             width: 100%;
             margin-bottom: 1.5rem;
+            break-inside: avoid;
+        }
+        /* Fix for missing card image class in base css */
+        .nusa-card-img-top {
+            width: 100%;
         }
     </style>
 </head>
@@ -53,10 +58,10 @@
             <p class="text-secondary mt-2">Layout grid bergaya masonry menggunakan CSS Columns murni. Kartu disusun secara vertikal, kemudian ke kolom berikutnya.</p>
         </header>
 
-        <div class="nusa-masonry" data-masonry='{"percentPosition": true }'>
+        <div class="nusa-masonry">
             
             <div class="nusa-card">
-                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop" class="nusa-card-img-top" alt="...">
+                <img src="https://picsum.photos/600/400?random=5" class="nusa-card-img-top" alt="...">
                 <div class="nusa-card-body">
                     <h5 class="nusa-card-title">Card title that wraps to a new line</h5>
                     <p class="nusa-card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -75,7 +80,7 @@
             </div>
 
             <div class="nusa-card">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop" class="nusa-card-img-top" alt="...">
+                <img src="https://picsum.photos/600/400?random=6" class="nusa-card-img-top" alt="...">
                 <div class="nusa-card-body">
                     <h5 class="nusa-card-title">Card title</h5>
                     <p class="nusa-card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -103,7 +108,7 @@
             </div>
 
             <div class="nusa-card">
-                <img src="https://images.unsplash.com/photo-1481480746207-55d9a2105bd8?q=80&w=600&auto=format&fit=crop" class="nusa-card-img-top" alt="...">
+                <img src="https://picsum.photos/600/800?random=7" class="nusa-card-img-top" alt="...">
             </div>
 
             <div class="nusa-card p-3 text-end">
@@ -123,6 +128,52 @@
                     <p class="nusa-card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
                     <p class="nusa-card-text"><small class="text-secondary">Last updated 3 mins ago</small></p>
                 </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <header class="pb-3 mb-4 border-bottom">
+            <h3>Image Gallery</h3>
+            <p class="text-secondary mt-2">Contoh masonry untuk galeri foto tanpa teks.</p>
+        </header>
+
+        <div class="nusa-masonry">
+            <div class="nusa-card border-0">
+                <img src="https://picsum.photos/600/800?random=8" class="nusa-card-img-top rounded" alt="Nature">
+            </div>
+            <div class="nusa-card border-0">
+                <img src="https://picsum.photos/600/400?random=9" class="nusa-card-img-top rounded" alt="Nature">
+            </div>
+            <div class="nusa-card border-0">
+                <img src="https://picsum.photos/600/600?random=10" class="nusa-card-img-top rounded" alt="Nature">
+            </div>
+            <div class="nusa-card border-0">
+                <img src="https://picsum.photos/600/900?random=11" class="nusa-card-img-top rounded" alt="Nature">
+            </div>
+            <div class="nusa-card border-0">
+                <img src="https://picsum.photos/600/500?random=12" class="nusa-card-img-top rounded" alt="Nature">
+            </div>
+            <div class="nusa-card border-0">
+                <img src="https://picsum.photos/600/700?random=13" class="nusa-card-img-top rounded" alt="Nature">
+            </div>
+            <div class="nusa-card border-0">
+                <img src="https://picsum.photos/600/450?random=14" class="nusa-card-img-top rounded" alt="Nature">
+            </div>
+            <div class="nusa-card border-0">
+                <img src="https://picsum.photos/600/750?random=15" class="nusa-card-img-top rounded" alt="Nature">
+            </div>
+            <div class="nusa-card border-0">
+                <img src="https://picsum.photos/600/550?random=16" class="nusa-card-img-top rounded" alt="Nature">
+            </div>
+            <div class="nusa-card border-0">
+                <img src="https://picsum.photos/600/850?random=17" class="nusa-card-img-top rounded" alt="Nature">
+            </div>
+            <div class="nusa-card border-0">
+                <img src="https://picsum.photos/600/350?random=18" class="nusa-card-img-top rounded" alt="Nature">
+            </div>
+            <div class="nusa-card border-0">
+                <img src="https://picsum.photos/600/650?random=19" class="nusa-card-img-top rounded" alt="Nature">
             </div>
         </div>
     </div>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pola Kalimat Formal - Bakor</title>
+    <link rel="stylesheet" href="../../../../assets/css/nusa.css">
+    <style>
+        .korean-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--nusa-primary);
+            cursor: pointer;
+        }
+        .korean-text:hover {
+            text-decoration: underline;
+        }
+        /* Dark Mode Toggle */
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #0d6efd;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="nusa-navbar bg-white shadow-sm sticky-top">
+        <div class="nusa-container">
+            <a href="../index.html" class="nusa-navbar-brand fw-bold text-primary d-flex align-items-center">
+                <span class="me-2">🇰🇷</span> Bakor
+            </a>
+            <button class="nusa-navbar-toggler" type="button" data-nusa-toggle="collapse" data-nusa-target="#navbarNav">
+                <span class="nusa-navbar-toggler-icon"></span>
+            </button>
+            <div class="nusa-collapse nusa-navbar-collapse" id="navbarNav">
+                <ul class="nusa-navbar-nav ms-auto">
+                    <li class="nusa-nav-item"><a href="../index.html" class="nusa-nav-link">Beranda</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#courses" class="nusa-nav-link active">Kursus</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#about" class="nusa-nav-link">Tentang</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#contact" class="nusa-nav-link">Kontak</a></li>
+                </ul>
+                <div class="d-flex ms-lg-3 mt-3 mt-lg-0 align-items-center">
+                    <label class="theme-switch me-3" for="nusa-theme-toggle" aria-label="Toggle Dark Mode">
+                        <input type="checkbox" id="nusa-theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <a href="#" class="nusa-btn nusa-btn-primary">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white py-5">
+        <div class="nusa-container text-center">
+            <h1 class="display-4 fw-bold">Pola Kalimat Formal</h1>
+            <p class="lead opacity-75">Belajar bentuk sopan formal (Hapsyo-che) untuk situasi resmi.</p>
+        </div>
+    </header>
+
+    <main class="nusa-container py-5">
+        <!-- Intro -->
+        <section class="mb-5">
+            <h2 class="fw-bold mb-3">Apa itu Bentuk Formal?</h2>
+            <p class="text-secondary">Bentuk formal (Hapsyo-che / 합쇼체) digunakan dalam situasi resmi seperti berita, pidato, militer, atau saat berbicara dengan orang yang sangat dihormati. Ciri khasnya adalah akhiran <strong>-mnida</strong> atau <strong>-seumnida</strong>.</p>
+        </section>
+
+        <!-- Declarative -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">1. Kalimat Pernyataan (Declarative)</h3>
+            <div class="nusa-row g-4">
+                <!-- Vowel Ending -->
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 shadow-sm">
+                        <div class="nusa-card-header bg-light fw-bold">Akhiran Vokal</div>
+                        <div class="nusa-card-body">
+                            <h4 class="text-primary mb-3">Kata Dasar + ㅂ니다</h4>
+                            <p>Jika kata dasar berakhir dengan huruf vokal, tambahkan <strong>ㅂ니다</strong> (mnida) di bawahnya.</p>
+                            <div class="nusa-alert nusa-alert-secondary">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span>가다 (Pergi)</span>
+                                    <span>→</span>
+                                    <span class="korean-text" onclick="playAudio('갑니다')">갑니다 <small class="text-muted fs-6">gam-ni-da</small></span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>보다 (Lihat)</span>
+                                    <span>→</span>
+                                    <span class="korean-text" onclick="playAudio('봅니다')">봅니다 <small class="text-muted fs-6">bom-ni-da</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Consonant Ending -->
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 shadow-sm">
+                        <div class="nusa-card-header bg-light fw-bold">Akhiran Konsonan (Batchim)</div>
+                        <div class="nusa-card-body">
+                            <h4 class="text-primary mb-3">Kata Dasar + 습니다</h4>
+                            <p>Jika kata dasar berakhir dengan huruf konsonan (batchim), tambahkan <strong>습니다</strong> (seumnida).</p>
+                            <div class="nusa-alert nusa-alert-secondary">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span>먹다 (Makan)</span>
+                                    <span>→</span>
+                                    <span class="korean-text" onclick="playAudio('먹습니다')">먹습니다 <small class="text-muted fs-6">meok-seum-ni-da</small></span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>읽다 (Baca)</span>
+                                    <span>→</span>
+                                    <span class="korean-text" onclick="playAudio('읽습니다')">읽습니다 <small class="text-muted fs-6">ik-seum-ni-da</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interrogative -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">2. Kalimat Pertanyaan (Interrogative)</h3>
+            <p class="text-secondary mb-4">Untuk bertanya, kita hanya perlu mengganti akhiran 'da' menjadi 'kka'.</p>
+            <div class="nusa-row g-4">
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 shadow-sm">
+                        <div class="nusa-card-body text-center">
+                            <h5 class="fw-bold">Akhiran Vokal</h5>
+                            <div class="display-6 text-primary mb-2">~ㅂ니까?</div>
+                            <p class="text-muted">mnikka?</p>
+                            <hr>
+                            <div class="d-flex justify-content-center gap-3 align-items-center" onclick="playAudio('갑니까?')">
+                                <span class="fs-5">가다</span>
+                                <span>→</span>
+                                <span class="korean-text">갑니까?</span>
+                            </div>
+                            <small class="text-muted">Apakah (Anda) pergi?</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="nusa-col-md-6">
+                    <div class="nusa-card h-100 shadow-sm">
+                        <div class="nusa-card-body text-center">
+                            <h5 class="fw-bold">Akhiran Konsonan</h5>
+                            <div class="display-6 text-primary mb-2">~습니까?</div>
+                            <p class="text-muted">seumnikka?</p>
+                            <hr>
+                            <div class="d-flex justify-content-center gap-3 align-items-center" onclick="playAudio('먹습니까?')">
+                                <span class="fs-5">먹다</span>
+                                <span>→</span>
+                                <span class="korean-text">먹습니까?</span>
+                            </div>
+                            <small class="text-muted">Apakah (Anda) makan?</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Examples Table -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">Contoh Kosakata Umum</h3>
+            <div class="table-responsive">
+                <table class="nusa-table nusa-table-hover align-middle">
+                    <thead class="bg-light">
+                        <tr>
+                            <th>Kata Dasar</th>
+                            <th>Arti</th>
+                            <th>Bentuk Formal (Pernyataan)</th>
+                            <th>Bentuk Formal (Pertanyaan)</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>자다 (Jada)</td>
+                            <td>Tidur</td>
+                            <td>잡니다 (Jamnida)</td>
+                            <td>잡니까? (Jamnikka?)</td>
+                            <td><button class="nusa-btn nusa-btn-sm nusa-btn-outline-primary" onclick="playAudio('잡니다')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td>오다 (Oda)</td>
+                            <td>Datang</td>
+                            <td>옵니다 (Omnida)</td>
+                            <td>옵니까? (Omnikka?)</td>
+                            <td><button class="nusa-btn nusa-btn-sm nusa-btn-outline-primary" onclick="playAudio('옵니다')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td>좋다 (Jota)</td>
+                            <td>Bagus</td>
+                            <td>좋습니다 (Joseumnida)</td>
+                            <td>좋습니까? (Joseumnikka?)</td>
+                            <td><button class="nusa-btn nusa-btn-sm nusa-btn-outline-primary" onclick="playAudio('좋습니다')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td>있다 (Itda)</td>
+                            <td>Ada/Punya</td>
+                            <td>있습니다 (Itseumnida)</td>
+                            <td>있습니까? (Itseumnikka?)</td>
+                            <td><button class="nusa-btn nusa-btn-sm nusa-btn-outline-primary" onclick="playAudio('있습니다')">🔊</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Irregular Verbs -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">Pengecualian: ㄹ (Rieul) Irregular</h3>
+            <p class="text-secondary mb-4">Beberapa kata kerja memiliki aturan khusus. Salah satu yang paling umum adalah kata kerja yang berakhiran huruf <strong>ㄹ (L)</strong>.</p>
+            
+            <div class="nusa-card shadow-sm border-warning">
+                <div class="nusa-card-header bg-light fw-bold text-warning">Aturan Penghilangan ㄹ</div>
+                <div class="nusa-card-body">
+                    <p>Jika kata dasar berakhiran <strong>ㄹ</strong>, huruf ㄹ tersebut <strong>dihilangkan</strong> dan langsung ditambahkan akhiran vokal (<strong>ㅂ니다</strong>).</p>
+                    
+                    <div class="nusa-row text-center g-4 mt-2">
+                        <div class="nusa-col-md-6">
+                            <div class="p-3 bg-light rounded">
+                                <div class="fw-bold mb-2">살다 (Tinggal)</div>
+                                <div class="d-flex justify-content-center align-items-center gap-2">
+                                    <span class="text-decoration-line-through text-secondary">살습니다</span>
+                                    <span>→</span>
+                                    <span class="korean-text text-success" onclick="playAudio('삽니다')">삽니다 <small class="text-muted fw-normal fs-6">sam-ni-da</small></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nusa-col-md-6">
+                            <div class="p-3 bg-light rounded">
+                                <div class="fw-bold mb-2">만들다 (Membuat)</div>
+                                <div class="d-flex justify-content-center align-items-center gap-2">
+                                    <span class="text-decoration-line-through text-secondary">만들습니다</span>
+                                    <span>→</span>
+                                    <span class="korean-text text-success" onclick="playAudio('만듭니다')">만듭니다 <small class="text-muted fw-normal fs-6">man-deum-ni-da</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="mb-5">
+            <h3 class="fw-bold mb-4 border-bottom pb-2">Latihan Singkat</h3>
+            <div class="nusa-card shadow-sm p-4 text-center">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Ubah ke Bentuk Formal</h4>
+                    <div class="d-flex align-items-center">
+                        <button id="quiz-reset" class="nusa-btn nusa-btn-sm nusa-btn-outline-error me-2">Reset</button>
+                        <span id="quiz-score" class="nusa-badge nusa-badge-secondary">Skor: 0 / 0</span>
+                    </div>
+                </div>
+                <div class="mb-2">Kata Dasar:</div>
+                <div class="display-4 fw-bold text-primary mb-4" id="quiz-question">?</div>
+                <div class="d-flex flex-column gap-2 mb-3" id="quiz-options">
+                    <!-- Options will be generated here -->
+                </div>
+                <div id="quiz-result" class="fw-bold mt-3" style="min-height: 1.5em;"></div>
+                <button id="quiz-next" class="nusa-btn nusa-btn-outline-primary mt-3" style="display: none;">Soal Selanjutnya</button>
+            </div>
+        </section>
+
+        <!-- Navigation CTA -->
+        <div class="nusa-card border-0 shadow-sm p-4 text-center">
+            <h3 class="fw-bold">Luar Biasa!</h3>
+            <p class="text-secondary">Anda sudah memahami pola kalimat dasar formal. Selanjutnya, mari belajar bentuk informal sopan (polite informal).</p>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="pelafalan.html" class="nusa-btn nusa-btn-outline-secondary">← Kembali ke Pelafalan</a>
+                <a href="informal.html" class="nusa-btn nusa-btn-primary">Bentuk Informal →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="nusa-container">
+            <p class="text-center small text-gray-500">&copy; 2026 Bakor. All rights reserved. Powered by Nusa UI.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="../../../../assets/js/nusa-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script type="module">
+        import { initDarkMode } from '../../../../assets/js/nusa-dark-mode.js';
+        initDarkMode();
+
+        // Sound Effects
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playSoundEffect(type) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            if (type === 'correct') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.1);
+                gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.5);
+            } else {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+                osc.frequency.linearRampToValueAtTime(100, audioCtx.currentTime + 0.3);
+                gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.3);
+            }
+        }
+
+        // Expose playAudio to global scope for onclick handlers
+        window.playAudio = function(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Stop previous audio
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ko-KR';
+                utterance.rate = 0.8; // Slower for learning
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('Browser Anda tidak mendukung fitur audio.');
+            }
+        };
+
+        // Quiz Logic
+        const quizData = [
+            { word: '가다 (Pergi)', correct: '갑니다', options: ['갑니다', '가습니다', '가니다'] },
+            { word: '먹다 (Makan)', correct: '먹습니다', options: ['먹습니다', '먹니다', '먹읍니다'] },
+            { word: '보다 (Lihat)', correct: '봅니다', options: ['봅니다', '보습니다', '보니다'] },
+            { word: '입다 (Pakai)', correct: '입습니다', options: ['입습니다', '입니다', '입읍니다'] },
+            { word: '하다 (Lakukan)', correct: '합니다', options: ['합니다', '하습니다', '하니다'] },
+            { word: '웃다 (Tertawa)', correct: '웃습니다', options: ['웃습니다', '웃니다', '웃읍니다'] },
+            { word: '살다 (Tinggal)', correct: '삽니다', options: ['삽니다', '살습니다', '살니다'] },
+            { word: '만들다 (Membuat)', correct: '만듭니다', options: ['만듭니다', '만들습니다', '만들니다'] }
+        ];
+
+        const questionEl = document.getElementById('quiz-question');
+        const optionsEl = document.getElementById('quiz-options');
+        const resultEl = document.getElementById('quiz-result');
+        const nextBtn = document.getElementById('quiz-next');
+        const scoreEl = document.getElementById('quiz-score');
+        const resetBtn = document.getElementById('quiz-reset');
+
+        let currentQuestion = null;
+        let score = 0;
+        let questionsAnswered = 0;
+
+        function generateQuestion() {
+            resultEl.textContent = '';
+            resultEl.className = 'fw-bold mt-3';
+            nextBtn.style.display = 'none';
+            optionsEl.innerHTML = '';
+
+            const randomIndex = Math.floor(Math.random() * quizData.length);
+            currentQuestion = quizData[randomIndex];
+            questionEl.textContent = currentQuestion.word;
+
+            // Shuffle options
+            const shuffledOptions = [...currentQuestion.options].sort(() => Math.random() - 0.5);
+
+            shuffledOptions.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'nusa-btn nusa-btn-outline-secondary w-100 py-2';
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(opt, btn);
+                optionsEl.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selected, btnElement) {
+            const buttons = optionsEl.querySelectorAll('button');
+            buttons.forEach(b => b.disabled = true);
+
+            questionsAnswered++;
+
+            if (selected === currentQuestion.correct) {
+                score++;
+                btnElement.classList.remove('nusa-btn-outline-secondary');
+                btnElement.classList.add('nusa-btn-success');
+                resultEl.textContent = `Benar! 🎉`;
+                resultEl.classList.add('text-success');
+                playAudio(currentQuestion.correct); // Play audio on correct answer
+                playSoundEffect('correct');
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            } else {
+                btnElement.classList.remove('nusa-btn-outline-secondary');
+                btnElement.classList.add('nusa-btn-error');
+                resultEl.textContent = `Salah! Jawaban: ${currentQuestion.correct}`;
+                resultEl.classList.add('text-error');
+                playSoundEffect('wrong');
+                
+                buttons.forEach(b => {
+                    if (b.textContent === currentQuestion.correct) {
+                        b.classList.remove('nusa-btn-outline-secondary');
+                        b.classList.add('nusa-btn-success');
+                    }
+                });
+            }
+            scoreEl.textContent = `Skor: ${score} / ${questionsAnswered}`;
+            nextBtn.style.display = 'inline-block';
+        }
+
+        nextBtn.addEventListener('click', generateQuestion);
+        resetBtn.addEventListener('click', () => {
+            score = 0; questionsAnswered = 0; scoreEl.textContent = 'Skor: 0 / 0'; generateQuestion();
+        });
+
+        generateQuestion();
+    </script>
+</body>
+</html>

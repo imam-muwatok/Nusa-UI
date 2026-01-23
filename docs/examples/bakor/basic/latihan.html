@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Membaca Hangul - Bakor</title>
+    <link rel="stylesheet" href="../../../../assets/css/nusa.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .word-card {
+            perspective: 1000px;
+            cursor: pointer;
+            height: 220px;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+        .word-hangul {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--nusa-primary);
+        }
+        .word-rom {
+            font-style: italic;
+            color: var(--nusa-text-secondary);
+        }
+        .word-meaning {
+            font-weight: 500;
+        }
+        /* Dark Mode Toggle */
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #0d6efd;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+        /* 3D Flip Styles */
+        .word-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .word-card.revealed .word-card-inner {
+            transform: rotateY(180deg);
+        }
+        .word-card-front, .word-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 0.375rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            background-color: #fff;
+            border: 1px solid var(--nusa-border-color);
+            box-shadow: var(--nusa-box-shadow-sm);
+        }
+        .word-card-back {
+            transform: rotateY(180deg);
+            background-color: #f8f9fa;
+        }
+        /* Dark Mode for Cards */
+        [data-nusa-theme="dark"] .word-card-front,
+        [data-nusa-theme="dark"] .word-card-back {
+            background-color: #1e1e1e;
+            border-color: #333;
+        }
+        [data-nusa-theme="dark"] .word-card-back {
+            background-color: #2d2d2d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="nusa-navbar bg-white shadow-sm sticky-top">
+        <div class="nusa-container">
+            <a href="../index.html" class="nusa-navbar-brand fw-bold text-primary d-flex align-items-center">
+                <span class="me-2">🇰🇷</span> Bakor
+            </a>
+            <button class="nusa-navbar-toggler" type="button" data-nusa-toggle="collapse" data-nusa-target="#navbarNav">
+                <span class="nusa-navbar-toggler-icon"></span>
+            </button>
+            <div class="nusa-collapse nusa-navbar-collapse" id="navbarNav">
+                <ul class="nusa-navbar-nav ms-auto">
+                    <li class="nusa-nav-item"><a href="../index.html" class="nusa-nav-link">Beranda</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#courses" class="nusa-nav-link active">Kursus</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#about" class="nusa-nav-link">Tentang</a></li>
+                    <li class="nusa-nav-item"><a href="../index.html#contact" class="nusa-nav-link">Kontak</a></li>
+                </ul>
+                <div class="d-flex ms-lg-3 mt-3 mt-lg-0 align-items-center">
+                    <label class="theme-switch me-3" for="nusa-theme-toggle" aria-label="Toggle Dark Mode">
+                        <input type="checkbox" id="nusa-theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <a href="#" class="nusa-btn nusa-btn-primary">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white py-5">
+        <div class="nusa-container text-center">
+            <h1 class="display-4 fw-bold">Latihan Membaca</h1>
+            <p class="lead opacity-75">Uji kemampuan membacamu dengan kata-kata sederhana.</p>
+        </div>
+    </header>
+
+    <main class="nusa-container py-5">
+        <!-- Progress Bar -->
+        <div class="nusa-card shadow-sm mb-5 position-sticky" style="top: .1rem; z-index: 90;">
+            <div class="nusa-card-body py-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="mb-0 fw-bold fs-6">Progress Kartu</h5>
+                    <span id="progress-text" class="nusa-badge nusa-badge-primary rounded-pill">0 / 0</span>
+                </div>
+                <div class="nusa-progress" style="height: 0.5rem;">
+                    <div id="progress-bar" class="nusa-progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Word Grid -->
+        <section class="mb-5">
+            <h2 class="fw-bold mb-4">Kata Benda Dasar</h2>
+            <div class="word-grid">
+                <!-- Word Cards will be here -->
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">가구</div>
+                        <div class="word-rom mb-2">gagu</div>
+                        <div class="word-meaning">Perabotan</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">나라</div>
+                        <div class="word-rom mb-2">nara</div>
+                        <div class="word-meaning">Negara</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">다리</div>
+                        <div class="word-rom mb-2">dari</div>
+                        <div class="word-meaning">Kaki / Jembatan</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">우유</div>
+                        <div class="word-rom mb-2">uyu</div>
+                        <div class="word-meaning">Susu</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">고기</div>
+                        <div class="word-rom mb-2">gogi</div>
+                        <div class="word-meaning">Daging</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">나무</div>
+                        <div class="word-rom mb-2">namu</div>
+                        <div class="word-meaning">Pohon</div>
+                    </div>
+                </div>
+                 <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">소리</div>
+                        <div class="word-rom mb-2">sori</div>
+                        <div class="word-meaning">Suara</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">아기</div>
+                        <div class="word-rom mb-2">agi</div>
+                        <div class="word-meaning">Bayi</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">모자</div>
+                        <div class="word-rom mb-2">moja</div>
+                        <div class="word-meaning">Topi</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">바지</div>
+                        <div class="word-rom mb-2">baji</div>
+                        <div class="word-meaning">Celana</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">치마</div>
+                        <div class="word-rom mb-2">chima</div>
+                        <div class="word-meaning">Rok</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">코</div>
+                        <div class="word-rom mb-2">ko</div>
+                        <div class="word-meaning">Hidung</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Food Section -->
+        <section class="mb-5">
+            <h2 class="fw-bold mb-4">Makanan & Minuman</h2>
+            <div class="word-grid">
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">밥</div>
+                        <div class="word-rom mb-2">bap</div>
+                        <div class="word-meaning">Nasi</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">김치</div>
+                        <div class="word-rom mb-2">kimchi</div>
+                        <div class="word-meaning">Kimchi</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">물</div>
+                        <div class="word-rom mb-2">mul</div>
+                        <div class="word-meaning">Air</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">차</div>
+                        <div class="word-rom mb-2">cha</div>
+                        <div class="word-meaning">Teh</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">사과</div>
+                        <div class="word-rom mb-2">sagwa</div>
+                        <div class="word-meaning">Apel</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">빵</div>
+                        <div class="word-rom mb-2">ppang</div>
+                        <div class="word-meaning">Roti</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animal Section -->
+        <section class="mb-5">
+            <h2 class="fw-bold mb-4">Hewan</h2>
+            <div class="word-grid">
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">개</div>
+                        <div class="word-rom mb-2">gae</div>
+                        <div class="word-meaning">Anjing</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">고양이</div>
+                        <div class="word-rom mb-2">goyangi</div>
+                        <div class="word-meaning">Kucing</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">곰</div>
+                        <div class="word-rom mb-2">gom</div>
+                        <div class="word-meaning">Beruang</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">새</div>
+                        <div class="word-rom mb-2">sae</div>
+                        <div class="word-meaning">Burung</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">소</div>
+                        <div class="word-rom mb-2">so</div>
+                        <div class="word-meaning">Sapi</div>
+                    </div>
+                </div>
+                <div class="nusa-card text-center word-card">
+                    <div class="nusa-card-body">
+                        <div class="word-hangul">오리</div>
+                        <div class="word-rom mb-2">ori</div>
+                        <div class="word-meaning">Bebek</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation CTA -->
+        <div class="nusa-card border-0 shadow-sm p-4 text-center">
+            <h3 class="fw-bold">Luar Biasa!</h3>
+            <p class="text-secondary">Anda sudah bisa membaca kata-kata dasar. Teruslah berlatih untuk menjadi lebih lancar.</p>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="struktur.html" class="nusa-btn nusa-btn-outline-secondary">← Kembali ke Struktur Suku Kata</a>
+                <a href="pelafalan.html" class="nusa-btn nusa-btn-primary">Pelafalan →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="nusa-container">
+            <p class="text-center small text-gray-500">&copy; 2026 Bakor. All rights reserved. Powered by Nusa UI.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="../../../../assets/js/nusa-script.js"></script>
+    <script type="module">
+        import { initDarkMode } from '../../../../assets/js/nusa-dark-mode.js';
+        initDarkMode();
+
+        // Audio Pronunciation Logic
+        function playAudio(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Stop previous audio
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ko-KR';
+                utterance.rate = 0.8; // Slower for learning
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        const totalCards = document.querySelectorAll('.word-card').length;
+        let revealedCount = 0;
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+        
+        if (progressText) progressText.textContent = `0 / ${totalCards}`;
+
+        document.querySelectorAll('.word-card').forEach(card => {
+            // Extract data
+            const hangul = card.querySelector('.word-hangul').textContent;
+            const rom = card.querySelector('.word-rom').textContent;
+            const meaning = card.querySelector('.word-meaning').textContent;
+
+            // Create 3D structure
+            const inner = document.createElement('div');
+            inner.className = 'word-card-inner';
+
+            // Front Face
+            const front = document.createElement('div');
+            front.className = 'word-card-front';
+            front.innerHTML = `
+                <div class="word-hangul mb-3">${hangul}</div>
+                <div class="small text-secondary opacity-75"><em>Klik untuk membalik</em></div>
+            `;
+
+            // Back Face
+            const back = document.createElement('div');
+            back.className = 'word-card-back';
+            back.innerHTML = `
+                <div class="word-hangul mb-1" style="font-size: 1.5rem;">${hangul}</div>
+                <div class="word-rom fst-italic text-secondary mb-1">${rom}</div>
+                <div class="word-meaning fw-bold mb-3">${meaning}</div>
+                <div class="text-primary opacity-75">🔊</div>
+            `;
+
+            inner.appendChild(front);
+            inner.appendChild(back);
+            
+            // Replace content
+            card.innerHTML = '';
+            card.appendChild(inner);
+
+            // Click event
+            card.addEventListener('click', () => {
+                if (!card.hasAttribute('data-viewed')) {
+                    card.setAttribute('data-viewed', 'true');
+                    revealedCount++;
+                    const percent = (revealedCount / totalCards) * 100;
+                    if (progressBar) progressBar.style.width = `${percent}%`;
+                    if (progressText) progressText.textContent = `${revealedCount} / ${totalCards}`;
+                }
+
+                card.classList.toggle('revealed');
+                if (card.classList.contains('revealed')) {
+                    playAudio(hangul);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

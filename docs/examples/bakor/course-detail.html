@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Kursus - Bakor</title>
+    <link rel="stylesheet" href="../../../assets/css/nusa.css">
+    <style>
+        /* Custom styles for Bakor theme */
+        .course-header {
+            background-color: #18181B; /* Dark bg */
+            color: white;
+            padding: 4rem 0;
+        }
+        .instructor-avatar {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .course-sidebar {
+            position: sticky;
+            top: 6rem;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="nusa-navbar bg-white shadow-sm sticky-top">
+        <div class="nusa-container">
+            <a href="index.html" class="nusa-navbar-brand fw-bold text-primary d-flex align-items-center">
+                <span class="me-2">🇰🇷</span> Bakor
+            </a>
+            <button class="nusa-navbar-toggler" type="button" data-nusa-toggle="collapse" data-nusa-target="#navbarNav">
+                <span class="nusa-navbar-toggler-icon"></span>
+            </button>
+            <div class="nusa-collapse nusa-navbar-collapse" id="navbarNav">
+                <ul class="nusa-navbar-nav ms-auto">
+                    <li class="nusa-nav-item"><a href="index.html" class="nusa-nav-link">Beranda</a></li>
+                    <li class="nusa-nav-item"><a href="index.html#courses" class="nusa-nav-link active">Kursus</a></li>
+                    <li class="nusa-nav-item"><a href="index.html#about" class="nusa-nav-link">Tentang</a></li>
+                    <li class="nusa-nav-item"><a href="index.html#contact" class="nusa-nav-link">Kontak</a></li>
+                </ul>
+                <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#" class="nusa-btn nusa-btn-outline-primary me-2">Masuk</a>
+                    <a href="#" class="nusa-btn nusa-btn-primary">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="nusa-container">
+            <div class="nusa-row">
+                <div class="nusa-col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="nusa-breadcrumb bg-transparent p-0 mb-3">
+                            <li class="nusa-breadcrumb-item"><a href="index.html" class="text-gray-400 text-decoration-none">Beranda</a></li>
+                            <li class="nusa-breadcrumb-item"><a href="index.html#courses" class="text-gray-400 text-decoration-none">Kursus</a></li>
+                            <li class="nusa-breadcrumb-item active text-white" aria-current="page">Mastering Hangul</li>
+                        </ol>
+                    </nav>
+                    <h1 class="display-5 fw-bold mb-3">Mastering Hangul dalam 7 Hari</h1>
+                    <p class="lead text-gray-300 mb-4">Pelajari huruf Korea dasar, cara membaca, dan menulis Hangul dengan cepat dan tepat bersama native speaker.</p>
+                    
+                    <div class="d-flex flex-wrap align-items-center gap-4 mb-4">
+                        <div class="d-flex align-items-center">
+                            <span class="nusa-badge nusa-badge-warning me-2">Best Seller</span>
+                            <span class="text-warning">★ 4.8</span>
+                            <span class="text-gray-400 ms-1">(1,240 rating)</span>
+                        </div>
+                        <div class="d-flex align-items-center text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="me-2" viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/></svg>
+                            2,500+ Siswa
+                        </div>
+                        <div class="d-flex align-items-center text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="me-2" viewBox="0 0 16 16"><path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/><path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+                            Bahasa Indonesia
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <img src="https://picsum.photos/50/50?random=instructor" alt="Instructor" class="instructor-avatar me-3">
+                        <div>
+                            <div class="text-gray-400 small">Dibuat oleh</div>
+                            <a href="#" class="text-white text-decoration-none fw-bold">Kim Min-ji</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="nusa-container py-5">
+        <div class="nusa-row">
+            <!-- Left Column -->
+            <div class="nusa-col-lg-8">
+                <!-- About Course -->
+                <div class="nusa-card shadow-sm border-0 mb-4">
+                    <div class="nusa-card-body p-4">
+                        <h3 class="fw-bold mb-3">Tentang Kursus Ini</h3>
+                        <p>Kursus ini dirancang khusus untuk pemula yang belum pernah belajar bahasa Korea sebelumnya. Anda akan dibimbing langkah demi langkah untuk mengenal huruf Hangul, cara pengucapan yang benar, dan aturan penulisan dasar.</p>
+                        <p>Setelah mengikuti kursus ini, Anda akan mampu:</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><span class="text-success me-2">✓</span> Membaca dan menulis semua huruf Hangul (Vokal & Konsonan)</li>
+                            <li class="mb-2"><span class="text-success me-2">✓</span> Memahami struktur suku kata bahasa Korea</li>
+                            <li class="mb-2"><span class="text-success me-2">✓</span> Mengucapkan kata-kata dengan intonasi yang natural</li>
+                            <li class="mb-2"><span class="text-success me-2">✓</span> Menulis nama Anda sendiri dalam Hangul</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Curriculum -->
+                <div class="nusa-card shadow-sm border-0 mb-4">
+                    <div class="nusa-card-body p-4">
+                        <h3 class="fw-bold mb-3">Kurikulum</h3>
+                        <div class="nusa-accordion" id="curriculumAccordion">
+                            <div class="nusa-accordion-item">
+                                <h2 class="nusa-accordion-header" id="headingOne">
+                                    <button class="nusa-accordion-button" type="button" data-nusa-toggle="collapse" data-nusa-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Bagian 1: Pengenalan Hangul
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="nusa-accordion-collapse collapse show" aria-labelledby="headingOne" data-nusa-parent="#curriculumAccordion">
+                                    <div class="nusa-accordion-body">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="d-flex justify-content-between py-2 border-bottom">
+                                                <span><span class="me-2">📺</span> Sejarah Singkat Hangul</span>
+                                                <span class="text-secondary">05:00</span>
+                                            </li>
+                                            <li class="d-flex justify-content-between py-2 border-bottom">
+                                                <span><span class="me-2">📺</span> Vokal Dasar (ㅏ, ㅑ, ㅓ, ㅕ...)</span>
+                                                <span class="text-secondary">12:30</span>
+                                            </li>
+                                            <li class="d-flex justify-content-between py-2">
+                                                <span><span class="me-2">📺</span> Konsonan Dasar (ㄱ, ㄴ, ㄷ...)</span>
+                                                <span class="text-secondary">15:00</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nusa-accordion-item">
+                                <h2 class="nusa-accordion-header" id="headingTwo">
+                                    <button class="nusa-accordion-button collapsed" type="button" data-nusa-toggle="collapse" data-nusa-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Bagian 2: Membentuk Suku Kata
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="nusa-accordion-collapse collapse" aria-labelledby="headingTwo" data-nusa-parent="#curriculumAccordion">
+                                    <div class="nusa-accordion-body">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="d-flex justify-content-between py-2 border-bottom">
+                                                <span><span class="me-2">📺</span> Struktur Blok Suku Kata</span>
+                                                <span class="text-secondary">10:00</span>
+                                            </li>
+                                            <li class="d-flex justify-content-between py-2">
+                                                <span><span class="me-2">📺</span> Latihan Menulis</span>
+                                                <span class="text-secondary">20:00</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nusa-accordion-item">
+                                <h2 class="nusa-accordion-header" id="headingThree">
+                                    <button class="nusa-accordion-button collapsed" type="button" data-nusa-toggle="collapse" data-nusa-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Bagian 3: Batchim (Konsonan Akhir)
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="nusa-accordion-collapse collapse" aria-labelledby="headingThree" data-nusa-parent="#curriculumAccordion">
+                                    <div class="nusa-accordion-body">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="d-flex justify-content-between py-2 border-bottom">
+                                                <span><span class="me-2">📺</span> Apa itu Batchim?</span>
+                                                <span class="text-secondary">08:00</span>
+                                            </li>
+                                            <li class="d-flex justify-content-between py-2">
+                                                <span><span class="me-2">📝</span> Kuis Batchim</span>
+                                                <span class="text-secondary">10 Soal</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instructor -->
+                <div class="nusa-card shadow-sm border-0">
+                    <div class="nusa-card-body p-4">
+                        <h3 class="fw-bold mb-3">Instruktur</h3>
+                        <div class="d-flex">
+                            <img src="https://picsum.photos/100/100?random=instructor" alt="Kim Min-ji" class="rounded-circle me-4" style="width: 80px; height: 80px; object-fit: cover;">
+                            <div>
+                                <h5 class="fw-bold">Kim Min-ji</h5>
+                                <p class="text-primary mb-2">Guru Bahasa Korea Bersertifikat</p>
+                                <p class="text-secondary small mb-3">
+                                    <span class="me-3">⭐ 4.9 Rating Instruktur</span>
+                                    <span class="me-3">👥 15,000+ Siswa</span>
+                                    <span>▶️ 5 Kursus</span>
+                                </p>
+                                <p class="mb-0">Annyeonghaseyo! Saya Kim Min-ji, native speaker dari Seoul. Saya telah mengajar bahasa Korea untuk orang asing selama lebih dari 5 tahun. Saya suka membuat belajar bahasa menjadi menyenangkan dan mudah dipahami.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column (Sidebar) -->
+            <div class="nusa-col-lg-4">
+                <div class="course-sidebar">
+                    <div class="nusa-card shadow border-0 overflow-hidden">
+                        <img src="https://picsum.photos/400/250?random=hangul" class="nusa-card-img-top" alt="Course Preview">
+                        <div class="nusa-card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <h2 class="fw-bold mb-0 me-2">Rp 150.000</h2>
+                                <span class="text-decoration-line-through text-secondary">Rp 300.000</span>
+                                <span class="nusa-badge nusa-badge-error ms-auto">50% OFF</span>
+                            </div>
+                            <div class="d-grid gap-2 mb-4">
+                                <button class="nusa-btn nusa-btn-primary nusa-btn-lg">Beli Sekarang</button>
+                                <button class="nusa-btn nusa-btn-outline-secondary">Tambah ke Keranjang</button>
+                            </div>
+                            <p class="text-center small text-secondary mb-4">Jaminan uang kembali 30 hari</p>
+                            
+                            <h6 class="fw-bold mb-3">Kursus ini mencakup:</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2 d-flex align-items-center"><span class="me-2">🎥</span> 5 jam video on-demand</li>
+                                <li class="mb-2 d-flex align-items-center"><span class="me-2">📂</span> 10 artikel & sumber bacaan</li>
+                                <li class="mb-2 d-flex align-items-center"><span class="me-2">📥</span> 15 konten yang dapat diunduh</li>
+                                <li class="mb-2 d-flex align-items-center"><span class="me-2">♾️</span> Akses seumur hidup</li>
+                                <li class="mb-2 d-flex align-items-center"><span class="me-2">📱</span> Akses di perangkat seluler dan TV</li>
+                                <li class="mb-2 d-flex align-items-center"><span class="me-2">🏆</span> Sertifikat penyelesaian</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Copied from index.html) -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="nusa-container">
+            <div class="nusa-row">
+                <div class="nusa-col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Bakor</h5>
+                    <p class="text-gray-400 small">Platform belajar bahasa Korea terdepan di Indonesia dengan metode yang menyenangkan, fleksibel, dan mudah dipahami oleh siapa saja.</p>
+                </div>
+                <div class="nusa-col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Menu</h6>
+                    <ul class="list-unstyled small text-gray-400">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Beranda</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Kursus</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                <div class="nusa-col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Bantuan</h6>
+                    <ul class="list-unstyled small text-gray-400">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Kontak</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Kebijakan Privasi</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-gray-400 hover-text-white">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                <div class="nusa-col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
+                    <p class="text-gray-400 small">Dapatkan tips belajar dan promo terbaru.</p>
+                    <div class="nusa-input-group">
+                        <input type="email" class="nusa-form-control form-control-sm bg-dark text-white border-secondary" placeholder="Email Anda">
+                        <button class="nusa-btn nusa-btn-primary nusa-btn-sm">Langganan</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-gray-700 my-4">
+            <div class="text-center small text-gray-500">
+                &copy; 2026 Bakor. All rights reserved. Powered by Nusa UI.
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../../../assets/js/nusa-script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionButtons = document.querySelectorAll('.nusa-accordion-button');
+            
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-nusa-target');
+                    const target = document.querySelector(targetId);
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                    
+                    // Toggle current
+                    button.setAttribute('aria-expanded', !isExpanded);
+                    button.classList.toggle('collapsed');
+                    
+                    if (target) {
+                        target.classList.toggle('show');
+                        target.classList.toggle('collapse');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

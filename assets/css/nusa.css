@@ -1170,6 +1170,12 @@ h6, .h6 {
     opacity: 1;
   }
 }
+header,
+header .d-flex {
+  justify-content: center !important;
+  align-items: center !important;
+}
+
 .nusa-table,
 .ns-table {
   width: 100%;
@@ -1539,6 +1545,7 @@ h6, .h6 {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.175);
   border-radius: 0.375rem;
+  margin-bottom: 1.5rem;
 }
 
 .nusa-card-body,
@@ -1555,6 +1562,36 @@ h6, .h6 {
 .nusa-card-text:last-child,
 .ns-card-text:last-child {
   margin-bottom: 0;
+}
+
+.nusa-card-header,
+.ns-card-header {
+  padding: 1rem 1rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid var(--nusa-border-color);
+}
+.nusa-card-header:first-child,
+.ns-card-header:first-child {
+  border-radius: calc(0.375rem - 1px) calc(0.375rem - 1px) 0 0;
+}
+
+.nusa-card-footer,
+.ns-card-footer {
+  padding: 1rem 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid var(--nusa-border-color);
+}
+.nusa-card-footer:last-child,
+.ns-card-footer:last-child {
+  border-radius: 0 0 calc(0.375rem - 1px) calc(0.375rem - 1px);
+}
+
+.nusa-card-img-top,
+.ns-card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(0.375rem - 1px);
+  border-top-right-radius: calc(0.375rem - 1px);
 }
 
 .nusa-card-primary,
@@ -1619,6 +1656,22 @@ h6, .h6 {
 .ns-card-bg-primary .ns-card-title {
   color: #E0E7FF;
 }
+.nusa-card-bg-primary .nusa-card-text,
+.nusa-card-bg-primary .ns-card-text,
+.nusa-card-bg-primary h1, .nusa-card-bg-primary h2, .nusa-card-bg-primary h3, .nusa-card-bg-primary h4, .nusa-card-bg-primary h5, .nusa-card-bg-primary h6,
+.nusa-card-bg-primary p, .nusa-card-bg-primary small,
+.ns-card-bg-primary .nusa-card-text,
+.ns-card-bg-primary .ns-card-text,
+.ns-card-bg-primary h1,
+.ns-card-bg-primary h2,
+.ns-card-bg-primary h3,
+.ns-card-bg-primary h4,
+.ns-card-bg-primary h5,
+.ns-card-bg-primary h6,
+.ns-card-bg-primary p,
+.ns-card-bg-primary small {
+  color: #E0E7FF;
+}
 
 .nusa-card-bg-secondary,
 .ns-card-bg-secondary {
@@ -1630,6 +1683,22 @@ h6, .h6 {
 .nusa-card-bg-secondary .ns-card-title,
 .ns-card-bg-secondary .nusa-card-title,
 .ns-card-bg-secondary .ns-card-title {
+  color: #FAE4F1;
+}
+.nusa-card-bg-secondary .nusa-card-text,
+.nusa-card-bg-secondary .ns-card-text,
+.nusa-card-bg-secondary h1, .nusa-card-bg-secondary h2, .nusa-card-bg-secondary h3, .nusa-card-bg-secondary h4, .nusa-card-bg-secondary h5, .nusa-card-bg-secondary h6,
+.nusa-card-bg-secondary p, .nusa-card-bg-secondary small,
+.ns-card-bg-secondary .nusa-card-text,
+.ns-card-bg-secondary .ns-card-text,
+.ns-card-bg-secondary h1,
+.ns-card-bg-secondary h2,
+.ns-card-bg-secondary h3,
+.ns-card-bg-secondary h4,
+.ns-card-bg-secondary h5,
+.ns-card-bg-secondary h6,
+.ns-card-bg-secondary p,
+.ns-card-bg-secondary small {
   color: #FAE4F1;
 }
 
@@ -1645,6 +1714,22 @@ h6, .h6 {
 .ns-card-bg-accent .ns-card-title {
   color: #214D49;
 }
+.nusa-card-bg-accent .nusa-card-text,
+.nusa-card-bg-accent .ns-card-text,
+.nusa-card-bg-accent h1, .nusa-card-bg-accent h2, .nusa-card-bg-accent h3, .nusa-card-bg-accent h4, .nusa-card-bg-accent h5, .nusa-card-bg-accent h6,
+.nusa-card-bg-accent p, .nusa-card-bg-accent small,
+.ns-card-bg-accent .nusa-card-text,
+.ns-card-bg-accent .ns-card-text,
+.ns-card-bg-accent h1,
+.ns-card-bg-accent h2,
+.ns-card-bg-accent h3,
+.ns-card-bg-accent h4,
+.ns-card-bg-accent h5,
+.ns-card-bg-accent h6,
+.ns-card-bg-accent p,
+.ns-card-bg-accent small {
+  color: #214D49;
+}
 
 .nusa-card-bg-neutral,
 .ns-card-bg-neutral {
@@ -1656,6 +1741,22 @@ h6, .h6 {
 .nusa-card-bg-neutral .ns-card-title,
 .ns-card-bg-neutral .nusa-card-title,
 .ns-card-bg-neutral .ns-card-title {
+  color: #E4E4E7;
+}
+.nusa-card-bg-neutral .nusa-card-text,
+.nusa-card-bg-neutral .ns-card-text,
+.nusa-card-bg-neutral h1, .nusa-card-bg-neutral h2, .nusa-card-bg-neutral h3, .nusa-card-bg-neutral h4, .nusa-card-bg-neutral h5, .nusa-card-bg-neutral h6,
+.nusa-card-bg-neutral p, .nusa-card-bg-neutral small,
+.ns-card-bg-neutral .nusa-card-text,
+.ns-card-bg-neutral .ns-card-text,
+.ns-card-bg-neutral h1,
+.ns-card-bg-neutral h2,
+.ns-card-bg-neutral h3,
+.ns-card-bg-neutral h4,
+.ns-card-bg-neutral h5,
+.ns-card-bg-neutral h6,
+.ns-card-bg-neutral p,
+.ns-card-bg-neutral small {
   color: #E4E4E7;
 }
 
@@ -1671,6 +1772,22 @@ h6, .h6 {
 .ns-card-bg-info .ns-card-title {
   color: #0E2E4A;
 }
+.nusa-card-bg-info .nusa-card-text,
+.nusa-card-bg-info .ns-card-text,
+.nusa-card-bg-info h1, .nusa-card-bg-info h2, .nusa-card-bg-info h3, .nusa-card-bg-info h4, .nusa-card-bg-info h5, .nusa-card-bg-info h6,
+.nusa-card-bg-info p, .nusa-card-bg-info small,
+.ns-card-bg-info .nusa-card-text,
+.ns-card-bg-info .ns-card-text,
+.ns-card-bg-info h1,
+.ns-card-bg-info h2,
+.ns-card-bg-info h3,
+.ns-card-bg-info h4,
+.ns-card-bg-info h5,
+.ns-card-bg-info h6,
+.ns-card-bg-info p,
+.ns-card-bg-info small {
+  color: #0E2E4A;
+}
 
 .nusa-card-bg-success,
 .ns-card-bg-success {
@@ -1682,6 +1799,22 @@ h6, .h6 {
 .nusa-card-bg-success .ns-card-title,
 .ns-card-bg-success .nusa-card-title,
 .ns-card-bg-success .ns-card-title {
+  color: #214D38;
+}
+.nusa-card-bg-success .nusa-card-text,
+.nusa-card-bg-success .ns-card-text,
+.nusa-card-bg-success h1, .nusa-card-bg-success h2, .nusa-card-bg-success h3, .nusa-card-bg-success h4, .nusa-card-bg-success h5, .nusa-card-bg-success h6,
+.nusa-card-bg-success p, .nusa-card-bg-success small,
+.ns-card-bg-success .nusa-card-text,
+.ns-card-bg-success .ns-card-text,
+.ns-card-bg-success h1,
+.ns-card-bg-success h2,
+.ns-card-bg-success h3,
+.ns-card-bg-success h4,
+.ns-card-bg-success h5,
+.ns-card-bg-success h6,
+.ns-card-bg-success p,
+.ns-card-bg-success small {
   color: #214D38;
 }
 
@@ -1697,6 +1830,22 @@ h6, .h6 {
 .ns-card-bg-warning .ns-card-title {
   color: #79320F;
 }
+.nusa-card-bg-warning .nusa-card-text,
+.nusa-card-bg-warning .ns-card-text,
+.nusa-card-bg-warning h1, .nusa-card-bg-warning h2, .nusa-card-bg-warning h3, .nusa-card-bg-warning h4, .nusa-card-bg-warning h5, .nusa-card-bg-warning h6,
+.nusa-card-bg-warning p, .nusa-card-bg-warning small,
+.ns-card-bg-warning .nusa-card-text,
+.ns-card-bg-warning .ns-card-text,
+.ns-card-bg-warning h1,
+.ns-card-bg-warning h2,
+.ns-card-bg-warning h3,
+.ns-card-bg-warning h4,
+.ns-card-bg-warning h5,
+.ns-card-bg-warning h6,
+.ns-card-bg-warning p,
+.ns-card-bg-warning small {
+  color: #79320F;
+}
 
 .nusa-card-bg-error,
 .ns-card-bg-error {
@@ -1708,6 +1857,22 @@ h6, .h6 {
 .nusa-card-bg-error .ns-card-title,
 .ns-card-bg-error .nusa-card-title,
 .ns-card-bg-error .ns-card-title {
+  color: #4E1518;
+}
+.nusa-card-bg-error .nusa-card-text,
+.nusa-card-bg-error .ns-card-text,
+.nusa-card-bg-error h1, .nusa-card-bg-error h2, .nusa-card-bg-error h3, .nusa-card-bg-error h4, .nusa-card-bg-error h5, .nusa-card-bg-error h6,
+.nusa-card-bg-error p, .nusa-card-bg-error small,
+.ns-card-bg-error .nusa-card-text,
+.ns-card-bg-error .ns-card-text,
+.ns-card-bg-error h1,
+.ns-card-bg-error h2,
+.ns-card-bg-error h3,
+.ns-card-bg-error h4,
+.ns-card-bg-error h5,
+.ns-card-bg-error h6,
+.ns-card-bg-error p,
+.ns-card-bg-error small {
   color: #4E1518;
 }
 
@@ -1734,6 +1899,22 @@ h6, .h6 {
 .nusa-card-bg-dark .ns-card-title,
 .ns-card-bg-dark .nusa-card-title,
 .ns-card-bg-dark .ns-card-title {
+  color: #fff;
+}
+.nusa-card-bg-dark .nusa-card-text,
+.nusa-card-bg-dark .ns-card-text,
+.nusa-card-bg-dark h1, .nusa-card-bg-dark h2, .nusa-card-bg-dark h3, .nusa-card-bg-dark h4, .nusa-card-bg-dark h5, .nusa-card-bg-dark h6,
+.nusa-card-bg-dark p, .nusa-card-bg-dark small,
+.ns-card-bg-dark .nusa-card-text,
+.ns-card-bg-dark .ns-card-text,
+.ns-card-bg-dark h1,
+.ns-card-bg-dark h2,
+.ns-card-bg-dark h3,
+.ns-card-bg-dark h4,
+.ns-card-bg-dark h5,
+.ns-card-bg-dark h6,
+.ns-card-bg-dark p,
+.ns-card-bg-dark small {
   color: #fff;
 }
 
