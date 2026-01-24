@@ -1,11 +1,11 @@
 import React from "react";
 import CodeBlock from "../components/ui/CodeBlock";
 
-export default function FormPage() {
+export default function InputPage() {
   return (
     <main className="flex-1 lg:pl-16">
       <div className="mb-12">
-        <h1 className="text-4xl font-black md:text-6xl mb-4">Forms</h1>
+        <h1 className="text-4xl font-black md:text-6xl mb-4">Form Input</h1>
         <p className="text-zinc-500 dark:text-zinc-400 text-lg">
           Komponen input untuk mengumpulkan data pengguna dengan gaya yang konsisten.
         </p>

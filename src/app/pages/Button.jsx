@@ -1,6 +1,8 @@
 import React from "react";
 import CodeBlock from "../components/ui/CodeBlock";
 import Button from "../components/ui/Button";
+import Badge from "../components/ui/Badge";
+import ButtonGroup from "../components/ui/ButtonGroup";
 import { PlusIcon } from "@heroicons/react/24/outline";
 
 export default function ButtonPage() {
@@ -132,6 +134,18 @@ export default function ButtonPage() {
           </CodeBlock>
         </section>
 
+        {/* Block Level */}
+        <section>
+          <h2 className="text-2xl font-bold mb-6">Block Level</h2>
+          <CodeBlock code={`<Button className="w-full" variant="primary">Block Level Button</Button>
+<Button className="w-full" type="outline" variant="secondary">Block Level Button</Button>`}>
+            <div className="space-y-4 w-full">
+              <Button className="w-full" variant="primary">Block Level Button</Button>
+              <Button className="w-full" type="outline" variant="secondary">Block Level Button</Button>
+            </div>
+          </CodeBlock>
+        </section>
+
         {/* States */}
         <section>
           <h2 className="text-2xl font-bold mb-6">States</h2>
@@ -154,6 +168,72 @@ export default function ButtonPage() {
               </svg>
               Loading
             </Button>
+          </CodeBlock>
+        </section>
+
+        {/* Loading */}
+        <section>
+          <h2 className="text-2xl font-bold mb-6">Loading</h2>
+          <CodeBlock code={`<Button className="flex items-center gap-2" disabled>
+  <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+  </svg>
+  Processing...
+</Button>`}>
+            <div className="flex items-center gap-4">
+              <Button className="flex items-center gap-2" disabled>
+                <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Processing...
+              </Button>
+            </div>
+          </CodeBlock>
+        </section>
+
+        {/* Button with Animation */}
+        <section>
+          <h2 className="text-2xl font-bold mb-6">Button with Animation</h2>
+          <CodeBlock code={`<Button className="animate-bounce" variant="primary">
+  Notifications <Badge variant="light" className="ml-2">4</Badge>
+</Button>`}>
+            <div className="flex items-center gap-4">
+              <Button className="animate-bounce" variant="primary">
+                Notifications <Badge variant="light" className="ml-2">4</Badge>
+              </Button>
+            </div>
+          </CodeBlock>
+        </section>
+
+        {/* Button Group */}
+        <section>
+          <h2 className="text-2xl font-bold mb-6">Button Group</h2>
+          <CodeBlock code={`<ButtonGroup>
+  <Button variant="primary">Left</Button>
+  <Button variant="primary">Middle</Button>
+  <Button variant="primary">Right</Button>
+</ButtonGroup>
+
+<ButtonGroup>
+  <Button type="outline" variant="secondary">Years</Button>
+  <Button type="outline" variant="secondary">Months</Button>
+  <Button type="outline" variant="secondary">Days</Button>
+</ButtonGroup>`}>
+            <div className="flex flex-col gap-4 items-start">
+              <ButtonGroup>
+                <Button variant="primary">Left</Button>
+                <Button variant="primary">Middle</Button>
+                <Button variant="primary">Right</Button>
+              </ButtonGroup>
+              
+              <ButtonGroup>
+                <Button type="outline" variant="secondary">Years</Button>
+                <Button type="outline" variant="secondary">Months</Button>
+                <Button type="outline" variant="secondary">Days</Button>
+              </ButtonGroup>
+            </div>
           </CodeBlock>
         </section>
       </div>

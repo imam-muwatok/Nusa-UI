@@ -15,10 +15,11 @@ import Footer from './components/layouts/Footer';
 import IntroPage from './pages/Intro';
 import ButtonPage from './pages/Button';
 import CardPage from './pages/Card';
-import FormPage from './pages/Form';
+import InputPage from './pages/Input';
 import ModalPage from './pages/Modal';
 import AlertPage from './pages/Alert';
 import BadgePage from './pages/Badge';
+import AccordionPage from './pages/Accordion';
 
 export default function App() {
   const [dark, setDark] = useState(true);
@@ -44,7 +45,7 @@ export default function App() {
         setActivePage={setActivePage} 
       />
 
-      <div className="container mx-auto flex px-6 py-10">
+      <div className="flex px-4 py-10">
         {/* DESKTOP SIDEBAR (Selalu tampil di layar besar) */}
         <aside className="hidden w-64 shrink-0 lg:block">
           <div className="sticky top-28">
@@ -56,10 +57,11 @@ export default function App() {
         {activePage === 'Introduction' && <IntroPage setIsModalOpen={setIsModalOpen} />}
         {activePage === 'Buttons' && <ButtonPage />}
         {activePage === 'Cards' && <CardPage />}
-        {activePage === 'Forms' && <FormPage />}
+        {activePage === 'Input' && <InputPage />}
         {activePage === 'Modals' && <ModalPage />}
         {activePage === 'Alerts' && <AlertPage />}
         {activePage === 'Badges' && <BadgePage />}
+        {activePage === 'Accordion' && <AccordionPage />}
         {['Installation', 'Theming'].includes(activePage) && (
           <main className="flex-1 lg:pl-16">
             <h1 className="text-4xl font-black md:text-6xl mb-4">{activePage}</h1>
