@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Penting untuk Toggle Manual di v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-nusa: var(--color-cyan-500);
+  --color-nusa-dark: var(--color-cyan-600);
+
+  /* Bootstrap-like Theme Colors */
+  --color-primary: var(--color-blue-600);
+  --color-secondary: var(--color-zinc-500);
+  --color-success: var(--color-green-500);
+  --color-danger: var(--color-red-500);
+  --color-warning: var(--color-yellow-500);
+  --color-info: var(--color-cyan-500);
+  --color-light: var(--color-zinc-100);
+  --color-dark: var(--color-zinc-900);
+
+  /* Theme Gradients */
+  --background-image-gradient-primary: linear-gradient(to right, var(--color-blue-400), var(--color-blue-600), var(--color-blue-800));
+  --background-image-gradient-secondary: linear-gradient(to right, var(--color-zinc-400), var(--color-zinc-600));
+  --background-image-gradient-success: linear-gradient(to right, var(--color-green-400), var(--color-green-600));
+  --background-image-gradient-danger: linear-gradient(to right, var(--color-red-400), var(--color-red-600), var(--color-red-800));
+  --background-image-gradient-warning: linear-gradient(to right, var(--color-yellow-400), var(--color-yellow-600));
+  --background-image-gradient-info: linear-gradient(to right, var(--color-cyan-400), var(--color-cyan-600));
+  --background-image-gradient-light: linear-gradient(to right, var(--color-zinc-50), var(--color-zinc-200));
+  --background-image-gradient-dark: linear-gradient(to right, var(--color-zinc-700), var(--color-zinc-800), var(--color-zinc-950));
+
+  /* Custom Animations */
+  --animate-ping-soft: ping-soft 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  @keyframes ping-soft {
+    75%, 100% {
+      transform: scale(1.35);
+      opacity: 0;
+    }
+  }
+
+  --animate-ripple: ripple 600ms linear;
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 0.35;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50 transition-colors duration-300;
+  }
+}

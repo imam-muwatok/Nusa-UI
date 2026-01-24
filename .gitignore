@@ -13,4 +13,8 @@ node_modules/
 *.log
 
 # Project Specific
+trash
+example
+app/example
+
 
