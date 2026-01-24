@@ -23,6 +23,7 @@ import AccordionPage from './pages/Accordion';
 import BreadcrumbPage from './pages/Breadcrumb';
 import CarouselPage from './pages/Carousel';
 import CollapsePage from './pages/Collapse';
+import DropdownsPage from './pages/Dropdowns';
 
 export default function App() {
   const [dark, setDark] = useState(true);
@@ -68,6 +69,7 @@ export default function App() {
         {activePage === 'Breadcrumb' && <BreadcrumbPage />}
         {activePage === 'Carousel' && <CarouselPage />}
         {activePage === 'Collapse' && <CollapsePage />}
+        {activePage === 'Dropdowns' && <DropdownsPage />}
         {['Installation', 'Theming'].includes(activePage) && (
           <main className="flex-1 lg:pl-16">
             <h1 className="text-4xl font-black md:text-6xl mb-4">{activePage}</h1>
