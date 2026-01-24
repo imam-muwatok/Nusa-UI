@@ -20,6 +20,7 @@ import ModalPage from './pages/Modal';
 import AlertPage from './pages/Alert';
 import BadgePage from './pages/Badge';
 import AccordionPage from './pages/Accordion';
+import BreadcrumbPage from './pages/Breadcrumb';
 
 export default function App() {
   const [dark, setDark] = useState(true);
@@ -62,6 +63,7 @@ export default function App() {
         {activePage === 'Alerts' && <AlertPage />}
         {activePage === 'Badges' && <BadgePage />}
         {activePage === 'Accordion' && <AccordionPage />}
+        {activePage === 'Breadcrumb' && <BreadcrumbPage />}
         {['Installation', 'Theming'].includes(activePage) && (
           <main className="flex-1 lg:pl-16">
             <h1 className="text-4xl font-black md:text-6xl mb-4">{activePage}</h1>
