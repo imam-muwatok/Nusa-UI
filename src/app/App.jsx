@@ -21,6 +21,8 @@ import AlertPage from './pages/Alert';
 import BadgePage from './pages/Badge';
 import AccordionPage from './pages/Accordion';
 import BreadcrumbPage from './pages/Breadcrumb';
+import CarouselPage from './pages/Carousel';
+import CollapsePage from './pages/Collapse';
 
 export default function App() {
   const [dark, setDark] = useState(true);
@@ -64,6 +66,8 @@ export default function App() {
         {activePage === 'Badges' && <BadgePage />}
         {activePage === 'Accordion' && <AccordionPage />}
         {activePage === 'Breadcrumb' && <BreadcrumbPage />}
+        {activePage === 'Carousel' && <CarouselPage />}
+        {activePage === 'Collapse' && <CollapsePage />}
         {['Installation', 'Theming'].includes(activePage) && (
           <main className="flex-1 lg:pl-16">
             <h1 className="text-4xl font-black md:text-6xl mb-4">{activePage}</h1>

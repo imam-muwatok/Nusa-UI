@@ -16,7 +16,7 @@ export default function Navbar({ dark, setDark, setIsSidebarOpen }) {
             
             <div className="flex items-center gap-2 text-xl font-black tracking-tighter uppercase">
               <span className="bg-cyan-500 px-2 py-0.5 rounded text-white">N</span>
-              <span>NUSA</span>
+              <span className="text-cyan-500">NUSA</span>
               <span>UI</span>
             </div>
           </div>
