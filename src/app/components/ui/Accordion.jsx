@@ -15,16 +15,24 @@ export default function Accordion({ items, alwaysOpen = false, variant = "defaul
     });
   };
 
-  const baseStyles = variant === "flush" 
-    ? "divide-y divide-zinc-200 dark:divide-zinc-800 border-b border-zinc-200 dark:border-zinc-800"
-    : "divide-y divide-zinc-200 rounded-xl border border-zinc-200 bg-white dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-900";
+  let containerClasses = "";
+  let itemClasses = "group";
+
+  if (variant === "flush") {
+    containerClasses = "divide-y divide-zinc-200 dark:divide-zinc-800 border-b border-zinc-200 dark:border-zinc-800";
+  } else if (variant === "bordered") {
+    containerClasses = "space-y-4";
+    itemClasses = "group rounded-xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900 overflow-hidden";
+  } else {
+    containerClasses = "divide-y divide-zinc-200 rounded-xl border border-zinc-200 bg-white dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-900 overflow-hidden";
+  }
 
   return (
-    <div className={`${baseStyles} ${className}`}>
+    <div className={`${containerClasses} ${className}`}>
       {items.map((item, index) => {
         const isOpen = openIndexes[index];
         return (
-          <div key={index} className="group">
+          <div key={index} className={itemClasses}>
             <button
               onClick={() => toggleIndex(index)}
               className={`flex w-full items-center justify-between p-4 text-left font-medium transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-800/50 ${isOpen ? 'text-cyan-600 dark:text-cyan-400' : 'text-zinc-900 dark:text-white'}`}
@@ -36,7 +44,7 @@ export default function Accordion({ items, alwaysOpen = false, variant = "defaul
               <ChevronDownIcon className={`h-5 w-5 text-zinc-500 transition-transform duration-300 ${isOpen ? "-rotate-180" : ""}`} />
             </button>
             <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}>
-              <div className="p-4 pt-0 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed border-t border-transparent">{item.content}</div>
+              <div className={`p-4 pt-0 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed border-t border-transparent ${isOpen ? "animate-in fade-in duration-500" : ""}`}>{item.content}</div>
             </div>
           </div>
         );

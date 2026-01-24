@@ -49,6 +49,19 @@ export default function AccordionPage() {
           </CodeBlock>
         </section>
 
+        {/* Bordered Variant */}
+        <section>
+          <h2 className="text-2xl font-bold mb-6">Bordered Variant</h2>
+          <p className="mb-4 text-zinc-500 dark:text-zinc-400">
+            Gunakan <code>variant="bordered"</code> untuk memberikan border terpisah pada setiap item.
+          </p>
+          <CodeBlock code={`<Accordion variant="bordered" items={items} />`}>
+            <div className="w-full">
+              <Accordion variant="bordered" items={defaultItems} />
+            </div>
+          </CodeBlock>
+        </section>
+
         {/* Always Open */}
         <section>
           <h2 className="text-2xl font-bold mb-6">Always Open</h2>
