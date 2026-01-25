@@ -42,6 +42,18 @@ import TimePickerPage from './pages/TimePicker';
 import CalendarPage from './pages/Calendar';
 import PaginationPage from './pages/Pagination';
 import ListsPage from './pages/Lists';
+import TabsPage from './pages/Tabs';
+import NavsPage from './pages/Navs';
+import NavbarPage from './pages/Navbar';
+import OffcanvasPage from './pages/Offcanvas';
+import PopoversPage from './pages/Popovers';
+import TooltipsPage from './pages/Tooltips';
+import TablePage from './pages/Table';
+import ToastsPage from './pages/Toasts';
+import Toaster from './components/ui/Toaster';
+import SpinnerPage from './pages/Spinner';
+import ProgressPage from './pages/Progress';
+import SkeletonPage from './pages/Skeleton';
 
 export default function App() {
   const [dark, setDark] = useState(true);
@@ -56,6 +68,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen">
+      <Toaster />
       {/* NAVBAR */}
       <Navbar dark={dark} setDark={setDark} setIsSidebarOpen={setIsSidebarOpen} />
 
@@ -106,6 +119,17 @@ export default function App() {
         {activePage === 'Calendar' && <CalendarPage />}
         {activePage === 'Pagination' && <PaginationPage />}
         {activePage === 'Lists' && <ListsPage />}
+        {activePage === 'Tabs' && <TabsPage />}
+        {activePage === 'Navs' && <NavsPage />}
+        {activePage === 'Navbar' && <NavbarPage />}
+        {activePage === 'Offcanvas' && <OffcanvasPage />}
+        {activePage === 'Popovers' && <PopoversPage />}
+        {activePage === 'Tooltips' && <TooltipsPage />}
+        {activePage === 'Tables' && <TablePage />}
+        {activePage === 'Toasts' && <ToastsPage />}
+        {activePage === 'Spinners' && <SpinnerPage />}
+        {activePage === 'Progress' && <ProgressPage />}
+        {activePage === 'Skeleton' && <SkeletonPage />}
         {['Installation', 'Theming'].includes(activePage) && (
           <main className="flex-1 lg:pl-16">
             <h1 className="text-4xl font-black md:text-6xl mb-4">{activePage}</h1>
