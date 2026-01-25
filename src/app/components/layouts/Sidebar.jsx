@@ -33,7 +33,6 @@ const sidebarData = [
   {
     title: "Components",
     items: [
-      
       { name: "Accordion" },
       { name: "Alerts" },
       { name: "Badges" },
@@ -61,6 +60,13 @@ const sidebarData = [
       { name: "Toasts" },
       { name: "Tooltips" },
 
+    ],
+  },
+  {
+    title: "Page Templates",
+    items: [
+      { name: "Hero" },
+ 
     ],
   },
 ];

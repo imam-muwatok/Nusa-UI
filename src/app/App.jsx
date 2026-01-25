@@ -12,48 +12,61 @@ import Sidebar, { SidebarContent } from './components/layouts/Sidebar';
 import Footer from './components/layouts/Footer';
 
 // Pages
+
+// --- 1. Getting Started ---
 import IntroPage from './pages/Intro';
-import ButtonPage from './pages/Button';
-import CardPage from './pages/Card';
-import InputPage from './pages/Input';
-import ModalPage from './pages/Modal';
+import ThemingPage from './pages/Theming';
+import InstallationPage from './pages/Installation';
+import MyProjectPage from './pages/MyProject';
+
+// --- 2. Forms ---
+import AutocompletePage from './pages/Autocomplete';
+import CheckboxPage from './pages/Checkbox';
+import DatePickerPage from './pages/DatePicker';
+import FileInputPage from './pages/FileInput';
+import FloatingLabelsPage from './pages/FloatingLabels';
+import FormControlPage from './pages/FormControl';
+import RangePage from './pages/Range';
+import SelectPage from './pages/Select';
+import Select2Page from './pages/Select2';
+import SwitchPage from './pages/Switch';
+import TextareaPage from './pages/Textarea';
+import TimePickerPage from './pages/TimePicker';
+import WizardPage from './pages/Wizard';
+// (Validation belum ada di list import Anda)
+
+// --- 3. Components ---
+import AccordionPage from './pages/Accordion';
 import AlertPage from './pages/Alert';
 import BadgePage from './pages/Badge';
-import AccordionPage from './pages/Accordion';
 import BreadcrumbPage from './pages/Breadcrumb';
+import ButtonPage from './pages/Button';
+import CalendarPage from './pages/Calendar';
+import CardPage from './pages/Card';
 import CarouselPage from './pages/Carousel';
 import CollapsePage from './pages/Collapse';
 import DropdownsPage from './pages/Dropdowns';
-import SelectPage from './pages/Select';
-import Select2Page from './pages/Select2';
-import CheckboxPage from './pages/Checkbox';
-import SwitchPage from './pages/Switch';
-import TextareaPage from './pages/Textarea';
-import RangePage from './pages/Range';
-import FileInputPage from './pages/FileInput';
-import FormControlPage from './pages/FormControl';
-import FloatingLabelsPage from './pages/FloatingLabels';
-import WizardPage from './pages/Wizard';
-import AutocompletePage from './pages/Autocomplete';
-import TimelinePage from './pages/Timeline';
-import RatingPage from './pages/Rating';
-import DatePickerPage from './pages/DatePicker';
-import TimePickerPage from './pages/TimePicker';
-import CalendarPage from './pages/Calendar';
-import PaginationPage from './pages/Pagination';
 import ListsPage from './pages/Lists';
-import TabsPage from './pages/Tabs';
-import NavsPage from './pages/Navs';
+import ModalPage from './pages/Modal';
 import NavbarPage from './pages/Navbar';
+import NavsPage from './pages/Navs';
 import OffcanvasPage from './pages/Offcanvas';
+import PaginationPage from './pages/Pagination';
 import PopoversPage from './pages/Popovers';
-import TooltipsPage from './pages/Tooltips';
-import TablePage from './pages/Table';
-import ToastsPage from './pages/Toasts';
-import Toaster from './components/ui/Toaster';
-import SpinnerPage from './pages/Spinner';
 import ProgressPage from './pages/Progress';
+import RatingPage from './pages/Rating';
 import SkeletonPage from './pages/Skeleton';
+import SpinnerPage from './pages/Spinner';
+import TablePage from './pages/Table';
+import TabsPage from './pages/Tabs';
+import TimelinePage from './pages/Timeline';
+import ToastsPage from './pages/Toasts';
+import TooltipsPage from './pages/Tooltips';
+
+// --- Extra / UI Components ---
+import Toaster from './components/ui/Toaster';
+
+// example app
 
 export default function App() {
   const [dark, setDark] = useState(true);
@@ -82,14 +95,18 @@ export default function App() {
 
       <div className="flex px-4 py-10">
         {/* DESKTOP SIDEBAR (Selalu tampil di layar besar) */}
-        <aside className="hidden w-64 shrink-0 lg:block">
-          <div className="sticky top-28 max-h-[calc(100vh-9rem)] overflow-y-auto pr-2">
-            <SidebarContent activePage={activePage} setActivePage={setActivePage} />
-          </div>
-        </aside>
+        {activePage !== 'MyProject' && (
+          <aside className="hidden w-64 shrink-0 lg:block">
+            <div className="sticky top-28 max-h-[calc(100vh-9rem)] overflow-y-auto pr-2">
+              <SidebarContent activePage={activePage} setActivePage={setActivePage} />
+            </div>
+          </aside>
+        )}
 
         {/* MAIN CONTENT */}
         {activePage === 'Introduction' && <IntroPage setIsModalOpen={setIsModalOpen} />}
+        {activePage === 'Theming' && <ThemingPage />}
+        {activePage === 'Installation' && <InstallationPage />}
         {activePage === 'Buttons' && <ButtonPage />}
         {activePage === 'Cards' && <CardPage />}
         {activePage === 'Input' && <InputPage />}
@@ -130,12 +147,8 @@ export default function App() {
         {activePage === 'Spinners' && <SpinnerPage />}
         {activePage === 'Progress' && <ProgressPage />}
         {activePage === 'Skeleton' && <SkeletonPage />}
-        {['Installation', 'Theming'].includes(activePage) && (
-          <main className="flex-1 lg:pl-16">
-            <h1 className="text-4xl font-black md:text-6xl mb-4">{activePage}</h1>
-            <p className="text-zinc-500 dark:text-zinc-400">Halaman ini sedang dalam pengembangan.</p>
-          </main>
-        )}
+        {activePage === 'Bootcamp' && <BootcampPage />}
+        {activePage === 'MyProject' && <MyProjectPage />}
         
       </div>
       {/* Footer */}
