@@ -29,6 +29,7 @@ import CheckboxPage from './pages/Checkbox';
 import SwitchPage from './pages/Switch';
 import TextareaPage from './pages/Textarea';
 import RangePage from './pages/Range';
+import FileInputPage from './pages/FileInput';
 
 export default function App() {
   const [dark, setDark] = useState(true);
@@ -80,6 +81,7 @@ export default function App() {
         {activePage === 'Switch' && <SwitchPage />}
         {activePage === 'Textarea' && <TextareaPage />}
         {activePage === 'Range' && <RangePage />}
+        {activePage === 'File input' && <FileInputPage />}
         {['Installation', 'Theming'].includes(activePage) && (
           <main className="flex-1 lg:pl-16">
             <h1 className="text-4xl font-black md:text-6xl mb-4">{activePage}</h1>
