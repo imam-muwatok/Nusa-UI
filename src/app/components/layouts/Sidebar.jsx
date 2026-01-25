@@ -17,7 +17,6 @@ const sidebarData = [
       { name: "Form control" },
       { name: "Select" },
       { name: "Checkbox" },
-      { name: "Radio" },
       { name: "Inputs" },
       { name: "Textarea" },
       { name: "Range" },

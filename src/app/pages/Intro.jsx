@@ -37,23 +37,11 @@ export default function Intro({ setIsModalOpen = () => {} }) {
             
             <h1 className="text-5xl font-black leading-tight md:text-7xl mb-6">
               Membangun UI dengan <br/>
-              <span className="text-cyan-500">Gaya Indonesia.</span>
+              <span className="text-cyan-500">Cepat & Elegan.</span>
             </h1>
             <p className="text-xl text-zinc-500 dark:text-zinc-400 max-w-2xl mb-10 leading-relaxed">
               Framework UI berbasis Tailwind CSS 4 yang ringan, modular, dan dirancang khusus untuk kecepatan development maksimal.
             </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <button 
-                onClick={() => setIsModalOpen(true)}
-                className="rounded-xl bg-cyan-600 px-8 py-4 font-bold text-white shadow-lg shadow-cyan-500/20 hover:bg-cyan-500 transition-all active:scale-95"
-              >
-                Coba Modal
-              </button>
-              <button className="rounded-xl border border-zinc-200 dark:border-zinc-800 px-8 py-4 font-bold hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-all">
-                Baca Docs
-              </button>
-            </div>
           </section>
 
           {/* Features Grid */}

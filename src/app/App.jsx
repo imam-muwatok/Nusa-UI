@@ -24,6 +24,11 @@ import BreadcrumbPage from './pages/Breadcrumb';
 import CarouselPage from './pages/Carousel';
 import CollapsePage from './pages/Collapse';
 import DropdownsPage from './pages/Dropdowns';
+import SelectPage from './pages/Select';
+import CheckboxPage from './pages/Checkbox';
+import SwitchPage from './pages/Switch';
+import TextareaPage from './pages/Textarea';
+import RangePage from './pages/Range';
 
 export default function App() {
   const [dark, setDark] = useState(true);
@@ -70,6 +75,11 @@ export default function App() {
         {activePage === 'Carousel' && <CarouselPage />}
         {activePage === 'Collapse' && <CollapsePage />}
         {activePage === 'Dropdowns' && <DropdownsPage />}
+        {activePage === 'Select' && <SelectPage />}
+        {(activePage === 'Checkbox' || activePage === 'Radio') && <CheckboxPage />}
+        {activePage === 'Switch' && <SwitchPage />}
+        {activePage === 'Textarea' && <TextareaPage />}
+        {activePage === 'Range' && <RangePage />}
         {['Installation', 'Theming'].includes(activePage) && (
           <main className="flex-1 lg:pl-16">
             <h1 className="text-4xl font-black md:text-6xl mb-4">{activePage}</h1>
