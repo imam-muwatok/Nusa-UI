@@ -13,11 +13,10 @@ const sidebarData = [
   {
     title: "Forms",
     items: [
-      { name: "Overview" },
       { name: "Form control" },
       { name: "Select" },
+      { name: "Select2" },
       { name: "Checkbox" },
-      { name: "Inputs" },
       { name: "Textarea" },
       { name: "Range" },
       { name: "File input" },
@@ -26,6 +25,8 @@ const sidebarData = [
       { name: "Wizard" },
       { name: "Autocomplete" },
       { name: "Validation" },
+      { name: "Datepicker" },
+      { name: "Timepicker" },
 
 
     ],
@@ -39,11 +40,11 @@ const sidebarData = [
       { name: "Badges" },
       { name: "Breadcrumb" },
       { name: "Buttons" },
+      { name: "Calendar" },
       { name: "Cards" },
       { name: "Carousel" },
       { name: "Collapse" },
       { name: "Dropdowns" },
-      { name: "Input" },
       { name: "Lists" },
       { name: "Modals" },
       { name: "Navs" },
@@ -52,9 +53,11 @@ const sidebarData = [
       { name: "Pagination" },
       { name: "Popovers" },
       { name: "Progress" },
+      { name: "Rating" },
       { name: "Spinners" },
       { name: "Tables" },
       { name: "Tabs" },
+      { name: "Timeline" },
       { name: "Toasts" },
       { name: "Tooltips" },
 
@@ -99,7 +102,7 @@ export const SidebarContent = ({ activePage, setActivePage, setIsSidebarOpen }) 
               {section.title}
               <ChevronDownIcon className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "-rotate-180" : ""}`} />
             </h4>
-            <ul className={`space-y-1 ms-6 text-sm overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-[800px] opacity-100 pb-2" : "max-h-0 opacity-0"}`}>
+            <ul className={`space-y-1 ms-6 text-sm overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-[2000px] opacity-100 pb-2" : "max-h-0 opacity-0"}`}>
               {section.items.map((item, idx) => (
                 <li
                   key={idx}
@@ -131,7 +134,7 @@ export default function Sidebar({ isSidebarOpen, setIsSidebarOpen, activePage, s
       <div className="absolute inset-0 bg-zinc-950/60 backdrop-blur-sm" onClick={() => setIsSidebarOpen(false)}></div>
 
       {/* Sidebar Panel */}
-      <aside className={`absolute top-0 left-0 h-full w-64 bg-white p-4 shadow-xl transition-transform duration-300 dark:bg-zinc-900 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
+      <aside className={`absolute top-0 left-0 h-full w-64 bg-white p-4 shadow-xl transition-transform duration-300 dark:bg-zinc-900 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} overflow-y-auto`}>
         <div className="mb-8 flex items-center justify-between">
           <div className="text-lg font-black uppercase tracking-tighter">Nusa-UI</div>
           <button onClick={() => setIsSidebarOpen(false)}><XMarkIcon className="h-6 w-6" /></button>

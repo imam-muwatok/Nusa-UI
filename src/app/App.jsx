@@ -25,11 +25,23 @@ import CarouselPage from './pages/Carousel';
 import CollapsePage from './pages/Collapse';
 import DropdownsPage from './pages/Dropdowns';
 import SelectPage from './pages/Select';
+import Select2Page from './pages/Select2';
 import CheckboxPage from './pages/Checkbox';
 import SwitchPage from './pages/Switch';
 import TextareaPage from './pages/Textarea';
 import RangePage from './pages/Range';
 import FileInputPage from './pages/FileInput';
+import FormControlPage from './pages/FormControl';
+import FloatingLabelsPage from './pages/FloatingLabels';
+import WizardPage from './pages/Wizard';
+import AutocompletePage from './pages/Autocomplete';
+import TimelinePage from './pages/Timeline';
+import RatingPage from './pages/Rating';
+import DatePickerPage from './pages/DatePicker';
+import TimePickerPage from './pages/TimePicker';
+import CalendarPage from './pages/Calendar';
+import PaginationPage from './pages/Pagination';
+import ListsPage from './pages/Lists';
 
 export default function App() {
   const [dark, setDark] = useState(true);
@@ -58,7 +70,7 @@ export default function App() {
       <div className="flex px-4 py-10">
         {/* DESKTOP SIDEBAR (Selalu tampil di layar besar) */}
         <aside className="hidden w-64 shrink-0 lg:block">
-          <div className="sticky top-28">
+          <div className="sticky top-28 max-h-[calc(100vh-9rem)] overflow-y-auto pr-2">
             <SidebarContent activePage={activePage} setActivePage={setActivePage} />
           </div>
         </aside>
@@ -77,11 +89,23 @@ export default function App() {
         {activePage === 'Collapse' && <CollapsePage />}
         {activePage === 'Dropdowns' && <DropdownsPage />}
         {activePage === 'Select' && <SelectPage />}
-        {(activePage === 'Checkbox' || activePage === 'Radio') && <CheckboxPage />}
+        {activePage === 'Select2' && <Select2Page />}
+        {activePage === 'Checkbox' && <CheckboxPage />}
         {activePage === 'Switch' && <SwitchPage />}
         {activePage === 'Textarea' && <TextareaPage />}
         {activePage === 'Range' && <RangePage />}
         {activePage === 'File input' && <FileInputPage />}
+        {activePage === 'Form control' && <FormControlPage />}
+        {activePage === 'Floating labels' && <FloatingLabelsPage />}
+        {activePage === 'Wizard' && <WizardPage />}
+        {activePage === 'Autocomplete' && <AutocompletePage />}
+        {activePage === 'Timeline' && <TimelinePage />}
+        {activePage === 'Rating' && <RatingPage />}
+        {activePage === 'Datepicker' && <DatePickerPage />}
+        {activePage === 'Timepicker' && <TimePickerPage />}
+        {activePage === 'Calendar' && <CalendarPage />}
+        {activePage === 'Pagination' && <PaginationPage />}
+        {activePage === 'Lists' && <ListsPage />}
         {['Installation', 'Theming'].includes(activePage) && (
           <main className="flex-1 lg:pl-16">
             <h1 className="text-4xl font-black md:text-6xl mb-4">{activePage}</h1>

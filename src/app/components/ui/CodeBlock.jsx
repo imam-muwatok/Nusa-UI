@@ -47,8 +47,8 @@ export default function CodeBlock({ children, code }) {
   };
 
   return (
-    <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 overflow-hidden bg-white dark:bg-zinc-900">
-      <div className="flex items-center justify-between border-b border-zinc-200 bg-zinc-50/50 px-4 py-2 dark:border-zinc-800 dark:bg-zinc-900/50">
+    <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+      <div className="flex items-center justify-between border-b border-zinc-200 bg-zinc-50/50 px-4 py-2 dark:border-zinc-800 dark:bg-zinc-900/50 rounded-t-3xl">
         <div className="flex gap-1 bg-zinc-200/50 dark:bg-zinc-800/50 p-1 rounded-lg">
            <button 
              onClick={() => setActiveTab('preview')}
@@ -74,13 +74,13 @@ export default function CodeBlock({ children, code }) {
 
       <div className="relative">
         {activeTab === 'preview' && (
-          <div className="p-8 flex flex-wrap gap-4 justify-center bg-zinc-50/50 dark:bg-zinc-900/30 min-h-[160px] items-center">
+          <div className="p-8 flex flex-wrap gap-4 justify-center bg-zinc-50/50 dark:bg-zinc-900/30 min-h-[160px] items-center rounded-b-3xl">
             {children}
           </div>
         )}
         {activeTab === 'code' && (
           /* View Code Display */
-          <div className="bg-[#1E1E1E] p-6 overflow-x-auto min-h-[160px] flex items-center">
+          <div className="bg-[#1E1E1E] p-6 overflow-x-auto min-h-[160px] flex items-center rounded-b-3xl">
             <pre className="w-full whitespace-pre-wrap"><SyntaxHighlighter code={code} /></pre>
           </div>
         )}
