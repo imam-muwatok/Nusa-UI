@@ -37,12 +37,14 @@ import WizardPage from './pages/forms/Wizard';
 // --- 3. Components ---
 import AccordionPage from './pages/components/Accordion';
 import AlertPage from './pages/components/Alert';
+import AvatarPage from './pages/components/Avatar';
 import BadgePage from './pages/components/Badge';
 import BreadcrumbPage from './pages/components/Breadcrumb';
 import ButtonPage from './pages/components/Button';
 import CalendarPage from './pages/components/Calendar';
 import CardPage from './pages/components/Card';
 import CarouselPage from './pages/components/Carousel';
+import ChartPage from './pages/components/Chart';
 import CollapsePage from './pages/components/Collapse';
 import FigurePage from './pages/components/Figure';
 import MasonryLayoutPage from './pages/components/MasonryLayout';
@@ -59,6 +61,7 @@ import ParallaxPage from './pages/components/Parallax';
 import ProgressPage from './pages/components/Progress';
 import RatingPage from './pages/components/Rating';
 import SkeletonPage from './pages/components/Skeleton';
+import StatsCardPage from './pages/components/StatsCard';
 import SpinnerPage from './pages/components/Spinner';
 import TablePage from './pages/components/Table';
 import TabsPage from './pages/components/Tabs';
@@ -73,6 +76,16 @@ import TestimonialPage from './pages/examples/Testimonial';
 import PricingPage from './pages/examples/Pricing';
 import FooterPage from './pages/examples/Footer';
 import TeamPage from './pages/examples/Team';
+import FAQPage from './pages/examples/FAQ';
+import BlogPage from './pages/examples/Blog';
+import GalleryPage from './pages/examples/Gallery';
+import LightboxPage from './pages/examples/Lightbox';
+import ContactPage from './pages/examples/Contact';
+import ErrorPage from './pages/examples/Error';
+import AuthPage from './pages/examples/Auth';
+import DashboardPage from './pages/examples/Dashboard';
+import SettingsPage from './pages/examples/Settings';
+import ProfilePage from './pages/examples/Profile';
 
 // --- Extra / UI Components ---
 import Toaster from './components/ui/Toaster';
@@ -135,6 +148,7 @@ export default function App() {
         {activePage === 'Input' && <InputPage />}
         {activePage === 'Modals' && <ModalPage />}
         {activePage === 'Alerts' && <AlertPage />}
+        {activePage === 'Avatar' && <AvatarPage />}
         {activePage === 'Badges' && <BadgePage />}
         {activePage === 'Accordion' && <AccordionPage />}
         {activePage === 'Breadcrumb' && <BreadcrumbPage />}
@@ -163,6 +177,7 @@ export default function App() {
         {activePage === 'Calendar' && <CalendarPage />}
         {activePage === 'Pagination' && <PaginationPage />}
         {activePage === 'Lists' && <ListsPage />}
+        {activePage === 'Chart' && <ChartPage />}
         {activePage === 'Tabs' && <TabsPage />}
         {activePage === 'Navs' && <NavsPage />}
         {activePage === 'Navbar' && <NavbarPage />}
@@ -175,6 +190,7 @@ export default function App() {
         {activePage === 'Spinners' && <SpinnerPage />}
         {activePage === 'Progress' && <ProgressPage />}
         {activePage === 'Skeleton' && <SkeletonPage />}
+        {activePage === 'StatsCard' && <StatsCardPage />}
         {activePage === 'Bootcamp' && <BootcampPage />}
         {activePage === 'MyProject' && <MyProjectPage />}
         {activePage === 'Hero' && <HeroPage />}
@@ -183,6 +199,16 @@ export default function App() {
         {activePage === 'Pricing' && <PricingPage />}
         {activePage === 'Footer' && <FooterPage />}
         {activePage === 'Team' && <TeamPage />}
+        {activePage === 'FAQ' && <FAQPage />}
+        {activePage === 'Blog' && <BlogPage />}
+        {activePage === 'Gallery' && <GalleryPage />}
+        {activePage === 'Lightbox' && <LightboxPage />}
+        {activePage === 'Contact' && <ContactPage />}
+        {activePage === 'Auth' && <AuthPage />}
+        {activePage === 'Error' && <ErrorPage />}
+        {activePage === 'Dashboard' && <DashboardPage />}
+        {activePage === 'Settings' && <SettingsPage />}
+        {activePage === 'Profile' && <ProfilePage />}
         
       </div>
       {/* Footer */}
