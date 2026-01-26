@@ -1,6 +1,6 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Autocomplete from "../components/ui/Autocomplete";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Autocomplete from "../../components/ui/Autocomplete";
 
 export default function AutocompletePage() {
   const countries = [

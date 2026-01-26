@@ -19,7 +19,7 @@ import ThemingPage from './pages/gettingStarting/Theming';
 import InstallationPage from './pages/gettingStarting/Installation';
 
 // --- 2. Forms ---
-import AutocompletePage from './pages/Autocomplete';
+import AutocompletePage from './pages/forms/Autocomplete';
 import CheckboxPage from './pages/Checkbox';
 import DatePickerPage from './pages/DatePicker';
 import FileInputPage from './pages/FileInput';

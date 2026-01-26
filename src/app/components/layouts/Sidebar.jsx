@@ -62,13 +62,13 @@ const sidebarData = [
 
     ],
   },
-  {
-    title: "Page Templates",
-    items: [
-      { name: "Hero" },
+  // {
+  //   title: "Page Templates",
+  //   items: [
+  //     { name: "Hero" },
  
-    ],
-  },
+  //   ],
+  // },
 ];
 
 export const SidebarContent = ({ activePage, setActivePage, setIsSidebarOpen }) => {
