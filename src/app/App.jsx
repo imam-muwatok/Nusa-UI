@@ -17,7 +17,6 @@ import Footer from './components/layouts/Footer';
 import IntroPage from './pages/Intro';
 import ThemingPage from './pages/Theming';
 import InstallationPage from './pages/Installation';
-import MyProjectPage from './pages/MyProject';
 
 // --- 2. Forms ---
 import AutocompletePage from './pages/Autocomplete';

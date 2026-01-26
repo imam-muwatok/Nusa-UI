@@ -37,7 +37,7 @@ export default function Intro({ setIsModalOpen = () => {} }) {
             
             <h1 className="text-5xl font-black leading-tight md:text-7xl mb-6">
               Membangun UI dengan <br/>
-              <span className="text-cyan-500">Cepat & Elegan.</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Cepat & Elegan.</span>
             </h1>
             <p className="text-xl text-zinc-500 dark:text-zinc-400 max-w-2xl mb-10 leading-relaxed">
               Framework UI berbasis Tailwind CSS 4 yang ringan, modular, dan dirancang khusus untuk kecepatan development maksimal.
