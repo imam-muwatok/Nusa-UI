@@ -1,6 +1,6 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import FileInput from "../components/ui/FileInput";
+import CodeBlock from "../../components/ui/CodeBlock";
+import FileInput from "../../components/ui/FileInput";
 
 export default function FileInputPage() {
   return (

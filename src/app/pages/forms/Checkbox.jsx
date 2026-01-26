@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import { Checkbox, Radio } from "../components/ui/Checkbox";
+import CodeBlock from "../../components/ui/CodeBlock";
+import { Checkbox, Radio } from "../../components/ui/Checkbox";
 
 export default function CheckboxPage() {
   const [checked, setChecked] = useState(false);

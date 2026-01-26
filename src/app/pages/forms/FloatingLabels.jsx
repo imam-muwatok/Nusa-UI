@@ -1,6 +1,6 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import FormControl from "../components/ui/FormControl";
+import CodeBlock from "../../components/ui/CodeBlock";
+import FormControl from "../../components/ui/FormControl";
 
 export default function FloatingLabelsPage() {
   const inputClasses = "block w-full rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 focus:border-cyan-600 focus:outline-none focus:ring-0 dark:border-zinc-700 dark:text-white dark:focus:border-cyan-500";

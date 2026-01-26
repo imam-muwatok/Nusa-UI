@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import DatePicker from "../components/ui/DatePicker";
+import CodeBlock from "../../components/ui/CodeBlock";
+import DatePicker from "../../components/ui/DatePicker";
 
 export default function DatePickerPage() {
   const [date, setDate] = useState(null);

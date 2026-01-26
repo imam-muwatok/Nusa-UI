@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Select, { NativeSelect } from "../components/ui/Select";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Select, { NativeSelect } from "../../components/ui/Select";
 
 export default function SelectPage() {
   const [selectedFramework, setSelectedFramework] = useState("");

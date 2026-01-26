@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Textarea from "../components/ui/Textarea";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Textarea from "../../components/ui/Textarea";
 
 export default function TextareaPage() {
   const [message, setMessage] = useState("");

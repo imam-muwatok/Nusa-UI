@@ -1,6 +1,6 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import FormControl from "../components/ui/FormControl";
+import CodeBlock from "../../components/ui/CodeBlock";
+import FormControl from "../../components/ui/FormControl";
 
 export default function FormControlPage() {
   const inputClasses = "w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm outline-none focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/10 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white transition-all";

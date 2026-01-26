@@ -1,6 +1,6 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Accordion from "../components/ui/Accordion";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Accordion from "../../components/ui/Accordion";
 import { UserIcon, ShieldCheckIcon } from "@heroicons/react/24/outline";
 
 export default function AccordionPage() {

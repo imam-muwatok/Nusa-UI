@@ -20,22 +20,22 @@ import InstallationPage from './pages/gettingStarting/Installation';
 
 // --- 2. Forms ---
 import AutocompletePage from './pages/forms/Autocomplete';
-import CheckboxPage from './pages/Checkbox';
-import DatePickerPage from './pages/DatePicker';
-import FileInputPage from './pages/FileInput';
-import FloatingLabelsPage from './pages/FloatingLabels';
-import FormControlPage from './pages/FormControl';
-import RangePage from './pages/Range';
-import SelectPage from './pages/Select';
-import Select2Page from './pages/Select2';
-import SwitchPage from './pages/Switch';
-import TextareaPage from './pages/Textarea';
-import TimePickerPage from './pages/TimePicker';
-import WizardPage from './pages/Wizard';
+import CheckboxPage from './pages/forms/Checkbox';
+import DatePickerPage from './pages/forms/DatePicker';
+import FileInputPage from './pages/forms/FileInput';
+import FloatingLabelsPage from './pages/forms/FloatingLabels';
+import FormControlPage from './pages/forms/FormControl';
+import RangePage from './pages/forms/Range';
+import SelectPage from './pages/forms/Select';
+import Select2Page from './pages/forms/Select2';
+import SwitchPage from './pages/forms/Switch';
+import TextareaPage from './pages/forms/Textarea';
+import TimePickerPage from './pages/forms/TimePicker';
+import WizardPage from './pages/forms/Wizard';
 // (Validation belum ada di list import Anda)
 
 // --- 3. Components ---
-import AccordionPage from './pages/Accordion';
+import AccordionPage from './pages/components/Accordion';
 import AlertPage from './pages/Alert';
 import BadgePage from './pages/Badge';
 import BreadcrumbPage from './pages/Breadcrumb';

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Switch from "../components/ui/Switch";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Switch from "../../components/ui/Switch";
 import { CheckIcon, XMarkIcon, SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 
 export default function SwitchPage() {

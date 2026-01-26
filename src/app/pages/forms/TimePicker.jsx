@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import TimePicker from "../components/ui/TimePicker";
+import CodeBlock from "../../components/ui/CodeBlock";
+import TimePicker from "../../components/ui/TimePicker";
 
 export default function TimePickerPage() {
   const [time, setTime] = useState("09:00");

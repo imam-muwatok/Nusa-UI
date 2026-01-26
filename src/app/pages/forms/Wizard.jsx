@@ -1,7 +1,7 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Wizard from "../components/ui/Wizard";
-import FormControl from "../components/ui/FormControl";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Wizard from "../../components/ui/Wizard";
+import FormControl from "../../components/ui/FormControl";
 
 export default function WizardPage() {
   const inputClasses = "w-full rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm outline-none focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/10 dark:border-zinc-700 dark:bg-zinc-900 dark:text-white transition-all";

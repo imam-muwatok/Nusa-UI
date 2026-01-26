@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Select2 from "../components/ui/Select2";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Select2 from "../../components/ui/Select2";
 
 export default function Select2Page() {
   const [singleValue, setSingleValue] = useState(null);

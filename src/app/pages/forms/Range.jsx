@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Range from "../components/ui/Range";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Range from "../../components/ui/Range";
 
 export default function RangePage() {
   const [value1, setValue1] = useState(50);
