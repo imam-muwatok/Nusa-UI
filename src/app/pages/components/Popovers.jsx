@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Popover from "../components/ui/Popover";
-import Button from "../components/ui/Button";
-import Switch from "../components/ui/Switch";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Popover from "../../components/ui/Popover";
+import Button from "../../components/ui/Button";
+import Switch from "../../components/ui/Switch";
 
 export default function PopoversPage() {
   const [manualOpen, setManualOpen] = useState(false);

@@ -1,6 +1,6 @@
 import React from "react";
 import { EllipsisHorizontalIcon, PhotoIcon, ShareIcon } from "@heroicons/react/24/outline";
-import CodeBlock from "../components/ui/CodeBlock";
+import CodeBlock from "../../components/ui/CodeBlock";
 
 export default function CardPage() {
   return (

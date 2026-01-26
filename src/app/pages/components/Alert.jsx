@@ -1,6 +1,6 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Alert from "../components/ui/Alert";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Alert from "../../components/ui/Alert";
 
 export default function AlertPage() {
   return (

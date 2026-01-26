@@ -1,7 +1,7 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Timeline from "../components/ui/Timeline";
-import Button from "../components/ui/Button";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Timeline from "../../components/ui/Timeline";
+import Button from "../../components/ui/Button";
 import { CalendarIcon, CheckCircleIcon } from "@heroicons/react/24/solid";
 
 export default function TimelinePage() {

@@ -1,7 +1,7 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Table from "../components/ui/Table";
-import Badge from "../components/ui/Badge";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Table from "../../components/ui/Table";
+import Badge from "../../components/ui/Badge";
 
 export default function TablePage() {
   const columns = [

@@ -1,6 +1,6 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Skeleton from "../components/ui/Skeleton";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Skeleton from "../../components/ui/Skeleton";
 
 export default function SkeletonPage() {
   return (

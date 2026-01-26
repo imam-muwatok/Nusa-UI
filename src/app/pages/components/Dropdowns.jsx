@@ -1,7 +1,7 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Dropdown, { DropdownItem, DropdownDivider } from "../components/ui/Dropdown";
-import Button from "../components/ui/Button";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Dropdown, { DropdownItem, DropdownDivider } from "../../components/ui/Dropdown";
+import Button from "../../components/ui/Button";
 import { ChevronDownIcon, UserIcon, Cog6ToothIcon, ArrowRightOnRectangleIcon, PencilIcon, DocumentDuplicateIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 export default function DropdownsPage() {

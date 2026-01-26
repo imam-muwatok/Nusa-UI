@@ -1,7 +1,7 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Spinner from "../components/ui/Spinner";
-import Button from "../components/ui/Button";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Spinner from "../../components/ui/Spinner";
+import Button from "../../components/ui/Button";
 
 export default function SpinnerPage() {
   return (

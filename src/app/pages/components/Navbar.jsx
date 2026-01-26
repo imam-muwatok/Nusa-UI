@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Navbar, { NavbarBrand, NavbarToggle, NavbarCollapse } from "../components/ui/Navbar";
-import Nav, { NavItem, NavMegaMenu } from "../components/ui/Nav";
-import Button from "../components/ui/Button";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Navbar, { NavbarBrand, NavbarToggle, NavbarCollapse } from "../../components/ui/Navbar";
+import Nav, { NavItem, NavMegaMenu } from "../../components/ui/Nav";
+import Button from "../../components/ui/Button";
 
 export default function NavbarPage() {
   const [isOpen1, setIsOpen1] = useState(false);

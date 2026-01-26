@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Offcanvas from "../components/ui/Offcanvas";
-import Button from "../components/ui/Button";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Offcanvas from "../../components/ui/Offcanvas";
+import Button from "../../components/ui/Button";
 
 export default function OffcanvasPage() {
   const [isOpenLeft, setIsOpenLeft] = useState(false);

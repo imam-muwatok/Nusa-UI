@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Pagination from "../components/ui/Pagination";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Pagination from "../../components/ui/Pagination";
 
 export default function PaginationPage() {
   const [currentPage, setCurrentPage] = useState(1);

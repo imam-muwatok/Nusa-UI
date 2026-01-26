@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import List, { ListItem, ListHeader } from "../components/ui/List";
-import Badge from "../components/ui/Badge";
-import Button from "../components/ui/Button";
+import CodeBlock from "../../components/ui/CodeBlock";
+import List, { ListItem, ListHeader } from "../../components/ui/List";
+import Badge from "../../components/ui/Badge";
+import Button from "../../components/ui/Button";
 import { UserIcon, Cog6ToothIcon, BellIcon, ChevronRightIcon, Bars3Icon, TrashIcon, ArchiveBoxIcon } from "@heroicons/react/24/outline";
 
 export default function ListsPage() {

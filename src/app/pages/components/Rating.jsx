@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Rating from "../components/ui/Rating";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Rating from "../../components/ui/Rating";
 import { HeartIcon } from "@heroicons/react/24/solid";
 import { HeartIcon as HeartIconOutline } from "@heroicons/react/24/outline";
 

@@ -1,6 +1,6 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Breadcrumb from "../components/ui/Breadcrumb";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Breadcrumb from "../../components/ui/Breadcrumb";
 import { HomeIcon, FolderIcon, DocumentIcon } from "@heroicons/react/24/solid";
 
 export default function BreadcrumbPage() {

@@ -25,7 +25,7 @@ const sidebarData = [
       { name: "Switch" },
       { name: "Textarea" },
       { name: "Timepicker" },
-      { name: "Validation" },
+      // { name: "Validation" },
       { name: "Wizard" },
 
     ],

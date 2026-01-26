@@ -1,8 +1,8 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Button from "../components/ui/Button";
-import Badge from "../components/ui/Badge";
-import ButtonGroup from "../components/ui/ButtonGroup";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Button from "../../components/ui/Button";
+import Badge from "../../components/ui/Badge";
+import ButtonGroup from "../../components/ui/ButtonGroup";
 import { PlusIcon } from "@heroicons/react/24/outline";
 
 export default function ButtonPage() {

@@ -1,7 +1,7 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Tooltip from "../components/ui/Tooltip";
-import Button from "../components/ui/Button";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Tooltip from "../../components/ui/Tooltip";
+import Button from "../../components/ui/Button";
 
 export default function TooltipsPage() {
   return (

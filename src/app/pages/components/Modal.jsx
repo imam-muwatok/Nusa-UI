@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import CodeBlock from "../components/ui/CodeBlock";
+import CodeBlock from "../../components/ui/CodeBlock";
 
 const Modal = ({ isOpen, onClose, title, children }) => {
   if (!isOpen) return null;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Calendar from "../components/ui/Calendar";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Calendar from "../../components/ui/Calendar";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
 const EventModal = ({ isOpen, onClose, event }) => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Progress from "../components/ui/Progress";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Progress from "../../components/ui/Progress";
 
 export default function ProgressPage() {
   const [progress, setProgress] = useState(10);

@@ -1,6 +1,6 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Badge from "../components/ui/Badge";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Badge from "../../components/ui/Badge";
 import { UserIcon, StarIcon, CheckBadgeIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
 
 export default function BadgePage() {

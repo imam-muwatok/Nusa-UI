@@ -1,6 +1,6 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Tabs from "../components/ui/Tabs";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Tabs from "../../components/ui/Tabs";
 import { UserIcon, Cog6ToothIcon, BellIcon } from "@heroicons/react/24/outline";
 
 export default function TabsPage() {

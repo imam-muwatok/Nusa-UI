@@ -30,7 +30,7 @@ export default function Intro({ setIsModalOpen = () => {} }) {
             {showAlert && (
               <div className="mb-8">
                 <Alert variant="success" onClose={() => setShowAlert(false)}>
-                  Nusa-UI v4.0 Alpha sudah tersedia untuk dicoba!
+                  Nusa-UI v0.1 Alpha sudah tersedia untuk dicoba!
                 </Alert>
               </div>
             )}

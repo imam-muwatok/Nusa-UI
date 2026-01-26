@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Collapse from "../components/ui/Collapse";
-import Button from "../components/ui/Button";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Collapse from "../../components/ui/Collapse";
+import Button from "../../components/ui/Button";
 
 export default function CollapsePage() {
   const [isOpen, setIsOpen] = useState(false);

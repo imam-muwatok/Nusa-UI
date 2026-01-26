@@ -1,6 +1,6 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Carousel from "../components/ui/Carousel";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Carousel from "../../components/ui/Carousel";
 
 export default function CarouselPage() {
   const images = [

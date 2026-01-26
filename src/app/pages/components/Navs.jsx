@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import Nav, { NavItem, NavDropdown } from "../components/ui/Nav";
-import { DropdownItem, DropdownDivider } from "../components/ui/Dropdown";
+import CodeBlock from "../../components/ui/CodeBlock";
+import Nav, { NavItem, NavDropdown } from "../../components/ui/Nav";
+import { DropdownItem, DropdownDivider } from "../../components/ui/Dropdown";
 
 export default function NavsPage() {
   const [activeTab, setActiveTab] = useState("home");

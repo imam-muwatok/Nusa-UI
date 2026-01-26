@@ -1,7 +1,7 @@
 import React from "react";
-import CodeBlock from "../components/ui/CodeBlock";
-import { toast } from "../components/ui/Toaster";
-import Button from "../components/ui/Button";
+import CodeBlock from "../../components/ui/CodeBlock";
+import { toast } from "../../components/ui/Toaster";
+import Button from "../../components/ui/Button";
 
 export default function ToastsPage() {
   return (
