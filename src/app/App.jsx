@@ -66,6 +66,14 @@ import TimelinePage from './pages/components/Timeline';
 import ToastsPage from './pages/components/Toasts';
 import TooltipsPage from './pages/components/Tooltips';
 
+// --- 4. Examples ---
+import HeroPage from './pages/examples/Hero';
+import FeaturePage from './pages/examples/Feature';
+import TestimonialPage from './pages/examples/Testimonial';
+import PricingPage from './pages/examples/Pricing';
+import FooterPage from './pages/examples/Footer';
+import TeamPage from './pages/examples/Team';
+
 // --- Extra / UI Components ---
 import Toaster from './components/ui/Toaster';
 
@@ -169,6 +177,12 @@ export default function App() {
         {activePage === 'Skeleton' && <SkeletonPage />}
         {activePage === 'Bootcamp' && <BootcampPage />}
         {activePage === 'MyProject' && <MyProjectPage />}
+        {activePage === 'Hero' && <HeroPage />}
+        {activePage === 'Feature' && <FeaturePage />}
+        {activePage === 'Testimonial' && <TestimonialPage />}
+        {activePage === 'Pricing' && <PricingPage />}
+        {activePage === 'Footer' && <FooterPage />}
+        {activePage === 'Team' && <TeamPage />}
         
       </div>
       {/* Footer */}

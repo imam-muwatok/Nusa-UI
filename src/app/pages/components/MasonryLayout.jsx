@@ -18,9 +18,9 @@ export default function MasonryLayoutPage() {
             Contoh implementasi dasar masonry layout menggunakan CSS Columns.
           </p>
           <CodeBlock code={`<div className="masonry-grid">
-  <div>...</div>
-  <div>...</div>
-  <div>...</div>
+  <div className="animate-in fade-in duration-700">...</div>
+  <div className="animate-in fade-in duration-700">...</div>
+  <div className="animate-in fade-in duration-700">...</div>
 </div>
 
 .masonry-grid {
@@ -36,14 +36,14 @@ export default function MasonryLayoutPage() {
 }`}>
             <div className="w-full">
               <div className="masonry-grid">
-                <div className="h-48 rounded-xl bg-red-200"></div>
-                <div className="h-32 rounded-xl bg-green-200"></div>
-                <div className="h-56 rounded-xl bg-blue-200"></div>
-                <div className="h-40 rounded-xl bg-yellow-200"></div>
-                <div className="h-48 rounded-xl bg-purple-200"></div>
-                <div className="h-32 rounded-xl bg-pink-200"></div>
-                <div className="h-56 rounded-xl bg-orange-200"></div>
-                <div className="h-40 rounded-xl bg-teal-200"></div>
+                <div className="h-48 rounded-xl bg-red-200 animate-in fade-in duration-700"></div>
+                <div className="h-32 rounded-xl bg-green-200 animate-in fade-in duration-700"></div>
+                <div className="h-56 rounded-xl bg-blue-200 animate-in fade-in duration-700"></div>
+                <div className="h-40 rounded-xl bg-yellow-200 animate-in fade-in duration-700"></div>
+                <div className="h-48 rounded-xl bg-purple-200 animate-in fade-in duration-700"></div>
+                <div className="h-32 rounded-xl bg-pink-200 animate-in fade-in duration-700"></div>
+                <div className="h-56 rounded-xl bg-orange-200 animate-in fade-in duration-700"></div>
+                <div className="h-40 rounded-xl bg-teal-200 animate-in fade-in duration-700"></div>
               </div>
             </div>
           </CodeBlock>

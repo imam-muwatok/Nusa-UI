@@ -44,10 +44,9 @@ const sidebarData = [
       { name: "Collapse" },
       { name: "Dropdowns" },
       { name: "Figure" },
-      { name: "MasonryLayout" },
       { name: "Glassmorphism" },
-      
       { name: "Lists" },
+      { name: "MasonryLayout" },
       { name: "Modals" },
       { name: "Navbar" },
       { name: "Navs" },
@@ -67,13 +66,18 @@ const sidebarData = [
 
     ],
   },
-  // {
-  //   title: "Page Templates",
-  //   items: [
-  //     { name: "Hero" },
+  {
+    title: "Examples",
+    items: [
+      { name: "Hero" },
+      { name: "Feature" },
+      { name: "Testimonial" },
+      { name: "Pricing" },
+      { name: "Footer" },
+      { name: "Team" },
  
-  //   ],
-  // },
+    ],
+  },
 ];
 
 export const SidebarContent = ({ activePage, setActivePage, setIsSidebarOpen }) => {
