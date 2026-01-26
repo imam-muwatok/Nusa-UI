@@ -16,11 +16,20 @@ export default function AlertPage() {
         {/* Variants */}
         <section>
           <h2 className="text-2xl font-bold mb-6">Variants</h2>
-          <CodeBlock code={`<Alert variant="info">This is an informational alert.</Alert>
+          <CodeBlock code={`
+<Alert variant="primary">This is an primary alert.</Alert>
+<Alert variant="secondary">This is an secondary alert.</Alert>
+<Alert variant="info">This is an informational alert.</Alert>
 <Alert variant="success">This is a success alert.</Alert>
 <Alert variant="warning">This is a warning alert.</Alert>
 <Alert variant="danger">This is a danger alert.</Alert>`}>
             <div className="w-full space-y-4">
+              <Alert variant="primary">
+                This is an primary alert.
+              </Alert>
+              <Alert variant="secondary">
+                This is an secondary alert.
+              </Alert>
               <Alert variant="info">
                 This is an informational alert.
               </Alert>

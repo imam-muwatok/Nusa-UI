@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ArrowUpIcon } from "@heroicons/react/24/outline";
 
 const styles = {
   primary: {
@@ -73,6 +74,7 @@ export default function Button({ children, variant = "primary", type = "solid", 
   const [ripples, setRipples] = useState([]);
 
   const colorStyle = styles[variant] || styles.primary;
+
   const variantClass = colorStyle[type] || colorStyle.solid;
   const sizeClass = iconOnly ? (iconSizes[size] || iconSizes.md) : (sizes[size] || sizes.md);
 

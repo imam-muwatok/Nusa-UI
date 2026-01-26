@@ -31,8 +31,8 @@ import Select2Page from './pages/forms/Select2';
 import SwitchPage from './pages/forms/Switch';
 import TextareaPage from './pages/forms/Textarea';
 import TimePickerPage from './pages/forms/TimePicker';
+import ValidationPage from './pages/forms/Validation';
 import WizardPage from './pages/forms/Wizard';
-// (Validation belum ada di list import Anda)
 
 // --- 3. Components ---
 import AccordionPage from './pages/components/Accordion';
@@ -44,6 +44,9 @@ import CalendarPage from './pages/components/Calendar';
 import CardPage from './pages/components/Card';
 import CarouselPage from './pages/components/Carousel';
 import CollapsePage from './pages/components/Collapse';
+import FigurePage from './pages/components/Figure';
+import MasonryLayoutPage from './pages/components/MasonryLayout';
+import GlassmorphismPage from './pages/components/Glassmorphism';
 import DropdownsPage from './pages/components/Dropdowns';
 import ListsPage from './pages/components/Lists';
 import ModalPage from './pages/components/Modal';
@@ -52,6 +55,7 @@ import NavsPage from './pages/components/Navs';
 import OffcanvasPage from './pages/components/Offcanvas';
 import PaginationPage from './pages/components/Pagination';
 import PopoversPage from './pages/components/Popovers';
+import ParallaxPage from './pages/components/Parallax';
 import ProgressPage from './pages/components/Progress';
 import RatingPage from './pages/components/Rating';
 import SkeletonPage from './pages/components/Skeleton';
@@ -68,15 +72,27 @@ import Toaster from './components/ui/Toaster';
 // example app
 
 export default function App() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(() => {
+    // Cek tema dari localStorage saat inisialisasi
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      return savedTheme === 'dark';
+    }
+    // Jika tidak ada, gunakan preferensi sistem
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State sidebar mobile
-  const [activePage, setActivePage] = useState('Introduction');
+  const [activePage, setActivePage] = useState(() => localStorage.getItem('activePage') || 'Introduction');
 
   useEffect(() => {
-    if (dark) document.documentElement.classList.add('dark');
-    else document.documentElement.classList.remove('dark');
+    document.documentElement.classList.toggle('dark', dark);
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
   }, [dark]);
+
+  useEffect(() => {
+    localStorage.setItem('activePage', activePage);
+  }, [activePage]);
 
   return (
     <div className="min-h-screen">
@@ -116,6 +132,9 @@ export default function App() {
         {activePage === 'Breadcrumb' && <BreadcrumbPage />}
         {activePage === 'Carousel' && <CarouselPage />}
         {activePage === 'Collapse' && <CollapsePage />}
+        {activePage === 'Figure' && <FigurePage />}
+        {activePage === 'MasonryLayout' && <MasonryLayoutPage />}
+        {activePage === 'Glassmorphism' && <GlassmorphismPage />}
         {activePage === 'Dropdowns' && <DropdownsPage />}
         {activePage === 'Select' && <SelectPage />}
         {activePage === 'Select2' && <Select2Page />}
@@ -126,6 +145,7 @@ export default function App() {
         {activePage === 'File input' && <FileInputPage />}
         {activePage === 'Form control' && <FormControlPage />}
         {activePage === 'Floating labels' && <FloatingLabelsPage />}
+        {activePage === 'Validation' && <ValidationPage />}
         {activePage === 'Wizard' && <WizardPage />}
         {activePage === 'Autocomplete' && <AutocompletePage />}
         {activePage === 'Timeline' && <TimelinePage />}
@@ -140,6 +160,7 @@ export default function App() {
         {activePage === 'Navbar' && <NavbarPage />}
         {activePage === 'Offcanvas' && <OffcanvasPage />}
         {activePage === 'Popovers' && <PopoversPage />}
+        {activePage === 'Parallax' && <ParallaxPage />}
         {activePage === 'Tooltips' && <TooltipsPage />}
         {activePage === 'Tables' && <TablePage />}
         {activePage === 'Toasts' && <ToastsPage />}

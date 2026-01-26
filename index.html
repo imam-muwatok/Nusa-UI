@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Inline script untuk mencegah FOUC
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.body.style.backgroundColor = '#18181b'; // Warna latar belakang dark mode Anda
+      } else {
+        document.body.style.backgroundColor = '#ffffff'; // Warna latar belakang light mode Anda
+      }
+    </script>
     <title>nusa-ui</title>
   </head>
   <body>

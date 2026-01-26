@@ -8,6 +8,14 @@ import {
 } from "@heroicons/react/24/outline";
 
 const variants = {
+  primary: {
+    base: "border-blue-200 bg-blue-50 text-blue-800 dark:border-blue-900/50 dark:bg-blue-950/30 dark:text-blue-400",
+    icon: <InformationCircleIcon className="h-5 w-5" />,
+  },
+  secondary: {
+    base: "border-zinc-200 bg-zinc-50 text-zinc-800 dark:border-zinc-900/50 dark:bg-zinc-950/30 dark:text-zinc-400",
+    icon: <CheckCircleIcon className="h-5 w-5" />,
+  },
   info: {
     base: "border-cyan-200 bg-cyan-50 text-cyan-800 dark:border-cyan-900/50 dark:bg-cyan-950/30 dark:text-cyan-400",
     icon: <InformationCircleIcon className="h-5 w-5" />,

@@ -41,7 +41,10 @@ export default function NavbarPage() {
 </Navbar>`}>
             <div className="w-full border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden">
               <Navbar>
-                <NavbarBrand href="#">Nusa-UI</NavbarBrand>
+                <NavbarBrand href="#">
+                  <img src="/logo.png" alt="Nusa UI Logo" className="h-7 w-7" />
+                  <span>Nusa-UI</span>
+                </NavbarBrand>
                 <NavbarToggle isOpen={isOpen1} setIsOpen={setIsOpen1} />
                 <NavbarCollapse isOpen={isOpen1}>
                   <Nav className="flex-col lg:flex-row mt-4 lg:mt-0">
@@ -74,7 +77,10 @@ export default function NavbarPage() {
 </Navbar>`}>
             <div className="w-full border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden">
               <Navbar>
-                <NavbarBrand href="#">Nusa-UI</NavbarBrand>
+                <NavbarBrand href="#">
+                  <img src="/logo.png" alt="Nusa UI Logo" className="h-7 w-7" />
+                  <span>Nusa-UI</span>
+                </NavbarBrand>
                 <div className="flex lg:order-2 items-center">
                     <Button size="sm">Get started</Button>
                     <NavbarToggle isOpen={isOpen2} setIsOpen={setIsOpen2} />
@@ -108,7 +114,10 @@ export default function NavbarPage() {
 </Navbar>`}>
             <div className="w-full h-64 overflow-y-auto border border-zinc-200 dark:border-zinc-800 rounded-xl relative bg-zinc-50 dark:bg-zinc-900">
               <Navbar sticky className="absolute top-0 left-0 right-0">
-                <NavbarBrand href="#">Nusa-UI</NavbarBrand>
+                <NavbarBrand href="#">
+                  <img src="/logo.png" alt="Nusa UI Logo" className="h-7 w-7" />
+                  <span>Nusa-UI</span>
+                </NavbarBrand>
                 <NavbarToggle isOpen={isOpen3} setIsOpen={setIsOpen3} />
                 <NavbarCollapse isOpen={isOpen3}>
                   <Nav className="flex-col lg:flex-row mt-4 lg:mt-0">
@@ -143,7 +152,10 @@ export default function NavbarPage() {
             <div className="w-full h-48 rounded-xl relative bg-gradient-to-r from-cyan-500 to-blue-600 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center text-white/20 font-bold text-4xl">Hero Image Area</div>
               <Navbar transparent className="absolute top-0 left-0 right-0">
-                <NavbarBrand href="#" className="text-white">Nusa-UI</NavbarBrand>
+                <NavbarBrand href="#" className="text-white">
+                  <img src="/logo.png" alt="Nusa UI Logo" className="h-7 w-7" />
+                  <span>Nusa-UI</span>
+                </NavbarBrand>
                 <NavbarToggle isOpen={isOpen4} setIsOpen={setIsOpen4} className="text-white hover:bg-white/20" />
                 <NavbarCollapse isOpen={isOpen4}>
                   <Nav className="flex-col lg:flex-row mt-4 lg:mt-0">
@@ -178,7 +190,10 @@ export default function NavbarPage() {
 </Navbar>`}>
             <div className="w-full h-80 overflow-y-auto border border-zinc-200 dark:border-zinc-800 rounded-xl relative bg-zinc-50 dark:bg-zinc-900">
               <Navbar className="absolute top-0 left-0 right-0">
-                <NavbarBrand href="#">Nusa-UI</NavbarBrand>
+                <NavbarBrand href="#">
+                  <img src="/logo.png" alt="Nusa UI Logo" className="h-7 w-7" />
+                  <span>Nusa-UI</span>
+                </NavbarBrand>
                 <NavbarToggle isOpen={isOpen5} setIsOpen={setIsOpen5} />
                 <NavbarCollapse isOpen={isOpen5}>
                   <Nav className="flex-col lg:flex-row mt-4 lg:mt-0">
@@ -240,7 +255,10 @@ export default function NavbarPage() {
 </div>`}>
             <div id="scroll-container" className="relative h-80 overflow-y-auto border border-zinc-200 dark:border-zinc-800 rounded-xl scroll-smooth bg-white dark:bg-zinc-900">
               <Navbar sticky className="absolute top-0 left-0 right-0">
-                <NavbarBrand href="#">Docs</NavbarBrand>
+                <NavbarBrand href="#">
+                  <img src="/logo.png" alt="Nusa UI Logo" className="h-7 w-7" />
+                  <span>Docs</span>
+                </NavbarBrand>
                 <NavbarToggle isOpen={isOpen6} setIsOpen={setIsOpen6} />
                 <NavbarCollapse isOpen={isOpen6}>
                   <Nav scrollSpy spyContainer="#scroll-container" className="flex-col lg:flex-row">

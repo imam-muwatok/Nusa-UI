@@ -25,7 +25,7 @@ const sidebarData = [
       { name: "Switch" },
       { name: "Textarea" },
       { name: "Timepicker" },
-      // { name: "Validation" },
+      { name: "Validation" },
       { name: "Wizard" },
 
     ],
@@ -43,6 +43,10 @@ const sidebarData = [
       { name: "Carousel" },
       { name: "Collapse" },
       { name: "Dropdowns" },
+      { name: "Figure" },
+      { name: "MasonryLayout" },
+      { name: "Glassmorphism" },
+      
       { name: "Lists" },
       { name: "Modals" },
       { name: "Navbar" },
@@ -50,6 +54,7 @@ const sidebarData = [
       { name: "Offcanvas" },
       { name: "Pagination" },
       { name: "Popovers" },
+      { name: "Parallax" },
       { name: "Progress" },
       { name: "Rating" },
       { name: "Skeleton" },
