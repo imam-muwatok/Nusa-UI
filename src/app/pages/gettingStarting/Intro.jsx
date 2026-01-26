@@ -3,7 +3,7 @@ import {
   CommandLineIcon, 
   RocketLaunchIcon
 } from "@heroicons/react/24/outline";
-import Alert from "../components/ui/Alert";
+import Alert from "../../components/ui/Alert";
 
 const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
