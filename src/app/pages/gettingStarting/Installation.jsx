@@ -1,4 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ClipboardDocumentIcon, CheckIcon } from "@heroicons/react/24/outline";
+
+const CommandBlock = ({ command }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(command);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="relative rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900/50 group">
+      <pre className="overflow-x-auto text-sm text-zinc-800 dark:text-zinc-300 pr-10">
+        <code>{command}</code>
+      </pre>
+      <button
+        onClick={handleCopy}
+        className="absolute right-2 top-2 rounded-lg p-1.5 text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
+        title="Copy command"
+      >
+        {copied ? <CheckIcon className="h-4 w-4 text-green-500" /> : <ClipboardDocumentIcon className="h-4 w-4" />}
+      </button>
+    </div>
+  );
+};
 
 export default function InstallationPage() {
   return (
@@ -20,31 +46,19 @@ export default function InstallationPage() {
                 <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-bold text-zinc-700 dark:text-zinc-300">Clone</span>
                 </div>
-                <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900/50">
-                    <pre className="overflow-x-auto text-sm text-zinc-800 dark:text-zinc-300">
-                    <code>{`git clone -b tailwind-dev https://github.com/imam-muwatok/Nusa-UI.git`}</code>
-                    </pre>
-                </div>
+                <CommandBlock command="git clone -b tailwind-dev https://github.com/imam-muwatok/Nusa-UI.git" />
             </div>
             <div>
                 <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-bold text-zinc-700 dark:text-zinc-300">Installation</span>
                 </div>
-                <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900/50">
-                    <pre className="overflow-x-auto text-sm text-zinc-800 dark:text-zinc-300">
-                    <code>{`cd Nusa-UI && yarn install`}</code>
-                    </pre>
-                </div>
+                <CommandBlock command="cd Nusa-UI && yarn install" />
             </div>
             <div>
                 <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-bold text-zinc-700 dark:text-zinc-300">Run</span>
                 </div>
-                <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900/50">
-                    <pre className="overflow-x-auto text-sm text-zinc-800 dark:text-zinc-300">
-                    <code>{`yarn dev`}</code>
-                    </pre>
-                </div>
+                <CommandBlock command="yarn dev" />
             </div>
           </div>
         </section>

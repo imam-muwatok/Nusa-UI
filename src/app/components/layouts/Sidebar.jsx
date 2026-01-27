@@ -81,6 +81,7 @@ const sidebarData = [
       { name: "Pricing" },
       { name: "Footer" },
       { name: "Team" },
+      { name: "Sidebar" },
       { name: "FAQ" },
       { name: "Blog" },
       { name: "Gallery" },
