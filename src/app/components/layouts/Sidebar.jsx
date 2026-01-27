@@ -88,6 +88,7 @@ const sidebarData = [
       { name: "Lightbox" },
       { name: "Contact" },
       { name: "Auth" },
+      { name: "Online Shop" },
       { name: "Error" },
  
     ],

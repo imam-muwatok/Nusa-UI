@@ -83,6 +83,7 @@ import LightboxPage from './pages/examples/Lightbox';
 import ContactPage from './pages/examples/Contact';
 import ErrorPage from './pages/examples/Error';
 import AuthPage from './pages/examples/Auth';
+import OnlineShopPage from './pages/examples/OnlineShop';
 import DashboardPage from './pages/examples/Dashboard';
 import SettingsPage from './pages/examples/Settings';
 import ProfilePage from './pages/examples/Profile';
@@ -205,6 +206,7 @@ export default function App() {
         {activePage === 'Lightbox' && <LightboxPage />}
         {activePage === 'Contact' && <ContactPage />}
         {activePage === 'Auth' && <AuthPage />}
+        {activePage === 'Online Shop' && <OnlineShopPage />}
         {activePage === 'Error' && <ErrorPage />}
         {activePage === 'Dashboard' && <DashboardPage />}
         {activePage === 'Settings' && <SettingsPage />}
