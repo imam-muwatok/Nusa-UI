@@ -151,6 +151,98 @@ export default function BlogPage() {
             </div>
           </CodeBlock>
         </section>
+
+        {/* Featured Post */}
+        <section>
+          <h2 className="text-2xl font-bold mb-6">Featured Post</h2>
+          <CodeBlock code={`<article className="relative w-full h-96 rounded-2xl overflow-hidden shadow-lg group">
+    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Featured" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+    <div className="absolute bottom-0 left-0 p-8 text-white">
+        <Badge variant="primary" className="mb-3">Featured</Badge>
+        <h2 className="text-3xl font-bold mb-2">The Future of Web Development</h2>
+        <p className="text-zinc-200 mb-4 max-w-2xl">Discover the latest trends and technologies shaping the digital landscape in 2024 and beyond.</p>
+        <div className="flex items-center gap-3">
+            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Author" className="w-8 h-8 rounded-full border-2 border-white" />
+            <span className="font-medium">Jese Leos</span>
+            <span className="text-zinc-400">•</span>
+            <span className="text-zinc-300">Oct 24, 2023</span>
+        </div>
+    </div>
+</article>`}>
+            <div className="w-full">
+                <article className="relative w-full h-96 rounded-2xl overflow-hidden shadow-lg group">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Featured" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 p-8 text-white">
+                        <Badge variant="primary" className="mb-3">Featured</Badge>
+                        <h2 className="text-3xl font-bold mb-2">The Future of Web Development</h2>
+                        <p className="text-zinc-200 mb-4 max-w-2xl">Discover the latest trends and technologies shaping the digital landscape in 2024 and beyond.</p>
+                        <div className="flex items-center gap-3">
+                            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Author" className="w-8 h-8 rounded-full border-2 border-white" />
+                            <span className="font-medium">Jese Leos</span>
+                            <span className="text-zinc-400">•</span>
+                            <span className="text-zinc-300">Oct 24, 2023</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+          </CodeBlock>
+        </section>
+
+        {/* Horizontal List */}
+        <section>
+          <h2 className="text-2xl font-bold mb-6">Horizontal List</h2>
+          <CodeBlock code={`<div className="space-y-6">
+  {posts.map((post) => (
+    <article key={post.id} className="flex flex-col md:flex-row gap-6 bg-white dark:bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 p-4 hover:shadow-md transition-shadow">
+        <div className="w-full md:w-48 h-48 md:h-auto shrink-0">
+            <img src={post.image} alt={post.title} className="w-full h-full object-cover rounded-lg" />
+        </div>
+        <div className="flex flex-col justify-center">
+            <div className="flex items-center gap-3 mb-2">
+                <Badge variant="secondary" size="sm">{post.category}</Badge>
+                <span className="text-xs text-zinc-500 dark:text-zinc-400">{post.date}</span>
+            </div>
+            <h2 className="text-xl font-bold text-zinc-900 dark:text-white mb-2 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                <a href="#">{post.title}</a>
+            </h2>
+            <p className="text-zinc-500 dark:text-zinc-400 text-sm mb-4 line-clamp-2">{post.description}</p>
+            <div className="flex items-center gap-2 mt-auto">
+                <img src={post.author.avatar} alt={post.author.name} className="w-6 h-6 rounded-full" />
+                <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{post.author.name}</span>
+            </div>
+        </div>
+    </article>
+  ))}
+</div>`}>
+            <div className="w-full">
+                <div className="space-y-6">
+                    {posts.map((post) => (
+                        <article key={post.id} className="flex flex-col md:flex-row gap-6 bg-white dark:bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 p-4 hover:shadow-md transition-shadow">
+                            <div className="w-full md:w-48 h-48 md:h-auto shrink-0">
+                                <img src={post.image} alt={post.title} className="w-full h-full object-cover rounded-lg" />
+                            </div>
+                            <div className="flex flex-col justify-center">
+                                <div className="flex items-center gap-3 mb-2">
+                                    <Badge variant="secondary" size="sm">{post.category}</Badge>
+                                    <span className="text-xs text-zinc-500 dark:text-zinc-400">{post.date}</span>
+                                </div>
+                                <h2 className="text-xl font-bold text-zinc-900 dark:text-white mb-2 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                    <a href="#">{post.title}</a>
+                                </h2>
+                                <p className="text-zinc-500 dark:text-zinc-400 text-sm mb-4 line-clamp-2">{post.description}</p>
+                                <div className="flex items-center gap-2 mt-auto">
+                                    <img src={post.author.avatar} alt={post.author.name} className="w-6 h-6 rounded-full" />
+                                    <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{post.author.name}</span>
+                                </div>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </div>
+          </CodeBlock>
+        </section>
       </div>
     </main>
   );
