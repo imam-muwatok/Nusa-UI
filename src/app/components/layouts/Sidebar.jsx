@@ -89,6 +89,7 @@ const sidebarData = [
       { name: "Contact" },
       { name: "Auth" },
       { name: "Online Shop" },
+      { name: "Movies" },
       { name: "Error" },
  
     ],

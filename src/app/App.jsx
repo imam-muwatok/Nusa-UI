@@ -84,6 +84,7 @@ import ContactPage from './pages/examples/Contact';
 import ErrorPage from './pages/examples/Error';
 import AuthPage from './pages/examples/Auth';
 import OnlineShopPage from './pages/examples/OnlineShop';
+import MoviesPage from './pages/examples/Movies';
 import DashboardPage from './pages/examples/Dashboard';
 import SettingsPage from './pages/examples/Settings';
 import ProfilePage from './pages/examples/Profile';
@@ -207,6 +208,7 @@ export default function App() {
         {activePage === 'Contact' && <ContactPage />}
         {activePage === 'Auth' && <AuthPage />}
         {activePage === 'Online Shop' && <OnlineShopPage />}
+        {activePage === 'Movies' && <MoviesPage />}
         {activePage === 'Error' && <ErrorPage />}
         {activePage === 'Dashboard' && <DashboardPage />}
         {activePage === 'Settings' && <SettingsPage />}
