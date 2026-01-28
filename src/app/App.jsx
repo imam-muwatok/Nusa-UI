@@ -88,6 +88,7 @@ import MoviesPage from './pages/examples/Movies';
 import DashboardPage from './pages/examples/Dashboard';
 import SettingsPage from './pages/examples/Settings';
 import ProfilePage from './pages/examples/Profile';
+import ChatingPage from './pages/examples/Chating';
 
 // --- Extra / UI Components ---
 import Toaster from './components/ui/Toaster';
@@ -213,6 +214,7 @@ export default function App() {
         {activePage === 'Dashboard' && <DashboardPage />}
         {activePage === 'Settings' && <SettingsPage />}
         {activePage === 'Profile' && <ProfilePage />}
+        {activePage === 'Chating' && <ChatingPage />}
         
       </div>
       {/* Footer */}

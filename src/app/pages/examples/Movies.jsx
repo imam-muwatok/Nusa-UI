@@ -23,14 +23,6 @@ export default function MoviesPage() {
       image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
     },
     {
-      id: 3,
-      title: "The Dark Knight",
-      year: "2008",
-      rating: 5.0,
-      genre: "Action",
-      image: "https://images.unsplash.com/photo-1478720568477-152d9b164e63?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-    },
-    {
       id: 4,
       title: "Avengers: Endgame",
       year: "2019",
